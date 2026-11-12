@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-04-16T05:46:39.151267",
+  "src": "/content/drive/MyDrive/InaTechShips/dataset_25k",
+  "dst": "/content/drive/MyDrive/InaTechShips/dataset_25k_v2",
+  "seed": 42,
+  "proportions": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "n_unique_ids_input": 27796,
+  "n_classes": 10,
+  "ids_per_class_input": {
+    "BULK CARRIER": 3095,
+    "RO-RO/PASSENGER SHIP": 2877,
+    "VEHICLES CARRIER": 2722,
+    "PASSENGERS SHIP": 2736,
+    "RO-RO CARGO": 2602,
+    "CONTAINER SHIP": 2962,
+    "OIL PRODUCTS TANKER": 2672,
+    "GENERAL CARGO": 2853,
+    "TUG": 2603,
+    "OIL/CHEMICAL TANKER": 2674
+  },
+  "split_sizes": {
+    "train": 16677,
+    "val": 5558,
+    "test": 5561
+  },
+  "split_proportions_actual": {
+    "train": 0.5999784141603108,
+    "val": 0.19995682832062167,
+    "test": 0.2000647575190675
+  },
+  "disjoint_check": {
+    "train_intersect_val": 0,
+    "train_intersect_test": 0,
+    "val_intersect_test": 0,
+    "all_disjoint": true
+  },
+  "class_distribution_per_split": {
+    "train": {
+      "BULK CARRIER": 1857,
+      "RO-RO/PASSENGER SHIP": 1726,
+      "VEHICLES CARRIER": 1633,
+      "PASSENGERS SHIP": 1642,
+      "RO-RO CARGO": 1561,
+      "CONTAINER SHIP": 1777,
+      "OIL PRODUCTS TANKER": 1603,
+      "GENERAL CARGO": 1712,
+      "TUG": 1562,
+      "OIL/CHEMICAL TANKER": 1604
+    },
+    "val": {
+      "BULK CARRIER": 619,
+      "RO-RO/PASSENGER SHIP": 575,
+      "VEHICLES CARRIER": 544,
+      "PASSENGERS SHIP": 547,
+      "RO-RO CARGO": 520,
+      "CONTAINER SHIP": 592,
+      "OIL PRODUCTS TANKER": 534,
+      "GENERAL CARGO": 571,
+      "TUG": 521,
+      "OIL/CHEMICAL TANKER": 535
+    },
+    "test": {
+      "BULK CARRIER": 619,
+      "RO-RO/PASSENGER SHIP": 576,
+      "VEHICLES CARRIER": 545,
+      "PASSENGERS SHIP": 547,
+      "RO-RO CARGO": 521,
+      "CONTAINER SHIP": 593,
+      "OIL PRODUCTS TANKER": 535,
+      "GENERAL CARGO": 570,
+      "TUG": 520,
+      "OIL/CHEMICAL TANKER": 535
+    }
+  },
+  "copy_stats": {
+    "train": {
+      "n_copied": 16677,
+      "n_missing": 0,
+      "missing_files": []
+    },
+    "val": {
+      "n_copied": 5558,
+      "n_missing": 0,
+      "missing_files": []
+    },
+    "test": {
+      "n_copied": 5561,
+      "n_missing": 0,
+      "missing_files": []
+    }
+  }
+}

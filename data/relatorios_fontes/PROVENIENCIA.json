@@ -1,0 +1,10 @@
+{
+  "origem": "Cópias sem alteração, extraídas em 2026-11-12 dos pacotes genship3d-mirror.zip (audit_report.json, confirmation_report.csv, detection_report.csv; gerados por auditor.py e pela avaliação com SAM3) e dataset_25k_v2.zip (reconstrucao_report.json, 2026-04-16) com scripts/coletar_pendencias.py",
+  "nota": "Relatório narrativo de qualidade das anotações (PDF, 7,2 MB) recebido de Daniela em 2026-11-12; não está no repositório.",
+  "arquivos": {
+    "genship3d_audit_report.json": "0f8392d19746aaad1b745046209f7e2e5e54d1b0f8168999caf6af24720e2432",
+    "genship3d_confirmation_report.csv": "3bdda93b57bd91b9b7cb60485d5b26b32455d72d693cfe11bfaa96d5bf8e326f",
+    "genship3d_detection_report.csv": "8da95ee867ebfb46713c0d0cbfd141bf1c3c8136f6816a6c6fcf49d0a1d8f4b2",
+    "inatechships_reconstrucao_report.json": "856d008f517e4eabe01bac1bd89906ef6d0f7580c677c69111c9dd7ca9f23248"
+  }
+}

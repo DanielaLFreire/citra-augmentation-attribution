@@ -1,0 +1,99 @@
+{
+    "name": "Genship 3D",
+    "root": "/home/jacumbicos/github/vessel-detection/data/Genship 3D",
+    "splits": {
+        "Barca": {
+            "num_images": 228,
+            "num_labels": 222,
+            "matched_pairs": 222,
+            "total_bboxes": 1167,
+            "images_without_label": [
+                "Barca_0415_1155YD_RainOFF_DirtON_TerrenoON",
+                "Barca_0425_976YD_RainOFF_DirtON_TerrenoON",
+                "Barca_0426_976YD_RainOFF_DirtON_TerrenoON",
+                "Barca_0427_976YD_RainOFF_DirtON_TerrenoON",
+                "Barca_0428_976YD_RainOFF_DirtON_TerrenoON",
+                "Barca_0429_976YD_RainOFF_DirtON_TerrenoON"
+            ],
+            "labels_without_image": [],
+            "empty_labels": [],
+            "line_status_counts": {
+                "valid": 1167,
+                "malformed": 0,
+                "invalid_class": 0,
+                "non_numeric": 0,
+                "invalid": 0
+            },
+            "image_resolution_counts": {
+                "1920x1080": 228
+            },
+            "class_counts": {
+                "1": {
+                    "name": "unknown_class_1",
+                    "count": 1167,
+                    "percentage": 100.0
+                }
+            }
+        },
+        "Lancha": {
+            "num_images": 120,
+            "num_labels": 119,
+            "matched_pairs": 119,
+            "total_bboxes": 447,
+            "images_without_label": [
+                "Lancha_0567_294YD_RainOFF_DirtON_TerrenoON"
+            ],
+            "labels_without_image": [],
+            "empty_labels": [],
+            "line_status_counts": {
+                "valid": 447,
+                "malformed": 0,
+                "invalid_class": 0,
+                "non_numeric": 0,
+                "invalid": 0
+            },
+            "image_resolution_counts": {
+                "1920x1080": 120
+            },
+            "class_counts": {
+                "1": {
+                    "name": "unknown_class_1",
+                    "count": 447,
+                    "percentage": 100.0
+                }
+            }
+        },
+        "Passageiro": {
+            "num_images": 96,
+            "num_labels": 92,
+            "matched_pairs": 92,
+            "total_bboxes": 158,
+            "images_without_label": [
+                "Passageiro_0627_507YD_RainOFF_DirtON_TerrenoON",
+                "Passageiro_0628_507YD_RainOFF_DirtON_TerrenoON",
+                "Passageiro_0668_851YD_RainOFF_DirtON_TerrenoON",
+                "Passageiro_0680_1040YD_RainOFF_DirtON_TerrenoON"
+            ],
+            "labels_without_image": [],
+            "empty_labels": [],
+            "line_status_counts": {
+                "valid": 158,
+                "malformed": 0,
+                "invalid_class": 0,
+                "non_numeric": 0,
+                "invalid": 0
+            },
+            "image_resolution_counts": {
+                "1920x1080": 96
+            },
+            "class_counts": {
+                "4": {
+                    "name": "unknown_class_4",
+                    "count": 158,
+                    "percentage": 100.0
+                }
+            }
+        }
+    },
+    "errors": []
+}

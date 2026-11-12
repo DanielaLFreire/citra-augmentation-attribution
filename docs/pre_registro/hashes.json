@@ -47,6 +47,12 @@
       "caminho": "manifests/manifesto_smd.relatorio.json",
       "sha256": "f09609751ad58a2674fe7558a70a066e2dae44b94fd63fcd54bf15114f2aa58a",
       "tamanho_bytes": 519
+    },
+    "exclusao_R_A13.csv": {
+      "registrado_em_utc": "2026-11-12T20:00:58.586035+00:00",
+      "caminho": "manifests/exclusao_R_A13.csv",
+      "sha256": "f1a6c6542ce60a8039192cdaf0e2b529b00424ca969e4d316219e2e734fd5588",
+      "tamanho_bytes": 155994
     }
   },
   "adendos": {}
