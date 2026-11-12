@@ -19,3 +19,17 @@ Fora do experimento, mas presentes em `_zips`:
 | `INPUT_/OUTPUT_2026-08-11_14-31-55.zip` | Piloto do iflens | Ver `FICHA_iflens.md` |
 
 Gerar o manifesto de cada fonte: `python -m scripts.manifesto_fonte construir --fonte <nome> --formato <yolo|voc|abocsv> --zip <pacote> --saida manifests/manifesto_<nome>.csv --citra-hashes <tabela>`. Antes, gerar a tabela de hashes do CITRA com `python -m scripts.manifesto_fonte hashes-citra`.
+
+## Resultados dos manifestos
+
+Relatórios colados por Daniela em 2026-11-11 (Colab); os CSV dos manifestos ainda não foram enviados ao repositório.
+
+| Fonte | Imagens | Sem rótulo | Dup. nome-base | Dup. conteúdo exato | Clusters quase-dup (dHash ≤ 4) | Caixas | Small a 640 | Colide com CITRA (exata / quase) | SHA-256 do pacote |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SMD | 914 | 0 | 0 | 0 | 743 (171 imagens agrupadas, 18,7%) | 7.043 | 4.043 (57,4%) | 0 / 0 | `77b01da5…c48efc` (completo: `77b01da5e2f9664144295273202634bb25e5f86a220d83142c8b45ed0fc48efc`) |
+
+Leituras e limites:
+- 914 imagens e 7.043 caixas conferem com a contagem das Fases 0–5.
+- A ausência de colisão com o CITRA vale para cópias idênticas (hash de pixels) e para quase-cópias com dHash de 64 bits a distância ≤ 4. Esse hash é grosseiro; não detecta recortes nem reamostragens fortes. O limiar de 4 não foi calibrado.
+- O SMD tem 57,4% de caixas small a 640, contra 82,2% do CITRA: é a fonte com perfil mais próximo entre as medidas até agora, mas ainda mais "fácil" que o alvo.
+- CITRA: 1.348 train, 332 val e 401 test, como no plano. Há **3 imagens sem split reconhecível** no caminho (a identificar).
