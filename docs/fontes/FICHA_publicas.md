@@ -29,7 +29,7 @@ Relatórios colados por Daniela em 2026-11-11 (Colab); os CSV dos manifestos ain
 | SMD | 914 | 0 | 0 | 0 | 743 (171 imagens agrupadas, 18,7%) | 7.043 | 4.043 (57,4%) | 0 / 0 |
 | ABOShips | 9.880 | **839 (8,5%)** | 0 | 0 | 8.155 (1.725 agrupadas, 17,5%) | 41.967 | 29.657 (70,7%) | 0 / **3** |
 | InaTechShips | 27.796 | 0 | 0 | **5.651 (20,3%)** | 22.067 (5.729 agrupadas, 20,6%) | 27.796 (1 por imagem) | **0 (0%)** | 0 / **62** |
-| SeaShips (`SeaShips_voc.zip`) | — | — | — | — | — | — | — | — | `77b01da5…c48efc` (completo: `77b01da5e2f9664144295273202634bb25e5f86a220d83142c8b45ed0fc48efc`) |
+| SeaShips (`SeaShips_voc.zip`) | 13.105 (1 ilegível) | **329 (2,5%)** | **6.125** | **6.125** (os mesmos) | 955 | 16.821 | 727 (4,3%) | 0 / **542** | `77b01da5…c48efc` (completo abaixo) |
 
 Leituras e limites:
 - 914 imagens e 7.043 caixas conferem com a contagem das Fases 0–5.
@@ -39,8 +39,19 @@ Leituras e limites:
 
 Pontos que exigem verificação antes de qualquer uso:
 
-- **SeaShips:** a execução parou com `UnidentifiedImageError` depois de ~7.000 imagens (arquivo ilegível dentro do pacote). O script foi corrigido para registrar o arquivo como `ilegivel` e continuar; falta reexecutar. Os arquivos ilegíveis ficam listados no relatório.
+- **SeaShips:** reexecutado em 2026-11-12. Um arquivo ilegível (`SeaShips_voc_completo/test/002722_jpg.rf.d35bc241535da64952325422df50194e.jpg`) foi registrado e o resto seguiu. As 6.125 cópias por nome-base Roboflow são exatamente as 6.125 cópias de conteúdo idêntico, então a deduplicação por nome-base equivale à por conteúdo e deixa 6.979 imagens únicas, como nas Fases 0–5. 329 imagens ficaram sem XML casado (há 13.120 XML para 13.105 imagens): provável divergência de nomes; verificar antes de usar. Só 4,3% das caixas são small.
 - **ABOShips, 839 imagens sem caixa:** ou são quadros sem embarcação, ou o nome do arquivo não casou com a coluna `filename` do CSV. Comparar o nº de `filename` distintos do CSV com 9.880 − 839 = 9.041.
 - **InaTechShips:** exatamente uma caixa por imagem e **nenhuma small** a 640: é um conjunto de fotos de um objeto grande, sem relação com o regime do CITRA. 20,3% das imagens são cópias exatas de outras do próprio pacote (as divisões train/test/val internas não são independentes, o que também confirma que não servem de referência).
 - **Colisões com o CITRA por quase-cópia:** 3 no ABOShips e 62 no InaTechShips, com dHash ≤ 4. Podem ser falsos positivos (imagens com pouca textura, como mar e céu uniformes, têm dHash parecido) ou cópias reais. Só a inspeção visual decide: `python -m scripts.manifesto_fonte colisoes ...`. Até lá, tratar as imagens marcadas como excluídas do pool.
-- Os SHA-256 dos pacotes de ABOShips e InaTechShips não foram calculados (use `--hash-pacote` ou `sha256sum`).
+- **Colisões por quase-cópia:** SeaShips 542 (distâncias de Hamming de 0 a 4, a maioria em 3 e 4), ABOShips 3, InaTechShips 62. A concentração em distâncias 3–4 sugere coincidência de estrutura grosseira (horizonte, mar, céu), não cópia; as de 0 a 2 são as mais suspeitas. O subcomando `colisoes` agora também calcula a correlação 64×64 (`ncc_64`) de cada par: cópia reamostrada deve passar de ~0,95.
+
+SHA-256 completos dos pacotes (calculados no Colab em 2026-11-12):
+
+| Pacote | SHA-256 |
+| --- | --- |
+| `smd_clean.zip` | `77b01da5e2f9664144295273202634bb25e5f86a220d83142c8b45ed0fc48efc` |
+| `SeaShips_voc.zip` | `f94d2a643935a97cd9fc51e5ef2451e0cac02f1081efb3f71d74c7e68eb0a53c` |
+| `ABOships.zip` | `593ddff9d04d205183093d2be3bf6ea05e2668259603dc75c8ce8700980a672e` |
+| `dataset_25k_v2.zip` | `f929e66b743452c0e3c75381b81c62f8d976b6ead9c2a51e261f2fad85b8e4a8` |
+
+Perfil de tamanho das fontes (caixas small a 640): ABOShips 70,7%, SMD 57,4%, SeaShips 4,3%, InaTechShips 0%; CITRA 82,2%. Só ABOShips e SMD têm quantidade relevante de objetos no regime do alvo.

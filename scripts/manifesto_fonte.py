@@ -257,6 +257,17 @@ def hashes_citra(raiz: Path) -> list[dict]:
     return saida
 
 
+def ncc_64(a: Image.Image, b: Image.Image) -> float:
+    """Correlação normalizada entre as duas imagens em tons de cinza 64x64 (ignora a proporção).
+    ~1,0 para a mesma cena reamostrada ou recomprimida; baixa para cenas apenas parecidas."""
+    def z(im):
+        x = np.asarray(im.convert("L").resize((64, 64), Image.BILINEAR), dtype=np.float64).ravel()
+        x = x - x.mean()
+        n = np.linalg.norm(x)
+        return x / n if n > 0 else x
+    return float(np.dot(z(a), z(b)))
+
+
 def vizinho_citra(dhash_hex: str, citra: list[dict]) -> tuple[int, dict]:
     ch = np.array([int(c["dhash_hex"], 16) for c in citra], dtype=np.uint64)
     tabela = np.array([bin(i).count("1") for i in range(256)], dtype=np.uint8)
@@ -280,11 +291,12 @@ def montar_colisoes(manifesto: Path, caminho_zip: Path, citra: list[dict], saida
             tela = Image.new("RGB", (a.width + b.width + 10, altura + 18), "white")
             tela.paste(a, (0, 18)); tela.paste(b, (a.width + 10, 18))
             ImageDraw.Draw(tela).text((2, 2), f"{r['caminho_relativo'][-40:]} | CITRA {c['split']} d={d}", fill="black")
+            ncc = ncc_64(a, b)
             nome = f"col_{k:03d}.png"; tela.save(saida / nome)
             tabela.append({"arquivo": nome, "fonte_caminho": r["caminho_relativo"], "citra": c["caminho"],
-                           "citra_split": c["split"], "dist_hamming": d, "marca": r["colide_citra"]})
+                           "citra_split": c["split"], "dist_hamming": d, "ncc_64": round(ncc, 4), "marca": r["colide_citra"]})
     with open(saida / "colisoes.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["arquivo", "fonte_caminho", "citra", "citra_split", "dist_hamming", "marca"])
+        w = csv.DictWriter(f, fieldnames=["arquivo", "fonte_caminho", "citra", "citra_split", "dist_hamming", "ncc_64", "marca"])
         w.writeheader(); w.writerows(tabela)
     return tabela
 
@@ -323,7 +335,9 @@ def main(argv=None):
     citra = list(csv.DictReader(open(a.citra_hashes, encoding="utf-8"))) if a.citra_hashes else None
     if a.cmd == "colisoes":
         t = montar_colisoes(a.manifesto, a.zip, citra, a.saida)
-        print(f"{len(t)} pares em {a.saida}; distâncias: {sorted(x['dist_hamming'] for x in t)}")
+        import collections
+        faixas = collections.Counter("ncc>=0.95" if x["ncc_64"] >= 0.95 else "0.80-0.95" if x["ncc_64"] >= 0.80 else "ncc<0.80" for x in t)
+        print(f"{len(t)} pares em {a.saida}; por NCC: {dict(faixas)}; dist. de Hamming: {dict(collections.Counter(x['dist_hamming'] for x in t))}")
         return
     linhas, rel = construir(a.fonte, a.formato, a.zip, citra, a.limite, hash_pacote=a.hash_pacote)
     a.saida.parent.mkdir(parents=True, exist_ok=True)

@@ -126,3 +126,11 @@ def test_montar_colisoes(tmp_path):
         w = csv.DictWriter(f, fieldnames=CAMPOS); w.writeheader(); w.writerows(linhas)
     tab = montar_colisoes(m, zp, citra, tmp_path / "out")
     assert len(tab) == 1 and tab[0]["dist_hamming"] == 0 and (tmp_path / "out" / "col_000.png").exists()
+
+
+def test_ncc_distingue_copia_de_coincidencia():
+    from scripts.manifesto_fonte import ncc_64
+    a = Image.open(io.BytesIO(png(11, (200, 150))))
+    copia = a.resize((100, 75))
+    outra = Image.open(io.BytesIO(png(12, (200, 150))))
+    assert ncc_64(a, copia) > 0.9 and ncc_64(a, outra) < 0.3
