@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Se usar este material, cite-o com os metadados abaixo."
+title: "Atribuição de ganho de aumento de dados por tipo de fonte (real pública, renderizada, generativa) na detecção de embarcações pequenas"
+type: software
+version: 0.1.0
+date-released: "2026-11-11"
+authors:
+  - family-names: "Lopes Freire"
+    given-names: "Daniela"
+    affiliation: "CASNAV, Marinha do Brasil"
+repository-code: "https://github.com/DanielaLFreire/citra-augmentation-attribution"
+license: MIT

@@ -1,0 +1,10 @@
+{
+  "origem": "Auditoria visual gerada na sessão de 2026-11-10 a partir dos pacotes INPUT/OUTPUT_2026-08-11_14-31-55 do piloto iflens",
+  "arquivos": {
+    "audit_0.jpg": "843fbdec005e2660038af46a2ab1ebb5459b7ba7fbb88493556f4110696960af",
+    "audit_1.jpg": "0ae7616ff2a4ac3c22035db5acb1fba4013c02d2c4272bf55a34921ac1584327",
+    "audit_2.jpg": "af1f9c86863a797242d2755ed86a8f78069069415bb86247094e83e81468d774",
+    "audit_3.jpg": "755ff4f65f009209c2948d19542639edce869423f453fee30c515109765f0b52",
+    "auditoria_iflens_piloto.json": "8ab06d38d477fd7ffcf796836ca049e80d32f9abd532451921f13d6389ec611b"
+  }
+}

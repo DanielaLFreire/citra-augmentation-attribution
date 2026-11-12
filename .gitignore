@@ -1,0 +1,22 @@
+# Dados brutos, imagens e pesos NUNCA entram no repositório (ver docs/PROTOCOLO_RIGOR.md §2).
+# Só entram manifestos (CSV/JSON com hash), fichas, scripts e resultados agregados.
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.pt
+*.pth
+*.onnx
+datasets/
+imagens_locais/
+crops/
+runs_ultralytics/
+checkpoints/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+*.key
+.DS_Store

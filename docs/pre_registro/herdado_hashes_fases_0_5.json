@@ -1,0 +1,59 @@
+{
+  "gerado_em_utc": "2026-09-09T17:33:03.874924+00:00",
+  "artefatos": {
+    "perfil_citra_3d_real.json": {
+      "encontrado": true,
+      "caminho": "/content/drive/MyDrive/PROJETO_MARINHA/EXPERIMENTO_ATRIBUICAO_CAUSAL/pre_registro/perfil_citra_3d_real.json",
+      "sha256": "00760947a2f6bec357566a86e3b6d791b3de3bc5be11950386d5522d3b766376",
+      "tamanho_bytes": 9041
+    },
+    "tabela_min_dim_px.json": {
+      "encontrado": true,
+      "caminho": "/content/drive/MyDrive/PROJETO_MARINHA/EXPERIMENTO_ATRIBUICAO_CAUSAL/pre_registro/tabela_min_dim_px.json",
+      "sha256": "5a37d4e509f51b2d8fa7bf4dde99cdf5fad848d4e0ffd8851a73048b2875a599",
+      "tamanho_bytes": 3475
+    },
+    "cobertura_fatorial.json": {
+      "encontrado": true,
+      "caminho": "/content/drive/MyDrive/PROJETO_MARINHA/EXPERIMENTO_ATRIBUICAO_CAUSAL/pre_registro/cobertura_fatorial.json",
+      "sha256": "f594263e991130ca92e64c878bfa2bc48d64626ac891f3b88d2d440ec54a0a5c",
+      "tamanho_bytes": 632
+    },
+    "manifesto_colagens_sondagem_val.csv": {
+      "encontrado": true,
+      "caminho": "/content/drive/MyDrive/PROJETO_MARINHA/EXPERIMENTO_ATRIBUICAO_CAUSAL/estagio_a/colagens_sondagem_val/manifesto_colagens_sondagem_val.csv",
+      "sha256": "d472a7149676dcb46f8669e51c95660ebccac93e72928bc10f7d84084e51501e",
+      "tamanho_bytes": 11093756
+    },
+    "amostra_sinteticas_fase5.csv": {
+      "encontrado": true,
+      "registrado_em_utc": "2026-09-29T01:09:53.460243+00:00",
+      "caminho": "configs/amostra_sinteticas_fase5.csv",
+      "sha256": "f14cddb825d0d6ffda523ecdf5c486a9b5df2d21c753969f7a118e9699b7c588",
+      "tamanho_bytes": 364924
+    }
+  },
+  "adendos": {
+    "adendo_fase3_fatorial.md": {
+      "lacrado_em_utc": "2026-09-15T01:23:20.714880+00:00",
+      "caminho": "docs/pre_registro/adendo_fase3_fatorial.md",
+      "sha256": "9fb7a139df119274c62bfee26f23d7ffc91c5e357660ef1276bfc0c503bb58ec",
+      "tamanho_bytes": 9082,
+      "sha256_previsoes_fase0_md_no_momento": "59010c49994420c52cafcc59af9d8b81d55e4aebe31685e2da7867f96c91afd7"
+    },
+    "adendo2_fase3_fatorial_2x2.md": {
+      "lacrado_em_utc": "2026-09-15T02:21:38.783717+00:00",
+      "caminho": "docs/pre_registro/adendo2_fase3_fatorial_2x2.md",
+      "sha256": "be395b8bbb017ed0f4aac98009934801f32a23625b4dbb653b94da6e215db7e9",
+      "tamanho_bytes": 8008,
+      "sha256_previsoes_fase0_md_no_momento": "59010c49994420c52cafcc59af9d8b81d55e4aebe31685e2da7867f96c91afd7"
+    },
+    "adendo3_fase5_passos_igualados.md": {
+      "lacrado_em_utc": "2026-09-29T00:33:35.735864+00:00",
+      "caminho": "docs/pre_registro/adendo3_fase5_passos_igualados.md",
+      "sha256": "604cf0360f2cb1d1f1ae4edd09c207e9e425145e6575f822576a5a2156dd3d90",
+      "tamanho_bytes": 13128,
+      "sha256_previsoes_fase0_md_no_momento": "59010c49994420c52cafcc59af9d8b81d55e4aebe31685e2da7867f96c91afd7"
+    }
+  }
+}

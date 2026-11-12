@@ -1,0 +1,10 @@
+{
+  "origem": "https://github.com/DanielaLFreire/synth-detection-attribution",
+  "tag": "v1.1-fase5-fechada",
+  "commit": "e23e0f0",
+  "nota": "Cópias sem alteração de docs/fase5_resultados_val.json e docs/fase5_teste_metricas.csv, usadas por scripts/dimensionamento_fase5.py.",
+  "arquivos": {
+    "fase5_resultados_val.json": "c2feab87d3f0483015edd534546a9b76f8912a0ee12e1b81992df0bb7099d4ed",
+    "fase5_teste_metricas.csv": "cc3a6e0b7e4ce1a8cdca117ff0b9231581059ec8e429721eb0ed390804b26ea3"
+  }
+}

@@ -1,0 +1,5 @@
+id,descricao,script,entrada,saida,status
+F01,"Diferença pareada por braço e métrica, com IC de 95%",a escrever,results/,,pendente
+F02,"Taxa de caixas inválidas por condição e tamanho de objeto (auditoria)",a escrever,data/auditoria_*/,,pendente
+T01,"Fontes: tipo, nº de imagens, caixas, perfil de tamanho",a escrever,manifests/,,pendente
+T02,"Dimensionamento: seeds por braço",scripts/dimensionamento_fase5.py,data/herdado_fase5/,,disponível (saída em texto)
