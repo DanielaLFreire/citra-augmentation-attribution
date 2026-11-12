@@ -32,4 +32,4 @@ Leituras e limites:
 - 914 imagens e 7.043 caixas conferem com a contagem das Fases 0–5.
 - A ausência de colisão com o CITRA vale para cópias idênticas (hash de pixels) e para quase-cópias com dHash de 64 bits a distância ≤ 4. Esse hash é grosseiro; não detecta recortes nem reamostragens fortes. O limiar de 4 não foi calibrado.
 - O SMD tem 57,4% de caixas small a 640, contra 82,2% do CITRA: é a fonte com perfil mais próximo entre as medidas até agora, mas ainda mais "fácil" que o alvo.
-- CITRA: 1.348 train, 332 val e 401 test, como no plano. Há **3 imagens sem split reconhecível** no caminho (a identificar).
+- CITRA: 1.348 train, 332 val e 401 test, como no plano. As 3 imagens sem split eram 2 em `_quarantine` (`14.04.2022-13-48-55`, `29.04.2022-14-59-27`) e a figura `escala_citra3d_report.png`, que não é do dataset. A segunda quarentena é a imagem que aparece também no piloto do iflens. O script agora marca a pasta como `quarentena` e ignora figuras de relatório.

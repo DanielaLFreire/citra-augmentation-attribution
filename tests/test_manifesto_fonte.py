@@ -87,3 +87,12 @@ def test_dhash_estavel_a_pequeno_ruido():
     a = Image.open(io.BytesIO(png(7, (128, 96))))
     b = Image.open(io.BytesIO(png(7, (128, 96), ruido=3)))
     assert bin(dhash(a) ^ dhash(b)).count("1") <= 8
+
+
+def test_hashes_citra_quarentena_e_relatorio(tmp_path):
+    for sub, nome in (("train", "a.png"), ("_quarantine", "q.png"), (".", "escala_report.png")):
+        d = tmp_path / sub
+        d.mkdir(exist_ok=True)
+        (d / nome).write_bytes(png(hash(nome) % 1000))
+    splits = sorted(r["split"] for r in hashes_citra(tmp_path))
+    assert splits == ["quarentena", "train"]

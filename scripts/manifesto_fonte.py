@@ -223,7 +223,12 @@ def hashes_citra(raiz: Path) -> list[dict]:
     saida = []
     for p in sorted(Path(raiz).rglob("*")):
         if p.suffix.lower() in IMG_EXT:
-            split = next((s for s in ("train", "valid", "val", "test") if s in p.parts), "desconhecido")
+            if "report" in p.stem.lower():   # figuras de relatório, não imagens do dataset
+                continue
+            if any(q in p.parts for q in ("_quarantine", "quarantine")):
+                split = "quarentena"
+            else:
+                split = next((s for s in ("train", "valid", "val", "test") if s in p.parts), "desconhecido")
             h = hashes_imagem(p.read_bytes())
             saida.append({"split": "val" if split == "valid" else split, "caminho": str(p),
                           "sha256_conteudo": h["sha256_conteudo"], "dhash_hex": f"{h['dhash']:016x}"})
