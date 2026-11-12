@@ -96,3 +96,33 @@ def test_hashes_citra_quarentena_e_relatorio(tmp_path):
         (d / nome).write_bytes(png(hash(nome) % 1000))
     splits = sorted(r["split"] for r in hashes_citra(tmp_path))
     assert splits == ["quarentena", "train"]
+
+
+def test_arquivo_ilegivel_nao_derruba(tmp_path):
+    zp = tmp_path / "i.zip"
+    with zipfile.ZipFile(zp, "w") as z:
+        z.writestr("d/test/images/ok.jpg", png(1, fmt="JPEG"))
+        z.writestr("d/test/labels/ok.txt", "0 0.5 0.5 0.1 0.1\n")
+        z.writestr("d/test/images/ruim.jpg", b"isto nao e uma imagem")
+    linhas, rel = construir("fx", "yolo", zp, progresso=0, hash_pacote=True)
+    assert rel["n_imagens"] == 2 and rel["n_legiveis"] == 1 and rel["n_ilegiveis"] == 1
+    ruim = [r for r in linhas if r["erro_leitura"]][0]
+    assert ruim["status_auditoria"] == "ilegivel" and ruim["sha256_arquivo"]
+    assert len(rel["sha256_pacote"]) == 64
+
+
+def test_montar_colisoes(tmp_path):
+    from scripts.manifesto_fonte import montar_colisoes, CAMPOS
+    img = png(9, (80, 60))
+    zp = tmp_path / "c.zip"
+    with zipfile.ZipFile(zp, "w") as z:
+        z.writestr("D/Seaships/d/x_000.png", img)
+        z.writestr("D/Labels/L.csv", "filename,xmin,xmax,ymin,ymax,width,height,class\nx_000,1,11,2,12,10,10,s\n")
+    cd = tmp_path / "citra" / "val"; cd.mkdir(parents=True); (cd / "c.png").write_bytes(img)
+    citra = hashes_citra(tmp_path / "citra")
+    linhas, _ = construir("fx", "abocsv", zp, citra, progresso=0)
+    m = tmp_path / "m.csv"
+    with open(m, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=CAMPOS); w.writeheader(); w.writerows(linhas)
+    tab = montar_colisoes(m, zp, citra, tmp_path / "out")
+    assert len(tab) == 1 and tab[0]["dist_hamming"] == 0 and (tmp_path / "out" / "col_000.png").exists()

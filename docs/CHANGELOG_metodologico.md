@@ -23,3 +23,9 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - `scripts/manifesto_fonte.py`: lê direto do pacote, calcula hash de conteúdo, dHash, caixas e small a 640, marca duplicatas e colisões com o CITRA. Testado com pacotes fictícios (11 testes passam); **não rodado em dado real**.
 - Decisões D06, D07; abertas A09 a A11.
 
+## 2026-11-12 — Primeiros manifestos de ABOShips e InaTechShips; SeaShips falhou
+
+- SeaShips parou em arquivo ilegível; script corrigido (registra e continua, hash do pacote opcional em qualquer tamanho, subcomando `colisoes` para inspeção visual). 14 testes passam. Reexecução pendente.
+- ABOShips: 9.880 imagens, 839 sem caixa, 70,7% small. InaTechShips: 27.796 imagens, 1 caixa por imagem, 0% small, 20,3% de cópias exatas internas. Colisões por quase-cópia com o CITRA: 3 e 62, a inspecionar. Detalhes e ressalvas em `docs/fontes/FICHA_publicas.md`.
+- Abertas A12 (papel do InaTechShips) e A13 (quase-cópias do CITRA).
+

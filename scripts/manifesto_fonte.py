@@ -44,7 +44,8 @@ _ROBOFLOW = re.compile(r"^(.*)_jpg\.rf\.[a-f0-9]+\.(jpg|jpeg|png)$", re.IGNORECA
 
 CAMPOS = ["id_imagem", "fonte", "caminho_relativo", "sha256_conteudo", "sha256_arquivo", "largura", "altura",
           "n_caixas", "n_small_640", "split_origem", "id_original", "parametros_json", "status_auditoria",
-          "base_roboflow", "dup_base_de", "dup_conteudo_de", "cluster_quase_dup", "dhash_hex", "colide_citra"]
+          "base_roboflow", "dup_base_de", "dup_conteudo_de", "cluster_quase_dup", "dhash_hex", "colide_citra",
+          "erro_leitura", "tamanho_bytes"]
 
 
 # ---------- hashes ----------
@@ -150,17 +151,36 @@ def agrupar_quase_duplicatas(hashes: list[int], limiar: int = LIMIAR_HAMMING) ->
     return [achar(i) for i in range(n)]
 
 
+def sha256_arquivo_grande(caminho: Path) -> str:
+    h = hashlib.sha256()
+    with open(caminho, "rb") as f:
+        for bloco in iter(lambda: f.read(1 << 24), b""):
+            h.update(bloco)
+    return h.hexdigest()
+
+
 def construir(fonte: str, formato: str, caminho_zip: Path, citra: list[dict] | None = None, limite: int | None = None,
-              progresso: int = 1000) -> tuple[list[dict], dict]:
+              progresso: int = 1000, hash_pacote: bool = False) -> tuple[list[dict], dict]:
     linhas: list[dict] = []
     sem_rotulo = 0
+    ilegiveis: list[str] = []
     with zipfile.ZipFile(caminho_zip) as z:
         for k, (n, rotulo, split) in enumerate(itens_do_pacote(z, formato)):
             if limite and k >= limite:
                 break
             if progresso and k % progresso == 0:
                 print(f"  {fonte}: {k} imagens...", file=sys.stderr)
-            h = hashes_imagem(z.read(n))
+            dados = z.read(n)
+            try:
+                h = hashes_imagem(dados)
+            except Exception as e:  # arquivo corrompido ou não-imagem: registra e segue
+                ilegiveis.append(n)
+                linhas.append({c: "" for c in CAMPOS} | {
+                    "id_imagem": f"{fonte}:{n}", "fonte": fonte, "caminho_relativo": n,
+                    "sha256_arquivo": hashlib.sha256(dados).hexdigest(), "n_caixas": 0, "n_small_640": 0,
+                    "split_origem": split, "status_auditoria": "ilegivel", "cluster_quase_dup": -1,
+                    "erro_leitura": f"{type(e).__name__}: {e}"[:200], "tamanho_bytes": len(dados)})
+                continue
             caixas = rotulo(h["largura"], h["altura"])
             if caixas is None:
                 sem_rotulo += 1
@@ -172,13 +192,14 @@ def construir(fonte: str, formato: str, caminho_zip: Path, citra: list[dict] | N
                 "largura": h["largura"], "altura": h["altura"], "n_caixas": len(caixas),
                 "n_small_640": sum(small_letterbox(x1 - x0, y1 - y0, h["largura"], h["altura"]) for x0, y0, x1, y1 in caixas),
                 "split_origem": split, "id_original": "", "parametros_json": "",
-                "status_auditoria": "nao_auditada",
+                "status_auditoria": "nao_auditada", "erro_leitura": "", "tamanho_bytes": len(dados),
                 "base_roboflow": m.group(1) if m else "", "dup_base_de": "", "dup_conteudo_de": "",
                 "cluster_quase_dup": -1, "dhash_hex": f"{h['dhash']:016x}", "colide_citra": "",
             })
     # duplicatas
     primeiro_base, primeiro_cont = {}, {}
-    for r in sorted(linhas, key=lambda r: r["caminho_relativo"]):
+    ok = [r for r in linhas if not r["erro_leitura"]]
+    for r in sorted(ok, key=lambda r: r["caminho_relativo"]):
         if r["base_roboflow"]:
             r["dup_base_de"] = primeiro_base.setdefault(r["base_roboflow"], r["id_imagem"])
             if r["dup_base_de"] == r["id_imagem"]:
@@ -186,15 +207,15 @@ def construir(fonte: str, formato: str, caminho_zip: Path, citra: list[dict] | N
         r["dup_conteudo_de"] = primeiro_cont.setdefault(r["sha256_conteudo"], r["id_imagem"])
         if r["dup_conteudo_de"] == r["id_imagem"]:
             r["dup_conteudo_de"] = ""
-    if linhas:
-        cl = agrupar_quase_duplicatas([int(r["dhash_hex"], 16) for r in linhas])
-        for r, c in zip(linhas, cl):
+    if ok:
+        cl = agrupar_quase_duplicatas([int(r["dhash_hex"], 16) for r in ok])
+        for r, c in zip(ok, cl):
             r["cluster_quase_dup"] = c
     if citra:
         por_hash = {c["sha256_conteudo"]: c["split"] for c in citra}
         ch = np.array([int(c["dhash_hex"], 16) for c in citra], dtype=np.uint64)
         tabela = np.array([bin(i).count("1") for i in range(256)], dtype=np.uint8)
-        for r in linhas:
+        for r in ok:
             if r["sha256_conteudo"] in por_hash:
                 r["colide_citra"] = f"exata:{por_hash[r['sha256_conteudo']]}"
                 continue
@@ -202,14 +223,15 @@ def construir(fonte: str, formato: str, caminho_zip: Path, citra: list[dict] | N
             j = int(np.argmin(d))
             if d[j] <= LIMIAR_HAMMING:
                 r["colide_citra"] = f"quase:{citra[j]['split']}"
-    unicas_base = [r for r in linhas if not r["dup_base_de"]]
+    unicas_base = [r for r in ok if not r["dup_base_de"]]
     rel = {
         "fonte": fonte, "formato": formato, "pacote": Path(caminho_zip).name,
-        "sha256_pacote": hashlib.sha256(Path(caminho_zip).read_bytes()).hexdigest() if Path(caminho_zip).stat().st_size < 2e9 else "nao_calculado(>2GB; use sha256sum)",
-        "n_imagens": len(linhas), "n_sem_rotulo": sem_rotulo,
+        "sha256_pacote": sha256_arquivo_grande(Path(caminho_zip)) if hash_pacote else "nao_calculado(use --hash-pacote ou sha256sum)",
+        "n_imagens": len(linhas), "n_legiveis": len(ok), "n_sem_rotulo": sem_rotulo,
         "n_dup_base_roboflow": sum(bool(r["dup_base_de"]) for r in linhas),
         "n_dup_conteudo_exato": sum(bool(r["dup_conteudo_de"]) for r in linhas),
-        "n_clusters_quase_dup": len({r["cluster_quase_dup"] for r in linhas}),
+        "n_clusters_quase_dup": len({r["cluster_quase_dup"] for r in ok}),
+        "n_ilegiveis": len(ilegiveis), "ilegiveis_primeiros": ilegiveis[:20],
         "n_unicas_pela_regra_herdada": len(unicas_base),
         "n_caixas": sum(r["n_caixas"] for r in linhas), "n_small_640": sum(r["n_small_640"] for r in linhas),
         "n_colide_citra_exata": sum(r["colide_citra"].startswith("exata") for r in linhas),
@@ -235,6 +257,38 @@ def hashes_citra(raiz: Path) -> list[dict]:
     return saida
 
 
+def vizinho_citra(dhash_hex: str, citra: list[dict]) -> tuple[int, dict]:
+    ch = np.array([int(c["dhash_hex"], 16) for c in citra], dtype=np.uint64)
+    tabela = np.array([bin(i).count("1") for i in range(256)], dtype=np.uint8)
+    d = tabela[(ch ^ np.uint64(int(dhash_hex, 16))).view(np.uint8).reshape(-1, 8)].sum(axis=1)
+    j = int(np.argmin(d))
+    return int(d[j]), citra[j]
+
+
+def montar_colisoes(manifesto: Path, caminho_zip: Path, citra: list[dict], saida: Path, altura: int = 240) -> list[dict]:
+    """Para cada linha marcada como colisão, grava um par lado a lado (fonte | CITRA) e devolve a tabela."""
+    from PIL import ImageDraw
+    saida = Path(saida); saida.mkdir(parents=True, exist_ok=True)
+    marcadas = [r for r in csv.DictReader(open(manifesto, encoding="utf-8")) if r["colide_citra"]]
+    tabela = []
+    with zipfile.ZipFile(caminho_zip) as z:
+        for k, r in enumerate(marcadas):
+            d, c = vizinho_citra(r["dhash_hex"], citra)
+            a = Image.open(io.BytesIO(z.read(r["caminho_relativo"]))).convert("RGB")
+            b = Image.open(c["caminho"]).convert("RGB")
+            a = a.resize((int(a.width * altura / a.height), altura)); b = b.resize((int(b.width * altura / b.height), altura))
+            tela = Image.new("RGB", (a.width + b.width + 10, altura + 18), "white")
+            tela.paste(a, (0, 18)); tela.paste(b, (a.width + 10, 18))
+            ImageDraw.Draw(tela).text((2, 2), f"{r['caminho_relativo'][-40:]} | CITRA {c['split']} d={d}", fill="black")
+            nome = f"col_{k:03d}.png"; tela.save(saida / nome)
+            tabela.append({"arquivo": nome, "fonte_caminho": r["caminho_relativo"], "citra": c["caminho"],
+                           "citra_split": c["split"], "dist_hamming": d, "marca": r["colide_citra"]})
+    with open(saida / "colisoes.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["arquivo", "fonte_caminho", "citra", "citra_split", "dist_hamming", "marca"])
+        w.writeheader(); w.writerows(tabela)
+    return tabela
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -245,6 +299,12 @@ def main(argv=None):
     c.add_argument("--saida", required=True, type=Path)
     c.add_argument("--citra-hashes", type=Path)
     c.add_argument("--limite", type=int)
+    c.add_argument("--hash-pacote", action="store_true", help="calcula o SHA-256 do pacote (lento em pacotes grandes)")
+    k = sub.add_parser("colisoes", help="grava pares lado a lado das imagens marcadas como colisão com o CITRA")
+    k.add_argument("--manifesto", required=True, type=Path)
+    k.add_argument("--zip", required=True, type=Path)
+    k.add_argument("--citra-hashes", required=True, type=Path)
+    k.add_argument("--saida", required=True, type=Path)
     h = sub.add_parser("hashes-citra")
     h.add_argument("--raiz", required=True, type=Path)
     h.add_argument("--saida", required=True, type=Path)
@@ -261,7 +321,11 @@ def main(argv=None):
             print("ATENÇÃO: imagens sem split reconhecível no caminho; confira a estrutura antes de usar.")
         return
     citra = list(csv.DictReader(open(a.citra_hashes, encoding="utf-8"))) if a.citra_hashes else None
-    linhas, rel = construir(a.fonte, a.formato, a.zip, citra, a.limite)
+    if a.cmd == "colisoes":
+        t = montar_colisoes(a.manifesto, a.zip, citra, a.saida)
+        print(f"{len(t)} pares em {a.saida}; distâncias: {sorted(x['dist_hamming'] for x in t)}")
+        return
+    linhas, rel = construir(a.fonte, a.formato, a.zip, citra, a.limite, hash_pacote=a.hash_pacote)
     a.saida.parent.mkdir(parents=True, exist_ok=True)
     with open(a.saida, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=CAMPOS)
