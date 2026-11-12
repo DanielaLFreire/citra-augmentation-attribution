@@ -57,7 +57,7 @@ def varrer_zip(caminho: Path):
             yield n, _split(PurePosixPath(n).parts), z.read(n)
 
 
-def auditar(fonte) -> tuple[list[dict], dict]:
+def auditar(fonte, todas: bool = False) -> tuple[list[dict], dict]:
     linhas, total, ilegiveis = [], 0, 0
     for caminho, split, dados in fonte:
         total += 1
@@ -68,9 +68,9 @@ def auditar(fonte) -> tuple[list[dict], dict]:
             linhas.append({"caminho": caminho, "split": split, "motivo": "ilegivel"} | {k: "" for k in CAMPOS if k not in ("caminho", "split", "motivo")})
             continue
         m = motivo(e)
-        if m:
+        if m or todas:
             linhas.append({"caminho": caminho, "split": split, "motivo": m} | e)
-    resumo = {"n_imagens": total, "n_ilegiveis": ilegiveis, "n_degeneradas": len(linhas) - ilegiveis,
+    resumo = {"n_imagens": total, "n_ilegiveis": ilegiveis, "n_degeneradas": sum(1 for l in linhas if l["motivo"] and l["motivo"] != "ilegivel"),
               "por_split": {}}
     for l in linhas:
         resumo["por_split"][l["split"]] = resumo["por_split"].get(l["split"], 0) + 1
@@ -82,13 +82,15 @@ def main(argv=None):
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--raiz", type=Path); g.add_argument("--zip", type=Path)
     ap.add_argument("--saida", required=True, type=Path)
+    ap.add_argument("--todas", action="store_true", help="grava as estatísticas de TODAS as imagens (para calibrar os limites)")
     a = ap.parse_args(argv)
-    linhas, resumo = auditar(varrer_pasta(a.raiz) if a.raiz else varrer_zip(a.zip))
+    linhas, resumo = auditar(varrer_pasta(a.raiz) if a.raiz else varrer_zip(a.zip), a.todas)
     with open(a.saida, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=CAMPOS); w.writeheader(); w.writerows(linhas)
     print(resumo)
-    for l in linhas[:30]:
-        print(l["split"], l["motivo"], l["media"], l["desvio"], l["caminho"][-70:])
+    mostrar = sorted((l for l in linhas if l["media"] != ""), key=lambda l: l["media"])[:30] if a.todas else linhas[:30]
+    for l in mostrar:
+        print(l["split"], l["motivo"] or "-", l["media"], l["desvio"], l["caminho"][-70:])
 
 
 if __name__ == "__main__":

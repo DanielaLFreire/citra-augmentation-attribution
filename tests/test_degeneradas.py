@@ -24,3 +24,9 @@ def test_auditar_resume_por_split_e_ilegivel():
     linhas, r = auditar(iter(itens))
     assert r["n_imagens"] == 3 and r["n_degeneradas"] == 1 and r["n_ilegiveis"] == 1
     assert r["por_split"] == {"train": 1, "test": 1}
+
+
+def test_todas_grava_tudo_e_resumo_nao_conta_normais():
+    itens = [("a/train/i.png", "train", img(0)), ("a/val/j.png", "val", img())]
+    linhas, r = auditar(iter(itens), todas=True)
+    assert len(linhas) == 2 and r["n_degeneradas"] == 1
