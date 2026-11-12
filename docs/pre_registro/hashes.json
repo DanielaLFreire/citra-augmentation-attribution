@@ -1,1 +1,53 @@
-{"artefatos": {}, "adendos": {}}
+{
+  "artefatos": {
+    "manifesto_aboships.csv": {
+      "registrado_em_utc": "2026-11-12T19:23:58.585650+00:00",
+      "caminho": "manifests/manifesto_aboships.csv",
+      "sha256": "1a06291161dc7c00da8eed1d35d827dd989ba846f43ff5669b7e1a6699353ce0",
+      "tamanho_bytes": 3262383
+    },
+    "manifesto_aboships.relatorio.json": {
+      "registrado_em_utc": "2026-11-12T19:23:58.616475+00:00",
+      "caminho": "manifests/manifesto_aboships.relatorio.json",
+      "sha256": "d9c1b8e284b5590ba97c0bc5048611b8c7023192a67cb2f812112ce1eb063451",
+      "tamanho_bytes": 533
+    },
+    "manifesto_inatechships.csv": {
+      "registrado_em_utc": "2026-11-12T19:23:58.643608+00:00",
+      "caminho": "manifests/manifesto_inatechships.csv",
+      "sha256": "5ab1de256fc23076c87faaa56fd729f81f2e24149f94d78e0d3fe0e452615a04",
+      "tamanho_bytes": 8670584
+    },
+    "manifesto_inatechships.relatorio.json": {
+      "registrado_em_utc": "2026-11-12T19:23:58.681406+00:00",
+      "caminho": "manifests/manifesto_inatechships.relatorio.json",
+      "sha256": "7e3214b492ec345644ab9801e87b9be3346cbd18bb06488752d1cc903a5744d6",
+      "tamanho_bytes": 543
+    },
+    "manifesto_seaships.csv": {
+      "registrado_em_utc": "2026-11-12T19:23:58.715776+00:00",
+      "caminho": "manifests/manifesto_seaships.csv",
+      "sha256": "5a4b7480007074f84e327b3b123ed48c746324978f38ddcc2d346d269219623d",
+      "tamanho_bytes": 5854979
+    },
+    "manifesto_seaships.relatorio.json": {
+      "registrado_em_utc": "2026-11-12T19:23:58.747368+00:00",
+      "caminho": "manifests/manifesto_seaships.relatorio.json",
+      "sha256": "420c810d15a67aef4d9ce066963514b6e78b6014693ee680bbcacfd48cc0068c",
+      "tamanho_bytes": 628
+    },
+    "manifesto_smd.csv": {
+      "registrado_em_utc": "2026-11-12T19:23:58.773650+00:00",
+      "caminho": "manifests/manifesto_smd.csv",
+      "sha256": "f01706151db1b3c31452167c20d122aeffe4c28a66612ceeb0893da13aff966a",
+      "tamanho_bytes": 369167
+    },
+    "manifesto_smd.relatorio.json": {
+      "registrado_em_utc": "2026-11-12T19:23:58.801373+00:00",
+      "caminho": "manifests/manifesto_smd.relatorio.json",
+      "sha256": "f09609751ad58a2674fe7558a70a066e2dae44b94fd63fcd54bf15114f2aa58a",
+      "tamanho_bytes": 519
+    }
+  },
+  "adendos": {}
+}

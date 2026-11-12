@@ -1,0 +1,20 @@
+{
+  "fonte": "aboships",
+  "formato": "abocsv",
+  "pacote": "ABOships.zip",
+  "sha256_pacote": "593ddff9d04d205183093d2be3bf6ea05e2668259603dc75c8ce8700980a672e",
+  "n_imagens": 9880,
+  "n_legiveis": 9880,
+  "n_sem_rotulo": 839,
+  "n_dup_base_roboflow": 0,
+  "n_dup_conteudo_exato": 0,
+  "n_clusters_quase_dup": 8155,
+  "n_ilegiveis": 0,
+  "ilegiveis_primeiros": [],
+  "n_unicas_pela_regra_herdada": 9880,
+  "n_caixas": 41967,
+  "n_small_640": 29657,
+  "n_colide_citra_exata": 0,
+  "n_colide_citra_quase": 3,
+  "limiar_hamming": 4
+}

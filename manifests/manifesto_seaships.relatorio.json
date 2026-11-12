@@ -1,0 +1,22 @@
+{
+  "fonte": "seaships",
+  "formato": "voc",
+  "pacote": "SeaShips_voc.zip",
+  "sha256_pacote": "f94d2a643935a97cd9fc51e5ef2451e0cac02f1081efb3f71d74c7e68eb0a53c",
+  "n_imagens": 13105,
+  "n_legiveis": 13104,
+  "n_sem_rotulo": 329,
+  "n_dup_base_roboflow": 6125,
+  "n_dup_conteudo_exato": 6125,
+  "n_clusters_quase_dup": 955,
+  "n_ilegiveis": 1,
+  "ilegiveis_primeiros": [
+    "SeaShips_voc_completo/test/002722_jpg.rf.d35bc241535da64952325422df50194e.jpg"
+  ],
+  "n_unicas_pela_regra_herdada": 6979,
+  "n_caixas": 16821,
+  "n_small_640": 727,
+  "n_colide_citra_exata": 0,
+  "n_colide_citra_quase": 542,
+  "limiar_hamming": 4
+}

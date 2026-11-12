@@ -1,0 +1,20 @@
+{
+  "fonte": "inatechships",
+  "formato": "yolo",
+  "pacote": "dataset_25k_v2.zip",
+  "sha256_pacote": "f929e66b743452c0e3c75381b81c62f8d976b6ead9c2a51e261f2fad85b8e4a8",
+  "n_imagens": 27796,
+  "n_legiveis": 27796,
+  "n_sem_rotulo": 0,
+  "n_dup_base_roboflow": 0,
+  "n_dup_conteudo_exato": 5651,
+  "n_clusters_quase_dup": 22067,
+  "n_ilegiveis": 0,
+  "ilegiveis_primeiros": [],
+  "n_unicas_pela_regra_herdada": 27796,
+  "n_caixas": 27796,
+  "n_small_640": 0,
+  "n_colide_citra_exata": 0,
+  "n_colide_citra_quase": 62,
+  "limiar_hamming": 4
+}

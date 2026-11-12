@@ -1,0 +1,20 @@
+{
+  "fonte": "smd",
+  "formato": "yolo",
+  "pacote": "smd_clean.zip",
+  "sha256_pacote": "77b01da5e2f9664144295273202634bb25e5f86a220d83142c8b45ed0fc48efc",
+  "n_imagens": 914,
+  "n_legiveis": 914,
+  "n_sem_rotulo": 0,
+  "n_dup_base_roboflow": 0,
+  "n_dup_conteudo_exato": 0,
+  "n_clusters_quase_dup": 743,
+  "n_ilegiveis": 0,
+  "ilegiveis_primeiros": [],
+  "n_unicas_pela_regra_herdada": 914,
+  "n_caixas": 7043,
+  "n_small_640": 4043,
+  "n_colide_citra_exata": 0,
+  "n_colide_citra_quase": 0,
+  "limiar_hamming": 4
+}
