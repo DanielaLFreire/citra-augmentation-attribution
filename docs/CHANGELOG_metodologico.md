@@ -34,4 +34,4 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - Rodados no Colab com gravação no Drive (`EXPERIMENTO_ATRIBUICAO_CAUSAL/manifestos/`). SHA-256 dos quatro pacotes registrados em `docs/fontes/FICHA_publicas.md`. CITRA: 2.083 imagens (2 em quarentena).
 - SeaShips: 13.105 imagens, 6.125 cópias exatas por nome-base, 6.979 únicas (igual às Fases 0–5); 329 sem XML casado; 4,3% small. Tamanho small: ABOShips 70,7%, SMD 57,4%, SeaShips 4,3%, InaTechShips 0%.
 - Quase-cópias com o CITRA: SeaShips 542, ABOShips 3, InaTechShips 62. Nada foi concluído; adicionada a correlação 64×64 (`ncc_64`) ao subcomando `colisoes` para separar cópia de coincidência. A12 reescrita (composição do braço R).
-
+- Premissa informada por Daniela: o CITRA-3D-Real é um dataset operacional privado da Marinha, não pode estar entre as imagens públicas. As quase-cópias marcadas (607 no total) são tratadas como falsos positivos prováveis; a checagem por hash exato e NCC continua para documentar a ausência de vazamento.
