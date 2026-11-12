@@ -57,3 +57,18 @@ O pacote `iflens.rar` tem cerca de 34,7 mil imagens em três árvores (`input/`,
 2. Existe relatório, artigo ou documentação interna sobre a geração que possa ser citado?
 3. O dataset já foi usado para treinar algum detector avaliado no CITRA? Com que resultado?
 4. Quem é a pessoa de contato para dúvidas técnicas e, no caso do GenShip, para solicitar novas renderizações?
+
+
+## Divisão dos splits do CITRA (para quem criou train/val/test)
+
+**Por que perguntamos.** Os nomes dos arquivos do CITRA-3D-Real trazem data e hora. Ao medir o intervalo entre os quadros, vimos que os 27 dias de captura aparecem nos três splits (train 1.348, val 332, test 401) e que o quadro de treino mais próximo de cada quadro de teste está, em mediana, a 55 segundos (54% a até 60 s, 96% a até 5 min, mínimo de 8 s). Isso sugere que a divisão foi feita por quadro, não por período, e quadros vizinhos de uma mesma cena podem estar dos dois lados. Isso não invalida o trabalho, mas um revisor vai perguntar, e queremos descrever o que de fato foi feito.
+
+**Perguntas**
+
+1. Como foi feita a divisão em treino, validação e teste? (Aleatória por quadro? Estratificada por algum atributo? Por vídeo, sequência ou dia?) Pode nos enviar o script ou o procedimento e a semente aleatória, se houver?
+2. Havia alguma regra para impedir que quadros vizinhos no tempo ficassem em splits diferentes? Se sim, qual?
+3. De onde vêm os quadros? São extraídos de vídeo contínuo, com que intervalo (os quadros vizinhos ficam em mediana a cerca de 1 minuto)? Houve algum filtro de seleção, por exemplo só quadros com embarcação visível?
+4. Existe um identificador de gravação, sessão, câmera ou ponto de vista (além da data)? Há mais de uma câmera ou posição?
+5. Existe metadado de condição por dia ou por gravação (clima, luz, maré, tráfego)?
+6. Esta divisão foi usada por outras equipes ou em outros trabalhos? Se o teste já foi usado, saberíamos quantas vezes?
+7. Seria possível refazer a divisão em blocos de dias (por exemplo, separar alguns dias inteiros para teste)? Há restrições, como dias raros com condições específicas que precisem ficar no treino?
