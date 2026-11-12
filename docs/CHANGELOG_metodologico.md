@@ -35,3 +35,5 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - SeaShips: 13.105 imagens, 6.125 cópias exatas por nome-base, 6.979 únicas (igual às Fases 0–5); 329 sem XML casado; 4,3% small. Tamanho small: ABOShips 70,7%, SMD 57,4%, SeaShips 4,3%, InaTechShips 0%.
 - Quase-cópias com o CITRA: SeaShips 542, ABOShips 3, InaTechShips 62. Nada foi concluído; adicionada a correlação 64×64 (`ncc_64`) ao subcomando `colisoes` para separar cópia de coincidência. A12 reescrita (composição do braço R).
 - Premissa informada por Daniela: o CITRA-3D-Real é um dataset operacional privado da Marinha, não pode estar entre as imagens públicas. As quase-cópias marcadas (607 no total) são tratadas como falsos positivos prováveis; a checagem por hash exato e NCC continua para documentar a ausência de vazamento.
+- NCC das colisões: nenhum par ≥ 0,95 (máximos 0,892 / 0,444 / 0,938). 29 pares em 0,80–0,95 para inspeção visual. Imagem uniforme no treino do CITRA (`11.05.2022-14-13-13.png`) identificada pelos pares com NCC 0. Proposta A13 (excluir tudo que o dHash marcar) e aberta A14.
+

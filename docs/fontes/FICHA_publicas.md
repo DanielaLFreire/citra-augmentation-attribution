@@ -55,3 +55,16 @@ SHA-256 completos dos pacotes (calculados no Colab em 2026-11-12):
 | `dataset_25k_v2.zip` | `f929e66b743452c0e3c75381b81c62f8d976b6ead9c2a51e261f2fad85b8e4a8` |
 
 Perfil de tamanho das fontes (caixas small a 640): ABOShips 70,7%, SMD 57,4%, SeaShips 4,3%, InaTechShips 0%; CITRA 82,2%. Só ABOShips e SMD têm quantidade relevante de objetos no regime do alvo.
+
+## Colisões com o CITRA: resultado do NCC (2026-11-12)
+
+| Fonte | Pares marcados (dHash ≤ 4) | NCC < 0,80 | NCC 0,80–0,95 | NCC ≥ 0,95 | NCC máximo |
+| --- | --- | --- | --- | --- | --- |
+| SeaShips | 542 (288 imagens-base distintas; o resto são cópias Roboflow idênticas) | 532 | 10 | 0 | 0,892 |
+| ABOShips | 3 | 3 | 0 | 0 | 0,444 |
+| InaTechShips | 62 | 43 | 19 | 0 | 0,938 (3 pares ≥ 0,90) |
+
+- **Nenhum par chegou a 0,95.** Como o CITRA é privado, isso é o resultado esperado; não há evidência de cópia.
+- O corte de 0,95 foi escolhido sem calibração. Em cenas de porto com horizonte, céu claro e mar escuro, o NCC 64×64 também fica alto (0,8–0,94) sem ser cópia, então os pares de 0,80–0,95 não se resolvem só com o número: precisam de inspeção visual (10 de SeaShips, 19 de InaTechShips).
+- **35 pares do SeaShips e 1 do InaTechShips têm NCC exatamente 0.** Todos apontam para uma única imagem do CITRA, `11.05.2022-14-13-13.png` (split train), cujo NCC é zero porque a imagem é praticamente uniforme (variância zero a 64×64). Isso não é veredito sobre cópia; é um achado de qualidade do CITRA: **há uma imagem degenerada (uniforme) no treino**, a verificar.
+- Os mesmos poucos exemplares do CITRA (`05.07.2022-09-00-00`, `05.07.2022-08-46-38`, `18.04.2022-13-41-55`, entre outros) são vizinhos de muitas imagens públicas diferentes: 542 pares do SeaShips apontam para só 31 imagens do CITRA. Padrão de falso positivo de hash grosseiro, não de cópia (cópia seria um-para-um).
