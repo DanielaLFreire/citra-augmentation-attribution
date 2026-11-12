@@ -15,3 +15,11 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 
 - Estrutura criada (D05). Planejamento e questionário migrados para Markdown. Scripts de apoio, dados herdados da Fase 5 com proveniência, auditoria do piloto, ficha de cada fonte, livro de alegações e esboço do artigo.
 - Nenhum treino executado neste repositório. Nenhum adendo lacrado.
+
+## 2026-11-11 (tarde) — Inventário de `_zips` e construtor de manifestos
+
+- Inventário rodado por Daniela (`docs/fontes/INVENTARIO_zips_2026-11-11.txt`). Resultado: as imagens inteiras das quatro fontes públicas existem; há três pacotes de SeaShips; `dataset_25k_v2.zip` é o InaTechShips com divisões internas e relatório de reconstrução; `genship3d-mirror.zip` traz relatórios de auditoria do Genship; os `synth_*.zip` são as composições da linha encerrada.
+- Correção ao planejamento: a definição de "fração externa" não estava escrita. Pela definição do adendo 3 da Fase 5 (fração do fluxo de amostras; CITRA repetido 3 vezes; lista de 5.392 entradas), 25% dá 1.348 imagens externas distintas, como o plano já dizia. Uma leitura minha de que o número estaria errado (25% de 1.348 = 337) usava outra definição e estava errada. A definição foi acrescentada ao texto.
+- `scripts/manifesto_fonte.py`: lê direto do pacote, calcula hash de conteúdo, dHash, caixas e small a 640, marca duplicatas e colisões com o CITRA. Testado com pacotes fictícios (11 testes passam); **não rodado em dado real**.
+- Decisões D06, D07; abertas A09 a A11.
+

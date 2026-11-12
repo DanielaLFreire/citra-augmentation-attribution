@@ -41,6 +41,7 @@ Imagens, rótulos brutos e pesos **não** ficam aqui: ficam no Drive do projeto,
 pip install -r requirements.txt
 make check        # testes + verificação de integridade dos hashes
 python scripts/dimensionamento_fase5.py data/herdado_fase5   # reproduz as tabelas de dimensionamento
+python -m scripts.manifesto_fonte --help                      # manifesto de fonte pública (rodar no Colab, ver docs/fontes/FICHA_publicas.md)
 ```
 
 ## Licença e citação

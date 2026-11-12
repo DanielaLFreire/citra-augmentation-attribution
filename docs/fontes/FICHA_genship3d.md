@@ -16,3 +16,5 @@
 | Problemas conhecidos | Variação de nome só observada em `RainOFF_DirtON_TerrenoON` na amostra | — | — |
 
 Plano para o braço G: renderizar conjunto novo com parâmetros sorteados por plano e gravados por imagem (depende das respostas 1–3 do questionário).
+
+**Pacote adicional `genship3d-mirror.zip` (inventário de 2026-11-11):** 450 PNG (444 imagens mais 6 figuras de relatório), 1.299 `.txt`, pasta `quarantine` (11 arquivos), `audit_report.json`, `confirmation_report.csv`, `detection_report.csv` e segmentações em `.cache`. Parece uma versão já auditada do Genship; quem a produziu, com que critério e o que a quarentena contém são **desconhecidos** até ler os relatórios (decisão A11).

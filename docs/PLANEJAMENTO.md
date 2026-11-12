@@ -37,12 +37,18 @@ O alvo é o CITRA-3D-Real (train 1.348 imagens e 4.489 caixas; val 332 e 1.267; 
 
 | Fonte | Tipo | Imagens | Rótulos | Estado | Pendência |
 | --- | --- | --- | --- | --- | --- |
-| Singapore Maritime Dataset (on-shore) | Real pública | 914 | YOLO, 7.043 caixas | Só recortes extraídos | Materializar imagens inteiras; quadros de 36 vídeos, deduplicar |
-| SeaShips | Real pública | 6.979 | VOC XML | Só recortes extraídos | Materializar; objetos grandes |
-| ABOShips | Real pública | 9.880 | CSV | Só recortes extraídos | Materializar; a mais próxima do CITRA em escala |
-| InaTechShips | Real pública | 27.796 | YOLO | Só recortes extraídos | Materializar; fotos próximas, objetos grandes |
+| Singapore Maritime Dataset (on-shore) | Real pública | 914 | YOLO, 7.043 caixas | Imagens inteiras em `smd_clean.zip` (tudo sob `test/`, nomes Roboflow) | Construir manifesto; quadros de 36 vídeos, quase-duplicatas |
+| SeaShips | Real pública | 6.979 | VOC XML | Imagens inteiras em `SeaShips_voc.zip` (13.105 JPG, exportação Roboflow com cópias aumentadas; a regra da Fase 0–5 por nome-base resulta em 6.979). Outros dois pacotes: `seaship.zip` (7.000 JPG, CSV) e `SeaShips_voc_incompleto_6509.zip` | Escolher o pacote canônico (decisão A09); objetos grandes |
+| ABOShips | Real pública | 9.880 | CSV | Imagens inteiras em `ABOships.zip` (9.880 PNG, 8,2 GB, `Labels/Vesibussi_Labels.csv`) | Construir manifesto; a mais próxima do CITRA em escala |
+| InaTechShips | Real pública | 27.796 | YOLO | Imagens inteiras em `dataset_25k_v2.zip` (27.796 JPG, 10,7 GB, divisões internas train/test/val, `reconstrucao_report.json`) | Construir manifesto; ler o relatório de reconstrução; fotos próximas, objetos grandes |
 | Genship 3D | Renderizada (simulador GenShip) | 444 | YOLO, 433 arquivos | Pacote inventariado | Perfil estrutural; renderização nova com parâmetros gravados (questionário) |
 | Edições iflens do CITRA | Edição generativa de imagens reais (Gemini 3.1 flash lite) | 36 no piloto; nenhuma utilizável | Herdados da imagem original | Piloto auditado: 22% das caixas inválidas | Gerar conjunto novo a partir do treino, se o piloto restrito passar (ver seção do braço generativo) |
+
+O inventário de `_zips` (2026-11-11, `docs/fontes/INVENTARIO_zips_2026-11-11.txt`) mostra três coisas que mudam o plano:
+
+- **As imagens inteiras das quatro fontes públicas existem**; não é preciso procurá-las. O que falta é o manifesto com hash de conteúdo e a checagem de colisão com o CITRA (`scripts/manifesto_fonte.py`).
+- **Há um `genship3d-mirror.zip`** com relatórios de auditoria, pasta `quarantine` e arquivos de segmentação. Ele parece ser uma versão já auditada do Genship. Seus relatórios podem responder parte das perguntas 9 a 12 do questionário e precisam ser lidos antes de o Genship ser perfilado.
+- **Os pacotes `synth_*.zip` (21.840 imagens cada) são as composições sintéticas das Fases 3–5**, com nomes de imagem do CITRA e sufixo `_vN`. Pertencem à linha encerrada e não podem entrar em nenhum braço nem na lista de fontes externas.
 
 Três observações sobre o iflens condicionam o desenho:
 
@@ -59,7 +65,7 @@ O experimento avança por seis etapas, e cada uma só começa se a anterior pass
 1. **Preparação (CPU, sem GPU).** Materializar imagens inteiras e rótulos das quatro fontes públicas; perfilar o Genship 3D no referencial letterbox 640. *Portão:* cada fonte tem imagens suficientes na faixa de escala do alvo para compor o seu braço. Fonte que não tiver sai do desenho, com registro.
 2. **Piloto de métrica (quase sem GPU).** Reavaliar os 10 modelos de controle da Fase 5 (CITRA puro, orçamentos S1 e S2, 5 seeds) com desfechos alternativos: recall em limiar de confiança fixo, mAP50, AP do estrato small e média das últimas épocas. *Portão:* escolher como primária a métrica operacionalmente relevante de menor variância entre seeds, antes de ver qualquer braço novo.
 3. **Piloto do braço generativo (sem GPU de treino).** Gerar cerca de 100 edições de imagens do treino com condições restritas e auditar todas as caixas. *Portão:* pelo menos 90% das caixas válidas. Abaixo disso o braço E sai do desenho, e o resultado da auditoria é relatado.
-4. **Portão por tipo de fonte (GPU).** Até quatro braços com a mesma lista de treino de comprimento fixo e os mesmos passos: C (CITRA repetido), R (CITRA + amostra aleatória das fontes reais públicas, balanceada por fonte), G (CITRA + renderizações do GenShip) e E (CITRA + edições iflens verificadas de imagens do treino). Fração externa única, a definir (proposta: 25%). Os braços C, R e G não dependem do E. *Portão:* regra de decisão do adendo 3 (IC 95% para diferença, equivalência por TOST com margem de ±1 pp). Se nenhum braço diferir de C, o experimento termina aqui com resultado negativo publicável.
+4. **Portão por tipo de fonte (GPU).** Até quatro braços com a mesma lista de treino de comprimento fixo e os mesmos passos: C (CITRA repetido), R (CITRA + amostra aleatória das fontes reais públicas, balanceada por fonte), G (CITRA + renderizações do GenShip) e E (CITRA + edições iflens verificadas de imagens do treino). Fração externa única, a definir (proposta: 25%). **Definição, herdada do adendo 3 da Fase 5:** a fração é a proporção de amostras externas no fluxo de treino. Cada imagem do CITRA entra `repeat_real` vezes na lista e cada imagem externa exatamente 1 vez. Com 1.348 imagens do CITRA repetidas 3 vezes (4.044) e fração 0,25, a lista tem 5.392 entradas (= 337 passos × lote 16) e **1.348 imagens externas distintas**. É daí que vem o número de imagens externas por braço. Todos os braços externos usam o mesmo número de imagens externas distintas; fontes com menos imagens distintas que isso precisam repeti-las, o que mistura tipo de fonte com diversidade (decisão A05). Os braços C, R e G não dependem do E. *Portão:* regra de decisão do adendo 3 (IC 95% para diferença, equivalência por TOST com margem de ±1 pp). Se nenhum braço diferir de C, o experimento termina aqui com resultado negativo publicável.
 5. **Atribuição dentro das fontes que passaram (GPU).** O método depende da fonte:
    - *GenShip:* renderização com parâmetros sorteados por um plano e gravados por imagem. É intervenção direta.
    - *iflens:* as condições sorteadas e gravadas por imagem são o fator de atribuição.

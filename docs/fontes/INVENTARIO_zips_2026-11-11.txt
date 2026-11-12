@@ -1,0 +1,128 @@
+
+== ABOships.zip  (8.169 GB)
+  n_arquivos: 9883
+  n_imagens: 9880
+  extensoes: {'.png': 9880, '.pdf': 1, '.csv': 1, '.py': 1}
+  pastas_2_niveis: {'ABOshipsDataset/Seaships': 9880, 'ABOshipsDataset/ABOshipDescription.pdf.pdf': 1, 'ABOshipsDataset/Labels': 1, 'ABOshipsDataset/parse_seaships.py': 1}
+  exemplos: ['ABOshipsDataset/ABOshipDescription.pdf.pdf', 'ABOshipsDataset/Labels/Vesibussi_Labels.csv', 'ABOshipsDataset/parse_seaships.py', 'ABOshipsDataset/Seaships/20180626/201806260722_000.png', 'ABOshipsDataset/Seaships/20180626/201806260722_001.png']
+
+== Genship_3D.zip  (0.858 GB)
+  n_arquivos: 877
+  n_imagens: 444
+  extensoes: {'.png': 444, '.txt': 433}
+  pastas_2_niveis: {'Genship 3D/Barca': 450, 'Genship 3D/Lancha': 239, 'Genship 3D/Passageiro': 188}
+  exemplos: ['Genship 3D/Passageiro/Entardecer/Passageiro_0665_851YD_RainOFF_DirtON_TerrenoON.txt', 'Genship 3D/Passageiro/Entardecer/Passageiro_0669_851YD_RainOFF_DirtON_TerrenoON.txt', 'Genship 3D/Passageiro/Thermal/Passageiro_0681_1040YD_RainOFF_DirtON_TerrenoON.txt', 'Genship 3D/Passageiro/Amanhecer/Passageiro_0621_1238YD_RainOFF_DirtON_TerrenoON.txt', 'Genship 3D/Passageiro/Thermal/Passageiro_0681_1040YD_RainOFF_DirtON_TerrenoON.png']
+
+== INPUT_2026-08-11_14-31-55.zip  (0.052 GB)
+  n_arquivos: 120
+  n_imagens: 60
+  extensoes: {'.png': 60, '.txt': 60}
+  pastas_2_niveis: {'2026-08-11_14-31-55/0039881.png': 1, '2026-08-11_14-31-55/0039881.txt': 1, '2026-08-11_14-31-55/0040090.png': 1, '2026-08-11_14-31-55/0040090.txt': 1, '2026-08-11_14-31-55/0040191.png': 1, '2026-08-11_14-31-55/0040191.txt': 1, '2026-08-11_14-31-55/0040230.png': 1, '2026-08-11_14-31-55/0040230.txt': 1, '2026-08-11_14-31-55/0040283.png': 1, '2026-08-11_14-31-55/0040283.txt': 1, '2026-08-11_14-31-55/0040702.png': 1, '2026-08-11_14-31-55/0040702.txt': 1, '2026-08-11_14-31-55/0040731.png': 1, '2026-08-11_14-31-55/0040731.txt': 1, '2026-08-11_14-31-55/0040960.png': 1, '2026-08-11_14-31-55/0040960.txt': 1, '2026-08-11_14-31-55/01.07.2022-10-51-42.png': 1, '2026-08-11_14-31-55/01.07.2022-10-51-42.txt': 1, '2026-08-11_14-31-55/0170963.png': 1, '2026-08-11_14-31-55/0170963.txt': 1, '2026-08-11_14-31-55/04.05.2022-10-05-42.png': 1, '2026-08-11_14-31-55/04.05.2022-10-05-42.txt': 1, '2026-08-11_14-31-55/04.05.2022-11-26-16.png': 1, '2026-08-11_14-31-55/04.05.2022-11-26-16.txt': 1, '2026-08-11_14-31-55/04.05.2022-15-01-54.png': 1}
+  exemplos: ['2026-08-11_14-31-55/0039881.png', '2026-08-11_14-31-55/0039881.txt', '2026-08-11_14-31-55/0040090.png', '2026-08-11_14-31-55/0040090.txt', '2026-08-11_14-31-55/0040191.png']
+
+== InaTechShips_crops_sam.zip  (27.831 GB)
+  n_arquivos: 27798
+  n_imagens: 27795
+  extensoes: {'.png': 27795, '.json': 3}
+  pastas_2_niveis: {'crops_sam/471634.png': 1, 'crops_sam/471858.png': 1, 'crops_sam/471959.png': 1, 'crops_sam/471990.png': 1, 'crops_sam/472017.png': 1, 'crops_sam/472025.png': 1, 'crops_sam/472026.png': 1, 'crops_sam/472087.png': 1, 'crops_sam/472145.png': 1, 'crops_sam/472198.png': 1, 'crops_sam/472373.png': 1, 'crops_sam/472556.png': 1, 'crops_sam/472655.png': 1, 'crops_sam/472700.png': 1, 'crops_sam/472907.png': 1, 'crops_sam/472926.png': 1, 'crops_sam/473112.png': 1, 'crops_sam/473180.png': 1, 'crops_sam/473187.png': 1, 'crops_sam/473215.png': 1, 'crops_sam/473335.png': 1, 'crops_sam/473395.png': 1, 'crops_sam/473420.png': 1, 'crops_sam/473464.png': 1, 'crops_sam/473483.png': 1}
+  exemplos: ['crops_sam/471634.png', 'crops_sam/471858.png', 'crops_sam/471959.png', 'crops_sam/471990.png', 'crops_sam/472017.png']
+
+== OUTPUT_2026-08-11_14-31-55.zip  (0.028 GB)
+  n_arquivos: 53
+  n_imagens: 53
+  extensoes: {'.png': 53}
+  pastas_2_niveis: {'2026-08-11_14-31-55/AUG_0039881.png.png': 1, '2026-08-11_14-31-55/AUG_0040090.png.png': 1, '2026-08-11_14-31-55/AUG_0040191.png.png': 1, '2026-08-11_14-31-55/AUG_0040230.png.png': 1, '2026-08-11_14-31-55/AUG_0040283.png.png': 1, '2026-08-11_14-31-55/AUG_0040702.png.png': 1, '2026-08-11_14-31-55/AUG_0040731.png.png': 1, '2026-08-11_14-31-55/AUG_0040960.png.png': 1, '2026-08-11_14-31-55/AUG_01.07.2022-10-51-42.png.png': 1, '2026-08-11_14-31-55/AUG_0170963.png.png': 1, '2026-08-11_14-31-55/AUG_04.05.2022-10-05-42.png.png': 1, '2026-08-11_14-31-55/AUG_04.05.2022-11-26-16.png.png': 1, '2026-08-11_14-31-55/AUG_05.07.2022-10-39-39.png.png': 1, '2026-08-11_14-31-55/AUG_05.07.2022-10-45-30.png.png': 1, '2026-08-11_14-31-55/AUG_05.07.2022-11-12-43.png.png': 1, '2026-08-11_14-31-55/AUG_05.07.2022-15-04-20.png.png': 1, '2026-08-11_14-31-55/AUG_07.04.2022-15-47-27.png.png': 1, '2026-08-11_14-31-55/AUG_08.07.2022-15-18-22.png.png': 1, '2026-08-11_14-31-55/AUG_09.05.2022-08-34-19.png.png': 1, '2026-08-11_14-31-55/AUG_09.05.2022-10-52-24.png.png': 1, '2026-08-11_14-31-55/AUG_10.05.2022-08-21-03.png.png': 1, '2026-08-11_14-31-55/AUG_10.05.2022-13-36-00.png.png': 1, '2026-08-11_14-31-55/AUG_10.05.2022-16-20-04.png.png': 1, '2026-08-11_14-31-55/AUG_10.05.2022-16-22-41.png.png': 1, '2026-08-11_14-31-55/AUG_12.04.2022-09-48-48.png.png': 1}
+  exemplos: ['2026-08-11_14-31-55/AUG_0039881.png.png', '2026-08-11_14-31-55/AUG_0040090.png.png', '2026-08-11_14-31-55/AUG_0040191.png.png', '2026-08-11_14-31-55/AUG_0040230.png.png', '2026-08-11_14-31-55/AUG_0040283.png.png']
+
+== SeaShips_voc.zip  (0.631 GB)
+  n_arquivos: 26225
+  n_imagens: 13105
+  extensoes: {'.xml': 13120, '.jpg': 13105}
+  pastas_2_niveis: {'SeaShips_voc_completo/train': 11168, 'SeaShips_voc_completo/test': 1099, 'SeaShips_voc_completo/003956_jpg.rf.b09746f6280f75d23e62bf590d4c7470.jpg': 1, 'SeaShips_voc_completo/000434_jpg.rf.0bc5a3c7c7c51a6390f8795cdbd7edbb.jpg': 1, 'SeaShips_voc_completo/006857_jpg.rf.58a2608e94b71da31b78e97f4cf0a153.jpg': 1, 'SeaShips_voc_completo/001026_jpg.rf.74be0566d91fc31fbb7e3a56b2860c2d.jpg': 1, 'SeaShips_voc_completo/002865_jpg.rf.cdb6fee6fc659719c83858ae44eb91c1.xml': 1, 'SeaShips_voc_completo/001087_jpg.rf.8f8d28d2d7abe4a453f630172364fd86.jpg': 1, 'SeaShips_voc_completo/005783_jpg.rf.2a4c0d15fbac029e18f3f9e854667b88.jpg': 1, 'SeaShips_voc_completo/001413_jpg.rf.788ea9235ee9c5a0ee0331c41f9ba306.jpg': 1, 'SeaShips_voc_completo/002924_jpg.rf.3aef186dda677555edd004e22b635818.jpg': 1, 'SeaShips_voc_completo/006293_jpg.rf.19cc9d1383bc5cd103dfb2a3a95b8a79.xml': 1, 'SeaShips_voc_completo/000902_jpg.rf.a2f0acca565ae4c363c4b67dc29a1fdb.jpg': 1, 'SeaShips_voc_completo/000301_jpg.rf.65a10cb2ddebd2fab6289fe242f69d97.xml': 1, 'SeaShips_voc_completo/002917_jpg.rf.085f06e53db5715506ccc0627fcd8238.xml': 1, 'SeaShips_voc_completo/001848_jpg.rf.1df1bc9b3f5397155e7049e21d820376.xml': 1, 'SeaShips_voc_completo/004890_jpg.rf.443a1fc516abb8508eae7e832a2bf683.jpg': 1, 'SeaShips_voc_completo/000895_jpg.rf.cc945bab24acce38dcba0741be479e83.jpg': 1, 'SeaShips_voc_completo/001577_jpg.rf.a3428016385675ba5dfb5e292e0deebe.jpg': 1, 'SeaShips_voc_completo/005102_jpg.rf.fb97ce036b51815ddce2d3b3e171e3de.xml': 1, 'SeaShips_voc_completo/003403_jpg.rf.d8fca762d8619e005115087525a10568.xml': 1, 'SeaShips_voc_completo/002505_jpg.rf.bcddfb06c31191302744c9947bb357ee.xml': 1, 'SeaShips_voc_completo/002167_jpg.rf.99174060faf8ddfed56823a1a0a3f870.xml': 1, 'SeaShips_voc_completo/003007_jpg.rf.65030bdd68b06c442cfb08d9a6526296.jpg': 1, 'SeaShips_voc_completo/004837_jpg.rf.699b038a454af7d20219c8525f0c01a5.xml': 1}
+  exemplos: ['SeaShips_voc_completo/003956_jpg.rf.b09746f6280f75d23e62bf590d4c7470.jpg', 'SeaShips_voc_completo/000434_jpg.rf.0bc5a3c7c7c51a6390f8795cdbd7edbb.jpg', 'SeaShips_voc_completo/006857_jpg.rf.58a2608e94b71da31b78e97f4cf0a153.jpg', 'SeaShips_voc_completo/001026_jpg.rf.74be0566d91fc31fbb7e3a56b2860c2d.jpg', 'SeaShips_voc_completo/002865_jpg.rf.cdb6fee6fc659719c83858ae44eb91c1.xml']
+
+== SeaShips_voc_incompleto_6509.zip  (0.53 GB)
+  n_arquivos: 21981
+  n_imagens: 11002
+  extensoes: {'.jpg': 11002, '.xml': 10979}
+  pastas_2_niveis: {'SeaShips_voc_completo/train': 11168, 'SeaShips_voc_completo/test': 1099, 'SeaShips_voc_completo/003945_jpg.rf.f0076fc8857f9bb01bc0e816ded3093a.jpg': 1, 'SeaShips_voc_completo/003609_jpg.rf.c247bda48d2104c087c8e506c720d0be.xml': 1, 'SeaShips_voc_completo/004887_jpg.rf.d54083fcdae59ed87acaf3c7b52a8225.jpg': 1, 'SeaShips_voc_completo/006184_jpg.rf.f3636c0d4dd3ba5e138c74f6edcc5dee.xml': 1, 'SeaShips_voc_completo/002123_jpg.rf.d21453737475bd6cad96f188f07d2b00.xml': 1, 'SeaShips_voc_completo/002540_jpg.rf.24e15efcc283d4d2381da793b60fbd2e.jpg': 1, 'SeaShips_voc_completo/001769_jpg.rf.2cbe2b42733de55a9e3717a41a286b2e.xml': 1, 'SeaShips_voc_completo/002180_jpg.rf.833578b7e3f6eddcdeb6a49c13a0ef4e.xml': 1, 'SeaShips_voc_completo/000565_jpg.rf.b87a79845cacbec25a8572d578063fd5.xml': 1, 'SeaShips_voc_completo/002092_jpg.rf.288ab15aad6857924af37e208eb17c1b.jpg': 1, 'SeaShips_voc_completo/003392_jpg.rf.10d9fcbddf6da7898aaea0e5482940d5.jpg': 1, 'SeaShips_voc_completo/005487_jpg.rf.8c6ca4e30fac71f1e215d7d49bd76747.jpg': 1, 'SeaShips_voc_completo/003908_jpg.rf.df65d8c8eb51058e012a5334715da1e7.xml': 1, 'SeaShips_voc_completo/000538_jpg.rf.7ce0ffdaf6a0b6f9e7e6cf4ded95e578.jpg': 1, 'SeaShips_voc_completo/002379_jpg.rf.c17b8eed99f0bc61fbf493b2556dd703.jpg': 1, 'SeaShips_voc_completo/003992_jpg.rf.98bf03a9c600f725cd4e79b6eb358b5e.xml': 1, 'SeaShips_voc_completo/004053_jpg.rf.32bc8f9ff15968b65be650ed98ae11e5.jpg': 1, 'SeaShips_voc_completo/003711_jpg.rf.9c3ab5bfe08a3e18603722bed0634d60.xml': 1, 'SeaShips_voc_completo/006139_jpg.rf.d5871fe2983228680d95de1a0e3f71fb.jpg': 1, 'SeaShips_voc_completo/001986_jpg.rf.4877ddd4dddcd9ae8424a64417f980ad.xml': 1, 'SeaShips_voc_completo/002750_jpg.rf.99692ae6f03303d0e8a5534379497c24.jpg': 1, 'SeaShips_voc_completo/005277_jpg.rf.97b73043fa621671cd4e00cde43872f6.jpg': 1, 'SeaShips_voc_completo/000306_jpg.rf.822bd23d85722b18c37e3c4b7f2474e6.jpg': 1}
+  exemplos: ['SeaShips_voc_completo/003945_jpg.rf.f0076fc8857f9bb01bc0e816ded3093a.jpg', 'SeaShips_voc_completo/003609_jpg.rf.c247bda48d2104c087c8e506c720d0be.xml', 'SeaShips_voc_completo/004887_jpg.rf.d54083fcdae59ed87acaf3c7b52a8225.jpg', 'SeaShips_voc_completo/006184_jpg.rf.f3636c0d4dd3ba5e138c74f6edcc5dee.xml', 'SeaShips_voc_completo/002123_jpg.rf.d21453737475bd6cad96f188f07d2b00.xml']
+
+== UA-DETRAC-DATASET-10K.zip  (0.543 GB)
+  n_arquivos: 19635
+  n_imagens: 9816
+  extensoes: {'.txt': 9818, '.jpg': 9816, '.yaml': 1}
+  pastas_2_niveis: {'train/images': 9316, 'train/labels': 9316, 'valid/images': 500, 'valid/labels': 500, 'README.dataset.txt': 1, 'README.roboflow.txt': 1, 'data.yaml': 1}
+  exemplos: ['README.dataset.txt', 'README.roboflow.txt', 'data.yaml', 'train/images/MVI_20011_img00001_jpg.rf.21eb8e9f48c70c8b2186afa92378a398.jpg', 'train/images/MVI_20011_img00005_jpg.rf.d97da4c37520d99bca7a6cb0aed56873.jpg']
+
+== crops_abo.zip  (0.257 GB)
+  n_arquivos: 16018
+  n_imagens: 16016
+  extensoes: {'.png': 16016, '.json': 2}
+  pastas_2_niveis: {'crops_abo/201807081244_047_0.png': 1, 'crops_abo/201807081244_047_1.png': 1, 'crops_abo/201807081244_047_2.png': 1, 'crops_abo/201807081244_047_3.png': 1, 'crops_abo/201807081244_048_0.png': 1, 'crops_abo/201807081244_048_1.png': 1, 'crops_abo/201807081244_048_2.png': 1, 'crops_abo/201807081244_049_0.png': 1, 'crops_abo/201807081244_049_1.png': 1, 'crops_abo/201807081244_050_6.png': 1, 'crops_abo/201807081244_050_7.png': 1, 'crops_abo/201807081244_050_8.png': 1, 'crops_abo/201807081244_050_9.png': 1, 'crops_abo/201807081415_000_4.png': 1, 'crops_abo/201807081415_000_5.png': 1, 'crops_abo/201807081415_001_1.png': 1, 'crops_abo/201807081415_002_0.png': 1, 'crops_abo/201807081415_002_1.png': 1, 'crops_abo/201807081415_002_6.png': 1, 'crops_abo/201807081415_003_0.png': 1, 'crops_abo/201807081415_003_5.png': 1, 'crops_abo/201807081415_004_0.png': 1, 'crops_abo/201807081415_004_2.png': 1, 'crops_abo/201807081415_004_3.png': 1, 'crops_abo/201807081415_004_6.png': 1}
+  exemplos: ['crops_abo/201807081244_047_0.png', 'crops_abo/201807081244_047_1.png', 'crops_abo/201807081244_047_2.png', 'crops_abo/201807081244_047_3.png', 'crops_abo/201807081244_048_0.png']
+
+== dataset_25k_v2.zip  (10.7 GB)
+  n_arquivos: 83391
+  n_imagens: 27796
+  extensoes: {'.txt': 55592, '.jpg': 27796, '.yaml': 2, '.json': 1}
+  pastas_2_niveis: {'dataset_25k_v2/train': 50031, 'dataset_25k_v2/test': 16683, 'dataset_25k_v2/val': 16674, 'dataset_25k_v2/reconstrucao_report.json': 1, 'dataset_25k_v2/data.yaml': 1, 'dataset_25k_v2/data_single_class.yaml': 1}
+  exemplos: ['dataset_25k_v2/reconstrucao_report.json', 'dataset_25k_v2/test/images/161277.jpg', 'dataset_25k_v2/test/images/260156.jpg', 'dataset_25k_v2/test/images/86229.jpg', 'dataset_25k_v2/test/images/128197.jpg']
+
+== genship3d-mirror.zip  (0.863 GB)
+  n_arquivos: 1754
+  n_imagens: 450
+  extensoes: {'.txt': 1299, '.png': 450, '.csv': 4, '.json': 1}
+  pastas_2_niveis: {'Genship 3D-mirror/Barca': 888, 'Genship 3D-mirror/Lancha': 476, 'Genship 3D-mirror/Passageiro': 368, 'Genship 3D-mirror/quarantine': 11, 'Genship 3D-mirror/.cache': 2, 'Genship 3D-mirror/genship_audit.png': 1, 'Genship 3D-mirror/contra_luz.png': 1, 'Genship 3D-mirror/confirmation_report.csv': 1, 'Genship 3D-mirror/border_annotations.png': 1, 'Genship 3D-mirror/audit_report.json': 1, 'Genship 3D-mirror/genship_eda.png': 1, 'Genship 3D-mirror/genship_qualidade.png': 1, 'Genship 3D-mirror/detection_report.csv': 1, 'Genship 3D-mirror/oclucao_exemplo.png': 1}
+  exemplos: ['Genship 3D-mirror/genship_audit.png', 'Genship 3D-mirror/contra_luz.png', 'Genship 3D-mirror/.cache/first_pass_segmentation.csv', 'Genship 3D-mirror/.cache/second_pass_segmentation.csv', 'Genship 3D-mirror/confirmation_report.csv']
+
+== iflens.rar  (1.569 GB)
+  n_arquivos: 69547
+  n_imagens: 34738
+  extensoes: {'.txt': 34561, '.jpg': 34557, '': 245, '.png': 181, '.py': 2, '.yaml': 1}
+  pastas_2_niveis: {'dataset/feitos': 34495, 'dataset/consolidado': 34305, 'input/2026-08-15_18-07-22': 101, 'input/2026-08-15_18-17-51': 101, 'input/2026-08-15_19-21-21': 101, 'output/2026-08-15_18-07-22': 51, 'output/2026-08-15_18-17-51': 51, 'output/2026-08-15_19-21-21': 51, 'input/2026-08-15_17-27-06': 41, 'input/2026-08-15_17-49-14': 41, 'input/2026-08-15_17-50-09': 21, 'input/2026-08-15_17-50-38': 21, 'input/2026-08-15_17-51-45': 21, 'input/2026-08-15_17-56-11': 21, 'input/2026-08-15_15-56-43': 11, 'input/2026-08-15_16-09-46': 11, 'input/2026-08-15_16-23-44': 11, 'input/2026-08-15_16-41-12': 11, 'input/2026-08-15_16-49-18': 11, 'input/2026-08-15_16-55-01': 11, 'input/2026-08-15_17-09-49': 11, 'output/2026-08-15_17-56-11': 11, 'output/2026-08-15_16-41-12': 6, 'output/2026-08-15_16-55-01': 6, 'output/2026-08-15_16-49-18': 5}
+  exemplos: ['input/2026-08-15_15-56-43/Vessel_container_ship__ship_a85bc33d0d46.jpg', 'input/2026-08-15_15-56-43/Vessel_container_ship__ship_a85bc33d0d46.txt', 'input/2026-08-15_15-56-43/Vessel_sailboat__ferry_2788d8d87dc3.jpg', 'input/2026-08-15_15-56-43/Vessel_sailboat__ferry_2788d8d87dc3.txt', 'input/2026-08-15_15-56-43/Vessel_sailboat__ferry_dba9a2b2b240.jpg']
+
+== seaship.zip  (1.229 GB)
+  n_arquivos: 7002
+  n_imagens: 7000
+  extensoes: {'.jpg': 7000, '.csv': 2}
+  pastas_2_niveis: {'SeaShip/train_images': 5600, 'SeaShip/test_images': 1400, 'SeaShip/test.csv': 1, 'SeaShip/train.csv': 1}
+  exemplos: ['SeaShip/test.csv', 'SeaShip/train.csv', 'SeaShip/train_images/001723.jpg', 'SeaShip/train_images/004484.jpg', 'SeaShip/train_images/005293.jpg']
+
+== smd_clean.zip  (0.156 GB)
+  n_arquivos: 1829
+  n_imagens: 914
+  extensoes: {'.txt': 914, '.jpg': 914, '.yaml': 1}
+  pastas_2_niveis: {'smd_clean/test': 1828, 'smd_clean/data.yaml': 1}
+  exemplos: ['smd_clean/data.yaml', 'smd_clean/test/labels/MVI_1486_VIS_frame540_jpg.rf.6b86ad6625505a721b0efe61eb587484.txt', 'smd_clean/test/labels/MVI_1613_VIS_frame540_jpg.rf.3d47021b50074e290ff5d4c06421445c.txt', 'smd_clean/test/labels/MVI_1622_VIS_frame260_jpg.rf.657ae379746804850e68b9f44d859872.txt', 'smd_clean/test/labels/MVI_1613_VIS_frame180_jpg.rf.0c0003fe62974be7c8d2381477f672fd.txt']
+
+== synth_abo.zip  (11.359 GB)
+  n_arquivos: 43680
+  n_imagens: 21840
+  extensoes: {'.txt': 21840, '.jpg': 21840}
+  pastas_2_niveis: {'train/labels': 17524, 'train/images': 17524, 'val/labels': 4316, 'val/images': 4316}
+  exemplos: ['val/labels/24.06.2022-14-00-37_v12.txt', 'val/labels/07.04.2022-14-50-36_v4.txt', 'val/labels/22.07.2022-11-23-12_v3.txt', 'val/labels/09.05.2022-08-48-46_v12.txt', 'val/labels/05.07.2022-10-33-06_v6.txt']
+
+== synth_both.zip  (11.387 GB)
+  n_arquivos: 43680
+  n_imagens: 21840
+  extensoes: {'.jpg': 21840, '.txt': 21840}
+  pastas_2_niveis: {'train/images': 17524, 'train/labels': 17524, 'val/images': 4316, 'val/labels': 4316}
+  exemplos: ['train/images/10.05.2022-11-13-08_v2.jpg', 'train/images/05.07.2022-15-12-00_v10.jpg', 'train/images/18.04.2022-13-35-43_v12.jpg', 'train/images/11.05.2022-13-50-21_v6.jpg', 'train/images/22.07.2022-15-52-39_v3.jpg']
+
+== synth_inatech.zip  (11.415 GB)
+  n_arquivos: 43680
+  n_imagens: 21840
+  extensoes: {'.txt': 21840, '.jpg': 21840}
+  pastas_2_niveis: {'train/labels': 17524, 'train/images': 17524, 'val/labels': 4316, 'val/images': 4316}
+  exemplos: ['val/labels/24.06.2022-10-26-37_v2.txt', 'val/labels/28.06.2022-10-03-01_v0.txt', 'val/labels/18.04.2022-11-06-09_v1.txt', 'val/labels/10.05.2022-13-53-08_v3.txt', 'val/labels/07.04.2022-14-44-55_v10.txt']
+
+== synth_inatech_v04_fullpool.zip  (11.417 GB)
+  n_arquivos: 43680
+  n_imagens: 21840
+  extensoes: {'.txt': 21840, '.jpg': 21840}
+  pastas_2_niveis: {'train/labels': 17524, 'train/images': 17524, 'val/labels': 4316, 'val/images': 4316}
+  exemplos: ['val/labels/11.05.2022-14-02-15_v6.txt', 'val/labels/23.06.2022-08-31-00_v6.txt', 'val/labels/27.06.2022-16-15-19_v5.txt', 'val/labels/05.07.2022-08-56-38_v4.txt', 'val/labels/13.04.2022-14-16-29_v6.txt']
+
+Salvo em /content/inventario_zips.json
