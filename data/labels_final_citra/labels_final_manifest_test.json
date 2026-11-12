@@ -1,0 +1,2018 @@
+{
+  "manifest_version": "1.0",
+  "split": "test",
+  "fonte_origem": "labels_single_class",
+  "classes_permitidas": [
+    "0"
+  ],
+  "gerado_em_utc": "2026-09-01T14:40:08.403623+00:00",
+  "n_arquivos": 401,
+  "n_boxes_total": 1247,
+  "arquivos": [
+    {
+      "imagem_id": "01.07.2022-10-49-24",
+      "sha256": "2a4a98ae57812ffab23e3d9791decffc2f01d32d37309d467565e1cbfa9edf2f",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "04.05.2022-09-55-41",
+      "sha256": "e34d0f7000f946f448d3ba6819a4228088610f27e7c0a3782db836dc2441fd7a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "04.05.2022-13-45-32",
+      "sha256": "fce45bb453d170a6c93d3a4b6b0bad9b6c90e253db610e05289bc73e811017f9",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "04.05.2022-13-49-25",
+      "sha256": "1dde6a1952e864694eb0b3df38cc4c2e973c6c41e02b3716e1f968a86ddb26ed",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "04.05.2022-13-50-37",
+      "sha256": "5cc9a3df226e12f6121b131f856672187319145b5c52a2ceaaedb4683876545f",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "04.05.2022-14-03-37",
+      "sha256": "34d97c4278e66368a2d9fe51ff0cadce41411795466d442f7c0e4704dee97908",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "04.05.2022-14-06-12",
+      "sha256": "ff965561faed6827845421ff851945c579cd44a12fc1e6fca3696a8e32dfff77",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "04.05.2022-14-06-46",
+      "sha256": "7643907dad4e5073da29b1e8b65fcdacd9e5c4e754a4c2e9cdb8e585002ded29",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "04.05.2022-14-35-59",
+      "sha256": "7aeaa681c845ad79d8e6b7d7aac1195a8a74827809073b165ee9ef7053d91d4b",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "04.05.2022-14-57-16",
+      "sha256": "83e5cb3a3f37613f6a61611bcabe16d28f90c356608fb0f9a059b2cb0c7a7437",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "04.05.2022-15-02-35",
+      "sha256": "8ee974afda70e0bff1d3a421ef42729bb295ce1bb153502169d91a6a2038851f",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "04.05.2022-15-19-46",
+      "sha256": "fba96fe993e5747403347b57df0153cb3eb51149b9a09dad6f4fb66f25ec1c4d",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "04.05.2022-15-48-46",
+      "sha256": "f282eadf22fdc210c1710036c1ed909e278dad6218d88a58777f4b8e733521b0",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "04.05.2022-15-53-23",
+      "sha256": "80d8d8733893049db97e61cabd5ad3c08e4eef53c20272399ef4ebfed593ec72",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-08-36-56",
+      "sha256": "fc4a4be93c25a0f67af3065d2ef2778ebc6a2825e435f157c1f506733b3877f0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-08-37-42",
+      "sha256": "a8d67e013ad3beb5cd6e655fe90d42cdb663ce79293be48e8d064082f794a96b",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-08-39-46",
+      "sha256": "316039df253e19ed2f4fd09eb43205e47c9b32841f59d9d3bfee8381b5fc4e8a",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-08-46-38",
+      "sha256": "d5a34f0a15ebb381649907be5a83cae7cef49ad271db72aaa1aef82e9554bd29",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-09-00-00",
+      "sha256": "be882c56d4492571c2a80a8153efda4d136e42208f77096c4b680ecb355840f7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-09-00-44",
+      "sha256": "909b7b9a0ec4f9d3be4823714d2125833c7da0afb7d1665532cc6895306dd6ce",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-09-05-33",
+      "sha256": "e28e8ffa1dfcdd5ba45a74ea19417d49dc539d21895791a5286420c70036e872",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-09-07-21",
+      "sha256": "7da20b516607b2f49017d0fa3e235896fca491da34d2b4313e573686e7ded3d1",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-09-49-31",
+      "sha256": "918bf95770e07706b029a3ebb2938ade7b27d0e95bf47d20a7e27b4cd74bfea4",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-09-49-51",
+      "sha256": "4ea4dc592da3d42d224feb24d5db3826775eed31e56060cfdc51d9e43b3b1bcf",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-10-00-41",
+      "sha256": "778eac280419f976cec1be90a1407e7a4fbb04d9c154936f59973f53f52faa55",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-10-41-48",
+      "sha256": "5325e29607c9a25b8aece33074546b3d43cb601a681f3cfe060b3e97d2ba0bec",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "05.07.2022-10-53-15",
+      "sha256": "c5f373fc5bad25ae540d32edae376725e30d7e8504b55bcd66ec0a796b1d8eff",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "05.07.2022-11-24-07",
+      "sha256": "3a848b093c3808824e1e5e6b43e3e9f67c7d89d4a5b18693ebe5606c0198da0d",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "05.07.2022-13-56-07",
+      "sha256": "ff10ada876083855d21b6dc5c7c4913f99bae8ad2619c92fbeb1345e685f4a65",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-13-57-43",
+      "sha256": "77fd0760bd71a7469e576131a142d8c9133802d280030bec85a0fe66b17016ef",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-13-58-43",
+      "sha256": "e671a61d204f0206024ea0e1d3314b93bc4bebd0e0f56677b0ad9c56b18e7db0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-14-09-59",
+      "sha256": "8035b18453326550d250d41ef75d8a167e67e9d98f6fd18bfb2a41b8ddfd4870",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-14-49-48",
+      "sha256": "51f6cc68cffc66f62bc5ae180f474a1d7ccdba5055863fd4959b07025bf574e5",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "05.07.2022-15-07-04",
+      "sha256": "8f48777f82c74fdde72ba47f19bd419ec061c74885b037ee8764d644b6e6aa13",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-15-11-11",
+      "sha256": "e2763cccbf98cd32c8270f1a85a4ca500d96eac959118ee2a933eb43add2b4dd",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "05.07.2022-15-14-36",
+      "sha256": "30acca4dbbc86759496eaf156afbf2877175cc2ae0283422c1ceb65e47c57c56",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-15-16-29",
+      "sha256": "5017f0f8bfee6ff009c0096f78de927adfae1ef70fe1fef1f6e9508d4e77f89e",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-15-23-17",
+      "sha256": "b803a63e1660f135df79777a622c821848054d09d3b4bf2fc5e24bb9f86e6561",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "05.07.2022-15-28-07",
+      "sha256": "6f8cbb5f988ce1c10f394b4989b4c0022b6e0e2166f26deaeacd2376cc9591db",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "05.07.2022-16-08-48",
+      "sha256": "05f94d15cc6bb7ed936f63bf183125d7e52b4f4f5ca75f420efe0662cb1f72fb",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-16-09-40",
+      "sha256": "d23448a17777d0cf1a97273445f344901b8a4e4db2572b0f9c7fa37b230acf17",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-16-12-34",
+      "sha256": "5eacf9ed6d5ad803176033ee314f66fec93602d6e5f126d2fa1f9c0e6d15692f",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "05.07.2022-16-12-44",
+      "sha256": "f6d1a22e7f7fb4749f2ab00ba7e8eb4eb598c113345254a012ca6629cf3c2681",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-10-36-12",
+      "sha256": "28832da6bfbf2885d5b768ca23af8d1d687713744790e3b8e1504d1e0ea8d92d",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-10-56-58",
+      "sha256": "170de1a4fe491a42464dcfb04e73092dfef96dda015e728e4973a7c1f0db04b0",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "07.04.2022-11-08-12",
+      "sha256": "4ca80566d3a3e10df84887b65db56cab433b16b377d791f5c6708c6a4520442a",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-11-11-00",
+      "sha256": "4044572a172dffa464358c3cd7158aa3d5ae9aa199b66390bb23ad5749d29a4d",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-11-13-48",
+      "sha256": "e8c2bd0dac1609ce1e6114ae673ce764367f4c5acd9d477112c93c0fc524f5f2",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "07.04.2022-11-16-00",
+      "sha256": "313bea5b627a100788743a0cb42aa474732ff4098adb5bb7f616a5ec4494afaa",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-13-37-41",
+      "sha256": "3f78920343f7834609f98ca5a3fc7c9ea58a94407f4da0857e5e8d551be1cb8c",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-13-41-12",
+      "sha256": "6e8c64bb3432df1cd650688a6dd87cfc24ddaec0cf3175d6e1befdb16d9413e8",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-13-43-39",
+      "sha256": "629abca1d047b134a1e79c7aa9def1312393f18a8c9675c6a5b9ded7ae998959",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-13-50-14",
+      "sha256": "55e79ff4daddfe616451f52532873b239dbbee12b84beb46255025137affeda5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-13-51-42",
+      "sha256": "aaebb248f8b700eaf7e4999caca1c58eb3f6373c8011bd796510445aeec572a1",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-13-53-01",
+      "sha256": "ad877ef89acd3a07c6968bc073a6fba4ad73d939552be3d18e6063d7c888fe26",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-13-54-20",
+      "sha256": "e23349c5ca2b631b039f17df6739d525bddb85c48a10e00265f447fd966fe35e",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-14-08-53",
+      "sha256": "7b7291fc09649fabcaf6f94af05c7d258df9ded71f90670a56123d299ec50ef5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-14-42-34",
+      "sha256": "42f178780286d1d780f0b7220eb49d1b387bd5f1a350f4cf5fd6470fb328470e",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "07.04.2022-14-43-17",
+      "sha256": "5c8f69e64a0ce337aef9768920d53d57527a80cbec092b5b5a678d97c474fed2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-14-47-18",
+      "sha256": "588b432672eae1fe645408b55e814ad1c3517c89e9cbfa15def4fdf919052d76",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-14-51-42",
+      "sha256": "5b8daa13603701166dfd6ba17addcec20316ce1f5b49fa8f698822182314e8a8",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-15-26-42",
+      "sha256": "f48a127a1fc15cf01452f45f1217829815a10e2f9596599e924a79f9cf4a57b2",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.04.2022-15-28-59",
+      "sha256": "ca11fed92106470fb71b98e4a4baebee70fbc5b2093f48074112f887aec47463",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "07.04.2022-15-29-26",
+      "sha256": "e0bf79fa3249f7bb7a0453182c9bbf3403fb988a1eaa2c6b897cdb755f638817",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-15-46-32",
+      "sha256": "2eaa6450d9d3a7ec1b0aa9a73d3c4383f581ca75861c3768e022be1c103bad81",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.04.2022-16-02-35",
+      "sha256": "82453bca095a4b2359484b9de34341761ebcb0cf543b9caf35c4511b6b795e58",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-08-53-34",
+      "sha256": "13269a4e099e5333187232512118ae280be2087c2a96029ab74fcbb0614d5d0d",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-08-53-59",
+      "sha256": "70395c9b2c0d1de641f6979603644cb7e93ecee6df2a934042c8df48cf2fdf95",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-08-54-30",
+      "sha256": "1b0d3519a4cf874a86586277d5063f6e6d0cebbf8d9ab1f437db6eefde571aa2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-08-54-47",
+      "sha256": "7d42a7bfbb1a5845cdf28a9c63de97fdd88bcb44b959f758f0df78f88b165a3d",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-09-27-22",
+      "sha256": "f1a47a42f1721311afdfa125f74c926357cc8e47e964f5f9cb4c72ac760abdfe",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "07.07.2022-10-30-09",
+      "sha256": "0250545648948d16bb903b8312414baf2ce38f28903f55ecf45b5fbb194599d4",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "07.07.2022-10-31-22",
+      "sha256": "7fe060530b806a03036c9a3128066de9224b6071106f95d96ac3d07765c7b12e",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "07.07.2022-10-36-10",
+      "sha256": "c3683dfd0516084082a3d10e5f9c4b27b454d25ac022b28c80e6fa3ba9843af7",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "07.07.2022-10-36-56",
+      "sha256": "76cd7c8c3231b22cfaf798f7375ab91268950375de32331ff44cde9b8575c2c1",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "07.07.2022-10-42-40",
+      "sha256": "f3b63fdd9479049493d0a3802a5c1482607509078688104284807d3da2ca007e",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "07.07.2022-10-43-55",
+      "sha256": "a90297b754f9846a9ec13101a5029dddfb4dc8ed08275270ea200d6b143d2c13",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "08.04.2022-09-11-01",
+      "sha256": "c8bee352f82b26859c33de1f726cbed58d89dd64695497267d9b2da39987a1bc",
+      "n_boxes": 10
+    },
+    {
+      "imagem_id": "08.04.2022-09-24-18",
+      "sha256": "8d0743d3b37fb249dacf56237576ef6494b8ab0831362e3b81a893625307c1f5",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "08.04.2022-09-33-30",
+      "sha256": "6f95355c4d5434f4231dea531f19dad639cba8e90cf9f2d1bfebebf525e866ee",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "08.04.2022-09-41-09",
+      "sha256": "6e16f9bf83c3bd67d47039ab47989f1e25e372d12bdfdf0338ef062c3bfff439",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "08.04.2022-10-22-45",
+      "sha256": "9f4c5169c18190b11dbe4e7de299ac8403ff232df1dc87d30e2308bd9409e603",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "08.04.2022-10-50-02",
+      "sha256": "10b3007dff878217ada93befad7e7aa6911d5a9475cec8d37c0f629f84379643",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "08.04.2022-10-55-05",
+      "sha256": "f5c44fd68d57813903cba6533cfc897862e9a6bcd91103609a98bbdd1c886f6d",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "08.04.2022-10-59-53",
+      "sha256": "4fc8ff9c999cabd07c4045e4c0d4851197c9912a288454b55f58d438e887dd9b",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "08.04.2022-11-00-38",
+      "sha256": "7f57f26f361553ae1d6fb5724b8ba9c950da7daab6605ca4200722dc41c72cce",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "08.07.2022-14-55-14",
+      "sha256": "b6ce1cb6741d298b064b6640f7b9bfc13077bbb28b8bab5b4afd86bb800e4392",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "08.07.2022-15-04-52",
+      "sha256": "3682934fa2a10ed67c8fe27994008f0fb8c9a240a242d33ad084db340beb221d",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "08.07.2022-15-10-24",
+      "sha256": "10826f4555a0faab818726801c74cc7d1912d6d8d0d0696b64e319737478ce48",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "08.07.2022-15-17-32",
+      "sha256": "dacf78fbd20025335968dced2127cdd9a22daee671d1cc2eb049dac7492dcfc1",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "08.07.2022-15-19-16",
+      "sha256": "5bdb9e3287ad07088afb6c349c2eaa953a2580519ab11b582a8b0a935f1bf26e",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "08.07.2022-15-20-54",
+      "sha256": "a8726b98a5c1cf39303be2f37cd5b3ae7893a0b652576250f0d22a2bd015dcb3",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "08.07.2022-15-25-30",
+      "sha256": "7277948ab9f17d5753521a4a334a623089680006588cc166f8b8cb9ded751488",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "08.07.2022-15-35-18",
+      "sha256": "b314c28db84b07106efe1cade23e87223005dd160758be1cbd255080a96e6c45",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "08.07.2022-15-35-43",
+      "sha256": "330e6ed5fd6b358b675b4996795e0a96d770e47f97fdb27575fbaea776639294",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "09.05.2022-08-50-46",
+      "sha256": "d2e292d0de5611aaa1c2f7f2d15e5edbf769f1a063ed65bbfef074395914b4db",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "09.05.2022-10-28-17",
+      "sha256": "b0ebbe5b66b5161dc988e2035ef40a39f367c9bfeee949c1b8b81e7463dc23fb",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "09.05.2022-10-41-45",
+      "sha256": "f1a539fa7d3389e542c4643643b70f1fc2c367a4a7afaa63c5178fbc75f0db4b",
+      "n_boxes": 18
+    },
+    {
+      "imagem_id": "09.05.2022-10-58-16",
+      "sha256": "b0e93f584bf45e1b6c609285176500c246a250701a3f4f8d23ef1c58f0eae2f5",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "09.05.2022-11-00-27",
+      "sha256": "33fef25ad607b4d372bbb700853f9f09c1a20bbf7b44c55b2a8384b0b77bce2d",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "09.05.2022-13-57-45",
+      "sha256": "b9a8b1e60fb3579fe0a53abece6f0ec552541b079ec074843b56cf6d586db8e5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "09.05.2022-14-12-06",
+      "sha256": "0e943a5771d1cf5e2cd6a7637bb96eafb7c5414e95aa294ff4cc7438386da876",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "09.05.2022-14-32-57",
+      "sha256": "7dfac79cb919e21dc57b647a3dda5cdb03be438a04928584be519f681815acb8",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "09.05.2022-15-26-44",
+      "sha256": "1ba63ffe73635c234f3c1c0d2f81e6c2d121e146a14f3c42dc69a7e85915e021",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "09.05.2022-15-33-11",
+      "sha256": "24b0985fad822a0de4bd870845fa024dbefb14c05f26919812f903fed53602ae",
+      "n_boxes": 19
+    },
+    {
+      "imagem_id": "10.05.2022-08-40-42",
+      "sha256": "fccbc158d422939ac38ad222f657d656e75c0b085e1ea58d60a50f3e4e56fd70",
+      "n_boxes": 20
+    },
+    {
+      "imagem_id": "10.05.2022-09-51-36",
+      "sha256": "d801d753cb71c84a64bd1c303f1f4eeffc3a23ebacaa1d4aa9db08a870b23add",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "10.05.2022-09-55-04",
+      "sha256": "470e91feb10bf76c4af5910557f05e4245cae3d9b4b864ca89eef26b3a358309",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "10.05.2022-10-08-25",
+      "sha256": "d9015237e565e4587826e21dbbd40bbf41f7094c4ef0a720515dfa50ea83c434",
+      "n_boxes": 24
+    },
+    {
+      "imagem_id": "10.05.2022-10-40-32",
+      "sha256": "299007e8024adf2a31eadfb09e33bb4c458372be7746913a91868ea11bf9b633",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "10.05.2022-10-41-12",
+      "sha256": "a28c2f2e8661452b60524fbbd235994885c0cdd952a3462ecc436f04506df2ed",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "10.05.2022-10-45-42",
+      "sha256": "934f28b09427ee73d9629791f02daf04da814384db420a6f66ac4c921a6ad136",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "10.05.2022-10-52-19",
+      "sha256": "04c3e7d64fb0ccbf12d9686cb63a51a829a5e200a57e43eb58d4364e97cf6e35",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "10.05.2022-10-58-24",
+      "sha256": "dccc0a3dae92165f170d5d23f2e783997f4a1131fb9a5074988c484c00d3cf2c",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "10.05.2022-11-02-50",
+      "sha256": "d11268eca47e9175344a8f8bd659dac504e6f34f99a87eefe1752ddfd30b7415",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "10.05.2022-13-32-31",
+      "sha256": "8c9fb3e8a6d91b6b6da1c9534ff52ba4ecad92419665855af6f4aeb4915687fd",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "10.05.2022-13-37-25",
+      "sha256": "3a0870f3e52e4679f62eca9460aa96575f3878fbf97c45af275f9d3e32cab75e",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "10.05.2022-13-43-27",
+      "sha256": "9ee28d3e9bdf3b7eff84ca4df557fd79f75c2b319d5fca4e373cc3d98e4fe04c",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "10.05.2022-13-47-53",
+      "sha256": "81da2d2fe4ee16e70c4b23eb7c65d72abe6027aaab99db0a1aecf1023634f904",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "10.05.2022-13-50-09",
+      "sha256": "a5c855721811cc3fac059ab3fb58d3a47fa622810e861493ba92eb48462a6b74",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "10.05.2022-13-50-42",
+      "sha256": "47aa7b115345d4cf0ffd9baeab2d4a5c2334d47d755e72196d0af87981fe1056",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "10.05.2022-14-03-01",
+      "sha256": "802afaf2797e81597de242cd4c5cfa8c17aa44049f28b68881ab900913e123bd",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "10.05.2022-16-20-52",
+      "sha256": "25381072848bc4c7e3af9abdd0532cf6579ee5c7ac52e59cf988cfbfa8d49d36",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.05.2022-13-47-38",
+      "sha256": "5afc8be14bb50ffed77dc29cd3eac1f0dfb8a48f75bc9ccf8010971653311e81",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.05.2022-13-53-47",
+      "sha256": "e066df07aef59e7659ac63fc826222ef9f63073657c29377e8f2b9f710006819",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "11.05.2022-13-55-47",
+      "sha256": "98729dd7e750e0092a9c18ce7ac0065a97ac92fa4acec896c3e7a7f866a5dcdb",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.05.2022-14-25-52",
+      "sha256": "94f47e8f6ffd9ba9d11c25f6ed4e9c3df46ebf86bbc5616afccc0e4d549301be",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.05.2022-15-09-34",
+      "sha256": "9ecc9cd1587fa76a35713811b482778fa43f4de541c8bcdc531d98ccbd9e650e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.05.2022-15-15-09",
+      "sha256": "d4defe74bb2720545efdd903f83a642f6136c680197dc199979a7637ad5fe1bc",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.05.2022-15-17-34",
+      "sha256": "6aa7b56015bc4d48add2f5a0483f938a6ddab2ab54d1e16ae47d55a1f03d64f0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.05.2022-15-24-33",
+      "sha256": "3880a337b87d94d6bee6378b0b1e65361eb30ee823c6041f33b2676d3acdb398",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.05.2022-15-24-58",
+      "sha256": "bd9b9b656e741c91907adde87ed0bf68991ccd5ed4d5f608d25bcdc62540b207",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.05.2022-15-27-30",
+      "sha256": "a7aa327e5e79ec3e8810462a11e632f24e966442ed165dbed3e86ccb6cb91305",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.05.2022-15-27-51",
+      "sha256": "642372483aa6dd3e7e75bb81ce362f34cd8d0bddccb2a33c6cd69ef93a240afe",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.07.2022-09-47-38",
+      "sha256": "802130bea2980c6585e923c34863819c7595fc0c536d58a2452d96abac7ff860",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-09-48-04",
+      "sha256": "da92b41b6ef533c9d9def460bc23b46e3ca0d8a96c43bd0e46bd6953872aa353",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-10-25-36",
+      "sha256": "4ad0e20e6a4d86881dbe83fc0bab1a0239a0b0fa812cd9495597b0369c47c864",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.07.2022-10-26-27",
+      "sha256": "19aaf57722fa666ee55bc3caeaf31b086cedd0d2b9b6f82194d0a216fd48fc85",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.07.2022-10-32-05",
+      "sha256": "a2ab7083a530d63c2d70ed64dafe9b09d29cf2853ed97d97afe119efedef2a0d",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.07.2022-10-33-59",
+      "sha256": "e9725b580fb2efe3c447c4c19361cb59fe01776b39cf652e73044d2e5954e2e1",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "11.07.2022-10-34-35",
+      "sha256": "e95041594bf7809732adcc2847fbb642dc61e9e0a777f58be344efb5865dca3a",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "11.07.2022-10-42-20",
+      "sha256": "a93048f8a0237a445bf8dfa60c26e998d21d8a721fcda9ea9194d34c68ca06d3",
+      "n_boxes": 18
+    },
+    {
+      "imagem_id": "11.07.2022-10-44-04",
+      "sha256": "9dd3e13805f04e06dda20b2efb7bcde8c34acc6f4285802fb9e8926068ccf675",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "11.07.2022-10-47-51",
+      "sha256": "4ba1a7919c4a3d47b6406a35dc406437aec4deb6795707bd6e88569aa76c2023",
+      "n_boxes": 11
+    },
+    {
+      "imagem_id": "11.07.2022-10-56-15",
+      "sha256": "420d98b096b738edb8c1717e3900c705f17f540d5b2915560c935815ae600867",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-10-57-12",
+      "sha256": "db322310b5e879e31c852374acbfcf7fce252af43c5fe40a99b45ab3243555f7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-10-58-25",
+      "sha256": "0e1ab551f1197853992fc4bdd956abf83dae3c3f1a4b48a00f59a500d1e12ec1",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-11-08-52",
+      "sha256": "44f2b62358f0570a92c4dfb6ca6edc92e84a9a6332ec6b879c3d2638805fc3d5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-11-09-50",
+      "sha256": "a629c869a06f52e583832acc25197134ce4bc570b1095398852456ff5df9ca57",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-11-19-16",
+      "sha256": "836cae0abc216dc2168da565aba51b9b9b8c277b0479d38dc184bc5baa3cafb4",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-14-11-27",
+      "sha256": "e7c57ed4d679a0e612a26556119b6da28159c4308209b6d2ec4d98143061a7eb",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.07.2022-14-35-05",
+      "sha256": "f26c4473409e6805c7232a5fd4a79c42d56eb8962629496ad24d911333ac1c84",
+      "n_boxes": 8
+    },
+    {
+      "imagem_id": "11.07.2022-15-42-09",
+      "sha256": "1602f623a7ceb927e54bd4c465288be5b25ec860cf5e7951f9663eb4fd7eda69",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-15-47-39",
+      "sha256": "5c830994f2c34402173320570f7ab2d8fd51e0d990b3c16bad4aaea33e580215",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "11.07.2022-15-50-49",
+      "sha256": "08ce38f48347ef1f783514c2fdfd69ff1b0f5290c9f0c00b88d68de00ce3415d",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-15-55-05",
+      "sha256": "2837b5ca4cf87eeaf0fefc9a5c47ffd81fa551a21812545deaef62e09c2c94e4",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "11.07.2022-15-58-37",
+      "sha256": "5007fa4a847bcf663a1bce551b7f2355ecba9aa8e382f635c13e05752c5f0c93",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "11.07.2022-16-04-24",
+      "sha256": "5f87a7f8ae19d062f708de2e1abe61785b238093a334869e270055d983e01c26",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-08-36-58",
+      "sha256": "4c81921d37c350f9a78eb0e777d0adee451cbe6f0065148ca765b72d068b96de",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-08-37-57",
+      "sha256": "f0e5ae8e11a3b732d65ba16894ecbeee08329f5fa08cff21ed95608c6a390309",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "12.04.2022-08-39-19",
+      "sha256": "6463959f23f8b5edb60b975900bdaf985a65710a793e09f4c2d6185721dd672a",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "12.04.2022-08-41-58",
+      "sha256": "d05889b83e86dfd3fa11d1b5d878ee29d24840e48381f2511fa4b6218d05d783",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-09-07-43",
+      "sha256": "49a1fa75c3782df6feaa62237e918380ddea07edb53989e4f403e85beb4a645a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.04.2022-09-11-38",
+      "sha256": "2d6d585bae67f7fae74eab0501b3a1d56c3eefe618e3e4a430f10454542d4782",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "12.04.2022-09-31-58",
+      "sha256": "50453a985e398831c63bf358ef08093d037633e897440cf09bc99594c49b3155",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-09-35-21",
+      "sha256": "6a14c16fd8a9b090ebe3487c3e6c2da34e7cab27609b3289da11a3b3008b34b4",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.04.2022-09-42-01",
+      "sha256": "4b6b9bba72a3928721d88fdf1be826c6dac9aded24caedac4248636a5fd46505",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-09-57-23",
+      "sha256": "c8c0e86cee69f746d9589ad9ddef36d73b6144aeff35bee9618a2b46d4d611aa",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "12.04.2022-10-15-15",
+      "sha256": "367df3a20b0df97989c23fdf18913753f9f760ecf0c4a08960bf7a0f160b37ef",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "12.04.2022-10-20-08",
+      "sha256": "67b2017768ee7f03fe069a32187cf92d56a7079d0682bd25db7c3d99861fec10",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "12.04.2022-13-32-58",
+      "sha256": "cd3be10030cd300dc11aad374de270592012e423063c8a1183104bdc298e4b61",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "12.04.2022-13-47-42",
+      "sha256": "0f7709565bebffe489f7b45cb6fa37c9172a9bdd4b3424d5bf7b1c6935873926",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-13-52-41",
+      "sha256": "2f2f33d87a7102ae9d36f1f3d9837ffba5afe0f1907a2b08292505cd244342dd",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.04.2022-14-20-42",
+      "sha256": "0dd67d8328b538336dbbd228e8a77ef614b4f1ff6f3e476a8dd6d358fb8041d1",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "12.04.2022-14-45-23",
+      "sha256": "a982dee9128e6e2810fce66006803c3e08280ebd3a4314715f2548b94a6415c8",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-15-41-39",
+      "sha256": "44fe0d7e94a7eb129bd9af5547a221b6bf0b08dac870fc9855dcd3bb8e43773b",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "12.04.2022-15-46-57",
+      "sha256": "8a23905facdc987f4f6ed333cccf9ec946b46caf507c0180e7f3358c6c3f9362",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.04.2022-15-54-42",
+      "sha256": "da4fb05cb116515efcdbbe47d9d64748b536f7258647e1b8828afdeff873ba0e",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.04.2022-15-55-13",
+      "sha256": "e904c5bf99cf9f9e07f73b222363a4455ccc96c7163c91dd1bb090fb43b9f268",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.04.2022-16-03-47",
+      "sha256": "02cc77c096bc80bbdc09a94b05e4d78312086a214a5e91b124e2a83cb1219a37",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-09-58-30",
+      "sha256": "72c3d185b9d97113dff5289ebda9677021888caffd1444ef345a606fd3ea3098",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-00-34",
+      "sha256": "8bd2e426a0eac8ab418f31c7245346594b9c97454ebf205a0b6f977f5f765201",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-00-59",
+      "sha256": "d621085efcef54624d91d7abb7ed1520e63daed0a5c09e3a8a0c19cca20a5eaf",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-01-44",
+      "sha256": "72f16a754fbab55a0c2d9fdeeb5342c0495d2da74cdd27b306ea8648f740a689",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "12.07.2022-10-05-49",
+      "sha256": "ee03e91fa9f31a31a0c432e6afb75daaf6c8b7a02b874067cdb7471261b7b467",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-07-45",
+      "sha256": "fe35821238e77177dec0a26018e8e31ef13b8c99dbfcb9a641a4ee7d23f1f989",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "12.07.2022-10-12-44",
+      "sha256": "d07b1658249f6f369904f51eefd1ba7f58bffc4680d1b93a65d1ca900a92f231",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-10-23-27",
+      "sha256": "5efc1ae3a6dd36e4c52fa43fe849de9e83ceade7c8760ee36f3a2078c65ae805",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-10-24-25",
+      "sha256": "bcde32ce938c4dbf4ba9b1544311397bbfc63f11153a7c441479ecd5140ee2d8",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-10-24-43",
+      "sha256": "04067e9edacb2f93fe5a11bc667066509669e1068f50eeae9c1b269537305dc7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-34-42",
+      "sha256": "897bbb44d91645553548c39fe6b704a30855a4b7f8b5bf91c709189ec82f7435",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-10-35-11",
+      "sha256": "a595f20378c645afad59aa6a5c237bbae7856d34417adc72d1d082cea3e0f5d0",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "12.07.2022-10-36-27",
+      "sha256": "1ba72afa54ba1681a783ffccaeee6805c20a07adec8680b3b0583142cbd7aad2",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.07.2022-10-36-52",
+      "sha256": "d4c9850b6a6241cf4205a20514b22b945474b716614dca28abe1097604462364",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.07.2022-10-37-24",
+      "sha256": "5ac08e28fb7e5c620c4608f2e08e6e86a4d03d11c321fa8b50e1ef7a605b9a93",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "12.07.2022-10-38-53",
+      "sha256": "2662a791f8a24e91afc69a4d56f8bd5baefb0e6331cc513e129759d9dcc63d2a",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "12.07.2022-10-43-58",
+      "sha256": "52c544227fef2639c74a2fcbd855efc0fb7d5cf911a65e04471f526b991a5ca2",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "12.07.2022-10-47-35",
+      "sha256": "b3272aaaa3af783efa8bcc969ce0547bce5f4044f140d1095ed923a4df24817b",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "13.04.2022-10-30-06",
+      "sha256": "3d3eb8f945d312b570e3b594ca1c0af15e713d3d4d4401b230ae64ac4ea963e4",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "13.04.2022-10-41-17",
+      "sha256": "bf2b34f0a8dc006121f2164364ca778b8a64545d68d200c19efe2ab9879e932c",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "13.04.2022-13-32-12",
+      "sha256": "e39e80d7234f3c1b0ae46fc71b77bb853b882f2a5ddad34b9506ef39483aa0ea",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "13.04.2022-15-28-54",
+      "sha256": "71c411af97e099d6af7871d40a3154c852241199522b9c00617a96102b1c56c0",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "13.04.2022-15-29-47",
+      "sha256": "fdc9d8df4004de1ba781c49368da14017be653486ad7f970018bd2059bc6850b",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.04.2022-15-35-11",
+      "sha256": "80eebe805a0675d884e32114fce9de64c5c8ab5bb2de8bc9830f8cc275efb2c4",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.04.2022-15-50-49",
+      "sha256": "a97be913491259776278b306af464085eeaaf8fe669033ed4daee56b7ae2006c",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "13.04.2022-16-01-22",
+      "sha256": "5a27cc61146d389d27a66e5c43852f67de0b0b629dd08a412802f834b99e434f",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "13.07.2022-13-33-43",
+      "sha256": "929717ce89b51d32903fded6ac297515cd490e5f598b0992f2df429cb231650a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.07.2022-13-34-28",
+      "sha256": "4d05a81ad7d2cdacb2c981ff5b889b01522f9630dd47c562e3f277efe294878e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "13.07.2022-13-36-03",
+      "sha256": "552a5b902529c6501cd2d2138c616257359aef9cf55bf666cfc3d6feee6447d1",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.07.2022-13-38-37",
+      "sha256": "c43492340e2392f969f860509ec9fe19b12a9641a8ee5c18fc13fb12148431b2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "13.07.2022-13-39-58",
+      "sha256": "2e63740b4f5b97ecafeea938e27a1cdc98e3dd269453cad98ee7db6b38baa005",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "13.07.2022-13-41-01",
+      "sha256": "e0d4efe2ed61a3ccc82ea752bcd2a82025a1a154dedf8dc6ca9f341dc2343f6a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.07.2022-13-52-12",
+      "sha256": "9438440204c8cf8c5a8ec554597e5d18c9c35916e54c7e541e9239085bac330c",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.07.2022-13-54-49",
+      "sha256": "7db205be6b1b6fc27f5ded29c0d355240089a0d535aef81bce81d49077054837",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "13.07.2022-13-55-13",
+      "sha256": "27e0ce7c3fa2fb1affc96c3de1db55243632e489bf61d35e11098c11abfbc7d1",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "14.04.2022-09-55-47",
+      "sha256": "c98a768d469eaae82ee4af6d7d70fa434a9d8efd1166f152c377b323983d8911",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "14.04.2022-10-23-11",
+      "sha256": "ca56d711ab259883dd7e7a5bab65ec31ae447645059c5b99c0cda9bd83c6bf05",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "14.04.2022-10-41-18",
+      "sha256": "7e75638cd321dbe3a025e30eec8f83e81e64e07e143ed7cba784dffb9f426ca0",
+      "n_boxes": 12
+    },
+    {
+      "imagem_id": "14.04.2022-10-48-08",
+      "sha256": "cbcf13032445f3eddb3be4189c2e5373bf2e941f9c19ee676c2c4d1d6f67a15f",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "14.04.2022-13-16-18",
+      "sha256": "7091799594a2be1597768501254e93fe20723fd18b5840a3e415ab184609912c",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "14.04.2022-13-20-21",
+      "sha256": "e76f15c4a0ba16fc18e4d7e11075c6b382a7f318330b37f9c94a5eac256c6c20",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "14.04.2022-13-21-28",
+      "sha256": "9146e1de0038693362f079c780a2464f189ab8231becdc63e9e0281e3d0082bc",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "14.04.2022-13-36-15",
+      "sha256": "99629dc4e3ef16583cb414bd93250e4cfed98ec621da2573b7e36245552876e7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "14.04.2022-13-46-39",
+      "sha256": "f57417fb8c4d37833df2c656cb063728e07338a0a36c5a4e5492c84627ed9dd9",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "14.04.2022-13-51-11",
+      "sha256": "aba60b9d2cb671ad792adc39961bfb9a1eed7e7cf388991a521f8390d2526894",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "14.04.2022-14-00-08",
+      "sha256": "6018a0b44b1a208f37275249ed1dec09dea7725e1b6521f6c827168896d344c5",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "14.04.2022-15-13-37",
+      "sha256": "fb77e2f41ad6aad775d8466daf615102ba329b8a778ea3b29c9256b88ca15b97",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "14.04.2022-15-25-29",
+      "sha256": "bcddbe5f1fb70c404fc9f8670ce781cc20f5225d5f0e9e82f1e1a83f64620228",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "14.04.2022-15-29-32",
+      "sha256": "44ac9e8de67c21fb2cfdbccb1893ea230612d1ac57823edd6946721867ef5311",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "14.04.2022-15-37-33",
+      "sha256": "1a70e483972c603f6df0d3a10bf7c6a136c8702e661b70f6337497f7d6e30d65",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "14.04.2022-15-45-32",
+      "sha256": "b550ac69b7975312d358fc1a1d2dd561a6907054df2fca83ccb0bc4b85089d0f",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "14.04.2022-15-53-50",
+      "sha256": "6c61896aefe6f281bebc08be46a57f89fa3c3f6d3218a4f644a3015a9c4b0d13",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "14.04.2022-15-55-58",
+      "sha256": "0b60347fb5c2f24dc95796f8e884f02202fe50c921ae6026dff8797ce5f5efba",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "18.04.2022-09-35-14",
+      "sha256": "312d37c7598a806e51bfb8fb76877fd6bb508e0b5d901afdc41509ef21ad74b3",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "18.04.2022-09-51-01",
+      "sha256": "0419eb2d861ddadedab0f7eb29d5800a6aea383b72fe1f0067ce0ac6be829b0d",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "18.04.2022-10-32-05",
+      "sha256": "31a96473771868265a450019c99aed0c57cc4655710c3f045bc1f8c3c3638d50",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "18.04.2022-10-56-38",
+      "sha256": "dfc192bc807bcda2d64fd6a0fba78515682e769f829b26e9d6a45db8c41cf222",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "18.04.2022-11-03-25",
+      "sha256": "d3552598c417ed6101d43e5b03314e8414dd341905828029ca86a9d9975a7deb",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "18.04.2022-13-35-05",
+      "sha256": "5cbca14d0769aa9ce59f5a1283e0a44984cac0b0f1bd3c62959c0852716e2ede",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "18.04.2022-13-41-55",
+      "sha256": "0043d0bb82af68164ae93c7772875e67c081dc193046ee79ee3695688bc565e0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "18.04.2022-13-49-49",
+      "sha256": "97d4788f66503873a3fb55633474ba4c2e04b1d66821e6099e01775a6a7a03ab",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "18.04.2022-13-51-58",
+      "sha256": "b018ff08e2a1c80f99c91850993d505da669b4cdeccb7327899fd0d162377c5e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "18.04.2022-13-55-27",
+      "sha256": "7df449afa2aa9a088d3c297351352fbad169a2dee3b6a226a4e168fc3b043e7c",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "18.04.2022-13-59-09",
+      "sha256": "7a3dc13bca4fc36176c1b76f7f73b80e939894e2a0434863911baae754fb25b2",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "18.04.2022-14-34-15",
+      "sha256": "e859379a1f3817a99802f6084eeb285fe93e1e5f8c3c23e90ae1d2a428643937",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "18.04.2022-14-35-28",
+      "sha256": "2544b40dd7cc2b7fc0bd69de6549aa09cb5945120494bd4684f9dbb88a25c833",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "18.04.2022-14-47-34",
+      "sha256": "edd1618d1d6fa8abbeb8078c514aad927bf59029732e66e43dfe27d89c063350",
+      "n_boxes": 8
+    },
+    {
+      "imagem_id": "18.04.2022-15-02-58",
+      "sha256": "fb81fd6906ff1305e3df516829e49572a174944757f11fd1029a7762eb919364",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "20.04.2022-09-27-08",
+      "sha256": "269cf3d8dfafd131936f6d7426b7c78608b6609c86df472d015727609c834a4b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "20.04.2022-09-40-15",
+      "sha256": "82f4fb10449bbdcdc4a4e66b39e969049c6d254720ba5d7512030df0f3d3c254",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "20.04.2022-09-44-29",
+      "sha256": "2f6081af2821173a6f07d56c08f2182131c1da623eeb8fa0611849fad106ac35",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "20.04.2022-10-04-44",
+      "sha256": "9fa5584539755ff44bc4271845d40d915ac2b9ba4e61986f7971df6e252db85d",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "20.04.2022-10-10-07",
+      "sha256": "92d7c27505f0fd719e16f2bf6640e32fef9315e8cef850e4ebfffa8ba1e6d9b3",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "20.04.2022-11-02-09",
+      "sha256": "b7465a146f02650df39b0793dafc948edf39d043518d6436c8807e597a2770fd",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "20.04.2022-11-15-34",
+      "sha256": "2731163257b0f999a427413eff608040087bcb1d73380e32de6f97bd50f13c41",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "20.04.2022-11-21-50",
+      "sha256": "84b90522ef1fc134aa39695670ce98170f77508d2a29183d3c7ba6cb3b524ff7",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "20.04.2022-11-24-28",
+      "sha256": "9c0642169fc0109ce0e771a5a3a04252203fb1435730d238fe6d71a46d3a778a",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "20.04.2022-11-25-24",
+      "sha256": "1ef7f98a42c9c293757d4a570ab5f8ea2fc4dface739023b03db42907f32c9a2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "20.04.2022-11-29-29",
+      "sha256": "42e9ae545aef377c268068ad9da433840e2885157df5385ba5167d86b0cfa808",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "20.04.2022-11-41-54",
+      "sha256": "4baec5ac8914446db9f97c04efd192a415283db563b749363d627a9e2d395581",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "22.06.2022-14-01-26",
+      "sha256": "158b8d1fde4e79f2c0a430439df82137f028fdcc7c98c9ed4755283eaaff21cd",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.06.2022-14-04-04",
+      "sha256": "50b0e908c2c20de62a4d1da2065144b1535ab76eef30816d287aed8a0d901439",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.06.2022-14-10-38",
+      "sha256": "757e696399334041cd5f311ece75dc1ab84474b52809ac62d5a2a18fe686479a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.06.2022-14-30-56",
+      "sha256": "fa059a2af1cfe500638f55000b361e7b439da56ee4105ad197532f4cdd682d9a",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "22.07.2022-09-52-41",
+      "sha256": "d4af7b9db9f96e58fc7a25d0c41422915c7ecd5f969d0b7110e09aa7d6c02330",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-10-05-40",
+      "sha256": "65ec952e358a9647ac299ec3172e337f7134a151a5428bacbb9f8fdb5c1f7c26",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-10-06-54",
+      "sha256": "1e49ac13766fcd82aa51810ad98591af5dfe5f7978799793f32579851cbc4441",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-10-59-35",
+      "sha256": "8b0fc9e9d57874888752940bde77a09389cbdb8952199ed802a6fef0dcfc6411",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-11-00-07",
+      "sha256": "ce376bd4cbef501874a4695e3e8ad91957f7d76411da35a03aea6bb92a2379d2",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-11-09-12",
+      "sha256": "49231ec3ca42cd14fef2176dd5ed6c16fa1592f5c9627724dff378ff73d7347b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-11-10-48",
+      "sha256": "6351e8e3838c893eeb0694e285701802369edaa6c693ba914c10fb5b5d5c51ce",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-11-15-06",
+      "sha256": "53f641ba80565bb60a53a8e6551e937cfd2e4d9d2c7b2e50f0aa2938fdc054e5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-11-17-01",
+      "sha256": "f0753c635b510eb3a01270007f212908b611a434f57c4f3d3253e68da2c32d8d",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-11-22-09",
+      "sha256": "3699c3b5977734fb7059dd8d292befff78ba5c14dc8dd4f6a84d44fa92169cc7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-13-57-32",
+      "sha256": "e3a4efa3cb5e6dd3c489aacba3e698145c41dc572c971bf360fc10764f1fdfd7",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "22.07.2022-13-59-00",
+      "sha256": "2fff3603c94379e63849db32ab5f4202dd9e6e6fcf956b85ee7e5bcaa4db2f93",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "22.07.2022-14-03-33",
+      "sha256": "18d10a9759d5cf59cfeb05b0264c622958cb9d78164d8cb2dd7d2da880fe983f",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "22.07.2022-14-04-19",
+      "sha256": "91990fa777f7dee30484a2be27ac33f00ab0e5174f92014a7334ab155e168c87",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "22.07.2022-14-07-10",
+      "sha256": "33b891c7699c8843a2436164075614e8c1b2da2e10a4796b8f77ddffb2406df5",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "22.07.2022-14-08-38",
+      "sha256": "5fbc676c199c2aea2f3fb6e2edd487c08c20f1f9339254a64257c353f29d487b",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "22.07.2022-14-13-40",
+      "sha256": "d24bb393de51fa71aa100a296e5f2051a90f94113c57f9cec051d4a57aa97870",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-14-14-35",
+      "sha256": "71985ae96cc11bc3c22d9bfdf1cf9c68d55d6fb1d28888d3582b974ccd8b2046",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-14-18-01",
+      "sha256": "f018cad16867f3001e5decb5ab0514df4141a4f572bf41fc92f14bc21a4665b5",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-18-19",
+      "sha256": "5190a3a97e59122e1448925878c05cd2c78902c76d439035219f34e0220a469f",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-21-51",
+      "sha256": "268e5ce4d1853d2137714f8bd9a2dbeb19c05bdcf636601a3bed15c378c51c8e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-23-58",
+      "sha256": "fb422121af0995c67964600260bf410a79fdf7c4ffda02aed2665bd6fd6a3659",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-24-34",
+      "sha256": "c574c87b83a1bc8400a9e81c664319574b7e0779bcca77b233a79f485105780b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-29-39",
+      "sha256": "08cd973bada43cfb7d3c4f78fd496dfb732c343bca2576731759029944337e9f",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "22.07.2022-14-30-56",
+      "sha256": "ded17bed2c2485e91fb9e4a8f5f85244285f7104ddb7be81cf7b453821c8174c",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "22.07.2022-14-36-38",
+      "sha256": "9d6efcb861e9c60e1c9216eb7bb9005c3d797f60ff2a122f889738789e1e1020",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-14-37-03",
+      "sha256": "0eae6938f87c750794e74169c54da94cfeb1f8caf454ca47524b60f8f504ea05",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-15-42-06",
+      "sha256": "e4b46b48c9c68943c154d7ad1ff4327e5603beedc3db683a718ef56f3ae5bf1d",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "22.07.2022-15-47-49",
+      "sha256": "74787e31bdf8c094178303a07dd6a663c95b3061bdc014c14037ccb86ce1ca21",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-15-53-52",
+      "sha256": "e19374a4a72da71b580088f580e071a51b02a58428b07f24223890772643a38f",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "22.07.2022-15-59-51",
+      "sha256": "d4b56696d5fd497c5fc72e9d624c749d48c35db8196d9c53e9bd754110a0307a",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "22.07.2022-16-00-44",
+      "sha256": "554e4d721c0c8eb9d511a33a793b004a65833ef29b55225dcede9618605415dd",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-08-42-18",
+      "sha256": "de06490b83883fd12bc3c61eeaae4693d8613b9bb656852255413466bbddf503",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "23.06.2022-08-54-11",
+      "sha256": "0fac1a52db179581a494eedeb54046c17ad745faf68bcd56899e7c646d40339c",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-14-28",
+      "sha256": "c60b28c0694e51c0a8d2575a699fc443a2e736d159a8b3a4fc072acf1dc46443",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-21-05",
+      "sha256": "4bf22f5137582c0d974127557e0991897d214cd568de54a358995f2602d61307",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-21-50",
+      "sha256": "ef4218d22d4ea93cd46fe96b556c01f7ed5824194e205f26d8186861e1f808fa",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-42-06",
+      "sha256": "abe7c4fa9934036751f8b034acd79eb67c416cfa6129306fa65a496439b2a4f2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-45-06",
+      "sha256": "5dae1d64e72daa2f873335a7986d7de438b836ac8fe67fd0959b289ff1c294fc",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-09-46-10",
+      "sha256": "441414a2d2675f66e47351a025c81fbd6dd169b031b05d83c33d28c772778dde",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-09-47-49",
+      "sha256": "5597f6d8617f78c96342d5ce6a6fc349b3a3e7824e026abd7257ce73a3546503",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "23.06.2022-09-59-27",
+      "sha256": "e1640e18cecbe8bbab97c715636be2f8fcc0109d91c7243d8abbb4b6e700aeee",
+      "n_boxes": 11
+    },
+    {
+      "imagem_id": "23.06.2022-10-59-14",
+      "sha256": "fac04a254d7df3a028d03f3782873a89f2def4a8893fa5b382be5867286f0543",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "23.06.2022-11-05-35",
+      "sha256": "32673caea6b6358804ee8477a0d813af8e77180954c418ea3c1be6bafb2a8734",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-11-22-14",
+      "sha256": "3e166bfc83e23f7e490675c48d52dc1a1a4f317e0b1af690b09c76858a322221",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-13-49-46",
+      "sha256": "4d1834e24fc2f42b3afc854322ba4ed1de53e388a5f306ed5beff0c2248245d3",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-13-53-40",
+      "sha256": "5db4f864e2d887472e5abfbe4cd3ff8c191740afe5d342529d68afd2dac37860",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "23.06.2022-14-04-49",
+      "sha256": "b8ffddadfa2cbf90f2b1b1432b3fc02d0b226d285e558ff3915f3ec4c13f0f9d",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "23.06.2022-14-08-16",
+      "sha256": "e13c9b36eaf64cf34ab5e2a7f14a7644e7132ccab438756cde467c2f931883f2",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "23.06.2022-14-14-01",
+      "sha256": "9279b68c11af86dc0053a35703351a5de82e735559b9b2550646ff9051bfcd10",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "23.06.2022-14-26-27",
+      "sha256": "1321ecbe13b2871891adf8efdab3a8f083ccf41189e5ed12a4e2814b91f6018a",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "23.06.2022-15-02-41",
+      "sha256": "29f0fec1fdb18ff7f618c1a82ab85d2249fc7418f8966ad270e0ff027b2c363e",
+      "n_boxes": 15
+    },
+    {
+      "imagem_id": "23.06.2022-16-09-40",
+      "sha256": "0647caca07e70a848fdef9a1bd28bfa35c842cd7ac84aa674f42a147171197b8",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "23.06.2022-16-22-50",
+      "sha256": "a1ff614f35c9709f628b0be2b2089ea1ded5edc2603fcaa207c64b5f75698fdc",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "24.06.2022-09-33-01",
+      "sha256": "a2581ebe61039a6787b36643ed5381926832c816c09b9e5d1d5a3ae752955fac",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-09-44-35",
+      "sha256": "3ff63c14d8fbd43817fcab0da0c4b4649e2a7e74727c6cb5d238cda963748808",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "24.06.2022-10-13-22",
+      "sha256": "ea60325ab2ff10215085c69826eb6f3e45d49a96c54cf55c043700b5e11ddde0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-10-19-48",
+      "sha256": "0c5bc9923f6dbd29506f0d6842421eab2e2d13927bea3ed2cd993cf13272c726",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-10-21-31",
+      "sha256": "0809ed9ea3f5d8655c92275114eac7dc13aff37bb4ce12a7e06c3c4c75495041",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-10-22-11",
+      "sha256": "3d5a995528d0be482ed395afc90e4534533e15a31be34cd9ebec9a45eae7af1b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-10-24-08",
+      "sha256": "de6bf6b9a4eb6a5652c644d54938f09b133e829a86fbca576508a348467e95c7",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "24.06.2022-11-03-17",
+      "sha256": "fda4642fb0c7130910ff1a8a1df26ffc99bfb9434924f40f9bb51eaf7b1640e6",
+      "n_boxes": 7
+    },
+    {
+      "imagem_id": "24.06.2022-11-09-47",
+      "sha256": "0637e6df47a95671ad2c1bbaae6a6c7bdd4e06ab453facb285b8e9f56056bfc8",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-11-21-30",
+      "sha256": "d6a967db45f5e36100f137357297a9521856ff02e3a660a00d4dc0aec47cab41",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-13-58-40",
+      "sha256": "c096d7a1d9c7929ee9e73e58e3b5bd9d3d5e4f5df246c22474c53ed7618a5d5c",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-14-13-05",
+      "sha256": "b792c5f976e2172a17a1f7b9255860332f90b150be7dc180e7d690fd9087e867",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-14-43-05",
+      "sha256": "d918a803872ced595a22352b5be76f7039102d38996a8b7386868131a5ac0bf2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-14-45-26",
+      "sha256": "2d0d98e12cbff5fbca2fc916ce86c38c0233d0ac453fbf0df830c3d9ec51e568",
+      "n_boxes": 8
+    },
+    {
+      "imagem_id": "24.06.2022-14-55-05",
+      "sha256": "368ea599436e14e9f52391f530f452728a22a3f98563dda54b7e2ccb7819403a",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-14-55-43",
+      "sha256": "6deebba8d328b97f990c8b4ed360d6d460f2fc3a0b366a6f81fd13c206b7131c",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "24.06.2022-15-13-52",
+      "sha256": "7fb0c88f3813b8f414c5173dc747b3f36febd3ce453b8feaca815aa0e5fc8e4f",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "24.06.2022-15-37-14",
+      "sha256": "5494f9a24a6ff09b4577ed5b44bcb2eedf520a1ba2f6ea25f9733f5136f55863",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "24.06.2022-15-41-54",
+      "sha256": "45f28d2515bac2615798275cd61460d5acc60ef32233f0311aedb964dc331ab0",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "24.06.2022-15-51-20",
+      "sha256": "8514a45ed727dd76262813beed3139867cacdc3a9632137da919b0674d24d918",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "24.06.2022-16-04-44",
+      "sha256": "bf9562d8d9179093fde8f33d3a894acbab763991efa664cd39c2cd17d732b9c4",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "25.04.2022-16-04-01",
+      "sha256": "c4771ca2a206caa5e88eb6dec9940b8a615c4a58eb3bdff7e460e42aa40a46d9",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "25.04.2022-16-05-16",
+      "sha256": "37066127b06309cd6c61977af61b8a468a35ef86e390de62d9eb0fd618bc0cf6",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "27.04.2022-08-47-30",
+      "sha256": "8a6f904957d408899f16e2211d509ace14c9ac21da2aa646c775a5177c3e03ab",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "27.04.2022-08-51-10",
+      "sha256": "ee17d69473862194193a5399c94b020f1d6e3e29cfd956afba849c9068563ef3",
+      "n_boxes": 8
+    },
+    {
+      "imagem_id": "27.04.2022-09-21-36",
+      "sha256": "a86d3c1e5a3298eae12db5b4ecadd35926da3d79045c28519e26839bb4b1a365",
+      "n_boxes": 20
+    },
+    {
+      "imagem_id": "27.04.2022-09-26-21",
+      "sha256": "6553df2de445ccb80f91b2443140386f5680823657aa960e85c2d6ebb2c391a1",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "27.04.2022-10-29-50",
+      "sha256": "ed5d937132df27e88d73781cef0549089d22e04226e64f928781c0b49c62d5ce",
+      "n_boxes": 12
+    },
+    {
+      "imagem_id": "27.04.2022-10-33-57",
+      "sha256": "68f8b72b6e7679f9229e641a6ca329997da99ce1a55a2c7819c8e4c0ff2b091a",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "27.04.2022-10-35-35",
+      "sha256": "9bcb3f3ba22799aa208c217c2ffbbf4de6f3d4068859621ea02961678d2f4dd8",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.04.2022-10-37-55",
+      "sha256": "26b6dd2414f90b4f5dead92c16cc3e331834bc57033d0e4c5fa09fdef7f233b9",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "27.04.2022-10-54-42",
+      "sha256": "d0125d22381ecb6d78d735350e71731cd46dccc184b823b1f68f9d61b559ec89",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.04.2022-11-09-57",
+      "sha256": "52b475979762c19eadfbcff69e3a30f1ebbe143b7414096227d9d37f2823766c",
+      "n_boxes": 9
+    },
+    {
+      "imagem_id": "27.04.2022-11-14-48",
+      "sha256": "2a896daef0001af7574f9abada8b9b5bd63b451f96173fee97b8f39150975b9a",
+      "n_boxes": 11
+    },
+    {
+      "imagem_id": "27.04.2022-11-26-26",
+      "sha256": "75b3fc2a3621e7e6095715be6cc7926c9ead3feb5af27e42bf71650f309e7cc5",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "27.04.2022-15-43-51",
+      "sha256": "94b20e6f32789324eae3fea5d4ba9cac5df325da8577226db7de62a695cd0ee3",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.04.2022-16-08-24",
+      "sha256": "de6b2235b9fc1b1fc293b65afe7cbcf577d14adb9a4717b81826b5668c919621",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-08-41-14",
+      "sha256": "3dd1f6013cbfee1ec37b514df28242566e467bf9c9e5a36c61b1ec4208123dee",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-08-46-42",
+      "sha256": "700414bab73b9ec1e40d73c78a2d2e543e1aeab52c878d5fc29316a0c4650fc9",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-08-47-25",
+      "sha256": "9b66295865ce3c433db11e154ebdbcb0084f8fd5b4980b9be8d3439dec34df93",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-08-48-03",
+      "sha256": "e0a4ef26b8d0ea698c750f300a005c1cc16f25274634bab6998e4733ba3a754e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-04-40",
+      "sha256": "8276fa953926d9281f1f50fd46022b22be44265a3c80cf74bf296afc878f79f6",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-05-15",
+      "sha256": "1473479aa6a9580e9039d2a4a96ea2c61e4dd32254160e08fc4011025ab58b18",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-06-53",
+      "sha256": "d2cdec19d968c9d99093529ae39aa85e246b92d4519d7aaba6e58621dfa23a5b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-10-40",
+      "sha256": "cbe29e3c758bb5fa513feaab0e788a57e920bed931bdac4adc6de33591e8c0f3",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-16-25",
+      "sha256": "253a41168e9f305f6cb6593ff3fb5dfabb0fe09db727e98fe86e8be0eef22a13",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "27.06.2022-09-19-24",
+      "sha256": "cb8c454069a880e8a018964f553f3ca5f40b786d2e73fc24e5b4f3b03fbda1ab",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-09-21-08",
+      "sha256": "af8faf3f5f770d6f9aa5c1caaca17f492e3e4fc81f6d43b34805b9206249df0b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-09-50-06",
+      "sha256": "64477b38f1467f7ad93cf56412bbd197c22e8ad110dfb78549a849cd30a6cc7b",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "27.06.2022-10-05-02",
+      "sha256": "3301cc43133ddc7664d8a74ea7e4655a04bfe30cb7e0a7df73914c17cb0432aa",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-13-59-48",
+      "sha256": "49de48968a174ce06924dcd2c171925bd8e1c4d7f920042d9d98609f16778f8b",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-14-02-51",
+      "sha256": "cb2cdf19c7bcad2354f21e7a1727d1aaae651802f9a02daad8df1eb1a51e021c",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-14-35-45",
+      "sha256": "a9ba8a4cb73b0c981c53f2cbe06edde2d530eed689c7dd78515d11b45de6ffc1",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-14-36-27",
+      "sha256": "4baca34fff8da852f511a5492ff230c9d358c1a94e0437b76a1c2862031bec05",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-14-46-48",
+      "sha256": "58fed9be3f8dab808ed3441de7c33497a857c803ee6c939ea94052c04d475b82",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "27.06.2022-14-54-53",
+      "sha256": "01c38ced2a72032fcfcba4cc694ff04629744f044f42d4c31dda4346d231bf8f",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-15-08-57",
+      "sha256": "27c4c9a06ae4791dc1bf4152bca7a25e32c863936b63c70d5b5e6d7e449198b2",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-15-09-33",
+      "sha256": "66aab18e3b69037bdf758a3b4bad866a4d2af9f819bbd3eb0ca6a637bd452afa",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-15-11-43",
+      "sha256": "96fcc830bd55564f8698ff9303259b47e3ae61768be04c9c53d44081579784cd",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "27.06.2022-15-18-14",
+      "sha256": "a3b201b6ea5ebe276e075ec51ec5a6311ddc505c8936e5b65932e17f4b523b8e",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "27.06.2022-15-47-35",
+      "sha256": "fc3820dabf4c167eee1b4003bef16b080da8a507953d40ea2b85f94326a4f074",
+      "n_boxes": 2
+    },
+    {
+      "imagem_id": "27.06.2022-15-54-23",
+      "sha256": "91b2072c4c7a02232bd01c9843525929b5ff55cb3700048e25213926641a7bb7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "27.06.2022-16-00-16",
+      "sha256": "cb2c9a5e1a4be624a2753a5f77cd0fce035db7208c072817d39574dbc48db95f",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-08-23-18",
+      "sha256": "39f1e00ea397bfb86cd196b070495ca07a5cf0320dbb7214285c8c9e3d28ed7d",
+      "n_boxes": 17
+    },
+    {
+      "imagem_id": "28.06.2022-08-33-38",
+      "sha256": "8fef87f66438284eb2086e9c4c169c27b752a6b66e49f42e36e8ea8bf0a58294",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "28.06.2022-08-55-16",
+      "sha256": "93597f7c80ae26983328819d651c7d80f51b09c53dba08effdce85bb1b811b55",
+      "n_boxes": 6
+    },
+    {
+      "imagem_id": "28.06.2022-09-13-10",
+      "sha256": "f65fa0f44dcdc217e18df1928023ac3c2b62091595f7aac7b62992e251d9e946",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "28.06.2022-09-18-12",
+      "sha256": "723d5bd186589b562e072c03d9346482d93a4677519b1e31a68ca07fc53a5f5a",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "28.06.2022-09-36-30",
+      "sha256": "dbc96d354bf40479e0fae0e0b91fc17ef68aaa9daa965b81f832096c2c8bc4b5",
+      "n_boxes": 4
+    },
+    {
+      "imagem_id": "28.06.2022-09-39-44",
+      "sha256": "636d7b611502072ffd4a9f2557237c0cc967507f0860974e0a257aac9e6781df",
+      "n_boxes": 5
+    },
+    {
+      "imagem_id": "28.06.2022-10-05-45",
+      "sha256": "2c742addf2bf6dc4568c1350743a73254bf83f2c66d06da2961397a5fa8a71e9",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-10-14-39",
+      "sha256": "0d7cf517da40d304c69d2b7c562aaf4738e22ca5c2f1b375b370af4bb1993e4e",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-10-17-19",
+      "sha256": "cc21d6847d31e4bb4739c36c4e36d04db1c846d67b4080645d46a55d2f5127a1",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-10-25-30",
+      "sha256": "2682e92e0009278e1e0a738ed7b73f03c095bfa71d16e1aa299468a1048018c7",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-10-26-41",
+      "sha256": "d1883ffc54f4c92af3d02d99bca71c1fa0b559771c2b1519157c699aef5c9c52",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-10-59-47",
+      "sha256": "f402f27d4b82231c1eee0b47e278bfc7917bfe8495e599385807767d142c99ff",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-11-09-53",
+      "sha256": "a468a6179e051630b6bd359b1d8b65c72defda074d303a7e689afc325d65efb0",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "28.06.2022-11-22-00",
+      "sha256": "29f7eb89f3872b01d77dc55af27fea834a26458d40b36397bfb48d8854dfcf1b",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "28.06.2022-11-26-19",
+      "sha256": "600707d145a2e94828fd48a6655020f6ca397d82b8c2111b148cac8e334bc142",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "28.06.2022-11-40-12",
+      "sha256": "3f6c0ad48fcd9620f04c4e75753b6778351a1852aa5fa25f9564c73813a189bc",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "29.04.2022-14-34-39",
+      "sha256": "ebeac090c9c7dae48a5d5b96015135376b9fb5bef165f2620bd4e38f3401fb79",
+      "n_boxes": 3
+    },
+    {
+      "imagem_id": "29.04.2022-14-53-55",
+      "sha256": "40ef16ea670c8249044ca60ee5de54d1701b889fcc769dfcc35cb246e710eeaf",
+      "n_boxes": 1
+    },
+    {
+      "imagem_id": "29.04.2022-15-07-47",
+      "sha256": "f442daa346a73f5e7e1b9db8527e7a4991c19534750b87d255223eb4ccc99e50",
+      "n_boxes": 2
+    }
+  ]
+}

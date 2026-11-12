@@ -1,0 +1,10 @@
+{
+  "origem": "labels_final_manifest.json de cada split de CITRA-3D-Real (Drive de Daniela), gerados em 2026-09-01 pela tarefa -1.4 do repositório das Fases 0–5 (labels_final copiada de labels_single_class); cópias sem alteração enviadas em 2026-11-12",
+  "nota": "Cada manifesto traz SHA-256 e contagem de caixas por arquivo de rótulo; permite verificar deriva de labels_final. comparacao_rotulos_vs_espelho.json: saída de scripts/comparar_rotulos_mirror.py (2026-11-12), labels_final contra as três versões de rótulos do citra-mirror.zip.",
+  "arquivos": {
+    "labels_final_manifest_test.json": "f788a9005fbbfb2946b2794c3750d33d30b5aea30802867736fd935a5c92aaa4",
+    "labels_final_manifest_val.json": "77013f53290f333061c7ad1276a7b4570f155ef66cc9de5f428a0732f56dd365",
+    "labels_final_manifest_train.json": "5feebf29cb5403d163ac5355b801db2db83cf062613776edce504a9c4ab9c048",
+    "comparacao_rotulos_vs_espelho.json": "c532443ffea5b147f39ce25711555a51ec3cda3d6ca312abacbc77b9a166cce5"
+  }
+}
