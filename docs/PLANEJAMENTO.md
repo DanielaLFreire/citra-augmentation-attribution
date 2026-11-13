@@ -191,7 +191,7 @@ Nenhuma destas tarefas consome GPU de treino, e as quatro bloqueadas ou a propor
 | 5 | Materializar imagens inteiras e rótulos YOLO das quatro fontes públicas, com deduplicação por conteúdo e perfil por imagem | Daniela, no Colab (CPU); Claude prepara o script | Nada | A fazer |
 | 6 | Piloto de métrica: reavaliar os 10 modelos de controle da Fase 5 com desfechos alternativos | Daniela, no Colab (GPU leve, só inferência); Claude prepara o script | `last.pt` e `results.csv` da Fase 5 no Drive | A fazer |
 | 7 | Busca sistemática de literatura nas três frentes | Claude | Nada | A fazer |
-| 8 | Proposta de alteração no iflens: gravar condições e semente por imagem, prompt de preservação de objetos, arquivo de condições restrito | Claude redige; autor da ferramenta decide | Concordância do autor | Proposta redigida em 2026-11-13; falta envio e resposta |
+| 8 | Proposta de alteração no iflens: gravar condições e semente por imagem, prompt de preservação de objetos, arquivo de condições restrito | Claude redige; autor da ferramenta decide | Concordância do autor | Proposta respondida por Daniela em 2026-11-13; código implementado em ramo local (patch em docs/fontes/iflens_patch/); falta fork, pull request e confirmar plano pago da API |
 | 9 | Piloto novo do braço generativo: cerca de 100 edições de imagens do treino, com auditoria de todas as caixas | Autor do iflens gera; Daniela e Claude auditam | Tarefa 8 | Bloqueada |
 | 10 | Script de triagem com SAM 3 e de grades de recortes para a auditoria manual | Claude | Nada | A fazer |
 | 11 | Plano de renderização do GenShip com parâmetros sorteados e gravados | Claude redige; equipe do GenShip executa | Respostas 1 a 3 do questionário do Genship | Bloqueada |
