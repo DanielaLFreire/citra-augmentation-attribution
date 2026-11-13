@@ -193,7 +193,7 @@ Nenhuma destas tarefas consome GPU de treino, e as quatro bloqueadas ou a propor
 | 7 | Busca sistemática de literatura nas três frentes | Claude | Nada | A fazer |
 | 8 | Proposta de alteração no iflens: gravar condições e semente por imagem, prompt de preservação de objetos, arquivo de condições restrito | Claude redige; autor da ferramenta decide | Concordância do autor | Proposta respondida por Daniela em 2026-11-13; código implementado em ramo local (patch em docs/fontes/iflens_patch/); falta fork, pull request e confirmar plano pago da API |
 | 9 | Piloto novo do braço generativo: cerca de 100 edições de imagens do treino, com auditoria de todas as caixas | Autor do iflens gera; Daniela e Claude auditam | Tarefa 8 | Bloqueada |
-| 10 | Script de triagem com SAM 3 e de grades de recortes para a auditoria manual | Claude | Nada | A fazer |
+| 10 | Script de triagem com SAM 3 e de grades de recortes para a auditoria manual | Claude | Nada | Parte manual pronta (`scripts/auditoria_recortes_iflens.py`: folhas cegas, planilha, resumo com IC de Wilson); falta a triagem com SAM 3 |
 | 11 | Plano de renderização do GenShip com parâmetros sorteados e gravados | Claude redige; equipe do GenShip executa | Respostas 1 a 3 do questionário do Genship | Bloqueada |
 | 12 | Adendo de pré-registro (fatores, braços, seeds, métrica primária, previsões com lista de execuções) | Daniela e Claude | Tarefas 4, 5, 6 e 9 e respostas do questionário do Genship | Bloqueada |
 
