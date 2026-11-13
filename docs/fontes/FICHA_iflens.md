@@ -51,3 +51,14 @@ Ramo `reprodutibilidade-condicoes-restritas` (commit `3b9ca6b`), 3 imagens, seme
 - Reprodutibilidade entre as duas execuções: hash da entrada, sementes, condições originais classificadas, variação e prompt **iguais nas 3 imagens**; a imagem gerada **difere** (a edição não recebe semente), como previsto. Amostra pequena (3 imagens × 2); a classificação com `seed` do Groq é "melhor esforço", não garantia.
 - Resolução da saída: área ~1,06–1,07 MP com proporção preservada (desvio ≤ 0,05%): 8000×5331 → 1264×842; 4654×2555 → 1399×768; 3502×3024 → 1112×960. Não é "altura fixa de 768" (isso valia só para a proporção do piloto). Imagens do CITRA em 1920×1080 sairão perto de 1365×768: **decidir antes do treino se as geradas são reamostradas para a resolução original** (caixas normalizadas continuam válidas; o tamanho em pixels dos objetos pequenos muda).
 - Não verificado: preservação dos objetos (exige comparação visual com a original).
+
+## Primeiro teste com imagens do CITRA (2026-11-13; 5 imagens de treino, semente 42, prompt v1)
+
+Condições da D21 cumpridas antes do envio: chave do Gemini paga (declarado por Daniela), ZDR global ativo no Groq (tela mostrada por Daniela). Imagens de treino apenas, sem os 3 quadros em quarentena, rótulos `labels_final`. Conferência visual, original × gerada com as caixas desenhadas nas duas (painel enviado por Daniela; as imagens não entram no repositório, que não guarda imagens do CITRA):
+- Caixas continuam sobre os objetos em 3 das 5 imagens (07.07 09-26-33, 11.07 15-51-56 com alvos minúsculos difíceis de ver nesta escala, 12.04 13-27-48 com 8 caixas e o texto do casco legível).
+- **Objeto novo sem caixa** em 04.05 15-20-13: aparece um navio grande no horizonte à direita; no original não é visível (pode ter sido inventado ou estar escondido pela neblina removida).
+- **Objeto novo e embarcação alterada** em 28.06 10-22-39: aparece uma boia sem caixa; o navio dentro da caixa parece outro (cor e aparência diferentes), com fumaça. Conferir ampliando.
+- Aderência às condições irregular: a chuva leve é quase invisível na 11.07; o céu "noon/clear" fica saturado e com aspecto de foto de banco de imagens, bem diferente do original neblinoso (deslocamento de domínio a considerar na atribuição).
+- Classificação de hora do dia: `afternoon` para os quadros de 09:26 e 10:22 (pelo nome do arquivo; relógio das câmeras não verificado).
+Amostra de 5: não estima taxas. Em 2 de 5 houve objeto adicionado (falso negativo no treino se o rótulo for herdado); o piloto anterior tinha 22% de caixas inválidas. **Novo critério de auditoria:** "objeto adicionado sem rótulo", além de apagado, sem objeto, deslocado.
+Próximo: prompt v2 (proíbe adicionar objetos e repintar cascos) via `--prompt-file`, mesma semente e mesmas 5 imagens para comparar com o v1; congelar o prompt antes do piloto.
