@@ -11,7 +11,7 @@ from pathlib import Path
 
 CAMPOS = ["image", "master_seed", "input_sha256", "original_conditions", "variation_conditions",
           "generation_prompt", "generation_model_returned", "response_id", "output_sha256",
-          "same_size_as_input", "status"]
+          "same_aspect_ratio", "status"]
 
 
 def carregar(pasta):
@@ -34,8 +34,8 @@ def conferir_pasta(pasta):
             problemas.append(f"{nome}: PNG ausente")
         elif hashlib.sha256(png.read_bytes()).hexdigest() != r.get("output_sha256"):
             problemas.append(f"{nome}: SHA-256 do PNG não bate com o registro")
-        if r.get("same_size_as_input") is False:
-            problemas.append(f"{nome}: tamanho da saída difere da entrada {r['input_size_wh']} -> {r['output_size_wh']}")
+        if r.get("same_aspect_ratio") is False:
+            problemas.append(f"{nome}: proporção da saída difere da entrada {r['input_size_wh']} -> {r['output_size_wh']} (desvio {r.get('aspect_ratio_deviation')})")
         o, v = r.get("original_conditions", {}), r.get("variation_conditions", {})
         if any(o.get(k) == x for k, x in v.items()):
             problemas.append(f"{nome}: variação repete condição original")
