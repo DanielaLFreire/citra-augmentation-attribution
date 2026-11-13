@@ -42,3 +42,12 @@ Mudanças propostas na ferramenta antes de qualquer geração nova: gravar condi
 **Crédito:** o autor da ferramenta será coautor (Daniela).
 
 **Geografia (D19):** a lista de condições segue a afirmação de Daniela sobre as câmeras (litoral do Rio de Janeiro, Baía de Todos os Santos, Santos). As duas páginas da Marinha que ela citou não puderam ser abertas por mim; registrar a fonte oficial no artigo.
+
+## Teste de fumaça real (2026-11-13, Colab, imagens de exemplo do repositório, não do CITRA)
+
+Ramo `reprodutibilidade-condicoes-restritas` (commit `3b9ca6b`), 3 imagens, semente 42, duas execuções com o código atual (`saida2`, `saida3`).
+- Gemini `gemini-3.1-flash-lite-image` (biblioteca `google-genai` 3.3.0, mais nova que a do `pyproject`) respondeu; `response_id` e modelo retornado gravados.
+- Groq: `qwen/qwen3.6-27b` **não existe mais** (NotFoundError); o padrão passou a `qwen/qwen3.8-27b`. Um arquivo de 8000×5331 px gerou BadRequest antes de a imagem ser reduzida para a classificação; depois da correção as 3 passaram.
+- Reprodutibilidade entre as duas execuções: hash da entrada, sementes, condições originais classificadas, variação e prompt **iguais nas 3 imagens**; a imagem gerada **difere** (a edição não recebe semente), como previsto. Amostra pequena (3 imagens × 2); a classificação com `seed` do Groq é "melhor esforço", não garantia.
+- Resolução da saída: área ~1,06–1,07 MP com proporção preservada (desvio ≤ 0,05%): 8000×5331 → 1264×842; 4654×2555 → 1399×768; 3502×3024 → 1112×960. Não é "altura fixa de 768" (isso valia só para a proporção do piloto). Imagens do CITRA em 1920×1080 sairão perto de 1365×768: **decidir antes do treino se as geradas são reamostradas para a resolução original** (caixas normalizadas continuam válidas; o tamanho em pixels dos objetos pequenos muda).
+- Não verificado: preservação dos objetos (exige comparação visual com a original).
