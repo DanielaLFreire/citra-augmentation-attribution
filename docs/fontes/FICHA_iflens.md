@@ -62,3 +62,12 @@ Condições da D21 cumpridas antes do envio: chave do Gemini paga (declarado por
 - Classificação de hora do dia: `afternoon` para os quadros de 09:26 e 10:22 (pelo nome do arquivo; relógio das câmeras não verificado).
 Amostra de 5: não estima taxas. Em 2 de 5 houve objeto adicionado (falso negativo no treino se o rótulo for herdado); o piloto anterior tinha 22% de caixas inválidas. **Novo critério de auditoria:** "objeto adicionado sem rótulo", além de apagado, sem objeto, deslocado.
 Próximo: prompt v2 (proíbe adicionar objetos e repintar cascos) via `--prompt-file`, mesma semente e mesmas 5 imagens para comparar com o v1; congelar o prompt antes do piloto.
+
+### Prompt v1 × v2 nas mesmas 5 imagens (2026-11-13; mesma semente, mesmas variações sorteadas, 1 geração por prompt)
+
+v2 = v1 + "não adicionar nem remover nenhum navio, boia, barco, ave, pessoa ou objeto, mesmo ao longe; não repintar casco, superestrutura ou carga; não ampliar" (arquivo `prompt_v2.txt`, hash no registro `base_prompt_sha256`). Painel original | v1 | v2 com as caixas de `labels_final`:
+- 04.05 15-20-13: v1 acrescentou um navio no horizonte; v2 não.
+- 28.06 10-22-39: v1 acrescentou uma boia e trocou a aparência do navio; v2 manteve o casco vermelho e branco e não mostrou a boia.
+- **07.07 09-26-33: v2 piorou.** A embarcação da caixa superior ficou esmaecida e deslocada para baixo da caixa (caixa vazia); v1 mantinha o navio dentro da caixa.
+- 11.07 15-51-56 e 12.04 13-27-48: caixas preservadas nas duas versões.
+**Não se pode atribuir a diferença ao prompt:** a chamada de edição não tem semente e cada prompt foi gerado uma vez por imagem; o esmaecimento da 07.07 pode ser acaso. Falta medir a taxa de falha por prompt com repetições e auditoria por caixa (tarefa 10), em ≥ 30–50 imagens, antes de congelar o prompt. Regra a pré-registrar: se imagem reprovada na auditoria for regerada, isso é seleção; ou descarta-se sem regerar e a taxa de descarte é resultado.
