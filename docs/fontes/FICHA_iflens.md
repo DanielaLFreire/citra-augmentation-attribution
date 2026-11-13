@@ -16,3 +16,13 @@ Ferramenta: [iflens](https://github.com/Starblessed/iflens), commit `beb5e7d`. C
 | Licença / termos | **desconhecido** (termos de uso do Gemini para treino) | Questionário, comum Q1 | — |
 
 Mudanças propostas na ferramenta antes de qualquer geração nova: gravar condição original, variação sorteada, seed, modelo e data por imagem; instrução explícita de não mover, remover nem adicionar objetos; arquivo de condições restrito.
+
+## Leitura do código (2026-11-13, commit `beb5e7d`)
+
+- Seleção de imagens por `random.choice` sobre uma pasta, sem semente nem lista fixa.
+- Classificação por `qwen/qwen3.6-27b` via Groq com `temperature=1`, sem semente; resposta bruta não gravada.
+- `get_variation` troca todas as classes de condição de uma vez (exceto as de `KEEP_CLASSES`), sem semente; no exemplo do repositório são `people`, `time_of_day`, `precipitation` (o `planet` fica).
+- Prompt base: pede "sem outras mudanças significativas de composição" e lista as descrições das condições; nenhuma instrução de preservar objetos.
+- Só o PNG de saída (`AUG_<nome>.png`) é gravado; falhas são impressas e a imagem é pulada; `mime_type` fixo em `image/png`.
+- Licença MIT (Dannylo C. Mauricio). Requer Python 3.13+, chaves `GEMINI_API_KEY` e `GROQ_API_KEY`.
+- Proposta de alterações enviada ao autor: https://claude.ai/artifact/J64KiEHBYo5wHwaoRmHS1P (sete mudanças, conjunto restrito de condições, registro por imagem, oito perguntas, entre elas se Daniela pode usar a ferramenta ela mesma e sob que autorização e plano de API as imagens do CITRA foram enviadas aos provedores).
