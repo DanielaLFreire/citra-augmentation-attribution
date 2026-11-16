@@ -40,9 +40,10 @@ def test_gerar_e_resumir(tmp_path):
     assert len(list(out.glob("A*.png"))) == 4
     linhas = list(csv.DictReader(open(out / "auditoria_modelo.csv")))
     assert sum(r["tipo"] == "caixa" for r in linhas) == 8 and sum(r["tipo"] == "imagem" for r in linhas) == 4
+    assert sum(r["tipo"] == "original" for r in linhas) == 4
     chave = {r["codigo"]: r["base_prompt_sha256"] for r in csv.DictReader(open(out / "chave_cega.csv"))}
     for r in linhas:  # preenche: prompt h2 tem uma imagem reprovada
-        r["categoria"] = "0" if r["tipo"] == "imagem" else "valida"
+        r["categoria"] = "valida" if r["tipo"] == "caixa" else "0"
     alvo = next(c for c, h in chave.items() if h == "h2")
     for r in linhas:
         if r["codigo"] == alvo and r["tipo"] == "caixa" and r["item"] == "1":
@@ -60,3 +61,18 @@ def test_resumir_rejeita_categoria_invalida(tmp_path):
     with open(out / "auditoria_modelo.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(linhas[0].keys())); w.writeheader(); w.writerows(linhas)
     assert aud.main(["resumir", "--csv", str(out / "auditoria_modelo.csv"), "--chave", str(out / "chave_cega.csv")]) == 1
+
+
+def test_sem_objeto_ambiguo_e_ruido_nao_conta(tmp_path):
+    orig, saidas = _montar(tmp_path); out = tmp_path / "aud"
+    aud.main(["gerar", "--saidas", saidas[0], "--originais", str(orig), "--out", str(out), "--semente", "1"])
+    linhas = list(csv.DictReader(open(out / "auditoria_modelo.csv")))
+    for r in linhas:
+        r["categoria"] = "valida" if r["tipo"] == "caixa" else "0"
+    def gravar():
+        with open(out / "auditoria_modelo.csv", "w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(linhas[0].keys())); w.writeheader(); w.writerows(linhas)
+    linhas[0]["categoria"] = "sem_objeto"; gravar()
+    assert aud.main(["resumir", "--csv", str(out / "auditoria_modelo.csv"), "--chave", str(out / "chave_cega.csv")]) == 1
+    linhas[0]["categoria"] = "sem_objeto_original"; gravar()
+    assert aud.main(["resumir", "--csv", str(out / "auditoria_modelo.csv"), "--chave", str(out / "chave_cega.csv")]) == 0

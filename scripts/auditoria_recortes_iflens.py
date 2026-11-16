@@ -7,10 +7,19 @@ Duas ações:
            e chave_cega.csv (código -> prompt, condições; não abrir antes de terminar a auditoria).
   resumir  Lê o CSV preenchido e a chave e calcula, por prompt, a fração de imagens reprovadas com IC de Wilson 95%.
 
-Categorias por caixa: valida, apagada, sem_objeto, deslocada, alterada, nao_avaliavel.
-Por imagem: objeto_adicionado = 1 se há embarcação/boia/objeto novo sem caixa (0 caso contrário).
-Reprovada = alguma caixa apagada/sem_objeto/deslocada/alterada OU objeto_adicionado = 1. A unidade de análise é
-a imagem (caixas da mesma imagem não são independentes).
+Categorias por caixa (compare original e gerada):
+  valida              o mesmo objeto está dentro da caixa nas duas imagens
+  apagada             havia objeto na caixa do original e ele sumiu na gerada
+  deslocada           o mesmo objeto aparece na gerada, mas fora da caixa (a caixa não o cobre mais)
+  alterada            o objeto da gerada é outro (forma, tamanho ou aparência muito diferentes)
+  sem_objeto_original a caixa do ORIGINAL já não tinha objeto (erro do rótulo; não é falha da geração)
+  nao_avaliavel       o alvo é pequeno demais para decidir (explique em observacao)
+Por imagem (0 ou 1):
+  objeto_adicionado    a gerada tem embarcação, boia ou outro objeto que NÃO existe na original, rotulado ou não
+  original_sem_rotulo  a original tem embarcação visível sem caixa (erro do rótulo; não é falha da geração)
+Reprovada = alguma caixa apagada/deslocada/alterada OU objeto_adicionado = 1. Caixas sem_objeto_original e
+imagens com original_sem_rotulo são contadas à parte (ruído de rótulo herdado) e não entram na taxa de falha da
+geração. A unidade de análise é a imagem (caixas da mesma imagem não são independentes).
 
 Uso (Colab ou local; só precisa de opencv e numpy):
   python -m scripts.auditoria_recortes_iflens gerar --saidas SAIDA1 [SAIDA2 ...] --originais DIR [--rotulos DIR] --out DIR --semente 42
@@ -27,8 +36,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-CATEGORIAS = ["valida", "apagada", "sem_objeto", "deslocada", "alterada", "nao_avaliavel"]
-INVALIDAS = {"apagada", "sem_objeto", "deslocada", "alterada"}
+CATEGORIAS = ["valida", "apagada", "deslocada", "alterada", "sem_objeto_original", "nao_avaliavel"]
+INVALIDAS = {"apagada", "deslocada", "alterada"}
+DESCONSIDERADAS = {"nao_avaliavel", "sem_objeto_original"}
 LARGURA_INTEIRA = 800
 ALTURA_RECORTE = 240
 MIN_LADO_PX = 96
@@ -139,6 +149,7 @@ def gerar(args) -> int:
         for i, (cls, *_ ) in enumerate(caixas, 1):
             modelo.append({"codigo": codigo, "tipo": "caixa", "item": i, "classe": cls, "categoria": "", "observacao": ""})
         modelo.append({"codigo": codigo, "tipo": "imagem", "item": 0, "classe": "", "categoria": "", "observacao": ""})
+        modelo.append({"codigo": codigo, "tipo": "original", "item": 0, "classe": "", "categoria": "", "observacao": ""})
         chave.append({"codigo": codigo, "imagem": r["image"], "base_prompt_sha256": r.get("base_prompt_sha256", ""),
                       "saida": r["_dir"], "original_conditions": json.dumps(r.get("original_conditions", {})),
                       "variation_conditions": json.dumps(r.get("variation_conditions", {})), "response_id": r.get("response_id", "")})
@@ -147,41 +158,48 @@ def gerar(args) -> int:
         with open(out / nome, "w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=campos); w.writeheader(); w.writerows(linhas)
     print(f"{len(chave)} folhas em {out}. Preencha auditoria_modelo.csv: caixa -> categoria em {CATEGORIAS}; "
-          "imagem -> categoria = 0 ou 1 (objeto_adicionado). Não abra chave_cega.csv antes de terminar.")
+          "linha tipo=imagem -> 0 ou 1 (objeto_adicionado); linha tipo=original -> 0 ou 1 (original_sem_rotulo). "
+          "Não abra chave_cega.csv antes de terminar.")
     return 0
 
 
 def resumir(args) -> int:
     chave = {r["codigo"]: r for r in csv.DictReader(open(args.chave, encoding="utf-8"))}
-    por_img: dict[str, dict] = defaultdict(lambda: {"caixas": [], "adicionado": None})
+    por_img: dict[str, dict] = defaultdict(lambda: {"caixas": [], "adicionado": None, "orig_sem_rotulo": None})
     for r in csv.DictReader(open(args.csv, encoding="utf-8")):
-        cat = r["categoria"].strip().lower()
+        cat = str(r["categoria"] or "").strip().lower()
+        if cat.endswith(".0"):
+            cat = cat[:-2]
         if not cat:
             continue
         if r["tipo"] == "caixa":
+            if cat == "sem_objeto":
+                print(f"{r['codigo']} caixa {r['item']}: 'sem_objeto' é ambíguo; use 'apagada' (havia objeto no original e sumiu) "
+                      "ou 'sem_objeto_original' (a caixa do original já não tinha objeto)"); return 1
             if cat not in CATEGORIAS:
                 print(f"categoria inválida {cat!r} em {r['codigo']} caixa {r['item']}"); return 1
             por_img[r["codigo"]]["caixas"].append(cat)
         else:
             if cat not in {"0", "1"}:
-                print(f"objeto_adicionado deve ser 0 ou 1 em {r['codigo']}"); return 1
-            por_img[r["codigo"]]["adicionado"] = int(cat)
-    faltam = [c for c in chave if c not in por_img or por_img[c]["adicionado"] is None]
+                print(f"{r['tipo']} deve ser 0 ou 1 em {r['codigo']}"); return 1
+            por_img[r["codigo"]]["adicionado" if r["tipo"] == "imagem" else "orig_sem_rotulo"] = int(cat)
+    faltam = [c for c in chave if c not in por_img or por_img[c]["adicionado"] is None or por_img[c]["orig_sem_rotulo"] is None]
     if faltam:
         print(f"{len(faltam)} imagens sem auditoria completa (ex.: {faltam[:5]})")
-    grupos: dict[str, dict] = defaultdict(lambda: {"n": 0, "reprov": 0, "adic": 0, "cx": 0, "cx_inv": 0})
+    grupos: dict[str, dict] = defaultdict(lambda: {"n": 0, "reprov": 0, "adic": 0, "cx": 0, "cx_inv": 0, "ruido_cx": 0, "ruido_img": 0})
     for c, d in por_img.items():
-        if c not in chave or d["adicionado"] is None:
+        if c not in chave or d["adicionado"] is None or d["orig_sem_rotulo"] is None:
             continue
         g = grupos[chave[c]["base_prompt_sha256"] or "(prompt padrão)"]
-        av = [x for x in d["caixas"] if x != "nao_avaliavel"]
+        av = [x for x in d["caixas"] if x not in DESCONSIDERADAS]
         inv = sum(x in INVALIDAS for x in av)
         g["n"] += 1; g["adic"] += d["adicionado"]; g["cx"] += len(av); g["cx_inv"] += inv
+        g["ruido_cx"] += sum(x == "sem_objeto_original" for x in d["caixas"]); g["ruido_img"] += d["orig_sem_rotulo"]
         g["reprov"] += int(inv > 0 or d["adicionado"] == 1)
-    print("prompt (SHA-256)           imagens  reprovadas (IC95% Wilson)    c/ objeto adicionado   caixas inválidas/avaliáveis")
+    print("prompt (SHA-256)           imagens  reprovadas (IC95% Wilson)    c/ objeto adicionado   caixas inválidas/avaliáveis   ruído herdado (caixas s/ objeto; imagens s/ rótulo)")
     for h, g in sorted(grupos.items()):
         lo, hi = wilson(g["reprov"], g["n"])
-        print(f"{h[:24]:<26} {g['n']:>7}  {g['reprov']:>3} = {g['reprov']/g['n']:.0%} ({lo:.0%}–{hi:.0%})   {g['adic']:>3}                    {g['cx_inv']}/{g['cx']}")
+        print(f"{h[:24]:<26} {g['n']:>7}  {g['reprov']:>3} = {g['reprov']/g['n']:.0%} ({lo:.0%}–{hi:.0%})   {g['adic']:>3}                    {g['cx_inv']}/{g['cx']}                      {g['ruido_cx']}; {g['ruido_img']}")
     return 0
 
 
