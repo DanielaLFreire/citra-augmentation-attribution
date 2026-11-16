@@ -72,3 +72,13 @@ O pacote `iflens.rar` tem cerca de 34,7 mil imagens em três árvores (`input/`,
 5. Existe metadado de condição por dia ou por gravação (clima, luz, maré, tráfego)?
 6. Esta divisão foi usada por outras equipes ou em outros trabalhos? Se o teste já foi usado, saberíamos quantas vezes?
 7. Seria possível refazer a divisão em blocos de dias (por exemplo, separar alguns dias inteiros para teste)? Há restrições, como dias raros com condições específicas que precisem ficar no treino?
+
+## Genship 3D, segunda rodada (2026-11-16; depois das respostas do João)
+
+Enviada por Daniela ao João. Perguntas:
+1. Nas 444 imagens aparecem 36 com `RainON` (de `Lancha_0529_871YD_RainON_DirtON_TerrenoON` a `Lancha_0564_332YD_RainON_DirtON_TerrenoON`), enquanto a resposta 5 diz que só houve `RainOFF`. Qual está certa?
+2. As pastas `Amanhecer`, `Manha` e `Entardecer` correspondem aos perfis `Sunrise`, `Sunny` e `Sunset`? É o único registro da hora do dia nas imagens existentes?
+3. A amostra de 444 foi exportada com qual versão do exportador quanto ao filtro de antenas e mastros e à regra de oclusão? É possível desligar o filtro de antenas numa nova extração, para a caixa incluir o mastro, como nas anotações do CITRA?
+4. Quem pode rodar uma nova extração, já que o repositório só tem o executável? Quanto tempo leva?
+5. Na nova extração: JSON por imagem com câmera, FOV, perfil solar, alinhamento com o sol, estado do mar, e **todas as embarcações, anotadas e suprimidas, com o motivo da supressão** (A17a); versão do exportador igual para todas as imagens e registrada (A17b); poucas imagens por cena em muitas cenas, com semente da cena registrada (A17c, A17d).
+6. Licença dos modelos 3D e permissão para descrever e publicar o conjunto; como citar o GenShip e o autor.
