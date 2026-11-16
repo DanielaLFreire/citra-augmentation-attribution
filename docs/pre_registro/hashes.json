@@ -53,6 +53,12 @@
       "caminho": "manifests/exclusao_R_A13.csv",
       "sha256": "f1a6c6542ce60a8039192cdaf0e2b529b00424ca969e4d316219e2e734fd5588",
       "tamanho_bytes": 155994
+    },
+    "Respostas_Genship_2026-11-16.pdf": {
+      "registrado_em_utc": "2026-11-16T10:40:03.500258+00:00",
+      "caminho": "data/respostas_equipes/Respostas_Genship_2026-11-16.pdf",
+      "sha256": "58930f0d3be5c07a115d80d8b6dbb10760aba5c56d07ffde192dce4e2948a566",
+      "tamanho_bytes": 202919
     }
   },
   "adendos": {}
