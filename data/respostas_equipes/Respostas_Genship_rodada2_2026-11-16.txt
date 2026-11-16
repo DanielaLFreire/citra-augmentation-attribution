@@ -1,0 +1,20 @@
+Resposta do João (responsável pelo GenShip) às perguntas da segunda rodada, colada por Daniela em 2026-11-16. Texto sem alteração.
+
+1. O nome do arquivo está correto.
+
+2. Sim. Atualmente, além dos sufixos no nome do arquivo (como RainOFF_DirtON_TerrenoON), esse é o único registro das condições climáticas. Futuramente, pretendo implementar a exportação de um arquivo .json contendo todos os parâmetros de ambiente e câmera  utilizados na geração das imagens daquela embarcação.
+
+3. Essa primeira amostra foi gerada na versão anterior, que utilizava um algoritmo de oclusão mais simples. A regra atual não se baseia apenas na remoção isolada de antenas ou mastros, ela considera a largura da embarcação para filtrar esses detalhes. Assim, se a embarcação for estreita/pequena, o filtro acaba englobando os mastros na caixa, como ocorre no caso dos barcos a vela.
+
+4. No momento, apenas usuários convidados têm acesso ao repositório. Quanto ao desempenho, o tempo de geração varia de acordo com o hardware utilizado. Para esse dataset de 444 imagens, o processo levou aproximadamente 5 minutos em uma máquina com a seguinte configuração:
+
+CPU: Intel Core i7-12700H (12ª geração, 2.30 GHz)
+RAM: 32 GB
+GPU: NVIDIA GeForce RTX 3060 Laptop (6 GB)
+SO: Windows 11 (64 bits)
+
+5. Posso implementar essa alteração para gerar o arquivo .json com os parâmetros exatos de cada captura. Além disso, na versão atual do simulador, essas embarcações suprimidas já não recebem anotação.
+
+6. Todos os modelos 3D foram criados pelos artistas do projeto SIMPASS. Acho muito pertinente incluir o nome dos dois artistas nos créditos do trabalho também, vou entrar em contato com eles para alinhar isso.
+
+Por fim, estou planejando publicar um artigo sobre o GenShip e disponibilizar o projeto para acesso via GitHub ou Zenodo.

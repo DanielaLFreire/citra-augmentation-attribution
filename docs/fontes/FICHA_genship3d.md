@@ -39,3 +39,10 @@ Afirmações da equipe. As conferências marcadas com **[medido]** vêm de `data
 | Sem rótulo (Q12) | 11 imagens sem `.txt` são amostras negativas (nenhuma embarcação válida) | Tratar como fundo se entrarem no treino |
 
 **[medido]** adicionais: 222 Barca, 119 Lancha, 92 Passageiro; ids de 36 a 732; distância à embarcação de referência de 170 a 1.637 jardas (mediana 518); largura mediana da caixa 84 px e altura 36 px (1920×1080); 37 das 1.772 caixas têm lado menor < 10 px.
+
+### Segunda resposta do João (2026-11-16; `data/respostas_equipes/Respostas_Genship_rodada2_2026-11-16.txt`)
+- Nome do arquivo está correto: 36 imagens `RainON` (D22). Nome e pastas de hora são o único registro das condições nas 444; o `.json` com parâmetros de ambiente e câmera está nos planos dele ("futuramente").
+- Amostra de 444 gerada com versão anterior (oclusão mais simples). Versão atual: o filtro de antenas e mastros considera a largura da embarcação; em embarcações estreitas ou pequenas (veleiros) o mastro entra na caixa.
+- Repositório só para convidados. 444 imagens em ~5 min em i7-12700H, 32 GB, RTX 3060 6 GB, Windows 11.
+- **Não respondeu:** lista de embarcações suprimidas com motivo; cenas curtas e numerosas; semente da cena (A17).
+- Modelos 3D de dois artistas do projeto SIMPASS; João vai alinhar o crédito com eles. Licença não declarada. Ele planeja artigo sobre o GenShip e liberação no GitHub ou Zenodo (A22).

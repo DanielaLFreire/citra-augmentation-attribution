@@ -59,6 +59,12 @@
       "caminho": "data/respostas_equipes/Respostas_Genship_2026-11-16.pdf",
       "sha256": "58930f0d3be5c07a115d80d8b6dbb10760aba5c56d07ffde192dce4e2948a566",
       "tamanho_bytes": 202919
+    },
+    "Respostas_Genship_rodada2_2026-11-16.txt": {
+      "registrado_em_utc": "2026-11-16T14:49:19.210023+00:00",
+      "caminho": "data/respostas_equipes/Respostas_Genship_rodada2_2026-11-16.txt",
+      "sha256": "3190be18e0fe0ed033da6b0bbccff0e7d89197210f1ac36c00ba8f7befb9f211",
+      "tamanho_bytes": 1856
     }
   },
   "adendos": {}
