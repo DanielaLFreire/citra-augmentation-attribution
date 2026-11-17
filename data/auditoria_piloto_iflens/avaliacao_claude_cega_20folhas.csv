@@ -1,0 +1,21 @@
+codigo,objeto_adicionado,original_sem_rotulo,confianca,observacao
+A001,0,0,alta,
+A007,1,0,baixa,"barco pequeno e navio minúsculo no horizonte aparecem na gerada; não os vejo na original"
+A008,0,0,alta,
+A015,0,1,baixa,"barcos atracados junto ao muro, sem caixa, também na original"
+A016,0,0,media,
+A021,0,0,alta,
+A027,0,1,baixa,"barcos atracados junto ao muro, sem caixa, também na original"
+A029,1,0,media,"pequenos navios no horizonte aparecem na gerada; não os vejo na original (pode ser neblina removida)"
+A032,0,0,alta,
+A033,1,0,media,"boia escura no canto inferior direito só na gerada"
+A036,0,0,alta,
+A037,0,0,alta,
+A038,0,0,alta,
+A039,0,1,baixa,"casco laranja junto à ponte sem caixa, também na original"
+A040,0,0,media,"plataformas de petróleo sem caixa não contadas como embarcação"
+A042,0,0,alta,
+A047,0,0,alta,
+A051,0,0,alta,
+A052,0,0,baixa,"possíveis barcos pequenos sob a ponte e uma embarcação com mastro junto à cidade; escala não permite decidir"
+A058,0,0,media,"plataforma sem caixa não contada como embarcação"

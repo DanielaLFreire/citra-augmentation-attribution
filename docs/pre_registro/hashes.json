@@ -65,6 +65,12 @@
       "caminho": "data/respostas_equipes/Respostas_Genship_rodada2_2026-11-16.txt",
       "sha256": "3190be18e0fe0ed033da6b0bbccff0e7d89197210f1ac36c00ba8f7befb9f211",
       "tamanho_bytes": 1856
+    },
+    "avaliacao_claude_cega_20folhas.csv": {
+      "registrado_em_utc": "2026-11-17T02:05:41.391247+00:00",
+      "caminho": "data/auditoria_piloto_iflens/avaliacao_claude_cega_20folhas.csv",
+      "sha256": "583e7d7f6df7bd98f630bc37d8e1bcf77811c16be3bad0a2e6572fac30f98bf2",
+      "tamanho_bytes": 1049
     }
   },
   "adendos": {}
