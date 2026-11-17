@@ -1,0 +1,77 @@
+{
+ "prompts": {
+  "v1": {
+   "n_imagens": 30,
+   "imagens_reprovadas": 3,
+   "ic95_wilson": [
+    0.035,
+    0.256
+   ],
+   "caixas_avaliadas": 94,
+   "caixas_invalidas": 1,
+   "ic95_caixas": [
+    0.002,
+    0.058
+   ],
+   "objeto_adicionado": 3,
+   "original_sem_rotulo": 4
+  },
+  "v2": {
+   "n_imagens": 30,
+   "imagens_reprovadas": 9,
+   "ic95_wilson": [
+    0.167,
+    0.479
+   ],
+   "caixas_avaliadas": 94,
+   "caixas_invalidas": 6,
+   "ic95_caixas": [
+    0.03,
+    0.132
+   ],
+   "objeto_adicionado": 7,
+   "original_sem_rotulo": 4
+  }
+ },
+ "pareado": {
+  "nenhum": 21,
+  "so_v2": 6,
+  "so_v1": 0,
+  "ambos": 3,
+  "mcnemar_exato_p": 0.03125
+ },
+ "concordancia_claude_20folhas": {
+  "antes_de_Daniela_ver_as_avaliacoes_de_Claude": {
+   "objeto_adicionado": {
+    "concordancia": 0.9,
+    "kappa": 0.61,
+    "divergencias": [
+     "A029",
+     "A052"
+    ]
+   },
+   "original_sem_rotulo": {
+    "concordancia": 0.85,
+    "kappa": 0.0,
+    "divergencias": [
+     "A015",
+     "A027",
+     "A039"
+    ]
+   }
+  },
+  "final_revisada_nao_independente": {
+   "objeto_adicionado": {
+    "concordancia": 1.0,
+    "kappa": 1.0,
+    "divergencias": []
+   },
+   "original_sem_rotulo": {
+    "concordancia": 1.0,
+    "kappa": 1.0,
+    "divergencias": []
+   }
+  }
+ },
+ "notas": "Exploratório: geração sem seed, n=30 por prompt. 4 caixas em branco (A012#1,A013#1,A041#2,A060#7) foram classificadas como valida por Daniela na versão final. A versão \"antes\" ainda tem essas 4 em branco; o cálculo de concordância a usa apenas no nível da imagem."
+}

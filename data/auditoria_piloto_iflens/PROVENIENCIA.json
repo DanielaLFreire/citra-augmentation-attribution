@@ -6,10 +6,20 @@
     "audit_2.jpg": "af1f9c86863a797242d2755ed86a8f78069069415bb86247094e83e81468d774",
     "audit_3.jpg": "755ff4f65f009209c2948d19542639edce869423f453fee30c515109765f0b52",
     "auditoria_iflens_piloto.json": "8ab06d38d477fd7ffcf796836ca049e80d32f9abd532451921f13d6389ec611b",
-    "avaliacao_claude_cega_20folhas.csv": "583e7d7f6df7bd98f630bc37d8e1bcf77811c16be3bad0a2e6572fac30f98bf2"
+    "avaliacao_claude_cega_20folhas.csv": "583e7d7f6df7bd98f630bc37d8e1bcf77811c16be3bad0a2e6572fac30f98bf2",
+    "auditoria_daniela_final.csv": "2199c7ef2a597507598a08a894393384fcb2b79af0b95cbb0c88593aafeb88b2",
+    "auditoria_daniela_antes_de_ver_claude.csv": "f503e249773015ce9b1aa80a9de12df6b2b6d13c8172ba89543ba77c73ae69b1",
+    "chave_cega.csv": "b679308486a8d951cdd5f1808a6bb142af6854c70fcb3e9536bc17f079180a94",
+    "resumo_auditoria.json": "08437082146362e3df682cad8ab67b256a8c19f9a2a037d22f2013f025805cdd"
   },
   "avaliacao_claude_cega_20folhas.csv": {
     "origem": "Avaliação cega de Claude, nível da imagem (objeto_adicionado, original_sem_rotulo), de 20 folhas sorteadas com random.Random(2026).sample(range(1,61), 20) entre as 60 folhas do piloto de prompts (A001–A060). Feita em 2026-11-17 SOBRE o topo das folhas (imagem inteira original e gerada), reduzido; ANTES de ver as respostas de Daniela nessas colunas e sem conhecer a chave código-prompt.",
     "limites": "Não avaliei caixas: já havia visto quais caixas Daniela marcou como inválidas, então a avaliação por caixa não seria independente. Alvos minúsculos e horizontes com neblina não são decidíveis nessa escala (confiança baixa)."
+  },
+  "auditoria_piloto_prompts_v1_v2": {
+    "origem": "60 folhas cegas (A001–A060; 30 imagens geradas com o prompt v1 e as mesmas 30 com o prompt v2) preenchidas por Daniela em 2026-11-16/17 (avaliadora única nas caixas e no nível da imagem). Chave código→prompt em chave_cega.csv.",
+    "auditoria_daniela_antes_de_ver_claude.csv": "Versão preenchida ANTES de Daniela ver as divergências com as avaliações cegas de Claude; tem 4 caixas em branco (A012#1, A013#1, A041#2, A060#7) e A004 com o valor na coluna errada (item=1).",
+    "auditoria_daniela_final.csv": "Versão final revisada (corrigiu A004, A029, A052, A039, A015, A027 depois de ver as divergências; classificou as 4 caixas em branco como valida). A concordância com Claude nesta versão NÃO é independente.",
+    "limites": "Exploratório: geração sem seed, n=30 por prompt, avaliadora única, v1 e v2 geradas em lotes diferentes (v2 inclui reexecução saida_piloto_v2b de 9 imagens com classificação em cache)."
   }
 }

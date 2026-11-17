@@ -71,3 +71,20 @@ v2 = v1 + "não adicionar nem remover nenhum navio, boia, barco, ave, pessoa ou 
 - **07.07 09-26-33: v2 piorou.** A embarcação da caixa superior ficou esmaecida e deslocada para baixo da caixa (caixa vazia); v1 mantinha o navio dentro da caixa.
 - 11.07 15-51-56 e 12.04 13-27-48: caixas preservadas nas duas versões.
 **Não se pode atribuir a diferença ao prompt:** a chamada de edição não tem semente e cada prompt foi gerado uma vez por imagem; o esmaecimento da 07.07 pode ser acaso. Falta medir a taxa de falha por prompt com repetições e auditoria por caixa (tarefa 10), em ≥ 30–50 imagens, antes de congelar o prompt. Regra a pré-registrar: se imagem reprovada na auditoria for regerada, isso é seleção; ou descarta-se sem regerar e a taxa de descarte é resultado.
+
+## Auditoria cega do piloto de prompts v1 × v2 (2026-11-17; 30 imagens × 2 prompts)
+
+Dados e proveniência em `data/auditoria_piloto_iflens/` (`auditoria_daniela_final.csv`, `auditoria_daniela_antes_de_ver_claude.csv`, `chave_cega.csv`, `resumo_auditoria.json`). Unidade: imagem. Reprovada = alguma caixa apagada, deslocada ou alterada, ou objeto adicionado. Ruído herdado (`original_sem_rotulo`) não conta.
+
+| | v1 | v2 |
+|---|---|---|
+| Imagens reprovadas | 3/30 (10%; IC95% 3,5–25,6%) | 9/30 (30%; IC95% 16,7–47,9%) |
+| Objeto adicionado | 3 | 7 |
+| Caixas inválidas | 1/94 | 6/94 |
+| Originais com embarcação sem rótulo | 4 | 4 |
+
+Pareado: 21 nenhum, 3 ambos, 6 só v2, 0 só v1 (McNemar exato p ≈ 0,03). Contrário à expectativa: o v2, que proíbe adicionar objetos, adicionou mais. Sem explicação; pode ser ruído de geração (sem seed) ou efeito do prompt. **Exploratório; prompt não congelado.** Base provisória: v1.
+
+Concordância com a avaliação cega de Claude (20 folhas, nível da imagem), na versão de Daniela anterior a ver as avaliações de Claude: `objeto_adicionado` 90% (kappa 0,61; divergências A029, A052); `original_sem_rotulo` 85% (kappa 0,00; divergências A015, A027, A039; prevalência baixa). Na versão final revisada a concordância é 100%, mas Daniela já tinha visto as divergências, então não é independente. Daniela marcou A015 e A027 com confiança baixa (parece haver parte de um barco). Segundo avaliador independente continua necessário antes do artigo.
+
+Regra a pré-registrar: imagens reprovadas são descartadas, não regeneradas; relatar a taxa de descarte.
