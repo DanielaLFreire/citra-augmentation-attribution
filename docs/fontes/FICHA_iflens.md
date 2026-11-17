@@ -88,3 +88,17 @@ Pareado: 21 nenhum, 3 ambos, 6 só v2, 0 só v1 (McNemar exato p ≈ 0,03). Cont
 Concordância com a avaliação cega de Claude (20 folhas, nível da imagem), na versão de Daniela anterior a ver as avaliações de Claude: `objeto_adicionado` 90% (kappa 0,61; divergências A029, A052); `original_sem_rotulo` 85% (kappa 0,00; divergências A015, A027, A039; prevalência baixa). Na versão final revisada a concordância é 100%, mas Daniela já tinha visto as divergências, então não é independente. Daniela marcou A015 e A027 com confiança baixa (parece haver parte de um barco). Segundo avaliador independente continua necessário antes do artigo.
 
 Regra a pré-registrar: imagens reprovadas são descartadas, não regeneradas; relatar a taxa de descarte.
+
+### Calibração de um avaliador LLM cego contra Daniela (2026-11-17; exploratória)
+
+3 agentes Claude de contexto novo avaliaram as 60 folhas (`avaliacao_llm_cega_60folhas.csv`). Referência: planilha de Daniela anterior a ver as avaliações de Claude; 4 caixas em branco excluídas; A004 (imagem) lida como 0 por estar na coluna errada. Kappa com IC95% por bootstrap sobre folhas (2.000 reamostragens, semente 2026).
+
+| Campo | Concordância | Kappa [IC95%] |
+|---|---|---|
+| objeto_adicionado (60 imagens) | 95% | 0,83 [0,62; 1,00] |
+| original_sem_rotulo | 92% | 0,62 [0,23; 0,88] |
+| imagem reprovada | 95% | 0,86 [0,67; 1,00] |
+| caixa, 6 categorias (n=184) | 92% | 0,44 [0,06; 0,78] |
+| caixa, valida/inválida/desconsiderada | 93% | 0,52 [0,12; 0,85] |
+
+O LLM é mais sensível: marca objeto adicionado em 12 imagens (Daniela 9), embarcação sem rótulo em 10 (Daniela 5), `nao_avaliavel` em 10 caixas que Daniela marcou válidas e 2 caixas inválidas que ela marcou válidas. Com os rótulos do LLM, v1 reprova 4/30 e v2 11/30 (0 só v1, 7 só v2, 4 ambos; McNemar exato p ≈ 0,016): mesma direção do resultado de Daniela. Kappa por caixa é baixo e instável (poucas caixas inválidas; IC largo). Conclusão: serve como leitor adicional/triagem para imagem inteira; não substitui avaliador humano nas caixas. Limiar de kappa para uso no desfecho a fixar no adendo.
