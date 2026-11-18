@@ -2,5 +2,10 @@
   "origem": "Saída de scripts/embeddings_citra.py (commit 8093f93) rodado por Daniela no Colab (GPU Tesla T4) em 2026-11-18 sobre CITRA-3D.zip; JSON copiado como impresso, sem alteração.",
   "arquivo_fora_do_repositorio": "embeddings_citra/dinov2_base_448.npz no Drive do projeto (PROJETO_MARINHA); sha256 74bd449e97347a99243bccd13d3ad9ea2f228a01b7be4bc44e5acf7436f5a3ea. Fora do repositório por ser derivado de imagem privada.",
   "conferencia": "n por split 1.348 / 332 / 401 = 2.081, igual a labels_final (D12).",
-  "limites": "modelo_commit saiu null: na transformers 5.x o atributo usado pelo script não existe. A revisão exata dos pesos será obtida do cache do Hugging Face no Colab e registrada em campo separado; o script foi corrigido para capturá-la nas próximas execuções. Aviso de requisição sem token do Hugging Face: irrelevante para o resultado."
+  "limites": "modelo_commit saiu null: na transformers 5.x o atributo usado pelo script não existe. A revisão exata dos pesos será obtida do cache do Hugging Face no Colab e registrada em campo separado; o script foi corrigido para capturá-la nas próximas execuções. Aviso de requisição sem token do Hugging Face: irrelevante para o resultado.",
+  "modelo_commit_obtido_do_cache": {
+    "facebook/dinov2-base": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+    "como": "listagem de /root/.cache/huggingface/hub/models--facebook--dinov2-base/snapshots no mesmo Colab da extração, informada por Daniela em 2026-11-18",
+    "limite": "Inferido do cache da sessão; o JSON da extração mantém modelo_commit null."
+  }
 }
