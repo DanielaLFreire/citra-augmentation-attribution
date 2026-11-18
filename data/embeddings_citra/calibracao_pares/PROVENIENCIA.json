@@ -1,0 +1,13 @@
+{
+  "origem": "Respostas de Daniela aos 40 pares P01-P40 (protocolo D27/D28), enviadas em 2026-11-18, ANTES de ver a chave (chave_pares.csv) e antes de qualquer cálculo de tau.",
+  "arquivos": {
+    "folha_resposta_pares_daniela.csv": "2be12f7ddb17f180d8b8d3e69d77977487e3ddbe5e9e544f03d30a7f9fa278b1"
+  },
+  "contagem": {
+    "mesmo_alvo": 20,
+    "sim": 6,
+    "cena": 6,
+    "nao": 8
+  },
+  "limites": "Uma avaliadora, sem observações em nenhum par; a chave ainda não foi lida por Claude nem por Daniela."
+}
