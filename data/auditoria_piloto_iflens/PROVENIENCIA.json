@@ -15,7 +15,7 @@
     "auditoria_daniela_v3_com_tipo.csv": "348eafd6788c00a2fcefd4ea94f33491eea9f4e54f9954c9d932d271b2b778d8",
     "resumo_auditoria_v3.json": "b2c13aebb4e86f1f0645068d65c80984f893c4c693ea4cf1a8206862f79d1335",
     "auditoria_jose_com_tipo.xlsx": "fe77879c855a0bef18b0517480ed4d910583327f38d3987fe552b01d7741d257",
-    "DEFINICOES_auditoria_v4.md": "204f3e4e7954fddfc2c78f5b89a4d407dd9cdbc72876b62dfc26ba6c967a1ce3",
+    "DEFINICOES_auditoria_v4.md": "092735c985bec5c5865b552e64a40678c5ed1352e94fc9b8087c47067beac111",
     "reavaliacao_v4_daniela_caixas.csv": "6dec857c3e02a7d6d6e3e5ce398e149ed41eaca1d8a73f57c3c363fb9d5fdd6d",
     "reavaliacao_v4_daniela_imagens.csv": "b01126386c89c84a08be8411250b6db187e7fa3d2be9cd78a047c493cfccdf6e",
     "reavaliacao_v4_daniela_caixas_corrigida.csv": "94c8bbdd501ab9a720493cddfe17820cb24e0fd0ede6cae82bd22deb0d3c0836"
@@ -48,5 +48,6 @@
     "origem": "Reavaliação v4 das 30 caixas e 3 imagens por Daniela, 2026-11-18, feita sem ver as respostas do José na reavaliação v4.",
     "limites": "Ainda sem a reavaliação v4 do José; análise de concordância pendente.",
     "correcao": "Mesmo dia, antes de ver a reavaliação v4 do José: A022 #4 e #6 passaram de valida para degradada, pelo critério da Daniela \"nitidez que pode ser confundida com a paisagem\". Versão original preservada. Esse critério não está em DEFINICOES_auditoria_v4.md."
-  }
+  },
+  "DEFINICOES_auditoria_v4.md_revisao": "2026-11-18, antes de o José preencher a reavaliação v4: acrescentado o limiar de degradada (confundível com o fundo). A versão com hash anterior foi enviada só à Daniela; o José recebe esta."
 }

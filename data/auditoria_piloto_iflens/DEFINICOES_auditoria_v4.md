@@ -5,6 +5,7 @@ Motivo da revisão: no piloto, dois avaliadores independentes divergiram nas cai
 ## Por caixa (compare original e gerada; uma categoria)
 - `valida`: o mesmo objeto, reconhecível, está dentro da caixa nas duas imagens.
 - `degradada` (nova): o mesmo objeto, ainda reconhecível como embarcação na gerada, dentro da caixa, mas com perda de nitidez ou detalhe (borrado, menos contraste).
+  **Limiar:** marque `degradada` quando a perda de nitidez é suficiente para a embarcação poder ser confundida com o fundo ou a paisagem. Perda leve, em que a embarcação segue claramente distinguível, é `valida` (pode anotar "pouca nitidez" em `observacao`).
 - `apagada`: na gerada não se reconhece embarcação dentro da caixa. **Teste prático:** sem ver a caixa, você diria que há uma embarcação ali? Se não, é `apagada`, mesmo que reste uma mancha.
 - `deslocada`: a mesma embarcação aparece na gerada, mas fora da caixa (a caixa não a cobre mais).
 - `alterada`: o objeto da gerada é **outro** (forma, tipo ou tamanho muito diferentes). Perda de nitidez sozinha NÃO é `alterada`.
