@@ -102,3 +102,16 @@ Regra a pré-registrar: imagens reprovadas são descartadas, não regeneradas; r
 | caixa, valida/inválida/desconsiderada | 93% | 0,52 [0,12; 0,85] |
 
 O LLM é mais sensível: marca objeto adicionado em 12 imagens (Daniela 9), embarcação sem rótulo em 10 (Daniela 5), `nao_avaliavel` em 10 caixas que Daniela marcou válidas e 2 caixas inválidas que ela marcou válidas. Com os rótulos do LLM, v1 reprova 4/30 e v2 11/30 (0 só v1, 7 só v2, 4 ambos; McNemar exato p ≈ 0,016): mesma direção do resultado de Daniela. Kappa por caixa é baixo e instável (poucas caixas inválidas; IC largo). Conclusão: serve como leitor adicional/triagem para imagem inteira; não substitui avaliador humano nas caixas. Limiar de kappa para uso no desfecho a fixar no adendo.
+
+### Revisão v3 da auditoria: critério primário só com embarcação (2026-11-18; pós-hoc)
+
+Motivo: as 9 classes do CITRA são tipos de embarcação e o experimento usa `labels_single_class`; boia, ave e pessoa não são classe e não corrompem rótulo de detecção. Daniela revisou as imagens com objeto adicionado e registrou o tipo (`auditoria_daniela_v3_com_tipo.csv`, `resumo_auditoria_v3.json`). Critério definido depois de ver os dados: **exploratório**. Versões anteriores preservadas.
+
+| | v1 | v2 |
+|---|---|---|
+| Imagens reprovadas (caixa inválida ou embarcação adicionada) | 2/30 (7%; IC95% 2–21%) | 10/30 (33%; IC95% 19–51%) |
+| Embarcação adicionada | 2 | 8 |
+| Boia adicionada (secundário) | 0 | 1 (A033) |
+| Caixas inválidas | 1/94 | 6/94 |
+
+Pareado: 20 nenhum, 2 ambos, 8 só v2, 0 só v1 (McNemar exato p ≈ 0,008). Todo objeto adicionado, exceto uma boia, foi embarcação: a hipótese de que a diferença v1×v2 viesse de objetos irrelevantes não se sustenta. Os agentes cegos marcaram objeto adicionado também em A029 e A033 (Daniela: sem embarcação; A033 tem boia), tratados como desacordo entre avaliadores. A revisão de Daniela não é cega ao prompt.

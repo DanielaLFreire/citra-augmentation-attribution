@@ -11,7 +11,9 @@
     "auditoria_daniela_antes_de_ver_claude.csv": "f503e249773015ce9b1aa80a9de12df6b2b6d13c8172ba89543ba77c73ae69b1",
     "chave_cega.csv": "b679308486a8d951cdd5f1808a6bb142af6854c70fcb3e9536bc17f079180a94",
     "resumo_auditoria.json": "08437082146362e3df682cad8ab67b256a8c19f9a2a037d22f2013f025805cdd",
-    "avaliacao_llm_cega_60folhas.csv": "befee85f40a64e2903de2c3c67c84aa84269772861ad20fb1e4a08cf3bef319a"
+    "avaliacao_llm_cega_60folhas.csv": "befee85f40a64e2903de2c3c67c84aa84269772861ad20fb1e4a08cf3bef319a",
+    "auditoria_daniela_v3_com_tipo.csv": "348eafd6788c00a2fcefd4ea94f33491eea9f4e54f9954c9d932d271b2b778d8",
+    "resumo_auditoria_v3.json": "b2c13aebb4e86f1f0645068d65c80984f893c4c693ea4cf1a8206862f79d1335"
   },
   "avaliacao_claude_cega_20folhas.csv": {
     "origem": "Avaliação cega de Claude, nível da imagem (objeto_adicionado, original_sem_rotulo), de 20 folhas sorteadas com random.Random(2026).sample(range(1,61), 20) entre as 60 folhas do piloto de prompts (A001–A060). Feita em 2026-11-17 SOBRE o topo das folhas (imagem inteira original e gerada), reduzido; ANTES de ver as respostas de Daniela nessas colunas e sem conhecer a chave código-prompt.",
@@ -26,5 +28,10 @@
   "avaliacao_llm_cega_60folhas.csv": {
     "origem": "3 agentes Claude (mesmo modelo da sessão, contexto novo), 20 folhas cada, em 2026-11-17, avaliando as 60 folhas de folhas_auditoria.zip sem acesso às respostas de Daniela, à chave nem às avaliações anteriores de Claude (isolamento por instrução, não técnico; 21–23 chamadas de ferramenta por agente, compatíveis com 20 leituras + 1 escrita). Mesmas categorias e definições da planilha de Daniela.",
     "limites": "Família Claude, não ChatGPT/Gemini; calibração exploratória contra avaliadora única. Concordância calculada contra a versão de Daniela anterior a ver as avaliações de Claude (97c899c6…, em auditoria_daniela_antes_de_ver_claude.csv)."
+  },
+  "auditoria_daniela_v3_com_tipo.csv": {
+    "origem": "Revisão de Daniela em 2026-11-18, depois de ver a chave e as avaliações de Claude: acrescenta a coluna tipo_objeto_adicionado e refina o critério (só embarcação adicionada conta como falha primária, porque todas as 9 classes do CITRA são embarcações e o experimento usa labels_single_class).",
+    "alteracoes_vs_final": "A029 1->0; A046 0->1 (barco); A052 0->1 (barco); A033 mantém 1 com tipo boia (secundário); A031 permaneceu 0 (uma edição provisória na linha errada foi corrigida por Daniela antes da gravação).",
+    "limites": "Critério alterado DEPOIS de ver os dados; revisão não cega ao prompt (Daniela conhece a chave): análise pós-hoc e exploratória. As versões anteriores foram mantidas."
   }
 }

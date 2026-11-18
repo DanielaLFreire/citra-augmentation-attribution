@@ -1,0 +1,38 @@
+{
+ "prompts": {
+  "v1": {
+   "n": 30,
+   "primario_reprovadas": 2,
+   "ic95": [
+    0.018,
+    0.213
+   ],
+   "secundario_qualquer_objeto_reprovadas": 2,
+   "embarcacao_adicionada": 2,
+   "boia_adicionada": 0,
+   "caixas_invalidas": 1,
+   "caixas_avaliadas": 94
+  },
+  "v2": {
+   "n": 30,
+   "primario_reprovadas": 10,
+   "ic95": [
+    0.192,
+    0.512
+   ],
+   "secundario_qualquer_objeto_reprovadas": 11,
+   "embarcacao_adicionada": 8,
+   "boia_adicionada": 1,
+   "caixas_invalidas": 6,
+   "caixas_avaliadas": 94
+  }
+ },
+ "pareado_primario": {
+  "nenhum": 20,
+  "so_v2": 8,
+  "so_v1": 0,
+  "ambos": 2,
+  "mcnemar_exato_p": 0.0078
+ },
+ "notas": "Versão v3 (2026-11-18): critério primário refinado (só embarcação adicionada conta; boia/ave/pessoa/outro = secundário). Definição alterada DEPOIS de ver os dados: análise pós-hoc e exploratória. Mudanças vs final: A029 e A033 -> sem embarcação (A033 tem boia), A046 e A052 -> embarcação adicionada, A004 etc. com tipo=barco; A031 permaneceu 0."
+}
