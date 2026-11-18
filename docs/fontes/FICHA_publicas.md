@@ -69,3 +69,13 @@ Perfil de tamanho das fontes (caixas small a 640): ABOShips 70,7%, SMD 57,4%, Se
 - O corte de 0,95 foi escolhido sem calibração. Em cenas de porto com horizonte, céu claro e mar escuro, o NCC 64×64 também fica alto (0,8–0,94) sem ser cópia, então os pares de 0,80–0,95 não se resolvem só com o número: precisam de inspeção visual (10 de SeaShips, 19 de InaTechShips).
 - **35 pares do SeaShips e 1 do InaTechShips têm NCC exatamente 0.** Todos apontam para uma única imagem do CITRA, `11.05.2022-14-13-13.png` (split train), cujo NCC é zero porque a imagem é praticamente uniforme (variância zero a 64×64). Isso não é veredito sobre cópia; é um achado de qualidade do CITRA: **há uma imagem degenerada no treino: um quadro preto** (confirmado visualmente por Daniela em 2026-11-12). Rótulo a verificar; ver A14.
 - Os mesmos poucos exemplares do CITRA (`05.07.2022-09-00-00`, `05.07.2022-08-46-38`, `18.04.2022-13-41-55`, entre outros) são vizinhos de muitas imagens públicas diferentes: 542 pares do SeaShips apontam para só 31 imagens do CITRA. Padrão de falso positivo de hash grosseiro, não de cópia (cópia seria um-para-um).
+
+
+## Conferência do CITRA-3D.zip contra `labels_final` (2026-11-18)
+
+`CITRA-3D.zip` (Drive do projeto) contém 7 zips internos: `train`, `val`, `test`, `train_aug` (3 partes) e `val_aug`. Os `_aug` são derivados das originais e não entram. Nomes e tamanhos dos PNG em `data/inventario_zip_citra3d/`.
+
+- Total: 3.401 PNG = 2.176 (train) + 544 (val) + 681 (test), isto é, 64,0% / 16,0% / 20,0%: confere com a divisão embaralhada sobre CITRA+3D descrita pelo Dannylo (D23).
+- Imagens reais (nome com data e hora): 1.349 / 332 / 402 = 2.083. O `labels_final` tem 1.348 / 332 / 401 = 2.081. Todos os nomes do manifesto estão no zip; sobram exatamente 2, `29.04.2022-14-59-27` (train) e `14.04.2022-13-48-55` (test), que são as duas imagens da quarentena já registradas acima. Sem nomes repetidos dentro nem entre splits.
+- As 1.318 imagens "outro" são 571 com nome do GenShip (`*_Terrain*`; 377 train, 86 val, 108 test) e 747 com nome numérico de 7 dígitos (450, 126, 171), de origem ainda não identificada. A contagem do GenShip (571) difere da amostra de 444 recebida do João: a esclarecer.
+- Conclusão: o zip contém todo o conjunto real; não é preciso pedir subsets crus à equipe para refazer a divisão.

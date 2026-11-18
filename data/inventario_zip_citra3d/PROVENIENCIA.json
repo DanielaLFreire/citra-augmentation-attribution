@@ -1,0 +1,7 @@
+{
+  "origem": "Lista de nomes e tamanhos (bytes) dos PNG dos zips train, val e test dentro de CITRA-3D.zip (Drive do projeto), gerada por Daniela no Colab em 2026-11-18, sem extrair imagens; coluna tipo: real = nome dd.mm.aaaa-hh-mm-ss.png, outro = demais (GenShip com Terrain* e nomes numéricos).",
+  "arquivos": {
+    "nomes_zip_citra3d.csv": "f38c8bf03e9a8e38478f56fcd5b422bdc737c37b60cdd5d89b0e6ec60749b5eb"
+  },
+  "nota": "Não inclui os zips *_aug (derivados das originais). Conferido contra data/labels_final_citra."
+}
