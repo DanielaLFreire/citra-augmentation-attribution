@@ -1,6 +1,6 @@
 import numpy as np
 
-from scripts.embeddings_citra import l2, nomes_reais
+from scripts.embeddings_citra import commit_do_caminho, l2, nomes_reais
 
 
 def test_nomes_reais_filtra_quarentena_e_nao_reais():
@@ -17,3 +17,9 @@ def test_nomes_reais_filtra_quarentena_e_nao_reais():
 def test_l2_norma_unitaria():
     v = l2(np.array([[3.0, 4.0], [1.0, 0.0]]))
     assert np.allclose(np.linalg.norm(v, axis=1), 1.0)
+
+
+def test_commit_do_caminho():
+    c = "/root/.cache/huggingface/hub/models--facebook--dinov2-base/snapshots/abc123/config.json"
+    assert commit_do_caminho(c) == "abc123"
+    assert commit_do_caminho(None) is None

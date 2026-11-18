@@ -1,0 +1,25 @@
+{
+  "gerado_em_utc": "2026-11-18T22:56:06.418815+00:00",
+  "modelo": "facebook/dinov2-base",
+  "modelo_commit": null,
+  "entrada_px_largura_altura": [
+    448,
+    252
+  ],
+  "precisao": "fp32",
+  "dispositivo": "cuda",
+  "versoes": {
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.22.1",
+    "numpy": "2.4.6",
+    "opencv": "4.14.0"
+  },
+  "n_por_split": {
+    "train": 1348,
+    "val": 332,
+    "test": 401
+  },
+  "repositorio_commit": "8093f93bd31f6bfde7066966b54569a1b0626719",
+  "npz_sha256": "74bd449e97347a99243bccd13d3ad9ea2f228a01b7be4bc44e5acf7436f5a3ea"
+}

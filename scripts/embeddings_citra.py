@@ -57,6 +57,21 @@ def sha256_arquivo(caminho):
     return h.hexdigest()
 
 
+def commit_do_caminho(caminho):
+    """Extrai o hash da revisão de um caminho de cache do Hugging Face (.../snapshots/<hash>/arquivo)."""
+    if isinstance(caminho, str) and "snapshots/" in caminho:
+        return caminho.split("snapshots/")[1].split("/")[0]
+    return None
+
+
+def _commit_modelo():
+    try:
+        from huggingface_hub import try_to_load_from_cache
+        return commit_do_caminho(try_to_load_from_cache(MODELO, "config.json"))
+    except Exception:
+        return None
+
+
 def _commit_repositorio():
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL).strip()
@@ -96,7 +111,7 @@ def principal(caminho_zip, saida_npz, lote=16):
     meta = {
         "gerado_em_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "modelo": MODELO,
-        "modelo_commit": getattr(modelo.config, "_commit_hash", None),
+        "modelo_commit": _commit_modelo(),
         "entrada_px_largura_altura": [LARGURA, ALTURA],
         "precisao": "fp32",
         "dispositivo": dev,
