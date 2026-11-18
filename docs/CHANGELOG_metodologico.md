@@ -72,3 +72,4 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - D24 (2026-11-18): braço G condicional à entrega da nova renderização do João; C, R e E seguem sem ele. Prazo máximo ainda a definir.
 - D25 (2026-11-18): medida de semelhança v2 (DINOv2) com limiar por regra objetiva e conferência humana de 30 pares, fixados antes da extração dos embeddings. Script: scripts/embeddings_citra.py.
 - D26 (2026-11-18): a regra do limiar da D25 falhou (τ = 0,38, 100% do teste acima); revisão por Otsu + conferência humana fixada antes de ver a distribuição dos pares; achado sem limiar: vizinho do mesmo dia em 59% do teste (acaso 4,6%).
+- D27 (2026-11-18): Otsu também degenerado (97,8% do teste acima); aciona a calibração humana (40 pares, três respostas sim/cena/nao, regra de 90% de precisão), fixada antes de gerar os pares.

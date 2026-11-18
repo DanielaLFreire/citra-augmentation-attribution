@@ -2,7 +2,7 @@ import json
 
 import numpy as np
 
-from scripts.semelhanca_v2_citra import analisar, limiares, otsu, pares_positivos, tempo
+from scripts.semelhanca_v2_citra import amostrar_pares, analisar, limiares, otsu, pares_positivos, tau_de_rotulos, tempo
 
 
 def test_tempo_diferenca_em_segundos():
@@ -36,3 +36,18 @@ def test_otsu_separa_dois_modos():
     rng = np.random.default_rng(1)
     v = np.concatenate([rng.normal(0.3, 0.05, 500), rng.normal(0.9, 0.03, 500)])
     assert 0.4 < otsu(v) < 0.8
+
+
+def test_amostrar_pares_estratos_e_reprodutivel():
+    sims = np.linspace(0.5, 1.0, 80)
+    a = amostrar_pares(sims)
+    assert len(a) == 40 and len({i for i, _ in a}) == 40
+    assert all(sum(1 for _, e in a if e == k) == 5 for k in range(8))
+    assert a == amostrar_pares(sims)
+
+
+def test_tau_de_rotulos():
+    sims = [0.99, 0.97, 0.95, 0.93, 0.91, 0.80, 0.70, 0.60]
+    assert tau_de_rotulos(sims, ["sim"] * 5 + ["nao"] * 3) == 0.91
+    assert tau_de_rotulos(sims, ["nao"] * 8) is None
+    assert tau_de_rotulos(sims, ["sim", "nao", "sim", "nao", "sim", "nao", "nao", "nao"]) is None

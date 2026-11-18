@@ -88,6 +88,110 @@ def distribuicao(npz):
     print(json.dumps(saida, ensure_ascii=False, indent=2))
 
 
+def amostrar_pares(sims, n_estratos=8, por_estrato=5, semente=2026):
+    """Estratos = faixas de igual tamanho (quantis) da semelhança; sorteia por_estrato pares em cada. Devolve (índice, estrato)."""
+    sims = np.asarray(sims, float)
+    ordem = np.argsort(sims)
+    rng = np.random.default_rng(semente)
+    saida = []
+    for e, bloco in enumerate(np.array_split(ordem, n_estratos)):
+        for i in rng.choice(bloco, por_estrato, replace=False):
+            saida.append((int(i), e))
+    return saida
+
+
+def tau_de_rotulos(sims, rotulos, precisao=0.9, min_pares=5):
+    """Menor valor s tal que, entre os pares com semelhança >= s, a fração rotulada 'sim' é >= precisao (com >= min_pares pares).
+    Devolve None se nenhum valor satisfaz (a semelhança CLS não define quase-cópia neste conjunto)."""
+    sims = np.asarray(sims, float)
+    sim = np.array([r == "sim" for r in rotulos])
+    melhor = None
+    for v in sorted(set(sims.tolist()), reverse=True):
+        m = sims >= v
+        if m.sum() >= min_pares and sim[m].mean() >= precisao:
+            melhor = v
+    return melhor
+
+
+def pares(npz, zip_imagens, pasta_saida, semente=2026):
+    """Gera os 40 pares da calibração humana (D27): imagens lado a lado SEM pontuação, folha em branco e chave separada."""
+    import io
+    import zipfile
+
+    import cv2
+
+    from scripts.embeddings_citra import INTERNOS, nomes_reais
+
+    d = np.load(npz)
+    split, nomes = d["split"].astype(str), d["nome"].astype(str)
+    z = d["cls"].astype(np.float32)
+    z /= np.linalg.norm(z, axis=1, keepdims=True)
+    s = z @ z.T
+    tr = np.where(split == "train")[0]
+    cand = np.array([i for i in range(len(nomes)) if split[i] in ("val", "test")])
+    viz = np.array([tr[np.argmax(s[i, tr])] for i in cand])
+    sims = np.array([s[i, j] for i, j in zip(cand, viz)])
+    escolhidos = amostrar_pares(sims, semente=semente)
+    rng = np.random.default_rng(semente + 1)
+    ordem = rng.permutation(len(escolhidos))
+    pasta = Path(pasta_saida)
+    (pasta / "pares_conferencia").mkdir(parents=True, exist_ok=True)
+    (pasta / "_NAO_ABRIR_chave").mkdir(parents=True, exist_ok=True)
+    ext = zipfile.ZipFile(zip_imagens)
+    acervo = {}
+    for sp in ("train", "val", "test"):
+        with ext.open(INTERNOS[sp]) as f:
+            zz = zipfile.ZipFile(io.BytesIO(f.read()))
+        acervo[sp] = (zz, {b: c for c, b in nomes_reais(zz.namelist())})
+
+    def ler(nome, sp):
+        zz, idx = acervo[sp]
+        im = cv2.imdecode(np.frombuffer(zz.read(idx[nome]), np.uint8), cv2.IMREAD_COLOR)
+        return cv2.resize(im, (960, 531), interpolation=cv2.INTER_AREA)
+
+    chave = []
+    for k, pos in enumerate(ordem, start=1):
+        idx, estrato = escolhidos[pos]
+        i, j = cand[idx], viz[idx]
+        codigo = f"P{k:02d}"
+        cv2.imwrite(str(pasta / "pares_conferencia" / f"{codigo}.jpg"),
+                    np.hstack([ler(nomes[i], split[i]), ler(nomes[j], "train")]), [cv2.IMWRITE_JPEG_QUALITY, 92])
+        chave.append({"codigo": codigo, "split_esq": split[i], "nome_esq": nomes[i], "nome_dir_treino": nomes[j],
+                      "cosseno_cls": float(sims[idx]), "estrato_octil": estrato})
+    with open(pasta / "_NAO_ABRIR_chave" / "chave_pares.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(chave[0]))
+        w.writeheader()
+        w.writerows(chave)
+    with open(pasta / "folha_resposta_pares.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "resposta_sim_cena_nao", "observacao"])
+        w.writerows([[c["codigo"], "", ""] for c in chave])
+    print(f"{len(chave)} pares gerados em {pasta}/pares_conferencia; folha em branco: folha_resposta_pares.csv")
+
+
+def calibrar(chave_csv, folha_csv):
+    """Aplica a regra da D27 às respostas de Daniela: tau (só 'sim') e tau' ('sim' ou 'cena'), com a precisão por estrato."""
+    ch = {r["codigo"]: r for r in csv.DictReader(open(chave_csv, encoding="utf-8"))}
+    resp = {r["codigo"]: r["resposta_sim_cena_nao"].strip().lower() for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
+    cod = sorted(ch)
+    faltam = [c for c in cod if resp.get(c) not in ("sim", "cena", "nao")]
+    if faltam:
+        sys.exit(f"respostas ausentes ou inválidas (use sim, cena ou nao): {faltam}")
+    sims = [float(ch[c]["cosseno_cls"]) for c in cod]
+    r = [resp[c] for c in cod]
+    r2 = ["sim" if x in ("sim", "cena") else "nao" for x in r]
+    por_estrato = {}
+    for c in cod:
+        e = int(ch[c]["estrato_octil"])
+        por_estrato.setdefault(e, []).append(resp[c])
+    saida = {"n_pares": len(cod), "tau_sim": tau_de_rotulos(sims, r), "tau_sim_ou_cena": tau_de_rotulos(sims, r2),
+             "respostas_por_estrato": {str(e): {k: v.count(k) for k in ("sim", "cena", "nao")} for e, v in sorted(por_estrato.items())},
+             "faixa_cosseno_por_estrato": {str(e): [min(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e),
+                                                   max(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e)]
+                                           for e in sorted(por_estrato)}}
+    print(json.dumps(saida, ensure_ascii=False, indent=2))
+
+
 def _sha256(caminho):
     h = hashlib.sha256()
     with open(caminho, "rb") as f:
@@ -158,5 +262,9 @@ if __name__ == "__main__":
         analisar(sys.argv[2], sys.argv[3])
     elif len(sys.argv) == 3 and sys.argv[1] == "distribuicao":
         distribuicao(sys.argv[2])
+    elif len(sys.argv) == 5 and sys.argv[1] == "pares":
+        pares(sys.argv[2], sys.argv[3], sys.argv[4])
+    elif len(sys.argv) == 4 and sys.argv[1] == "calibrar":
+        calibrar(sys.argv[2], sys.argv[3])
     else:
-        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida> | distribuicao <embeddings.npz>")
+        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <npz> <saida> | distribuicao <npz> | pares <npz> <CITRA-3D.zip> <saida> | calibrar <chave.csv> <folha.csv>")
