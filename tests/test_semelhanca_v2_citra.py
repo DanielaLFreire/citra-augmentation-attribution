@@ -51,3 +51,25 @@ def test_tau_de_rotulos():
     assert tau_de_rotulos(sims, ["sim"] * 5 + ["nao"] * 3) == 0.91
     assert tau_de_rotulos(sims, ["nao"] * 8) is None
     assert tau_de_rotulos(sims, ["sim", "nao", "sim", "nao", "sim", "nao", "nao", "nao"]) is None
+
+
+def test_calibrar_tres_limiares(tmp_path, capsys):
+    import csv
+
+    from scripts.semelhanca_v2_citra import calibrar
+
+    sims = [0.99, 0.97, 0.95, 0.93, 0.91, 0.80, 0.70, 0.60]
+    resp = ["sim", "mesmo_alvo", "sim", "mesmo_alvo", "sim", "cena", "nao", "nao"]
+    with open(tmp_path / "c.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "split_esq", "nome_esq", "nome_dir_treino", "cosseno_cls", "estrato_octil"])
+        for i, v in enumerate(sims):
+            w.writerow([f"P{i + 1:02d}", "test", "a", "b", v, 0])
+    with open(tmp_path / "f.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "resposta_sim_cena_nao", "observacao"])
+        for i, r in enumerate(resp):
+            w.writerow([f"P{i + 1:02d}", r, ""])
+    calibrar(str(tmp_path / "c.csv"), str(tmp_path / "f.csv"))
+    r = json.loads(capsys.readouterr().out)
+    assert r["tau_objeto_principal"] == 0.91 and r["tau_estrito_so_sim"] is None and r["tau_fundo_sim_mesmo_alvo_cena"] == 0.80

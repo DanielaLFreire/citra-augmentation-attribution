@@ -170,27 +170,34 @@ def pares(npz, zip_imagens, pasta_saida, semente=2026):
 
 
 def calibrar(chave_csv, folha_csv):
-    """Aplica a regra da D27 às respostas de Daniela: tau (só 'sim') e tau' ('sim' ou 'cena'), com a precisão por estrato."""
+    """Aplica a regra da D27/D28 às respostas de Daniela. Respostas: sim, mesmo_alvo, cena, nao.
+    tau_objeto (principal) conta sim + mesmo_alvo (mesmas embarcações); tau_estrito só sim; tau_fundo conta também cena."""
     ch = {r["codigo"]: r for r in csv.DictReader(open(chave_csv, encoding="utf-8"))}
     resp = {r["codigo"]: r["resposta_sim_cena_nao"].strip().lower() for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
     cod = sorted(ch)
-    faltam = [c for c in cod if resp.get(c) not in ("sim", "cena", "nao")]
+    validas = ("sim", "mesmo_alvo", "cena", "nao")
+    faltam = [c for c in cod if resp.get(c) not in validas]
     if faltam:
-        sys.exit(f"respostas ausentes ou inválidas (use sim, cena ou nao): {faltam}")
+        sys.exit(f"respostas ausentes ou inválidas (use sim, mesmo_alvo, cena ou nao): {faltam}")
     sims = [float(ch[c]["cosseno_cls"]) for c in cod]
     r = [resp[c] for c in cod]
-    r2 = ["sim" if x in ("sim", "cena") else "nao" for x in r]
+
+    def binario(aceitas):
+        return ["sim" if x in aceitas else "nao" for x in r]
+
     por_estrato = {}
     for c in cod:
-        e = int(ch[c]["estrato_octil"])
-        por_estrato.setdefault(e, []).append(resp[c])
-    saida = {"n_pares": len(cod), "tau_sim": tau_de_rotulos(sims, r), "tau_sim_ou_cena": tau_de_rotulos(sims, r2),
-             "respostas_por_estrato": {str(e): {k: v.count(k) for k in ("sim", "cena", "nao")} for e, v in sorted(por_estrato.items())},
+        por_estrato.setdefault(int(ch[c]["estrato_octil"]), []).append(resp[c])
+    saida = {"n_pares": len(cod),
+             "tau_objeto_principal": tau_de_rotulos(sims, binario(("sim", "mesmo_alvo"))),
+             "tau_estrito_so_sim": tau_de_rotulos(sims, binario(("sim",))),
+             "tau_fundo_sim_mesmo_alvo_cena": tau_de_rotulos(sims, binario(("sim", "mesmo_alvo", "cena"))),
+             "respostas_totais": {k: r.count(k) for k in validas},
+             "respostas_por_estrato": {str(e): {k: v.count(k) for k in validas} for e, v in sorted(por_estrato.items())},
              "faixa_cosseno_por_estrato": {str(e): [min(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e),
                                                    max(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e)]
                                            for e in sorted(por_estrato)}}
     print(json.dumps(saida, ensure_ascii=False, indent=2))
-
 
 def _sha256(caminho):
     h = hashlib.sha256()
