@@ -1,0 +1,31 @@
+codigo,caixa,categoria_v4,observacao
+A003,3,alterada,o objeto foi alterado e deslocado. a caixa não mais contém o objeto(barco).
+A003,4,apagada,
+A003,5,apagada,
+A004,2,alterada,o objeto foi alterado e deslocado. a caixa não mais contém o objeto(barco).
+A004,3,degradada,
+A008,2,degradada,
+A009,2,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A010,3,degradada,
+A014,2,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A014,6,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A017,2,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A022,2,degradada,
+A022,4,valida,pouca nitidez
+A022,6,valida,pouca nitidez
+A025,1,alterada,o objeto foi alterado e deslocado. a caixa não mais contém o objeto(barco).
+A025,2,alterada,o objeto foi alterado e deslocado. a caixa contém apenas parte do objeto(barco).
+A025,3,valida,pouca nitidez
+A030,4,alterada,o objeto foi alterado e deslocado. a caixa não mais contém o objeto(barco).
+A034,4,valida,pouca nitidez
+A034,5,valida,pouca nitidez
+A034,7,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A035,3,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A049,2,valida,
+A049,3,valida,
+A050,1,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A050,2,valida,pouca nitidez
+A052,17,nao_avaliavel,o objeto é muito pequeno e perdeu a nitidez
+A060,1,valida,pouca nitidez
+A060,4,degradada,
+A060,5,degradada,

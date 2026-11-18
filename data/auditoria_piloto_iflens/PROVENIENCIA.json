@@ -15,7 +15,9 @@
     "auditoria_daniela_v3_com_tipo.csv": "348eafd6788c00a2fcefd4ea94f33491eea9f4e54f9954c9d932d271b2b778d8",
     "resumo_auditoria_v3.json": "b2c13aebb4e86f1f0645068d65c80984f893c4c693ea4cf1a8206862f79d1335",
     "auditoria_jose_com_tipo.xlsx": "fe77879c855a0bef18b0517480ed4d910583327f38d3987fe552b01d7741d257",
-    "DEFINICOES_auditoria_v4.md": "204f3e4e7954fddfc2c78f5b89a4d407dd9cdbc72876b62dfc26ba6c967a1ce3"
+    "DEFINICOES_auditoria_v4.md": "204f3e4e7954fddfc2c78f5b89a4d407dd9cdbc72876b62dfc26ba6c967a1ce3",
+    "reavaliacao_v4_daniela_caixas.csv": "6dec857c3e02a7d6d6e3e5ce398e149ed41eaca1d8a73f57c3c363fb9d5fdd6d",
+    "reavaliacao_v4_daniela_imagens.csv": "b01126386c89c84a08be8411250b6db187e7fa3d2be9cd78a047c493cfccdf6e"
   },
   "avaliacao_claude_cega_20folhas.csv": {
     "origem": "Avaliação cega de Claude, nível da imagem (objeto_adicionado, original_sem_rotulo), de 20 folhas sorteadas com random.Random(2026).sample(range(1,61), 20) entre as 60 folhas do piloto de prompts (A001–A060). Feita em 2026-11-17 SOBRE o topo das folhas (imagem inteira original e gerada), reduzido; ANTES de ver as respostas de Daniela nessas colunas e sem conhecer a chave código-prompt.",
@@ -40,5 +42,9 @@
     "origem": "Auditoria independente das 60 folhas pelo José (avaliador 2), recebida de Daniela em 2026-11-18, sem acesso às respostas de Daniela nem à chave. Preencheu a planilha em branco com a coluna tipo_objeto_adicionado.",
     "resultados": "Concordância com Daniela (versão final v3): objeto_adicionado 95% (kappa 0,85 [0,65; 1,00]); original_sem_rotulo 87% (0,52 [0,20; 0,79]); caixa 3 categorias 88% (0,35 [0,07; 0,60]), 6 categorias 86% (0,27 [0,03; 0,51]). José 13 alterada (observação frequente: objeto borrado) contra 2 de Daniela. Desfecho primário por prompt (José): v1 6/30, v2 13/30. Regra qualquer um: v1 6/30, v2 13/30; regra ambos: v1 2/30, v2 10/30.",
     "limites": "Diferença de critério por definição ambígua de alterada (nitidez); resolvida em DEFINICOES_auditoria_v4.md. A024: José marcou objeto adicionado com tipo \"cidade alterada\" (mudança do fundo, não objeto adicionado)."
+  },
+  "reavaliacao_v4_daniela": {
+    "origem": "Reavaliação v4 das 30 caixas e 3 imagens por Daniela, 2026-11-18, feita sem ver as respostas do José na reavaliação v4.",
+    "limites": "Ainda sem a reavaliação v4 do José; análise de concordância pendente."
   }
 }
