@@ -1,0 +1,6 @@
+Conversa de Daniela com o João (responsável pelo GenShip), 2026-11-16, colada por Daniela em 2026-11-18. O primeiro trecho (11:46) aparece cortado na colagem; o texto completo dessa resposta está em Respostas_Genship_rodada2_2026-11-16.txt. Sem outras alterações.
+
+[11:46, 16/11/2026] João Vitor Souza: Bom dia, Daniela, tudo bem? Seguem os pontos sobre suas dúvidas: (ver Respostas_Genship_rodada2_2026-11-16.txt)
+[12:01, 16/11/2026] Daniela: Obrigada, João! Três pontos ainda abertos: (1) no .json novo, dá para listar também as embarcações suprimidas (pequenas demais, neblina, brilho solar, oclusão), com o motivo? É o que nos deixa descartar imagens com navio visível e sem caixa. (2) Dá para gerar poucas imagens por cena (2 a 4), em muitas cenas, com a semente da cena registrada? (3) Tem uma previsão para o .json? Seria ótimo testarmos com uma extração-piloto pequena (uns 100 quadros) antes da grande.
+[17:06, 16/11/2026] João Vitor Souza: Ainda estou no experimento, mas assim que estiver escrevendo, compartilho com todos.
+Beleza!
