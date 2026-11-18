@@ -1,7 +1,12 @@
 {
   "origem": "Lista de nomes e tamanhos (bytes) dos PNG dos zips train, val e test dentro de CITRA-3D.zip (Drive do projeto), gerada por Daniela no Colab em 2026-11-18, sem extrair imagens; coluna tipo: real = nome dd.mm.aaaa-hh-mm-ss.png, outro = demais (GenShip com Terrain* e nomes numéricos).",
   "arquivos": {
-    "nomes_zip_citra3d.csv": "f38c8bf03e9a8e38478f56fcd5b422bdc737c37b60cdd5d89b0e6ec60749b5eb"
+    "nomes_zip_citra3d.csv": "f38c8bf03e9a8e38478f56fcd5b422bdc737c37b60cdd5d89b0e6ec60749b5eb",
+    "similaridade_pareada.csv": "e767af17fa1828767f979b756814734d9d6698831da54f2ebc2340a0a5da0e19"
   },
-  "nota": "Não inclui os zips *_aug (derivados das originais). Conferido contra data/labels_final_citra."
+  "nota": "Não inclui os zips *_aug (derivados das originais). Conferido contra data/labels_final_citra.",
+  "similaridade_pareada.csv": {
+    "origem": "Saída de scripts/similaridade_temporal_citra.py rodado por Daniela no Colab em 2026-11-18 (733 linhas: 401 test e 332 val).",
+    "nota": "Medida exploratória (miniaturas 64x36 em cinza). A primeira versão (máximo do mesmo dia contra máximo de todos os outros dias, sem igualar o tamanho do conjunto) estava viesada e foi descartada; o CSV dela não foi guardado."
+  }
 }

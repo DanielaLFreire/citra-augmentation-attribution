@@ -1,0 +1,6 @@
+Transcrição das respostas do Dannylo C. Maurício (equipe CITRA) coladas por Daniela na sessão de 2026-11-18, tarde. Não é exportação do chat: são mensagens copiadas e transmitidas por Daniela.
+
+1. Filtro de seleção das capturas: "Acho que não passaram por nenhum filtro de seleção, mas não sei responder com certeza, pois o processo foi feito antes da minha contratação. Quem poderia responder melhor seria o João ou o Cmte Moreira."
+2. Dias raros: "Acredito que não haja nenhum cenário em particular a ser mantido em um split específico, caso a divisão seja feita em blocos"
+3. Sobre a divisão por blocos de dias (13:56): "A parte geral no entanto assume que há features diversas o suficiente dentro de um único dia. E assumindo features diversas o suficiente se rejeita, em partes, a hipótese de data leakage para o conjunto de testes" / "Observo que apesar das imagens de um dia serem parecidas, elas foram capturadas de diversas câmeras distintas" / "O que introduz variedade em imagens capturadas no mesmo dia"
+4. Câmeras: "Acredito que haja imagens de ao menos 4 câmeras distintas. O CITRA atual comporta mais de 20, mas antigamente eram menos."

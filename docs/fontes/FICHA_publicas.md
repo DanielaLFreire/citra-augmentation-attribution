@@ -79,3 +79,17 @@ Perfil de tamanho das fontes (caixas small a 640): ABOShips 70,7%, SMD 57,4%, Se
 - Imagens reais (nome com data e hora): 1.349 / 332 / 402 = 2.083. O `labels_final` tem 1.348 / 332 / 401 = 2.081. Todos os nomes do manifesto estão no zip; sobram exatamente 2, `29.04.2022-14-59-27` (train) e `14.04.2022-13-48-55` (test), que são as duas imagens da quarentena já registradas acima. Sem nomes repetidos dentro nem entre splits.
 - As 1.318 imagens "outro" são 571 com nome do GenShip (`*_Terrain*`; 377 train, 86 val, 108 test) e 747 com nome numérico de 7 dígitos (450, 126, 171), de origem ainda não identificada. A contagem do GenShip (571) difere da amostra de 444 recebida do João: a esclarecer.
 - Conclusão: o zip contém todo o conjunto real; não é preciso pedir subsets crus à equipe para refazer a divisão.
+
+## Semelhança visual mesmo dia × outros dias (2026-11-18; exploratória)
+
+Motivo: o Dannylo objetou que as imagens de um dia vêm de várias câmeras (pelo menos 4 nas imagens; o CITRA atual tem mais de 20), de modo que a mediana de 55 s até o quadro de treino mais próximo no tempo (D16) não garante quase-cópia. Medida: `scripts/similaridade_temporal_citra.py` (miniatura 64×36 em cinza, cosseno; máximo com o treino do mesmo dia contra o máximo de k quadros sorteados de outros dias, k igual, 200 sorteios, semente 2026). A primeira versão comparava com todos os outros dias e estava viesada contra o mesmo dia (conjunto maior, máximo maior por acaso); foi descartada.
+
+| | test (n = 401) | val (n = 332) |
+|---|---|---|
+| Mediana da semelhança, mesmo dia | 0,891 | 0,904 |
+| Mediana, outros dias (k igual) | 0,849 | 0,867 |
+| Diferença mediana | +0,022 | +0,023 |
+| Fração média de sorteios que o mesmo dia vence (nulo = 50%) | 72% | 74% |
+| Quadros com semelhança ≥ 0,95: mesmo dia / outros dias | 32% / 10% | 31% / 12% |
+
+Leitura: há semelhança extra por proximidade no tempo (cerca de 3 vezes mais quase-cópias no mesmo dia), mas o efeito é moderado e concentrado: cerca de 2/3 dos quadros de teste não têm quase-cópia no treino do mesmo dia (variedade que o Dannylo aponta), e ~10% têm quase-cópia mesmo em outros dias (cenário repetido pelas câmeras, que a divisão por dias não remove). A mediana do tempo até o quadro de treino mais parecido do mesmo dia é 481 s (test) e 431 s (val), não 55 s. Limites: medida grosseira (fundo domina a miniatura; não identifica a mesma embarcação); o limiar 0,95 foi escolhido depois de ver os dados. A D16 (fixada antes) permanece; esta medida a apoia de forma parcial e não a substitui. Respostas do Dannylo: `data/respostas_equipes/Dannylo_respostas_2026-11-18_tarde.txt`.
