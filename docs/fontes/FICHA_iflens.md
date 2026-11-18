@@ -115,3 +115,7 @@ Motivo: as 9 classes do CITRA são tipos de embarcação e o experimento usa `la
 | Caixas inválidas | 1/94 | 6/94 |
 
 Pareado: 20 nenhum, 2 ambos, 8 só v2, 0 só v1 (McNemar exato p ≈ 0,008). Todo objeto adicionado, exceto uma boia, foi embarcação: a hipótese de que a diferença v1×v2 viesse de objetos irrelevantes não se sustenta. Os agentes cegos marcaram objeto adicionado também em A029 e A033 (Daniela: sem embarcação; A033 tem boia), tratados como desacordo entre avaliadores. A revisão de Daniela não é cega ao prompt.
+
+### Textos dos prompts guardados no repositório (2026-11-18)
+
+`prompts/prompt_v1.txt` (hash `5437d06c…4f64`, idêntico a `BASE_GENERATION_PROMPT` do fork) e `prompts/prompt_v2.txt` (hash `e96659f9…423b`, conferido contra o `sha256sum` do arquivo usado no Colab). Ambos terminam em `\n`; o hash só confere com essa quebra de linha final. O v2 difere do v1 por: lista (céu, nuvens, cor e intensidade da luz, neblina, chuva), inclui prédios, pessoas e relevo no que deve ficar idêntico, proíbe explicitamente adicionar "vessel, buoy, boat, bird, person or object, even in the distance" e remover qualquer um, proíbe repintar casco, superestrutura e carga, e acrescenta "zoom" às proibições de enquadramento.

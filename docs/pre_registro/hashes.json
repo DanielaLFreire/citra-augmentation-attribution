@@ -71,6 +71,18 @@
       "caminho": "data/auditoria_piloto_iflens/avaliacao_claude_cega_20folhas.csv",
       "sha256": "583e7d7f6df7bd98f630bc37d8e1bcf77811c16be3bad0a2e6572fac30f98bf2",
       "tamanho_bytes": 1049
+    },
+    "prompt_v1.txt": {
+      "registrado_em_utc": "2026-11-18T13:33:17.098395+00:00",
+      "caminho": "prompts/prompt_v1.txt",
+      "sha256": "5437d06c0fc6daa06cd0b09782fcbd6aca0f5ad87c4a27dbc78b2d7144404f64",
+      "tamanho_bytes": 397
+    },
+    "prompt_v2.txt": {
+      "registrado_em_utc": "2026-11-18T13:33:17.139013+00:00",
+      "caminho": "prompts/prompt_v2.txt",
+      "sha256": "e96659f9aedacb42488439e18179e2b8a0aa16bc41e4d0118991a19294a6423b",
+      "tamanho_bytes": 614
     }
   },
   "adendos": {}
