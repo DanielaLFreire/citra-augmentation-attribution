@@ -18,7 +18,7 @@ Textos e hashes: `prompts/prompt_v1.txt` (5437d06c…4f64) e `prompts/prompt_v2.
 - Condições: `conditions-citra.yaml` (domínio brasileiro) e o estrato de risco `conditions-citra-risk.yaml` (chuva forte, neblina densa) conforme D19/A07.
 
 ## 4. Amostra
-- População: imagens do split de **treino** de `labels_final` com pelo menos 1 caixa.
+- População: imagens do split de **treino da divisão refeita em blocos de dias** (D16/D23) com pelo menos 1 caixa. DECISÃO PENDENTE: o sorteio só ocorre depois de a nova divisão ser congelada; se o adendo for lacrado antes, a população precisa citar o hash da lista de treino nova.
 - Excluídas: as 30 imagens do piloto, os quadros em quarentena, imagens usadas no desenvolvimento do prompt.
 - Tamanho: 150 imagens (n = 131 para poder de 90% num cenário de comparação; aqui a justificativa é a precisão da estimativa: com 7% de falha, o IC95% de Wilson fica em torno de 4%–12%).
 - Sorteio: semente pré-registrada DECISÃO PENDENTE, `random.Random(semente)`, script e lista de saída registrados com hash antes de gerar.

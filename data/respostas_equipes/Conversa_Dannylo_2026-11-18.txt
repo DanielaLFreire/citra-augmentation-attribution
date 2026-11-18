@@ -1,0 +1,34 @@
+[12:18, 18/11/2026] Dannylo C. Maurício: Ao analisar os nomes dos arquivos (que trazem data e hora), vimos que os 27 dias de captura aparecem nos três splits e que o quadro de treino mais próximo de cada quadro de teste está, em mediana, a 55 segundos (54% a até 60 s, 96% a até 5 min, mínimo de 8 s). Isso sugere divisão por quadro, e não por período. Queremos descrever com precisão o que foi feito, porque um revisor vai perguntar.
+
+Como foi feita a divisão (aleatória por quadro, estratificada, por vídeo, sequência ou dia)? Pode nos enviar o script e a semente aleatória?
+Havia alguma regra para evitar que quadros vizinhos no tempo ficassem em splits diferentes?
+De onde vêm os quadros? São extraídos de vídeo contínuo, com que intervalo? Houve algum filtro de seleção (por exemplo, só quadros com embar
+Imagino que esteja se referindo ao subset CITRA do dataset CITRA-3D.
+
+As imagens são provenientes da aplicação CITRA (Console de Imagens Táticas e Realidade Aumentada), que está conectada a múltiplas câmeras. As imagens são capturas de tela da câmera, pontuais, imagino que não derivadas de vídeo.
+[12:19, 18/11/2026] Dannylo C. Maurício: A divisão do conjunto em treino, teste e validação foi feita ao embaralhar todas as imagens (CITRA+3D) e utilizar os primeiros 64% para treino, os 16% seguintes para validação e os 20% restantes para teste
+[12:22, 18/11/2026] Dannylo C. Maurício: Ao analisar os nomes dos arquivos (que trazem data e hora), vimos que os 27 dias de captura aparecem nos três splits e que o quadro de treino mais próximo de cada quadro de teste está, em mediana, a 55 segundos (54% a até 60 s, 96% a até 5 min, mínimo de 8 s). Isso sugere divisão por quadro, e não por período. Queremos descrever com precisão o que foi feito, porque um revisor vai perguntar.
+
+Como foi feita a divisão (aleatória por quadro, estratificada, por vídeo, sequência ou dia)? Pode nos enviar o script e a semente aleatória?
+Havia alguma regra para evitar que quadros vizinhos no tempo ficassem em splits diferentes?
+De onde vêm os quadros? São extraídos de vídeo contínuo, com que intervalo? Houve algum filtro de seleção (por exemplo, só quadros com embar
+Não existem metadados.
+O dataset foi utilizado apenas pelo time CITRA, exclusivamente para treinar os nossos modelos.
+[12:22, 18/11/2026] Dannylo C. Maurício: Ao analisar os nomes dos arquivos (que trazem data e hora), vimos que os 27 dias de captura aparecem nos três splits e que o quadro de treino mais próximo de cada quadro de teste está, em mediana, a 55 segundos (54% a até 60 s, 96% a até 5 min, mínimo de 8 s). Isso sugere divisão por quadro, e não por período. Queremos descrever com precisão o que foi feito, porque um revisor vai perguntar.
+
+Como foi feita a divisão (aleatória por quadro, estratificada, por vídeo, sequência ou dia)? Pode nos enviar o script e a semente aleatória?
+Havia alguma regra para evitar que quadros vizinhos no tempo ficassem em splits diferentes?
+De onde vêm os quadros? São extraídos de vídeo contínuo, com que intervalo? Houve algum filtro de seleção (por exemplo, só quadros com embar
+É possível refazer a divisão utilizando os subsets crus, CITRA e 3D
+[12:24, 18/11/2026] Dannylo C. Maurício: Oi , Dannylo, vi que você está usando o FiftyOne para montar um banco de imagens. Como você está gerando essas imagens (ferramenta, modelo, prompt)? E como confere que as caixas continuam corretas depois da geração? Estou usando o iflens e quero comparar as abordagens antes de fechar o protocolo. Pode me explicar o que lhe levou a essa escolha? Obrigada!
+As imagens são aquelas dos nossos datasets: CITRA, 3D e WEB.
+
+Não há geração de imagens com IA no momento.
+
+O que levou à escolha do FiftyOne? Não está relacionado à ferramenta iflens, é uma escolha para infraestrutura de dados. Atualmente temos imagens e anotações, mas não temos uma maneira unificada de gerenciar datasets e metadados como embeddings e tags. Por isso o uso de fiftyone.
+[12:25, 18/11/2026] Dannylo C. Maurício: eu testei a geração com 2 prompts e estou auditando uma amostra para decidir qual prompt uso. na ferramenta que vc criou.
+Qual é o contexto?
+[12:30, 18/11/2026] Daniela: Estou medindo se imagens do CITRA editadas por IA (clima e hora do dia, com o iflens) mantêm as caixas válidas: o barco pode sumir, mudar de lugar ou aparecer um novo sem rótulo. Testei 2 prompts nas mesmas 30 imagens e auditá-las às cegas mostrou que o mais simples errou menos. O José vai atuar como 2º revisor. Depois vou medir a taxa numa amostra maior. Queria saber como você gera e confere as imagens do seu banco.
+[12:35, 18/11/2026] Dannylo C. Maurício: O banco de dados no FiftyOne não tem relação com a ferramenta iflens
+[12:35, 18/11/2026] Dannylo C. Maurício: As imagens do banco são as imagens originais do dataset
+[12:35, 18/11/2026] Dannylo C. Maurício: sem edição por IA

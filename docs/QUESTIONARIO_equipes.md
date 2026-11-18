@@ -82,3 +82,11 @@ Enviada por Daniela ao João. Perguntas:
 4. Quem pode rodar uma nova extração, já que o repositório só tem o executável? Quanto tempo leva?
 5. Na nova extração: JSON por imagem com câmera, FOV, perfil solar, alinhamento com o sol, estado do mar, e **todas as embarcações, anotadas e suprimidas, com o motivo da supressão** (A17a); versão do exportador igual para todas as imagens e registrada (A17b); poucas imagens por cena em muitas cenas, com semente da cena registrada (A17c, A17d).
 6. Licença dos modelos 3D e permissão para descrever e publicar o conjunto; como citar o GenShip e o autor.
+
+## Complemento à equipe CITRA (2026-11-18): refazer a divisão em blocos de dias
+
+Respondido pelo Dannylo: divisão aleatória por quadro (CITRA+3D embaralhadas, 64/16/20); capturas pontuais de várias câmeras; sem metadados; refazer é possível a partir dos subsets crus. Ainda sem resposta:
+1. Onde estão os subsets crus do CITRA e do 3D (pasta, quantidade de imagens em cada), e a lista bate com as 2.081 de `labels_final`?
+2. Houve filtro de seleção das capturas (por exemplo, só quadros com embarcação)? Qual era o intervalo entre capturas?
+3. A mistura com o subset 3D mudou a composição dos splits do CITRA? (O CITRA-3D-Real é só o subset CITRA?)
+4. Existe algum dia com condição rara (noite, chuva, neblina) que deva ficar no treino?
