@@ -27,14 +27,14 @@ Textos e hashes: `prompts/prompt_v1.txt` (5437d06c…4f64) e `prompts/prompt_v2.
 - Uma geração por imagem (a taxa estimada é por geração).
 
 ## 5. Desfecho primário
-Imagem **reprovada** se tiver pelo menos uma caixa `apagada`, `deslocada` ou `alterada`, ou uma **embarcação adicionada**. Justificativa: todas as 9 classes do CITRA são embarcações e o experimento usa `labels_single_class`; boia, ave e pessoa adicionadas não corrompem rótulo de detecção e são desfecho secundário (tipo registrado).
+Definições completas em `data/auditoria_piloto_iflens/DEFINICOES_auditoria_v4.md` (inclui a categoria `degradada` e o teste prático da caixa `apagada`). Imagem **reprovada** se tiver pelo menos uma caixa `apagada`, `deslocada` ou `alterada` (outro objeto; nitidez sozinha não conta), ou uma **embarcação adicionada**. Secundário: `degradada`; sensibilidade contando `degradada` como falha. Justificativa: todas as 9 classes do CITRA são embarcações e o experimento usa `labels_single_class`; boia, ave e pessoa adicionadas não corrompem rótulo de detecção e são desfecho secundário (tipo registrado).
 Ruído herdado do dataset (`sem_objeto_original`, `original_sem_rotulo`) é contado à parte e não entra na taxa de falha da geração.
 Observação de transparência: este critério foi refinado depois do piloto (v3 da auditoria, pós-hoc). Aqui ele é fixado antes dos dados confirmatórios.
 
 ## 6. Avaliação
 - Dois avaliadores humanos independentes (Daniela e José), cegos entre si e ao parâmetro de geração, com a planilha e as definições do piloto (`INSTRUCOES_avaliador2.md`).
-- Concordância entre eles medida primeiro nas 60 folhas do piloto (kappa com IC95% por bootstrap de folhas). DECISÃO PENDENTE: limiar mínimo de kappa por campo e conduta se não for atingido (refinar definições e reavaliar).
-- Resolução de discordâncias: DECISÃO PENDENTE (opções: reprovada se qualquer um marcar, "conservadora"; reprovada se ambos marcarem; terceira leitura). Relatar sempre as duas taxas extremas.
+- Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. DECISÃO PENDENTE: limiar mínimo de kappa por campo para prosseguir e conduta se não for atingido.
+- Resolução de discordâncias: primário = reprovada se **qualquer** avaliador marcar; sensibilidade = só se ambos marcarem; relatar as duas taxas (no piloto, com os dois avaliadores, v1: 6/30 contra 2/30; v2: 13/30 contra 10/30).
 - Leitor LLM (família diferente do gerador desejável): usado como terceiro leitor e como filtro; calibrado contra os humanos.
 
 ## 7. Filtro automático de qualidade
