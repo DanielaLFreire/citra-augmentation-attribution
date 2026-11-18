@@ -12,6 +12,9 @@ Afirmação de novidade exige busca sistemática registrada aqui (bases, strings
 | MariData (Henriksson et al., 2026) | https://arxiv.org/pdf/2606.03246 | completo | Tradução de imagens marítimas (neblina, pôr do sol, noite); não treina detector |
 | DsDm (Engstrom et al., ICML 2024) | https://arxiv.org/html/2401.12926v1 | trechos | Seleção de dados por modelagem de desempenho; base da etapa de atribuição |
 | Datamodels (Ilyas et al., 2022) | citado via DsDm | não aberto | Base da atribuição por subconjuntos aleatórios |
+| DINO (Caron et al., 2021) | https://arxiv.org/abs/2104.14294 | trechos | Atributos auto-supervisionados para recuperação e detecção de cópias (ver `NOTAS_semelhanca_e_vazamento.md`) |
+| DINOv2 (Oquab et al., 2023) | https://arxiv.org/abs/2304.07193 | trechos | Modelo da medida de semelhança v2 |
+| SSCD (Pizzi et al., 2022) | https://arxiv.org/abs/2202.10261 | trechos | Descritor de cópias supera o DINO genérico em cópias editadas: limite da medida v2 |
 
 ## Buscas sistemáticas a executar
 

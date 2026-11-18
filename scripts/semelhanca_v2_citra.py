@@ -1,0 +1,120 @@
+"""Passo 2 da medida de semelhança v2 (D25): limiar por regra objetiva e semelhança teste/validação contra treino.
+
+Lê o .npz de embeddings (scripts/embeddings_citra.py), NÃO precisa das imagens. Faz, sem alterar nenhuma divisão:
+1. Pares positivos: quadros reais do mesmo dia com diferença de tempo <= 60 s (todas as divisões juntas).
+   Limiar tau = percentil 5 do cosseno (CLS) desses pares; sensibilidade: percentis 1 e 10 (regra da D25).
+   Imprime quantos pares há, por tipo de divisão, e AVISA se forem menos de 100 (percentil instável): nesse caso
+   a regra da D25 precisa ser revista com Daniela antes de seguir.
+2. Para cada quadro de val/test: maior semelhança com o treino, qual quadro, se é do mesmo dia, diferença de tempo.
+3. Fração de val/test com semelhança >= tau (e >= percentis 1 e 10).
+Saídas: semelhanca_v2_por_quadro.csv e semelhanca_v2_resumo.json (com hash do .npz e commit do repositório).
+Uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida>
+"""
+import csv
+import datetime
+import hashlib
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+import numpy as np
+
+LIMITE_S = 60
+MIN_PARES = 100
+PERCENTIS = {"p5": 5, "p1": 1, "p10": 10}
+
+
+def tempo(nome):
+    """Segundos desde a época para um nome dd.mm.aaaa-hh-mm-ss (hora local, sem fuso: só diferenças importam)."""
+    d, m, resto = nome.split(".", 2)
+    a, h = resto.split("-", 1)
+    hh, mm, ss = h.split("-")
+    return datetime.datetime(int(a), int(m), int(d), int(hh), int(mm), int(ss)).timestamp()
+
+
+def dia(nome):
+    return nome[:10]
+
+
+def pares_positivos(nomes, limite_s=LIMITE_S):
+    """Índices (i, j), i < j, de quadros do mesmo dia com |diferença de tempo| <= limite_s."""
+    t = np.array([tempo(n) for n in nomes])
+    d = np.array([dia(n) for n in nomes])
+    m = (d[:, None] == d[None, :]) & (np.abs(t[:, None] - t[None, :]) <= limite_s)
+    return np.argwhere(np.triu(m, k=1))
+
+
+def limiares(sims):
+    return {k: float(np.percentile(sims, p)) for k, p in PERCENTIS.items()}
+
+
+def _sha256(caminho):
+    h = hashlib.sha256()
+    with open(caminho, "rb") as f:
+        for b in iter(lambda: f.read(1 << 20), b""):
+            h.update(b)
+    return h.hexdigest()
+
+
+def _commit():
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL).strip()
+    except Exception:
+        return None
+
+
+def analisar(npz, pasta_saida):
+    d = np.load(npz)
+    split, nomes = d["split"].astype(str), d["nome"].astype(str)
+    z = d["cls"].astype(np.float32)
+    z /= np.linalg.norm(z, axis=1, keepdims=True)
+    s = z @ z.T
+    par = pares_positivos(nomes)
+    tipos = {}
+    for i, j in par:
+        k = "-".join(sorted((split[i], split[j])))
+        tipos[k] = tipos.get(k, 0) + 1
+    tau = limiares(s[par[:, 0], par[:, 1]]) if len(par) else {}
+    aviso = None
+    if len(par) < MIN_PARES:
+        aviso = f"apenas {len(par)} pares positivos (< {MIN_PARES}): percentil instável; rever a regra da D25 com Daniela antes de usar"
+    tr = np.where(split == "train")[0]
+    t_all = np.array([tempo(n) for n in nomes])
+    linhas = []
+    for sp in ("val", "test"):
+        for i in np.where(split == sp)[0]:
+            j = tr[np.argmax(s[i, tr])]
+            mesmo = dia(nomes[i]) == dia(nomes[j])
+            linhas.append({
+                "split": sp, "nome": nomes[i], "max_sim_treino": float(s[i, j]), "vizinho_treino": nomes[j],
+                "mesmo_dia": mesmo, "delta_t_s": abs(t_all[i] - t_all[j]) if mesmo else "",
+                **{f"acima_{k}": bool(s[i, j] >= v) for k, v in tau.items()},
+            })
+    Path(pasta_saida).mkdir(parents=True, exist_ok=True)
+    with open(Path(pasta_saida) / "semelhanca_v2_por_quadro.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(linhas[0]))
+        w.writeheader()
+        w.writerows(linhas)
+    resumo = {"npz_sha256": _sha256(npz), "repositorio_commit": _commit(), "limite_tempo_s": LIMITE_S,
+              "n_imagens": int(len(nomes)), "n_pares_positivos": int(len(par)), "n_pares_por_tipo": tipos,
+              "limiares": tau, "aviso": aviso, "por_split": {}}
+    for sp in ("val", "test"):
+        x = [l for l in linhas if l["split"] == sp]
+        v = np.array([l["max_sim_treino"] for l in x])
+        resumo["por_split"][sp] = {
+            "n": len(x),
+            "quantis_max_sim": {q: float(np.percentile(v, q)) for q in (5, 25, 50, 75, 95)},
+            "fracao_acima": {k: float(np.mean([l[f"acima_{k}"] for l in x])) for k in tau},
+            "fracao_vizinho_mesmo_dia_entre_acima_p5": (
+                float(np.mean([l["mesmo_dia"] for l in x if l.get("acima_p5")])) if any(l.get("acima_p5") for l in x) else None),
+        }
+    with open(Path(pasta_saida) / "semelhanca_v2_resumo.json", "w", encoding="utf-8") as f:
+        json.dump(resumo, f, ensure_ascii=False, indent=2)
+    print(json.dumps(resumo, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 4 or sys.argv[1] != "analise":
+        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida>")
+    analisar(sys.argv[2], sys.argv[3])
