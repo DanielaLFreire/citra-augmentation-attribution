@@ -9,6 +9,7 @@ Lê o .npz de embeddings (scripts/embeddings_citra.py), NÃO precisa das imagens
 3. Fração de val/test com semelhança >= tau (e >= percentis 1 e 10).
 Saídas: semelhanca_v2_por_quadro.csv e semelhanca_v2_resumo.json (com hash do .npz e commit do repositório).
 Uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida>
+     python -m scripts.semelhanca_v2_citra distribuicao <embeddings.npz>   (D26: histograma dos pares positivos e limiar de Otsu)
 """
 import csv
 import datetime
@@ -47,6 +48,44 @@ def pares_positivos(nomes, limite_s=LIMITE_S):
 
 def limiares(sims):
     return {k: float(np.percentile(sims, p)) for k, p in PERCENTIS.items()}
+
+
+def otsu(valores, n_bins=100):
+    """Limiar de Otsu (máxima variância entre classes) de valores 1-D; regra objetiva, sem parâmetros livres além de n_bins."""
+    v = np.asarray(valores, float)
+    cont, bordas = np.histogram(v, bins=n_bins)
+    centros = (bordas[:-1] + bordas[1:]) / 2
+    p = cont / cont.sum()
+    w0 = np.cumsum(p)
+    m = np.cumsum(p * centros)
+    mt = m[-1]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        var = (mt * w0 - m) ** 2 / (w0 * (1 - w0))
+    return float(centros[np.nanargmax(var)])
+
+
+def distribuicao(npz):
+    """Descreve a distribuição do cosseno nos pares positivos (mesmo dia, <= 60 s) e o limiar de Otsu (D26)."""
+    d = np.load(npz)
+    split, nomes = d["split"].astype(str), d["nome"].astype(str)
+    z = d["cls"].astype(np.float32)
+    z /= np.linalg.norm(z, axis=1, keepdims=True)
+    s = z @ z.T
+    par = pares_positivos(nomes)
+    v = s[par[:, 0], par[:, 1]]
+    tr = np.where(split == "train")[0]
+    t_otsu = otsu(v)
+    cont, bordas = np.histogram(v, bins=20, range=(0.0, 1.0))
+    saida = {
+        "n_pares_positivos": int(len(v)),
+        "percentis_cosseno_pares_positivos": {str(q): float(np.percentile(v, q)) for q in (1, 5, 10, 25, 50, 75, 90, 95, 99)},
+        "histograma_20_faixas_de_0_a_1": {f"{bordas[i]:.2f}-{bordas[i + 1]:.2f}": int(cont[i]) for i in range(20)},
+        "limiar_otsu": t_otsu,
+        "fracao_pares_positivos_acima_otsu": float(np.mean(v >= t_otsu)),
+        "fracao_acima_otsu_por_split": {
+            sp: float(np.mean([s[i, tr].max() >= t_otsu for i in np.where(split == sp)[0]])) for sp in ("val", "test")},
+    }
+    print(json.dumps(saida, ensure_ascii=False, indent=2))
 
 
 def _sha256(caminho):
@@ -115,6 +154,9 @@ def analisar(npz, pasta_saida):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4 or sys.argv[1] != "analise":
-        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida>")
-    analisar(sys.argv[2], sys.argv[3])
+    if len(sys.argv) == 4 and sys.argv[1] == "analise":
+        analisar(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) == 3 and sys.argv[1] == "distribuicao":
+        distribuicao(sys.argv[2])
+    else:
+        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <embeddings.npz> <pasta_saida> | distribuicao <embeddings.npz>")

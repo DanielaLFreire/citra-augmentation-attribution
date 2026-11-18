@@ -2,7 +2,7 @@ import json
 
 import numpy as np
 
-from scripts.semelhanca_v2_citra import analisar, limiares, pares_positivos, tempo
+from scripts.semelhanca_v2_citra import analisar, limiares, otsu, pares_positivos, tempo
 
 
 def test_tempo_diferenca_em_segundos():
@@ -30,3 +30,9 @@ def test_analisar_sintetico(tmp_path):
     r = json.load(open(tmp_path / "out" / "semelhanca_v2_resumo.json", encoding="utf-8"))
     assert r["n_pares_positivos"] == 3 and r["aviso"] is not None
     assert r["por_split"]["test"]["n"] == 1 and r["por_split"]["test"]["quantis_max_sim"]["50"] > 0.99
+
+
+def test_otsu_separa_dois_modos():
+    rng = np.random.default_rng(1)
+    v = np.concatenate([rng.normal(0.3, 0.05, 500), rng.normal(0.9, 0.03, 500)])
+    assert 0.4 < otsu(v) < 0.8

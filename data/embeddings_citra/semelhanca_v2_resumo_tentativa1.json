@@ -1,0 +1,57 @@
+{
+  "nota": "Saída colada por Daniela em 2026-11-18 (commit e4f5751), regra do D25 aplicada como fixada. Resultado: limiar degenerado (todos acima).",
+  "npz_sha256": "74bd449e97347a99243bccd13d3ad9ea2f228a01b7be4bc44e5acf7436f5a3ea",
+  "n_pares_positivos": 1343,
+  "n_pares_por_tipo": {
+    "train-train": 541,
+    "test-train": 365,
+    "train-val": 279,
+    "test-val": 81,
+    "val-val": 22,
+    "test-test": 55
+  },
+  "limiares": {
+    "p5": 0.37994441390037537,
+    "p1": 0.19592872262001038,
+    "p10": 0.5092918276786804
+  },
+  "por_split": {
+    "val": {
+      "n": 332,
+      "quantis_max_sim": {
+        "5": 0.7498,
+        "25": 0.8258,
+        "50": 0.8815,
+        "75": 0.918,
+        "95": 0.9649
+      },
+      "fracao_acima": {
+        "p5": 1.0,
+        "p1": 1.0,
+        "p10": 0.99699
+      },
+      "fracao_vizinho_mesmo_dia": 0.5392
+    },
+    "test": {
+      "n": 401,
+      "quantis_max_sim": {
+        "5": 0.7311,
+        "25": 0.832,
+        "50": 0.8817,
+        "75": 0.9204,
+        "95": 0.9672
+      },
+      "fracao_acima": {
+        "p5": 1.0,
+        "p1": 1.0,
+        "p10": 0.99501
+      },
+      "fracao_vizinho_mesmo_dia": 0.591
+    }
+  },
+  "acaso_vizinho_mesmo_dia": {
+    "test": 0.046,
+    "val": 0.047,
+    "como": "média de k_treino_mesmo_dia/1348 em data/inventario_zip_citra3d/similaridade_pareada.csv"
+  }
+}
