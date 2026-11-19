@@ -1,0 +1,45 @@
+{
+  "nota": "Etapa A do D32: saída de `analise` com a divisão da D31, colada por Daniela em 2026-11-19 (commit 1389ee8). O campo `limiares` é o da regra descartada (D25) e não vale; os limiares válidos são os da calibração (D29).",
+  "npz_sha256": "74bd449e97347a99243bccd13d3ad9ea2f228a01b7be4bc44e5acf7436f5a3ea",
+  "n_imagens": 2081,
+  "n_pares_positivos": 1343,
+  "n_pares_por_tipo": {
+    "train-train": 878,
+    "val-val": 140,
+    "test-test": 325
+  },
+  "por_split": {
+    "val": {
+      "n": 325,
+      "quantis_max_sim": {
+        "5": 0.6986,
+        "25": 0.7821,
+        "50": 0.8278,
+        "75": 0.8655,
+        "95": 0.9244
+      },
+      "fracao_vizinho_mesmo_dia": 0.0
+    },
+    "test": {
+      "n": 383,
+      "quantis_max_sim": {
+        "5": 0.6867,
+        "25": 0.7717,
+        "50": 0.8262,
+        "75": 0.8677,
+        "95": 0.9137
+      },
+      "fracao_vizinho_mesmo_dia": 0.0
+    }
+  },
+  "comparacao_divisao_antiga": {
+    "test": {
+      "mediana": 0.8817,
+      "p95": 0.9672
+    },
+    "val": {
+      "mediana": 0.8815,
+      "p95": 0.9649
+    }
+  }
+}
