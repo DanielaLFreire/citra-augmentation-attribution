@@ -1,0 +1,39 @@
+{
+  "nota": "Etapa A do D32: saída de `fracoes` colada por Daniela em 2026-11-19 (commit 1e40eef), limiares da calibração antiga sem recalibrar, sobre analise_v2_divisao_nova/semelhanca_v2_por_quadro.csv.",
+  "val": {
+    "n": 325,
+    "tau_0.9642": {
+      "acima": 2,
+      "abaixo_ficam_no_subconjunto": 323,
+      "fracao_acima": 0.00615
+    },
+    "tau_0.8224": {
+      "acima": 172,
+      "abaixo_ficam_no_subconjunto": 153,
+      "fracao_acima": 0.52923
+    }
+  },
+  "test": {
+    "n": 383,
+    "tau_0.9642": {
+      "acima": 0,
+      "abaixo_ficam_no_subconjunto": 383,
+      "fracao_acima": 0.0
+    },
+    "tau_0.8224": {
+      "acima": 200,
+      "abaixo_ficam_no_subconjunto": 183,
+      "fracao_acima": 0.52219
+    }
+  },
+  "divisao_antiga_para_comparar": {
+    "test": {
+      "tau_0.9642": 0.0599,
+      "tau_0.8224": 0.7781
+    },
+    "val": {
+      "tau_0.9642": 0.0572,
+      "tau_0.8224": 0.7681
+    }
+  }
+}
