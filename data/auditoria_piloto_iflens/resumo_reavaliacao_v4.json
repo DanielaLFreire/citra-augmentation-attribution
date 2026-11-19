@@ -1,0 +1,407 @@
+{
+  "conferencia": {
+    "n_caixas": 188,
+    "n_caixas_iguais_nas_duas_planilhas": 188,
+    "n_reavaliadas": 30,
+    "caixas_nao_reavaliadas_com_marca_diferente_de_valida": [],
+    "tipos_objeto_adicionado": {
+      "daniela": [
+        "barco",
+        "boia",
+        "embarcações"
+      ],
+      "jose": [
+        "boia",
+        "embarcacao",
+        "embarcacoes",
+        "varias embarcacaoes",
+        "varias embarcacoes"
+      ]
+    }
+  },
+  "nas_30_caixas_reavaliadas": {
+    "concordancia_6_categorias": 0.2,
+    "kappa_6_categorias": 0.04000000000000002,
+    "concordancia_4_grupos": 0.3333333333333333,
+    "kappa_4_grupos": 0.12023460410557181,
+    "matriz_daniela_jose": {
+      "alterada|alterada": 1,
+      "alterada|apagada": 3,
+      "alterada|deslocada": 1,
+      "apagada|apagada": 2,
+      "degradada|alterada": 1,
+      "degradada|apagada": 3,
+      "degradada|valida": 4,
+      "nao_avaliavel|apagada": 3,
+      "nao_avaliavel|degradada": 3,
+      "nao_avaliavel|nao_avaliavel": 1,
+      "nao_avaliavel|valida": 1,
+      "valida|alterada": 1,
+      "valida|degradada": 1,
+      "valida|nao_avaliavel": 3,
+      "valida|valida": 2
+    },
+    "divergencias": [
+      [
+        "A003#3",
+        "alterada",
+        "deslocada"
+      ],
+      [
+        "A004#2",
+        "alterada",
+        "apagada"
+      ],
+      [
+        "A004#3",
+        "degradada",
+        "apagada"
+      ],
+      [
+        "A008#2",
+        "degradada",
+        "valida"
+      ],
+      [
+        "A009#2",
+        "nao_avaliavel",
+        "apagada"
+      ],
+      [
+        "A010#3",
+        "degradada",
+        "valida"
+      ],
+      [
+        "A014#2",
+        "nao_avaliavel",
+        "degradada"
+      ],
+      [
+        "A017#2",
+        "nao_avaliavel",
+        "degradada"
+      ],
+      [
+        "A022#2",
+        "degradada",
+        "valida"
+      ],
+      [
+        "A022#4",
+        "degradada",
+        "apagada"
+      ],
+      [
+        "A022#6",
+        "degradada",
+        "valida"
+      ],
+      [
+        "A025#1",
+        "alterada",
+        "apagada"
+      ],
+      [
+        "A025#3",
+        "valida",
+        "nao_avaliavel"
+      ],
+      [
+        "A030#4",
+        "alterada",
+        "apagada"
+      ],
+      [
+        "A034#7",
+        "nao_avaliavel",
+        "apagada"
+      ],
+      [
+        "A035#3",
+        "nao_avaliavel",
+        "degradada"
+      ],
+      [
+        "A049#2",
+        "valida",
+        "nao_avaliavel"
+      ],
+      [
+        "A049#3",
+        "valida",
+        "nao_avaliavel"
+      ],
+      [
+        "A050#1",
+        "nao_avaliavel",
+        "valida"
+      ],
+      [
+        "A050#2",
+        "valida",
+        "alterada"
+      ],
+      [
+        "A052#17",
+        "nao_avaliavel",
+        "apagada"
+      ],
+      [
+        "A060#1",
+        "valida",
+        "degradada"
+      ],
+      [
+        "A060#4",
+        "degradada",
+        "apagada"
+      ],
+      [
+        "A060#5",
+        "degradada",
+        "alterada"
+      ]
+    ]
+  },
+  "todas_as_caixas_60_folhas": {
+    "n": 188,
+    "concordancia_6": 0.8723404255319149,
+    "kappa_6": 0.4372661511598905,
+    "ic95_kappa_6": [
+      0.29263157894736846,
+      0.5697124135420457
+    ],
+    "kappa_4_grupos": 0.5270440251572327,
+    "ic95_kappa_4_grupos": [
+      0.34486632217479163,
+      0.6993805417223368
+    ],
+    "referencia_antes_da_v4": {
+      "kappa_6": 0.27,
+      "kappa_3_grupos": 0.35
+    }
+  },
+  "desfecho_por_imagem": {
+    "primario": {
+      "kappa_entre_avaliadores_imagem_reprovada": [
+        0.95,
+        0.86404833836858
+      ],
+      "ic95_kappa": [
+        0.6913580246913579,
+        1.0
+      ],
+      "qualquer_um": {
+        "v1": {
+          "reprovadas": 5,
+          "n": 30,
+          "wilson95": [
+            0.07336434240351683,
+            0.33564705185680177
+          ]
+        },
+        "v2": {
+          "reprovadas": 11,
+          "n": 30,
+          "wilson95": [
+            0.21873702204017678,
+            0.5448675356639506
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 19,
+          "ambas": 5,
+          "so_v2": 6,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.03125
+        }
+      },
+      "ambos": {
+        "v1": {
+          "reprovadas": 3,
+          "n": 30,
+          "wilson95": [
+            0.03459925995971615,
+            0.25621441315266624
+          ]
+        },
+        "v2": {
+          "reprovadas": 10,
+          "n": 30,
+          "wilson95": [
+            0.19230295526846194,
+            0.5122027418616973
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 20,
+          "ambas": 3,
+          "so_v2": 7,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.015625
+        }
+      },
+      "daniela": {
+        "v1": {
+          "reprovadas": 3,
+          "n": 30,
+          "wilson95": [
+            0.03459925995971615,
+            0.25621441315266624
+          ]
+        },
+        "v2": {
+          "reprovadas": 10,
+          "n": 30,
+          "wilson95": [
+            0.19230295526846194,
+            0.5122027418616973
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 20,
+          "ambas": 3,
+          "so_v2": 7,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.015625
+        }
+      },
+      "jose": {
+        "v1": {
+          "reprovadas": 5,
+          "n": 30,
+          "wilson95": [
+            0.07336434240351683,
+            0.33564705185680177
+          ]
+        },
+        "v2": {
+          "reprovadas": 11,
+          "n": 30,
+          "wilson95": [
+            0.21873702204017678,
+            0.5448675356639506
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 19,
+          "ambas": 5,
+          "so_v2": 6,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.03125
+        }
+      }
+    },
+    "sensibilidade_degradada_conta": {
+      "kappa_entre_avaliadores_imagem_reprovada": [
+        0.9166666666666666,
+        0.7910863509749303
+      ],
+      "ic95_kappa": [
+        0.5985401459854014,
+        0.9522292993630571
+      ],
+      "qualquer_um": {
+        "v1": {
+          "reprovadas": 6,
+          "n": 30,
+          "wilson95": [
+            0.09504978102401235,
+            0.37306047381027446
+          ]
+        },
+        "v2": {
+          "reprovadas": 13,
+          "n": 30,
+          "wilson95": [
+            0.2737723743061511,
+            0.6080299045459127
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 16,
+          "ambas": 5,
+          "so_v2": 8,
+          "so_v1": 1,
+          "mcnemar_exato_p": 0.0390625
+        }
+      },
+      "ambos": {
+        "v1": {
+          "reprovadas": 4,
+          "n": 30,
+          "wilson95": [
+            0.05309569424218104,
+            0.2968168394441695
+          ]
+        },
+        "v2": {
+          "reprovadas": 10,
+          "n": 30,
+          "wilson95": [
+            0.19230295526846194,
+            0.5122027418616973
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 20,
+          "ambas": 4,
+          "so_v2": 6,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.03125
+        }
+      },
+      "daniela": {
+        "v1": {
+          "reprovadas": 5,
+          "n": 30,
+          "wilson95": [
+            0.07336434240351683,
+            0.33564705185680177
+          ]
+        },
+        "v2": {
+          "reprovadas": 11,
+          "n": 30,
+          "wilson95": [
+            0.21873702204017678,
+            0.5448675356639506
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 18,
+          "ambas": 4,
+          "so_v2": 7,
+          "so_v1": 1,
+          "mcnemar_exato_p": 0.0703125
+        }
+      },
+      "jose": {
+        "v1": {
+          "reprovadas": 5,
+          "n": 30,
+          "wilson95": [
+            0.07336434240351683,
+            0.33564705185680177
+          ]
+        },
+        "v2": {
+          "reprovadas": 12,
+          "n": 30,
+          "wilson95": [
+            0.24590394326083403,
+            0.5767994750172616
+          ]
+        },
+        "pareado_v1_v2": {
+          "nenhuma": 18,
+          "ambas": 5,
+          "so_v2": 7,
+          "so_v1": 0,
+          "mcnemar_exato_p": 0.015625
+        }
+      }
+    }
+  }
+}

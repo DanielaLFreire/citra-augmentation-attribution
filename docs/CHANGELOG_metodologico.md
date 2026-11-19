@@ -79,3 +79,4 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - D31 (2026-11-19): divisão em blocos de dias sorteada (semente 20261119, aprovada antes): treino 1.373/20 dias, val 325/4, teste 383/3; lista congelada com hash; pendências: vazamento residual, recálculo da D18, estatística com 3 dias de teste.
 - D32 (2026-11-19): plano da medida do vazamento residual na divisão nova fixado (etapa A automática, etapa B com 40 pares, desfecho e leitura pré-fixados); código generalizado para aceitar a divisão nova; semente de amostragem pendente.
 - D32: semente de amostragem 20261120 aprovada por Daniela antes de gerar os pares.
+- D33 (2026-11-19): reavaliação v4 do José registrada; concordância por imagem kappa 0,86 (0,69-1,00); caixas 0,44 em 6 categorias (antes 0,27); reprovação v1 5/30 e v2 11/30 (qualquer um), 3/30 e 10/30 (ambos). v1 mantida.

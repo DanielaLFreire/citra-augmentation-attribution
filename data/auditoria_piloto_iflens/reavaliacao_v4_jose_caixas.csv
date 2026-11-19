@@ -1,0 +1,31 @@
+codigo,caixa,categoria_v4,observacao
+A003,3,deslocada,
+A003,4,apagada,
+A003,5,apagada,
+A004,2,apagada,"resta uma mancha, nem na caixa original da para distinguir"
+A004,3,apagada,tem um objeto mas nao da identificar que é uma embarcacao
+A008,2,valida,pouca nitidez
+A009,2,apagada,resta uma mancha
+A010,3,valida,pouca nitidez
+A014,2,degradada,
+A014,6,nao_avaliavel,"tem uma mancha, nao é uma embarcacao, pode ser classificada como""apagada"""
+A017,2,degradada,
+A022,2,valida,pouca nitidez
+A022,4,apagada,"na gerada, nao da para distinguir que tem uma embarcacao"
+A022,6,valida,
+A025,1,apagada,
+A025,2,alterada,parece uma mistura de embarcacoes 
+A025,3,nao_avaliavel,"objeto, tem uma mancha, pode ser classifcada como ""apagada"""
+A030,4,apagada,
+A034,4,valida,pouca nitidez
+A034,5,valida,pouca nitidez
+A034,7,apagada,so tem uma mancha
+A035,3,degradada,
+A049,2,nao_avaliavel,nao encaixa em nenhuma das definicoes das categorias. A gerada bem diferente da original mas nao pode ser alterada porque nao tem certeza que de fato 'e uma embarcacao 
+A049,3,nao_avaliavel,nao encaixa em nenhuma das definicoes das categorias. A gerada bem diferente da original mas nao pode ser alterada porque nao tem certeza que de fato 'e uma embarcacao 
+A050,1,valida,pouca nitidez
+A050,2,alterada,
+A052,17,apagada,so tem uma mancha
+A060,1,degradada,
+A060,4,apagada,
+A060,5,alterada,"na original, nao parace ser uma embarcacao mas na gerada  'e claro que 'e uma embarcacao diferente"

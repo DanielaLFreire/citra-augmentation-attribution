@@ -18,7 +18,10 @@
     "DEFINICOES_auditoria_v4.md": "092735c985bec5c5865b552e64a40678c5ed1352e94fc9b8087c47067beac111",
     "reavaliacao_v4_daniela_caixas.csv": "6dec857c3e02a7d6d6e3e5ce398e149ed41eaca1d8a73f57c3c363fb9d5fdd6d",
     "reavaliacao_v4_daniela_imagens.csv": "b01126386c89c84a08be8411250b6db187e7fa3d2be9cd78a047c493cfccdf6e",
-    "reavaliacao_v4_daniela_caixas_corrigida.csv": "94c8bbdd501ab9a720493cddfe17820cb24e0fd0ede6cae82bd22deb0d3c0836"
+    "reavaliacao_v4_daniela_caixas_corrigida.csv": "94c8bbdd501ab9a720493cddfe17820cb24e0fd0ede6cae82bd22deb0d3c0836",
+    "reavaliacao_v4_jose_caixas.csv": "fa40fbdf8b0acc0c81bebba4ad114a7a1b295cb60017d119197d565501d76092",
+    "reavaliacao_v4_jose_imagens.csv": "14b7668ddab31e442a61369a63d7557f5a6574f3721a0586a83f61681087cf56",
+    "resumo_reavaliacao_v4.json": "87808b091acd57349c1ac4fd95ae0699b70e0ca00798c62c1126fe45b43da14a"
   },
   "avaliacao_claude_cega_20folhas.csv": {
     "origem": "Avaliação cega de Claude, nível da imagem (objeto_adicionado, original_sem_rotulo), de 20 folhas sorteadas com random.Random(2026).sample(range(1,61), 20) entre as 60 folhas do piloto de prompts (A001–A060). Feita em 2026-11-17 SOBRE o topo das folhas (imagem inteira original e gerada), reduzido; ANTES de ver as respostas de Daniela nessas colunas e sem conhecer a chave código-prompt.",
@@ -49,5 +52,22 @@
     "limites": "Ainda sem a reavaliação v4 do José; análise de concordância pendente.",
     "correcao": "Mesmo dia, antes de ver a reavaliação v4 do José: A022 #4 e #6 passaram de valida para degradada, pelo critério da Daniela \"nitidez que pode ser confundida com a paisagem\". Versão original preservada. Esse critério não está em DEFINICOES_auditoria_v4.md."
   },
-  "DEFINICOES_auditoria_v4.md_revisao": "2026-11-18, antes de o José preencher a reavaliação v4: acrescentado o limiar de degradada (confundível com o fundo). A versão com hash anterior foi enviada só à Daniela; o José recebe esta."
+  "DEFINICOES_auditoria_v4.md_revisao": "2026-11-18, antes de o José preencher a reavaliação v4: acrescentado o limiar de degradada (confundível com o fundo). A versão com hash anterior foi enviada só à Daniela; o José recebe esta.",
+  "reavaliacao_v4_jose": {
+    "origem": "Reavaliação v4 das 30 caixas e 3 imagens pelo José, enviada por Daniela em 2026-11-19. Feita sem ver as respostas de Daniela na reavaliação v4 (informado por Daniela; não verificado de forma independente).",
+    "limites": "Definições v4 com o limiar de degradada (arquivo atualizado enviado a ele por WhatsApp antes de preencher, segundo Daniela).",
+    "contagem_caixas": {
+      "deslocada": 1,
+      "apagada": 11,
+      "valida": 7,
+      "degradada": 4,
+      "nao_avaliavel": 4,
+      "alterada": 3
+    }
+  },
+  "resumo_reavaliacao_v4.json": {
+    "origem": "Saída de scripts/analise_reavaliacao_v4.py sobre as respostas originais das 60 folhas e a reavaliação v4 dos dois avaliadores (2026-11-19).",
+    "conferencia": "188 caixas iguais nas duas planilhas; todas as caixas não reavaliadas são `valida` nos dois; correção feita antes da versão final: o reconhecimento de \"varias embarcacoes\" (José) como embarcação adicionada.",
+    "limites": "Nas 30 caixas reavaliadas a concordância é baixa por seleção (foram escolhidas por divergência); a concordância geral e a por imagem são as que valem. Reavaliação do José feita sem ver as respostas de Daniela, segundo Daniela, não verificado."
+  }
 }

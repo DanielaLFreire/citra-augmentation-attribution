@@ -33,7 +33,7 @@ Observação de transparência: este critério foi refinado depois do piloto (v3
 
 ## 6. Avaliação
 - Dois avaliadores humanos independentes (Daniela e José), cegos entre si e ao parâmetro de geração, com a planilha e as definições do piloto (`INSTRUCOES_avaliador2.md`).
-- Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. DECISÃO PENDENTE: limiar mínimo de kappa por campo para prosseguir e conduta se não for atingido.
+- Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. Resultado da reavaliação (D33): imagem reprovada kappa 0,86 (IC95% 0,69–1,00); caixa em 6 categorias 0,44 (0,29–0,57). DECISÃO PENDENTE: limiar mínimo de kappa por campo para prosseguir e conduta se não for atingido.
 - Resolução de discordâncias: primário = reprovada se **qualquer** avaliador marcar; sensibilidade = só se ambos marcarem; relatar as duas taxas (no piloto, com os dois avaliadores, v1: 6/30 contra 2/30; v2: 13/30 contra 10/30).
 - Leitor LLM (família diferente do gerador desejável): usado como terceiro leitor e como filtro; calibrado contra os humanos.
 
