@@ -1,0 +1,29 @@
+{
+  "nota": "Saída de `fracoes` colada por Daniela em 2026-11-19 (commit b217d66), sobre analise_v2/semelhanca_v2_por_quadro.csv, com os limiares da calibração (D27/D28).",
+  "val": {
+    "n": 332,
+    "tau_0.9642": {
+      "acima": 19,
+      "abaixo_ficam_no_subconjunto": 313,
+      "fracao_acima": 0.0572
+    },
+    "tau_0.8224": {
+      "acima": 255,
+      "abaixo_ficam_no_subconjunto": 77,
+      "fracao_acima": 0.7681
+    }
+  },
+  "test": {
+    "n": 401,
+    "tau_0.9642": {
+      "acima": 24,
+      "abaixo_ficam_no_subconjunto": 377,
+      "fracao_acima": 0.0599
+    },
+    "tau_0.8224": {
+      "acima": 312,
+      "abaixo_ficam_no_subconjunto": 89,
+      "fracao_acima": 0.7781
+    }
+  }
+}

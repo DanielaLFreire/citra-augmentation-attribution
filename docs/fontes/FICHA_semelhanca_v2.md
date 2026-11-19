@@ -15,3 +15,15 @@ O que NÃO está sustentado como eu disse:
 
 Limite importante:
 - Pizzi et al. 2022 (SSCD, arXiv 2202.10261) mostram que um descritor treinado especificamente para detecção de cópias melhora 2 a 5 vezes a linha de base do DINO (ViT-B/16, versão 1) em transformações fortes (conjunto DISC2021). Ou seja, o DINO genérico não é o melhor detector de cópias editadas. Nosso caso é diferente (quadros sem edição, da mesma câmera), mas o limite se aplica: a medida é uma aproximação, e a conferência de 30 pares testa se serve aqui.
+
+## Resultados na divisão antiga (2026-11-18/19)
+
+Detalhes e decisões: D25 a D29 em `docs/DECISOES.md`; dados em `data/embeddings_citra/`.
+
+1. **Tentativa 1 (regra do D25 como fixada):** limiar = percentil 5 do cosseno em 1.343 pares do mesmo dia a até 60 s = 0,380; 100% de val e test acima. Degenerado. Causa provável: câmeras diferentes na mesma janela de 60 s e câmeras com zoom ou giro (não verificada).
+2. **Tentativa 2 (Otsu, D26):** 0,686; 97,8% do teste acima. Histograma unimodal (moda 0,90 a 0,95). Degenerado.
+3. **Calibração humana (D27/D28, 40 pares, uma avaliadora):** τ principal 0,964 (5 de 5 na faixa mais alta), estrito nulo, de fundo 0,822.
+4. **Sem limiar:** o quadro de treino mais parecido é do mesmo dia em 59,1% do teste e 53,9% da validação, contra 4,6% e 4,7% ao acaso; 65% (50% a 78%) dos pares amostrados têm as mesmas embarcações.
+5. **Subconjuntos:** τ principal mantém 94% (teste e val); τ de fundo mantém 22% do teste (89 quadros) e 23% da validação (77).
+
+Para o artigo: a distribuição da semelhança é contínua e sem separação natural; limiares dependem de uma calibração humana pequena e devem ser apresentados como aproximados.
