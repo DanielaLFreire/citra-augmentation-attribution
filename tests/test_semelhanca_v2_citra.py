@@ -88,3 +88,50 @@ def test_fracoes(tmp_path, capsys):
     fracoes(str(tmp_path / "q.csv"), 0.9)
     r = json.loads(capsys.readouterr().out)
     assert r["test"]["tau_0.9000"]["acima"] == 1 and r["val"]["tau_0.9000"]["abaixo_ficam_no_subconjunto"] == 0
+
+
+def test_wilson_e_newcombe():
+    from scripts.semelhanca_v2_citra import newcombe, wilson
+
+    lo, hi = wilson(26, 40)
+    assert abs(lo - 0.495) < 0.002 and abs(hi - 0.779) < 0.002
+    l, u = newcombe(26, 40, 26, 40)
+    assert abs(l + u) < 1e-12 and u > 0
+    assert newcombe(10, 40, 26, 40)[1] < 0
+
+
+def test_aplicar_divisao(tmp_path):
+    import csv
+
+    import pytest
+
+    from scripts.semelhanca_v2_citra import aplicar_divisao
+
+    nomes = np.array(["a", "b"])
+    with open(tmp_path / "d.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["nome", "dia", "divisao"])
+        w.writerows([["a", "x", "test"], ["b", "x", "train"]])
+    assert list(aplicar_divisao(np.array(["train", "train"]), nomes, str(tmp_path / "d.csv"))) == ["test", "train"]
+    with pytest.raises(ValueError):
+        aplicar_divisao(np.array(["train"]), np.array(["z"]), str(tmp_path / "d.csv"))
+
+
+def test_vazamento_residual(tmp_path, capsys):
+    import csv
+
+    from scripts.semelhanca_v2_citra import vazamento_residual
+
+    with open(tmp_path / "c.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "split_esq", "nome_esq", "nome_dir_treino", "cosseno_cls", "estrato_octil"])
+        for i in range(4):
+            w.writerow([f"P{i + 1:02d}", "test", "01.01.2022-08-00-00", "02.01.2022-08-00-00", 0.9, 0])
+    with open(tmp_path / "f.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "resposta_sim_cena_nao", "observacao"])
+        for i, r in enumerate(["sim", "mesmo_alvo", "cena", "nao"]):
+            w.writerow([f"P{i + 1:02d}", r, ""])
+    vazamento_residual(str(tmp_path / "c.csv"), str(tmp_path / "f.csv"))
+    r = json.loads(capsys.readouterr().out)
+    assert r["mesmas_embarcacoes_nova"]["x"] == 2 and r["mesmo_dia_entre_pares"] == 0

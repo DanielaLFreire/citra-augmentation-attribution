@@ -50,6 +50,59 @@ def limiares(sims):
     return {k: float(np.percentile(sims, p)) for k, p in PERCENTIS.items()}
 
 
+def aplicar_divisao(split, nomes, csv_divisao):
+    """Substitui a divisão do .npz (a antiga) pela de um CSV nome,dia,divisao (ex.: blocos de dias, D31). Exige os mesmos nomes."""
+    mapa = {r["nome"]: r["divisao"] for r in csv.DictReader(open(csv_divisao, encoding="utf-8"))}
+    if set(mapa) != set(nomes):
+        raise ValueError("os nomes do CSV de divisão não coincidem com os do .npz")
+    return np.array([mapa[n] for n in nomes])
+
+
+def wilson(x, n, z=1.96):
+    """Intervalo de Wilson para uma proporção."""
+    p = x / n
+    den = 1 + z * z / n
+    centro = (p + z * z / (2 * n)) / den
+    meia = z * np.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / den
+    return float(centro - meia), float(centro + meia)
+
+
+def newcombe(x1, n1, x2, n2, z=1.96):
+    """Intervalo de Newcombe (método 10) para a diferença de duas proporções independentes p1 - p2."""
+    p1, p2 = x1 / n1, x2 / n2
+    l1, u1 = wilson(x1, n1, z)
+    l2, u2 = wilson(x2, n2, z)
+    d = p1 - p2
+    return float(d - np.sqrt((p1 - l1) ** 2 + (u2 - p2) ** 2)), float(d + np.sqrt((u1 - p1) ** 2 + (p2 - l2) ** 2))
+
+
+def vazamento_residual(chave_csv, folha_csv, antigo_x=26, antigo_n=40):
+    """Proporção de pares com as mesmas embarcações (sim ou mesmo_alvo) na divisão nova, com Wilson 95%, e diferença para a antiga (D29)."""
+    ch = {r["codigo"]: r for r in csv.DictReader(open(chave_csv, encoding="utf-8"))}
+    resp = {r["codigo"]: r["resposta_sim_cena_nao"].strip().lower() for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
+    cod = sorted(ch)
+    validas = ("sim", "mesmo_alvo", "cena", "nao")
+    faltam = [c for c in cod if resp.get(c) not in validas]
+    if faltam:
+        sys.exit(f"respostas ausentes ou inválidas (use sim, mesmo_alvo, cena ou nao): {faltam}")
+    r = [resp[c] for c in cod]
+    x = sum(1 for a in r if a in ("sim", "mesmo_alvo"))
+    n = len(r)
+    por_estrato = {}
+    for c in cod:
+        por_estrato.setdefault(int(ch[c]["estrato_octil"]), []).append(resp[c])
+    saida = {"n_pares": n, "respostas_totais": {k: r.count(k) for k in validas},
+             "mesmas_embarcacoes_nova": {"x": x, "n": n, "proporcao": x / n, "wilson95": wilson(x, n)},
+             "mesmas_embarcacoes_antiga": {"x": antigo_x, "n": antigo_n, "proporcao": antigo_x / antigo_n, "wilson95": wilson(antigo_x, antigo_n)},
+             "diferenca_nova_menos_antiga": {"valor": x / n - antigo_x / antigo_n, "newcombe95": newcombe(x, n, antigo_x, antigo_n)},
+             "mesmo_dia_entre_pares": sum(1 for c in cod if ch[c]["nome_esq"][:10] == ch[c]["nome_dir_treino"][:10]),
+             "respostas_por_estrato": {str(e): {k: v.count(k) for k in validas} for e, v in sorted(por_estrato.items())},
+             "faixa_cosseno_por_estrato": {str(e): [min(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e),
+                                                   max(float(ch[c]["cosseno_cls"]) for c in cod if int(ch[c]["estrato_octil"]) == e)]
+                                           for e in sorted(por_estrato)}}
+    print(json.dumps(saida, ensure_ascii=False, indent=2))
+
+
 def otsu(valores, n_bins=100):
     """Limiar de Otsu (máxima variância entre classes) de valores 1-D; regra objetiva, sem parâmetros livres além de n_bins."""
     v = np.asarray(valores, float)
@@ -113,7 +166,7 @@ def tau_de_rotulos(sims, rotulos, precisao=0.9, min_pares=5):
     return melhor
 
 
-def pares(npz, zip_imagens, pasta_saida, semente=2026):
+def pares(npz, zip_imagens, pasta_saida, semente=2026, csv_divisao=None):
     """Gera os 40 pares da calibração humana (D27): imagens lado a lado SEM pontuação, folha em branco e chave separada."""
     import io
     import zipfile
@@ -124,6 +177,8 @@ def pares(npz, zip_imagens, pasta_saida, semente=2026):
 
     d = np.load(npz)
     split, nomes = d["split"].astype(str), d["nome"].astype(str)
+    if csv_divisao:
+        split = aplicar_divisao(split, nomes, csv_divisao)
     z = d["cls"].astype(np.float32)
     z /= np.linalg.norm(z, axis=1, keepdims=True)
     s = z @ z.T
@@ -144,8 +199,10 @@ def pares(npz, zip_imagens, pasta_saida, semente=2026):
             zz = zipfile.ZipFile(io.BytesIO(f.read()))
         acervo[sp] = (zz, {b: c for c, b in nomes_reais(zz.namelist())})
 
+    original = dict(zip(nomes, d["split"].astype(str)))
+
     def ler(nome, sp):
-        zz, idx = acervo[sp]
+        zz, idx = acervo[original[nome]]
         im = cv2.imdecode(np.frombuffer(zz.read(idx[nome]), np.uint8), cv2.IMREAD_COLOR)
         return cv2.resize(im, (960, 531), interpolation=cv2.INTER_AREA)
 
@@ -155,7 +212,7 @@ def pares(npz, zip_imagens, pasta_saida, semente=2026):
         i, j = cand[idx], viz[idx]
         codigo = f"P{k:02d}"
         cv2.imwrite(str(pasta / "pares_conferencia" / f"{codigo}.jpg"),
-                    np.hstack([ler(nomes[i], split[i]), ler(nomes[j], "train")]), [cv2.IMWRITE_JPEG_QUALITY, 92])
+                    np.hstack([ler(nomes[i], split[i]), ler(nomes[j], split[j])]), [cv2.IMWRITE_JPEG_QUALITY, 92])
         chave.append({"codigo": codigo, "split_esq": split[i], "nome_esq": nomes[i], "nome_dir_treino": nomes[j],
                       "cosseno_cls": float(sims[idx]), "estrato_octil": estrato})
     with open(pasta / "_NAO_ABRIR_chave" / "chave_pares.csv", "w", newline="", encoding="utf-8") as f:
@@ -225,9 +282,11 @@ def _commit():
         return None
 
 
-def analisar(npz, pasta_saida):
+def analisar(npz, pasta_saida, csv_divisao=None):
     d = np.load(npz)
     split, nomes = d["split"].astype(str), d["nome"].astype(str)
+    if csv_divisao:
+        split = aplicar_divisao(split, nomes, csv_divisao)
     z = d["cls"].astype(np.float32)
     z /= np.linalg.norm(z, axis=1, keepdims=True)
     s = z @ z.T
@@ -276,15 +335,20 @@ def analisar(npz, pasta_saida):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4 and sys.argv[1] == "analise":
-        analisar(sys.argv[2], sys.argv[3])
+    if len(sys.argv) in (4, 5) and sys.argv[1] == "analise":
+        analisar(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) == 5 else None)
     elif len(sys.argv) == 3 and sys.argv[1] == "distribuicao":
         distribuicao(sys.argv[2])
-    elif len(sys.argv) == 5 and sys.argv[1] == "pares":
-        pares(sys.argv[2], sys.argv[3], sys.argv[4])
+    elif len(sys.argv) in (5, 7) and sys.argv[1] == "pares":
+        if len(sys.argv) == 7:
+            pares(sys.argv[2], sys.argv[3], sys.argv[4], semente=int(sys.argv[5]), csv_divisao=sys.argv[6])
+        else:
+            pares(sys.argv[2], sys.argv[3], sys.argv[4])
+    elif len(sys.argv) == 4 and sys.argv[1] == "residual":
+        vazamento_residual(sys.argv[2], sys.argv[3])
     elif len(sys.argv) == 4 and sys.argv[1] == "calibrar":
         calibrar(sys.argv[2], sys.argv[3])
     elif len(sys.argv) >= 4 and sys.argv[1] == "fracoes":
         fracoes(sys.argv[2], *[float(x) for x in sys.argv[3:]])
     else:
-        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <npz> <saida> | distribuicao <npz> | pares <npz> <CITRA-3D.zip> <saida> | calibrar <chave.csv> <folha.csv> | fracoes <por_quadro.csv> <tau> [tau ...]")
+        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <npz> <saida> | distribuicao <npz> | pares <npz> <CITRA-3D.zip> <saida> [<semente> <divisao.csv>] | residual <chave.csv> <folha.csv> | calibrar <chave.csv> <folha.csv> | fracoes <por_quadro.csv> <tau> [tau ...]")
