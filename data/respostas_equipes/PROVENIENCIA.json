@@ -6,7 +6,8 @@
     "Respostas_Genship_rodada2_2026-11-16.txt": "3190be18e0fe0ed033da6b0bbccff0e7d89197210f1ac36c00ba8f7befb9f211",
     "Conversa_Dannylo_2026-11-18.txt": "f0ddaaf33d43607652ddec7fe9caa55a7f44b21c52951610e3d818ed2475391f",
     "Dannylo_respostas_2026-11-18_tarde.txt": "84fd86412e859a4d2b21698b628a85802f6260f63544b45a40eee59b4b770294",
-    "Conversa_Joao_2026-11-16.txt": "fbd8bd37db0ec6cec46ba4ff811626c11a6a467aae4a2e409246475818a16fc8"
+    "Conversa_Joao_2026-11-16.txt": "fbd8bd37db0ec6cec46ba4ff811626c11a6a467aae4a2e409246475818a16fc8",
+    "Resposta_Cmte_Moreira_2026-11-19_resumo.md": "e73fa52b601d87235806e3a3456d4bfe2c3fb80cddffc466c1daf26fe74a6466"
   },
   "Conversa_Dannylo_2026-11-18.txt": {
     "origem": "Exportação do chat de Daniela com Dannylo C. Maurício (equipe CITRA), 2026-11-18, 12:18–12:35, recebida de Daniela; copiada sem alteração. As perguntas de Daniela aparecem coladas dentro do chat e misturadas às respostas dele (o texto não separa com clareza quem escreveu cada linha; as respostas são as linhas atribuídas a Dannylo e as que seguem as perguntas coladas).",
@@ -19,5 +20,9 @@
   "Conversa_Joao_2026-11-16.txt": {
     "origem": "Colagem de Daniela (2026-11-18) da conversa de 16/11 com o João",
     "limites": "As perguntas (1)-(3) de Daniela às 12:01 não foram respondidas ponto a ponto: a resposta das 17:06 diz apenas que ele ainda está no experimento e que compartilhará quando estiver escrevendo. Sem data, sem confirmação de extração-piloto, de controle de imagens por cena nem de semente."
+  },
+  "Resposta_Cmte_Moreira_2026-11-19_resumo.md": {
+    "origem": "Resumo, redigido na sessão, da resposta do Cmte Moreira recebida por Daniela em 2026-11-19. O texto integral não foi copiado para o repositório (público); fica com Daniela.",
+    "nota": "Afirmações do responsável, não verificadas; 'umas 10 câmeras' e 'provavelmente chuva e neblina' são estimativas dele."
   }
 }
