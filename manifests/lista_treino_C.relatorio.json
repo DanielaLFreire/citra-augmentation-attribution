@@ -1,0 +1,32 @@
+{
+  "linhas_por_epoca": 10960,
+  "passos_por_epoca": 685,
+  "epocas": 37,
+  "passos_total": 25345,
+  "lote": 16,
+  "por_fonte": {
+    "citra": 8220,
+    "citra_extra": 2740
+  },
+  "fracao_externa": 0.25,
+  "imagens_distintas": 1370,
+  "vezes_por_imagem": {
+    "8": 1370
+  },
+  "braco": "C",
+  "plano": "principal",
+  "semente_sorteio": 0,
+  "n_treino_efetivo": 1370,
+  "parametros": {
+    "fator_citra": 3,
+    "n_ext": 1370,
+    "ciclos_por_epoca": 2,
+    "epocas": 37
+  },
+  "excluidas_d10": [
+    "11.05.2022-14-13-13",
+    "07.07.2022-09-39-44",
+    "11.07.2022-09-43-17"
+  ],
+  "sha256_lista": "6f53c4a7c0769301d92ca27e82ae1967214b1673d9b3e7d2bf99286eef30f2d4"
+}

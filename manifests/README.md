@@ -18,4 +18,4 @@ Colunas mínimas por imagem (`manifesto_<fonte>.csv`):
 | `parametros_json` | Parâmetros de geração (renderização ou condições sorteadas); vazio se desconhecido |
 | `status_auditoria` | aprovada, descartada, não auditada |
 
-Listas de treino (`lista_treino_<braco>_seed<N>.csv`): `ordem,id_imagem,fonte`. Registrar o hash de cada uma com `python -m scripts.registrar_artefato` antes do treino.
+Listas de treino (`lista_treino_<braco>.csv`, geradas por `scripts/construir_lista_treino.py`; a lista não depende da semente do treino, só o plano reserva do braço C sorteia com semente): `ordem,id_imagem,fonte,copia`. Uma lista é **uma época** do treino (D35: 10.960 linhas = 685 passos de 16; 37 épocas = 25.345 passos); o Ultralytics embaralha as linhas a cada época, então `ordem` é só determinística. Registrar o hash de cada uma com `python -m scripts.registrar_artefato` antes do treino.
