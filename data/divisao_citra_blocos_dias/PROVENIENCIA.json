@@ -1,0 +1,10 @@
+{
+  "origem": "Sorteio único da divisão do CITRA real em blocos de dias (D23/D30), semente 20261119 aprovada por Daniela em 2026-11-19 antes de rodar; scripts/dividir_citra_dias.py (commit 7139288) sobre data/inventario_zip_citra3d/nomes_zip_citra3d.csv. Rodado uma vez; vale como saiu (aceito na 2ª tentativa do gerador).",
+  "arquivos": {
+    "divisao_blocos_dias.csv": "1e7674fdef8dff8413e93f7e9562d830dfe792dd85d35fe9033282e4e2e3bea9",
+    "resumo_sorteio.json": "f71f05b7fff06cbfac361e4adb468092c85a01af35ca7d8a6733aa902fe51453",
+    "balanco_descritivo.json": "47f415da1db0d1d4d0ec268c6876270037013f6d05a1244bbe7965ab58139e7d"
+  },
+  "conferencia": "Os 2.081 nomes batem com a união dos três manifestos labels_final (D12). Nomes sem extensão .png.",
+  "limites": "Teste com 3 dias; equilíbrio de caixas e de horário apenas relatado (balanco_descritivo.json), sem novo sorteio, como fixado na D30."
+}

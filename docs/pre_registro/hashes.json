@@ -83,6 +83,12 @@
       "caminho": "prompts/prompt_v2.txt",
       "sha256": "e96659f9aedacb42488439e18179e2b8a0aa16bc41e4d0118991a19294a6423b",
       "tamanho_bytes": 614
+    },
+    "divisao_blocos_dias.csv": {
+      "registrado_em_utc": "2026-11-19T01:28:10.457900+00:00",
+      "caminho": "data/divisao_citra_blocos_dias/divisao_blocos_dias.csv",
+      "sha256": "1e7674fdef8dff8413e93f7e9562d830dfe792dd85d35fe9033282e4e2e3bea9",
+      "tamanho_bytes": 78063
     }
   },
   "adendos": {}

@@ -1,0 +1,52 @@
+{
+  "nota": "Descritivo do balanço da divisão em blocos de dias (semente 20261119); só relatado, sem novo sorteio (D30).",
+  "nova": {
+    "train": {
+      "imagens": 1373,
+      "caixas": 4676,
+      "caixas_por_imagem_media": 3.41,
+      "caixas_por_imagem_mediana": 2,
+      "hora_media": 12.0,
+      "fracao_antes_das_10h": 0.224,
+      "fracao_16h": 0.046
+    },
+    "val": {
+      "imagens": 325,
+      "caixas": 1254,
+      "caixas_por_imagem_media": 3.86,
+      "caixas_por_imagem_mediana": 3,
+      "hora_media": 11.8,
+      "fracao_antes_das_10h": 0.2,
+      "fracao_16h": 0.055
+    },
+    "test": {
+      "imagens": 383,
+      "caixas": 1073,
+      "caixas_por_imagem_media": 2.8,
+      "caixas_por_imagem_mediana": 2,
+      "hora_media": 12,
+      "fracao_antes_das_10h": 0.261,
+      "fracao_16h": 0.06
+    }
+  },
+  "antiga_labels_final": {
+    "train": {
+      "imagens": 1348,
+      "caixas": 4489,
+      "caixas_por_imagem_media": 3.33,
+      "hora_media": 11.9
+    },
+    "val": {
+      "imagens": 332,
+      "caixas": 1267,
+      "caixas_por_imagem_media": 3.82,
+      "hora_media": 12.0
+    },
+    "test": {
+      "imagens": 401,
+      "caixas": 1247,
+      "caixas_por_imagem_media": 3.11,
+      "hora_media": 12.0
+    }
+  }
+}
