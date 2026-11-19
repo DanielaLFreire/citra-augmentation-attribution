@@ -50,6 +50,12 @@ def limiares(sims):
     return {k: float(np.percentile(sims, p)) for k, p in PERCENTIS.items()}
 
 
+def normalizar_resposta(valor):
+    """Minúsculas, sem espaços nas pontas e 'não' (com acento) tratado como 'nao'; não altera o arquivo de origem."""
+    v = (valor or "").strip().lower()
+    return "nao" if v == "não" else v
+
+
 def aplicar_divisao(split, nomes, csv_divisao):
     """Substitui a divisão do .npz (a antiga) pela de um CSV nome,dia,divisao (ex.: blocos de dias, D31). Exige os mesmos nomes."""
     mapa = {r["nome"]: r["divisao"] for r in csv.DictReader(open(csv_divisao, encoding="utf-8"))}
@@ -79,7 +85,7 @@ def newcombe(x1, n1, x2, n2, z=1.96):
 def vazamento_residual(chave_csv, folha_csv, antigo_x=26, antigo_n=40):
     """Proporção de pares com as mesmas embarcações (sim ou mesmo_alvo) na divisão nova, com Wilson 95%, e diferença para a antiga (D29)."""
     ch = {r["codigo"]: r for r in csv.DictReader(open(chave_csv, encoding="utf-8"))}
-    resp = {r["codigo"]: r["resposta_sim_cena_nao"].strip().lower() for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
+    resp = {r["codigo"]: normalizar_resposta(r["resposta_sim_cena_nao"]) for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
     cod = sorted(ch)
     validas = ("sim", "mesmo_alvo", "cena", "nao")
     faltam = [c for c in cod if resp.get(c) not in validas]
@@ -230,7 +236,7 @@ def calibrar(chave_csv, folha_csv):
     """Aplica a regra da D27/D28 às respostas de Daniela. Respostas: sim, mesmo_alvo, cena, nao.
     tau_objeto (principal) conta sim + mesmo_alvo (mesmas embarcações); tau_estrito só sim; tau_fundo conta também cena."""
     ch = {r["codigo"]: r for r in csv.DictReader(open(chave_csv, encoding="utf-8"))}
-    resp = {r["codigo"]: r["resposta_sim_cena_nao"].strip().lower() for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
+    resp = {r["codigo"]: normalizar_resposta(r["resposta_sim_cena_nao"]) for r in csv.DictReader(open(folha_csv, encoding="utf-8"))}
     cod = sorted(ch)
     validas = ("sim", "mesmo_alvo", "cena", "nao")
     faltam = [c for c in cod if resp.get(c) not in validas]

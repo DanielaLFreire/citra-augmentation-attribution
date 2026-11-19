@@ -135,3 +135,10 @@ def test_vazamento_residual(tmp_path, capsys):
     vazamento_residual(str(tmp_path / "c.csv"), str(tmp_path / "f.csv"))
     r = json.loads(capsys.readouterr().out)
     assert r["mesmas_embarcacoes_nova"]["x"] == 2 and r["mesmo_dia_entre_pares"] == 0
+
+
+def test_normalizar_resposta():
+    from scripts.semelhanca_v2_citra import normalizar_resposta
+
+    assert normalizar_resposta(" Não ") == "nao" and normalizar_resposta("nao") == "nao"
+    assert normalizar_resposta("mesmo_alvo") == "mesmo_alvo" and normalizar_resposta(None) == ""

@@ -1,0 +1,41 @@
+codigo,resposta_sim_cena_nao,observacao
+P01,cena,
+P02,cena,"mesma câmera, frota diferente”"
+P03,mesmo_alvo,
+P04,mesmo_alvo,
+P05,não,
+P06,não,
+P07,cena,
+P08,cena,
+P09,não,
+P10,cena,
+P11,cena,"mesma câmera rotacionada, frota diferente”"
+P12,cena,"mesma câmera com menos zoom, frota diferente”"
+P13,cena,"mesma câmera rotacionada, frota diferente”"
+P14,cena,"mesma câmera com menos zoom, frota diferente”"
+P15,cena,"mesma câmera com menos zoom, frota diferente”"
+P16,nao,
+P17,nao,
+P18,cena,"mesma câmera com menos zoom, frota diferente”"
+P19,cena,"mesma câmera com menos zoom, frota diferente”"
+P20,cena,
+P21,cena,
+P22,nao,
+P23,cena,"mesma câmera com mais zoom, frota diferente”"
+P24,nao,
+P25,nao,
+P26,cena,"mesma câmera com menos zoom, frota diferente”"
+P27,cena,"mesma câmera com mais zoom, frota diferente”"
+P28,nao,
+P29,cena,"mesma câmera rotacionada, menos zoom, frota diferente”"
+P30,cena,"mesma câmera rotacionada, menos zoom, frota diferente”"
+P31,nao,
+P32,nao,
+P33,nao,
+P34,cena,"mesma câmera mais zoom, frota diferente”"
+P35,cena,"mesma câmera rotacionada, frota diferente”"
+P36,cena,"mesma câmera mais zoom, frota diferente”"
+P37,cena,"mesma câmera mais zoom, frota diferente”"
+P38,cena,"mesma câmera mais zoom, frota diferente”"
+P39,cena,"mesma câmera rotacionada, menos zoom, frota diferente”"
+P40,cena,"mesma câmera rotacionada, menos zoom, frota diferente”"
