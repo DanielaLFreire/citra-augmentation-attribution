@@ -1,0 +1,97 @@
+{
+  "nota": "Saída de `calibrar` colada por Daniela em 2026-11-19 (commit e06d252), regra da D27/D28 aplicada como fixada, sobre folha_resposta_pares_daniela.csv.",
+  "n_pares": 40,
+  "tau_objeto_principal": 0.9641659259796143,
+  "tau_estrito_so_sim": null,
+  "tau_fundo_sim_mesmo_alvo_cena": 0.8223892450332642,
+  "respostas_totais": {
+    "sim": 6,
+    "mesmo_alvo": 20,
+    "cena": 6,
+    "nao": 8
+  },
+  "respostas_por_estrato": {
+    "0": {
+      "sim": 0,
+      "mesmo_alvo": 2,
+      "cena": 0,
+      "nao": 3
+    },
+    "1": {
+      "sim": 0,
+      "mesmo_alvo": 1,
+      "cena": 2,
+      "nao": 2
+    },
+    "2": {
+      "sim": 0,
+      "mesmo_alvo": 2,
+      "cena": 0,
+      "nao": 3
+    },
+    "3": {
+      "sim": 0,
+      "mesmo_alvo": 4,
+      "cena": 1,
+      "nao": 0
+    },
+    "4": {
+      "sim": 1,
+      "mesmo_alvo": 4,
+      "cena": 0,
+      "nao": 0
+    },
+    "5": {
+      "sim": 0,
+      "mesmo_alvo": 4,
+      "cena": 1,
+      "nao": 0
+    },
+    "6": {
+      "sim": 1,
+      "mesmo_alvo": 2,
+      "cena": 2,
+      "nao": 0
+    },
+    "7": {
+      "sim": 4,
+      "mesmo_alvo": 1,
+      "cena": 0,
+      "nao": 0
+    }
+  },
+  "faixa_cosseno_por_estrato": {
+    "0": [
+      0.5092,
+      0.7774
+    ],
+    "1": [
+      0.8058,
+      0.8258
+    ],
+    "2": [
+      0.8324,
+      0.8559
+    ],
+    "3": [
+      0.8591,
+      0.878
+    ],
+    "4": [
+      0.8847,
+      0.8993
+    ],
+    "5": [
+      0.8996,
+      0.9167
+    ],
+    "6": [
+      0.9276,
+      0.9374
+    ],
+    "7": [
+      0.9642,
+      0.9865
+    ]
+  }
+}

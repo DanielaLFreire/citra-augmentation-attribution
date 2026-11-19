@@ -199,6 +199,17 @@ def calibrar(chave_csv, folha_csv):
                                            for e in sorted(por_estrato)}}
     print(json.dumps(saida, ensure_ascii=False, indent=2))
 
+def fracoes(por_quadro_csv, *taus):
+    """Quantos quadros de val/test têm a maior semelhança com o treino >= cada tau (os que ficam fora do subconjunto 'sem quase-cópias')."""
+    linhas = list(csv.DictReader(open(por_quadro_csv, encoding="utf-8")))
+    saida = {}
+    for sp in ("val", "test"):
+        v = np.array([float(l["max_sim_treino"]) for l in linhas if l["split"] == sp])
+        saida[sp] = {"n": int(len(v)), **{f"tau_{t:.4f}": {"acima": int((v >= t).sum()), "abaixo_ficam_no_subconjunto": int((v < t).sum()),
+                                                            "fracao_acima": float((v >= t).mean())} for t in taus}}
+    print(json.dumps(saida, ensure_ascii=False, indent=2))
+
+
 def _sha256(caminho):
     h = hashlib.sha256()
     with open(caminho, "rb") as f:
@@ -273,5 +284,7 @@ if __name__ == "__main__":
         pares(sys.argv[2], sys.argv[3], sys.argv[4])
     elif len(sys.argv) == 4 and sys.argv[1] == "calibrar":
         calibrar(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) >= 4 and sys.argv[1] == "fracoes":
+        fracoes(sys.argv[2], *[float(x) for x in sys.argv[3:]])
     else:
-        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <npz> <saida> | distribuicao <npz> | pares <npz> <CITRA-3D.zip> <saida> | calibrar <chave.csv> <folha.csv>")
+        sys.exit("uso: python -m scripts.semelhanca_v2_citra analise <npz> <saida> | distribuicao <npz> | pares <npz> <CITRA-3D.zip> <saida> | calibrar <chave.csv> <folha.csv> | fracoes <por_quadro.csv> <tau> [tau ...]")

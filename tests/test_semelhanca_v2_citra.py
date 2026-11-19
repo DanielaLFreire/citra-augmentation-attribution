@@ -73,3 +73,18 @@ def test_calibrar_tres_limiares(tmp_path, capsys):
     calibrar(str(tmp_path / "c.csv"), str(tmp_path / "f.csv"))
     r = json.loads(capsys.readouterr().out)
     assert r["tau_objeto_principal"] == 0.91 and r["tau_estrito_so_sim"] is None and r["tau_fundo_sim_mesmo_alvo_cena"] == 0.80
+
+
+def test_fracoes(tmp_path, capsys):
+    import csv
+
+    from scripts.semelhanca_v2_citra import fracoes
+
+    with open(tmp_path / "q.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["split", "nome", "max_sim_treino"])
+        for sp, v in [("test", 0.9), ("test", 0.5), ("val", 0.95), ("val", 0.96)]:
+            w.writerow([sp, "x", v])
+    fracoes(str(tmp_path / "q.csv"), 0.9)
+    r = json.loads(capsys.readouterr().out)
+    assert r["test"]["tau_0.9000"]["acima"] == 1 and r["val"]["tau_0.9000"]["abaixo_ficam_no_subconjunto"] == 0
