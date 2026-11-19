@@ -1,0 +1,14 @@
+{
+  "origem": "Extração de embeddings de recortes de embarcação (D39), rodada no Colab (T4) em 2026-11-19 com scripts/semelhanca_recortes_citra.py no commit 4957bec; saída colada por Daniela.",
+  "arquivo_no_drive": "/content/drive/MyDrive/PROJETO_MARINHA/embeddings_citra/recortes_dinov2_base_224.npz (derivado de imagem privada; não está no repositório)",
+  "modelo": "facebook/dinov2-base",
+  "modelo_commit": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+  "margem": 0.2,
+  "lado_px": 224,
+  "n_caixas": 7003,
+  "caixas_esperadas_d12": 7003,
+  "imagens_rotulos_labels_final": 2081,
+  "imagens_sem_rotulo": [],
+  "npz_sha256": "fa1a5dfb5bfe3cb9f9088ea1a6d0c2eacb19848788e56f0705f8be4afbec91be",
+  "nota": "A extração foi feita duas vezes: a primeira com a versão anterior do script (que lia todos os .txt sob CITRA-3D-Real, sem o filtro labels_final), a segunda no commit 4957bec (só labels_final, 2081 arquivos, nomes únicos). Os dois .npz têm o mesmo SHA-256, então os rótulos usados eram os mesmos e a extração é reproduzível. Afirmação de Daniela sobre a primeira rodada: saída colada na sessão, sem a linha de contagem de rótulos."
+}
