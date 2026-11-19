@@ -27,3 +27,7 @@ Detalhes e decisões: D25 a D29 em `docs/DECISOES.md`; dados em `data/embeddings
 5. **Subconjuntos:** τ principal mantém 94% (teste e val); τ de fundo mantém 22% do teste (89 quadros) e 23% da validação (77).
 
 Para o artigo: a distribuição da semelhança é contínua e sem separação natural; limiares dependem de uma calibração humana pequena e devem ser apresentados como aproximados.
+
+## Vazamento residual na divisão em blocos de dias (2026-11-19)
+
+Plano em D32, resultado em D34 (`docs/DECISOES.md`), dados em `data/embeddings_citra/residual_pares/`. Com o mesmo protocolo de 40 pares: mesmas embarcações em 2 de 40 (5%; Wilson 95% 1,4% a 16,5%) na divisão nova, contra 26 de 40 (65%) na antiga; diferença −60 pontos percentuais (Newcombe 95% −73,4 a −40,7). Vazamento de cena (mesma câmera, outra frota): 28 de 40 contra 32 de 40, quase inalterado (descritivo posterior ao plano). A divisão por dias reduz o vazamento de objeto, mas não o de cenário das mesmas câmeras.

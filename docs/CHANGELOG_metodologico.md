@@ -80,3 +80,4 @@ Entradas cronológicas, mais recente no fim. Formato: data, o que foi feito, o q
 - D32 (2026-11-19): plano da medida do vazamento residual na divisão nova fixado (etapa A automática, etapa B com 40 pares, desfecho e leitura pré-fixados); código generalizado para aceitar a divisão nova; semente de amostragem pendente.
 - D32: semente de amostragem 20261120 aprovada por Daniela antes de gerar os pares.
 - D33 (2026-11-19): reavaliação v4 do José registrada; concordância por imagem kappa 0,86 (0,69-1,00); caixas 0,44 em 6 categorias (antes 0,27); reprovação v1 5/30 e v2 11/30 (qualquer um), 3/30 e 10/30 (ambos). v1 mantida.
+- D34 (2026-11-19): vazamento residual na divisão em blocos de dias: 2/40 (5%; 1,4%-16,5%) com as mesmas embarcações contra 26/40 (65%) na antiga; diferença −60 pontos (Newcombe −73,4 a −40,7); redução demonstrada nesta amostra; vazamento de cena (mesma câmera) quase igual (descritivo posterior).

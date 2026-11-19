@@ -1,7 +1,8 @@
 {
   "origem": "Respostas de Daniela aos 40 pares da divisão nova (D32, semente de amostragem 20261120), enviadas em 2026-11-19 ANTES de a chave ser enviada a Claude ou lida em qualquer cálculo.",
   "arquivos": {
-    "folha_resposta_pares_daniela.csv": "ff1c6c052d2377564f6cb36b7fe949cca361ffe30f37eca0c8832b6fa1937a7c"
+    "folha_resposta_pares_daniela.csv": "ff1c6c052d2377564f6cb36b7fe949cca361ffe30f37eca0c8832b6fa1937a7c",
+    "residual_resultado.json": "db00670405c5e2877e2351dcd7ece94b3bb4675e0e3ac49e5f733069599880f2"
   },
   "observacoes_do_arquivo": "Arquivo preservado como recebido: três respostas escritas 'não' com acento (P05, P06, P09) e aspas finais soltas em várias observações. A análise normaliza 'não' para 'nao'; nenhuma resposta foi alterada.",
   "contagem_bruta": {
@@ -9,5 +10,6 @@
     "mesmo_alvo": 2,
     "não": 3,
     "nao": 9
-  }
+  },
+  "chave": "A chave (residual_pares/_NAO_ABRIR_chave/chave_pares.csv no Drive) foi lida só pelo comando `residual`; ainda não foi enviada ao repositório."
 }
