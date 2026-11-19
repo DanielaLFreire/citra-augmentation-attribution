@@ -1,7 +1,10 @@
 {
   "origem": "Respostas de Daniela aos 40 pares P01-P40 (protocolo D27/D28), enviadas em 2026-11-18, ANTES de ver a chave (chave_pares.csv) e antes de qualquer cálculo de tau.",
   "arquivos": {
-    "folha_resposta_pares_daniela.csv": "2be12f7ddb17f180d8b8d3e69d77977487e3ddbe5e9e544f03d30a7f9fa278b1"
+    "folha_resposta_pares_daniela.csv": "2be12f7ddb17f180d8b8d3e69d77977487e3ddbe5e9e544f03d30a7f9fa278b1",
+    "chave_pares.csv": "7417656ff236f9c0108c69fd9de6e171db18178da5fe217007bd2391a138eeab",
+    "calibracao_resultado.json": "e3c4816d2771a05a4227a8fe37d884f5886de03449f05018fbf39d34e0464d4c",
+    "fracoes_resultado.json": "be943820f12e178498ff842b40da76598e501ce498a94000d7dbf05527377c38"
   },
   "contagem": {
     "mesmo_alvo": 20,
@@ -9,5 +12,6 @@
     "cena": 6,
     "nao": 8
   },
-  "limites": "Uma avaliadora, sem observações em nenhum par; a chave ainda não foi lida por Claude nem por Daniela."
+  "limites": "Uma avaliadora, sem observações em nenhum par; a chave ainda não foi lida por Claude nem por Daniela.",
+  "chave_pares.csv": "Gerada por scripts.semelhanca_v2_citra pares no Colab (commit e43a696); enviada por Daniela em 2026-11-19 depois de ela responder e depois do resultado de calibrar. Contém nomes de quadros (datas e horas) e cosseno, sem imagens."
 }
