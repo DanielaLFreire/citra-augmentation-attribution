@@ -153,7 +153,11 @@ def extrair(caminho_zip: str, pasta_rotulos: str, saida_npz: str, lote: int = 64
 
     from scripts.embeddings_citra import INTERNOS, MEDIA, DP, MODELO, nomes_reais, l2, _commit_modelo
 
-    rotulos = {p.stem: p for p in Path(pasta_rotulos).rglob("*.txt")}
+    achados = [p for p in Path(pasta_rotulos).rglob("*.txt") if p.parent.name == "labels_final"]
+    rotulos = {p.stem: p for p in achados}
+    if len(rotulos) != len(achados):
+        raise ValueError("nomes de rótulo repetidos em labels_final")
+    print(len(rotulos), "arquivos de rótulo em labels_final", flush=True)
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     modelo = AutoModel.from_pretrained(MODELO).eval().to(dev)
     ext = zipfile.ZipFile(caminho_zip)
