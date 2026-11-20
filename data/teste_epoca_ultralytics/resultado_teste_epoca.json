@@ -1,0 +1,13 @@
+{
+  "ultralytics": "8.4.215",
+  "linhas_na_lista": 10960,
+  "copias_fisicas": false,
+  "so_contou": true,
+  "esperado": {
+    "imagens": 10960,
+    "lotes": 685
+  },
+  "imagens_no_conjunto": 10960,
+  "lotes_por_epoca": 685,
+  "confere": true
+}

@@ -89,6 +89,12 @@
       "caminho": "data/divisao_citra_blocos_dias/divisao_blocos_dias.csv",
       "sha256": "1e7674fdef8dff8413e93f7e9562d830dfe792dd85d35fe9033282e4e2e3bea9",
       "tamanho_bytes": 78063
+    },
+    "lista_treino_C.csv": {
+      "registrado_em_utc": "2026-11-20T01:23:30.692075+00:00",
+      "caminho": "manifests/lista_treino_C.csv",
+      "sha256": "6f53c4a7c0769301d92ca27e82ae1967214b1673d9b3e7d2bf99286eef30f2d4",
+      "tamanho_bytes": 388963
     }
   },
   "adendos": {}

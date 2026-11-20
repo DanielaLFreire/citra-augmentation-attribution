@@ -1,0 +1,26 @@
+{
+  "origem": "Saída do teste de 1 época (modo --so-contar) rodado por Daniela no Colab em 2026-11-19 com scripts/teste_epoca_ultralytics.py no commit 1653b62 e manifests/lista_treino_C.csv; JSON e linhas do log coladas na sessão.",
+  "ambiente": {
+    "ultralytics": "8.4.215",
+    "python": "3.13.18",
+    "torch": "2.14.1+cpu",
+    "dispositivo": "CPU (Intel Xeon 2.20GHz): a sessão do Colab estava SEM GPU; a contagem não depende disso, mas qualquer treino real exige GPU (A100, D17)"
+  },
+  "linhas_do_log_relevantes": [
+    "Using 10960 train, 16 val images for fraction=1.0 at imgsz=640",
+    "train: Scanning /content/teste_epoca/labels... 10960 images, 0 backgrounds, 0 corrupt",
+    "optimizer: 'optimizer=auto' found ... AdamW(lr=0.002, momentum=0.9)",
+    "MEDIDO: {\"imagens_no_conjunto\": 10960, \"lotes_por_epoca\": 685}"
+  ],
+  "padroes_do_ultralytics_vistos_no_log": {
+    "optimizer": "auto (escolheu AdamW, lr 0.002)",
+    "warmup_epochs": 3.0,
+    "close_mosaic": 10,
+    "lrf": 0.01,
+    "nbs": 64,
+    "mosaic": 1.0,
+    "seed": 0,
+    "deterministic": true
+  },
+  "nota": "Rodada só para contar (parou no início da época 1). O conjunto de treino manteve as 10.960 linhas repetidas (as repetições não foram descartadas) e o carregador tem 685 lotes de 16."
+}
