@@ -5,6 +5,11 @@
   "nota": "Cópias sem alteração de docs/fase5_resultados_val.json e docs/fase5_teste_metricas.csv, usadas por scripts/dimensionamento_fase5.py.",
   "arquivos": {
     "fase5_resultados_val.json": "c2feab87d3f0483015edd534546a9b76f8912a0ee12e1b81992df0bb7099d4ed",
-    "fase5_teste_metricas.csv": "cc3a6e0b7e4ce1a8cdca117ff0b9231581059ec8e429721eb0ed390804b26ea3"
+    "fase5_teste_metricas.csv": "cc3a6e0b7e4ce1a8cdca117ff0b9231581059ec8e429721eb0ed390804b26ea3",
+    "args_f5_S1_C_seed42.yaml": "243264acde1aa42cfc1fdf7e58ab74f12125fa00defbff72bcfdf97b5b0d5644"
+  },
+  "args_f5_S1_C_seed42.yaml": {
+    "origem": "args.yaml gravado pelo Ultralytics na execução f5_S1_C_seed42 da Fase 5 (30 épocas × 337 passos = 10.110 passos, S1). Caminho no Drive: EXPERIMENTO_ATRIBUICAO_CAUSAL/fase5/runs/f5_S1_C_seed42/args.yaml. Enviado por Daniela em 2026-11-19; cópia sem alteração.",
+    "nota": "É da escala S1, não da S2 (75 épocas). A versão exata do Ultralytics não consta no arquivo; as chaves (cls_remap, dis, dlog, dgrad, dlam) são da série 8.4."
   }
 }
