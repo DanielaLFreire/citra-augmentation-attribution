@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from scripts.executar_treino import (argumentos_treino, COLUNAS, REGISTRO, anexar_registro, argumentos, carregar_config, conferir_listas,
+from scripts.executar_treino import (_commit_limpo, argumentos_treino, COLUNAS, REGISTRO, anexar_registro, argumentos, carregar_config, conferir_listas,
                                      linha_registro, preparar_dados, verificar_registrado)
 
 
@@ -132,3 +132,23 @@ def test_argumentos_com_a_config_real_do_repositorio():
         assert list(a).count("exist_ok") == 1 and "model" not in a
     assert argumentos(["--braco", "C", "--plano", "principal", "--lista", "l", "--config", "c", "--divisao", "d",
                        "--raiz", "r", "--seed", "1", "--destino", "x", "--fumaca"]).fumaca is True
+
+
+def test_registro_de_execucoes_nao_suja_a_conferencia_do_codigo(tmp_path):
+    import subprocess
+
+    def git(*a):
+        subprocess.check_call(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=tmp_path,
+                              stdout=subprocess.DEVNULL)
+
+    git("init", "-q")
+    (tmp_path / "runs").mkdir()
+    (tmp_path / "runs" / "REGISTRO_EXECUCOES.csv").write_text("a\n")
+    (tmp_path / "codigo.py").write_text("x = 1\n")
+    git("add", "-A")
+    git("commit", "-q", "-m", "i")
+    assert _commit_limpo(tmp_path)[1] is True
+    (tmp_path / "runs" / "REGISTRO_EXECUCOES.csv").write_text("a\nb\n")  # o que a 1ª execução faz
+    assert _commit_limpo(tmp_path)[1] is True
+    (tmp_path / "codigo.py").write_text("x = 2\n")  # alteração real de código continua barrando
+    assert _commit_limpo(tmp_path)[1] is False

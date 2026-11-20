@@ -154,9 +154,13 @@ def argumentos_treino(cfg: dict, data_yaml: str, projeto: str, nome: str, seed: 
     return args
 
 
-def _commit_limpo() -> tuple[str, bool]:
-    sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-    sujo = subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], text=True).strip()
+def _commit_limpo(cwd=None) -> tuple[str, bool]:
+    """Commit atual e se o código está limpo. O próprio registro de execuções fica de fora da conferência: cada execução
+    termina anexando uma linha a ele, e isso não pode barrar a execução seguinte (falha da 2ª semente em 2026-11-20)."""
+    sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True, cwd=cwd).strip()
+    sujo = subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=no", "--", ".", ":(exclude)runs/REGISTRO_EXECUCOES.csv"],
+        text=True, cwd=cwd).strip()
     return sha, sujo == ""
 
 
