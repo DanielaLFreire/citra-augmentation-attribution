@@ -1,3 +1,5 @@
 # Só para os scripts que rodam no Colab com GPU (extração de embeddings). O Colab já traz torch e opencv.
 torch
 transformers>=4.40
+# Treino (D43): versão fixada, a mesma da Fase 5.
+ultralytics==8.4.165

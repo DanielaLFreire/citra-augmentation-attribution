@@ -95,6 +95,18 @@
       "caminho": "manifests/lista_treino_C.csv",
       "sha256": "6f53c4a7c0769301d92ca27e82ae1967214b1673d9b3e7d2bf99286eef30f2d4",
       "tamanho_bytes": 388963
+    },
+    "treino_yolo11n_d43.yaml": {
+      "registrado_em_utc": "2026-11-20T01:48:45.190344+00:00",
+      "caminho": "configs/treino_yolo11n_d43.yaml",
+      "sha256": "7336a94b1ef55495d86ce3ebfb8c74c4028e767caeecd6dfb742062e3d9053b9",
+      "tamanho_bytes": 1979
+    },
+    "treino_yolo11n_f5_reproducao.yaml": {
+      "registrado_em_utc": "2026-11-20T01:48:45.217938+00:00",
+      "caminho": "configs/treino_yolo11n_f5_reproducao.yaml",
+      "sha256": "d69a4d407c7025c1ea3165bb3deccf7531ff6f68225fcca9d8b078f446123d2e",
+      "tamanho_bytes": 1798
     }
   },
   "adendos": {}
