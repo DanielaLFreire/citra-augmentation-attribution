@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from scripts.executar_treino import (COLUNAS, REGISTRO, anexar_registro, argumentos, carregar_config, conferir_listas,
+from scripts.executar_treino import (argumentos_treino, COLUNAS, REGISTRO, anexar_registro, argumentos, carregar_config, conferir_listas,
                                      linha_registro, preparar_dados, verificar_registrado)
 
 
@@ -108,3 +108,27 @@ def test_config_do_repositorio_e_argumentos():
     a = argumentos(["--braco", "C", "--plano", "principal", "--lista", "l", "--config", "c", "--divisao", "d",
                     "--raiz", "r", "--seed", "42", "--destino", "x"])
     assert a.seed == 42 and a.modelo == "yolo11n.pt"
+
+
+def test_argumentos_treino_sem_chave_duplicada_e_sem_model():
+    cfg = {"model": "yolo11n.pt", "epochs": 37, "exist_ok": True, "batch": 16, "plots": True}
+
+    def treino(**kw):  # imita Model.train: um TypeError se alguma chave vier duas vezes
+        return kw
+
+    r = treino(**argumentos_treino(cfg, "d.yaml", "p", "n", 42))
+    assert r["data"] == "d.yaml" and r["seed"] == 42 and r["exist_ok"] is True and "model" not in r
+    assert r["epochs"] == 37
+    f = argumentos_treino(cfg, "d.yaml", "p", "n", 42, fumaca=True)
+    assert f["epochs"] == 1 and f["fraction"] == 0.02 and f["plots"] is False
+    assert cfg["epochs"] == 37  # não altera a configuração original
+
+
+def test_argumentos_com_a_config_real_do_repositorio():
+    raiz = Path(__file__).resolve().parent.parent
+    for nome in ("treino_yolo11n_d43.yaml", "treino_yolo11n_f5_reproducao.yaml"):
+        cfg = carregar_config(raiz / "configs" / nome)
+        a = argumentos_treino(cfg, "d.yaml", "p", "n", 1)
+        assert list(a).count("exist_ok") == 1 and "model" not in a
+    assert argumentos(["--braco", "C", "--plano", "principal", "--lista", "l", "--config", "c", "--divisao", "d",
+                       "--raiz", "r", "--seed", "1", "--destino", "x", "--fumaca"]).fumaca is True

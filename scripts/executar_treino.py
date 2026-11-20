@@ -7,7 +7,7 @@ Monta os dados numa pasta LOCAL (copia as imagens únicas, como a Fase 5, em vez
 CITRA-3D-Real. Guarda `last.pt` (o modelo avaliado, pelo protocolo), `results.csv` e `args.yaml` no destino (Drive).
 Não avalia no teste: a avaliação única do teste é uma etapa à parte.
 
-Uso (uma execução por chamada; um laço de shell repete as sementes):
+Uso (uma execução por chamada; um laço de shell repete as sementes; --fumaca faz um teste curto do caminho todo):
   python -m scripts.executar_treino --braco C --plano principal --lista manifests/lista_treino_C.csv \\
       --config configs/treino_yolo11n_d43.yaml --divisao data/divisao_citra_blocos_dias/divisao_blocos_dias.csv \\
       --raiz <CITRA-3D-Real> --seed 42 --destino <pasta no Drive> [--mapa-externas mapa.csv] [--modelo yolo11n.pt]
@@ -143,6 +143,17 @@ def anexar_registro(linha: dict, caminho: Path = REGISTRO) -> None:
         w.writerow(linha)
 
 
+def argumentos_treino(cfg: dict, data_yaml: str, projeto: str, nome: str, seed: int, fumaca: bool = False) -> dict:
+    """Argumentos de Model.train: a configuração fixa + os campos de cada execução, numa só mapa (sem chave repetida).
+    'model' sai da configuração (quem escolhe o modelo é --modelo). No modo fumaça: 1 época em 2% do treino, só para
+    exercitar o caminho todo (dados, treino, cópia de pesos, registro)."""
+    args = {k: v for k, v in cfg.items() if k != "model"}
+    args.update({"data": data_yaml, "project": projeto, "name": nome, "exist_ok": True, "seed": seed})
+    if fumaca:
+        args.update({"epochs": 1, "fraction": 0.02, "plots": False})
+    return args
+
+
 def _commit_limpo() -> tuple[str, bool]:
     sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     sujo = subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], text=True).strip()
@@ -162,7 +173,8 @@ def principal(a) -> dict:
     if not limpo:
         raise SystemExit("o código tem alterações não commitadas; commit ou git checkout antes de treinar")
     plano = PLANOS[a.plano]
-    id_exec = f"{a.braco}_{a.plano}_{a.modelo.split('.')[0]}_seed{a.seed}"
+    base = f"{a.braco}_{a.plano}_{a.modelo.split('.')[0]}_seed{a.seed}"
+    id_exec = base + ("_fumaca" if a.fumaca else "")
     destino = Path(a.destino) / id_exec
     if destino.exists():
         raise SystemExit(f"{destino} já existe; execuções não se sobrescrevem")
@@ -173,7 +185,7 @@ def principal(a) -> dict:
     except Exception:
         pass
     divisao = ler_divisao(Path(a.divisao))
-    local = Path(a.trabalho) / id_exec
+    local = Path(a.trabalho) / base  # a fumaça e a execução real reaproveitam os mesmos dados copiados
     dados = preparar_dados(Path(a.lista), divisao, Path(a.raiz), local, ler_mapa_externas(a.mapa_externas))
     cfg = carregar_config(Path(a.config))
     medido = {}
@@ -182,6 +194,8 @@ def principal(a) -> dict:
         if "lotes" not in medido:
             medido["lotes"] = len(trainer.train_loader)
             medido["imagens"] = len(trainer.train_loader.dataset)
+            if a.fumaca:
+                return
             if medido["lotes"] != plano["passos_por_epoca"] or medido["imagens"] != dados["linhas_treino"]:
                 raise RuntimeError(f"conjunto fora do desenho: {medido} (esperado {plano['passos_por_epoca']} lotes, "
                                    f"{dados['linhas_treino']} imagens)")
@@ -190,9 +204,10 @@ def principal(a) -> dict:
     pesos_iniciais = sha256(Path(modelo.ckpt_path)) if getattr(modelo, "ckpt_path", None) and Path(modelo.ckpt_path).exists() else "desconhecido"
     modelo.add_callback("on_train_epoch_start", ao_iniciar_epoca)
     t0 = time.time()
-    modelo.train(**cfg, data=dados["data_yaml"], project=str(local / "runs"), name="treino", exist_ok=True, seed=a.seed)
+    cfg = argumentos_treino(cfg, dados["data_yaml"], str(local / "runs"), id_exec, a.seed, a.fumaca)
+    modelo.train(**cfg)
     horas = (time.time() - t0) / 3600
-    saida = local / "runs" / "treino"
+    saida = local / "runs" / id_exec
     destino.mkdir(parents=True)
     for nome in ("weights/last.pt", "results.csv", "args.yaml"):
         if (saida / nome).exists():
@@ -210,7 +225,8 @@ def principal(a) -> dict:
         duracao_h=round(horas, 3), caminho_pesos=str(pesos), sha256_pesos=sha256(pesos) if pesos.exists() else "",
         avaliado_val=f"mAP50 última época {val_final}", avaliado_teste="nao",
         observacoes=f"modelo inicial {a.modelo} sha256 {pesos_iniciais}; plano {a.plano}; lotes por época {medido['lotes']}")
-    anexar_registro(linha)
+    if not a.fumaca:  # a fumaça não entra no registro do experimento
+        anexar_registro(linha)
     anexar_registro(linha, destino / "registro_execucao.csv")
     print("REGISTRO:", json.dumps(linha, ensure_ascii=False))
     return linha
@@ -229,6 +245,7 @@ def argumentos(argv=None):
     p.add_argument("--trabalho", default="/content/trabalho")
     p.add_argument("--mapa-externas", default=None)
     p.add_argument("--modelo", default="yolo11n.pt")
+    p.add_argument("--fumaca", action="store_true", help="teste de caminho: 1 época em 2%% do treino, fora do registro")
     return p.parse_args(argv)
 
 
