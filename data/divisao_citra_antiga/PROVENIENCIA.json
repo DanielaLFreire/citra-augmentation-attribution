@@ -1,0 +1,4 @@
+{
+  "origem": "Divisão original do CITRA-3D-Real (embaralhada por quadro, 64/16/20), derivada de data/inventario_zip_citra3d/nomes_zip_citra3d.csv: só imagens reais (nome dd.mm.aaaa-hh-mm-ss), sem as 2 da quarentena (D10/A14 original). Formato nome,dia,divisao igual ao da divisão em blocos de dias.",
+  "nota": "Usada só para a checagem de reprodutibilidade da D09 (C na divisão antiga, configuração exata da Fase 5). As 3 imagens em quarentena da D10 continuam nesta lista, como na Fase 5 (5.392 = 1.348 × 4)."
+}

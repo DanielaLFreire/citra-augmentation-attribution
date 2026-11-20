@@ -10,6 +10,8 @@ Planos (D35):
   principal: CITRA ×3 + 1.370 externas ×1 por ciclo; 2 ciclos por época = 10.960 linhas = 685 passos;
              37 épocas = 25.345 passos.
   reserva:   CITRA ×1 + 454 externas; 1 ciclo por época = 1.824 linhas = 114 passos; 222 épocas = 25.308 passos.
+  f5_reproducao: braço C na divisão ANTIGA, como na Fase 5: real ×4 (1.348 imagens, com as 3 da D10), 5.392 linhas = 337
+             passos; 75 épocas = 25.275 passos (D09, D43).
 
 Braço C: no lugar das externas entram cópias extras do CITRA, sorteadas sem repetição com a semente. Com
 n_ext = nº de imagens do CITRA (plano principal) o sorteio sem repetição é o conjunto inteiro, então C = CITRA ×4.
@@ -33,8 +35,14 @@ QUARENTENA_D10 = ("11.05.2022-14-13-13", "07.07.2022-09-39-44", "11.07.2022-09-4
 LOTE = 16
 BRACOS = ("C", "R", "E", "G")
 PLANOS = {
-    "principal": {"fator_citra": 3, "n_ext": 1370, "ciclos_por_epoca": 2, "epocas": 37},
-    "reserva": {"fator_citra": 1, "n_ext": 454, "ciclos_por_epoca": 1, "epocas": 222},
+    "principal": {"fator_citra": 3, "n_ext": 1370, "ciclos_por_epoca": 2, "epocas": 37, "passos_por_epoca": 685,
+                  "excluir_d10": True},
+    "reserva": {"fator_citra": 1, "n_ext": 454, "ciclos_por_epoca": 1, "epocas": 222, "passos_por_epoca": 114,
+                "excluir_d10": True},
+    # Checagem de reprodutibilidade da D09: C na divisão antiga, como na Fase 5 (real x4, 75 épocas de 337 passos,
+    # com as 3 imagens da D10 ainda no treino, pois a Fase 5 as usou).
+    "f5_reproducao": {"fator_citra": 4, "n_ext": 0, "ciclos_por_epoca": 1, "epocas": 75, "passos_por_epoca": 337,
+                      "excluir_d10": False},
 }
 
 
@@ -111,7 +119,7 @@ def relatorio(linhas: list[dict], *, epocas: int, lote: int = LOTE) -> dict:
 def principal(braco: str, plano: str, divisao_csv: str, saida_csv: str,
               externas_csv: str | None = None, semente: int = 0) -> dict:
     p = PLANOS[plano]
-    treino = treino_efetivo(Path(divisao_csv))
+    treino = treino_efetivo(Path(divisao_csv), QUARENTENA_D10 if p.get("excluir_d10", True) else ())
     externas = ler_externas(Path(externas_csv), {"R": "publica", "E": "iflens", "G": "genship"}.get(braco, "")) \
         if externas_csv else None
     linhas = construir_lista(treino, externas, braco, fator_citra=p["fator_citra"], n_ext=p["n_ext"],
