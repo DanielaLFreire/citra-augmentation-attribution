@@ -7,7 +7,9 @@ isso e se usa --copias-fisicas (links com nomes únicos id__c<copia>, cada um co
 Não toca no CITRA-3D-Real: monta uma cópia de trabalho (links para as imagens e rótulos de `labels_final` copiados)
 numa pasta nova, porque o Ultralytics procura rótulos em .../labels/ e grava um .cache ao lado.
 Uso (Colab, com ultralytics instalado):
-  python -m scripts.teste_epoca_ultralytics <lista.csv> <raiz CITRA-3D-Real> <pasta_trabalho> [--copias-fisicas]
+  python -m scripts.teste_epoca_ultralytics <lista.csv> <raiz CITRA-3D-Real> <pasta_trabalho> [--copias-fisicas] [--so-contar]
+Os números (imagens no conjunto e lotes por época) são medidos e IMPRESSOS no início da época. Com --so-contar o treino
+para logo depois disso (a contagem basta para o objetivo do teste; a época completa é lenta porque lê imagens do Drive).
 Saída: <pasta_trabalho>/resultado_teste_epoca.json
 """
 from __future__ import annotations
@@ -53,7 +55,11 @@ def montar(linhas: list[tuple[str, int]], imagens: dict, rotulos: dict, saida: P
     return caminhos
 
 
-def principal(csv_lista: str, raiz: str, trabalho: str, copias_fisicas: bool = False) -> dict:
+class _Parada(Exception):
+    """Interrompe o treino depois da contagem (modo --so-contar)."""
+
+
+def principal(csv_lista: str, raiz: str, trabalho: str, copias_fisicas: bool = False, so_contar: bool = False) -> dict:
     import ultralytics
     from ultralytics import YOLO
 
@@ -70,12 +76,19 @@ def principal(csv_lista: str, raiz: str, trabalho: str, copias_fisicas: bool = F
     def ao_iniciar_epoca(trainer):
         medido["imagens_no_conjunto"] = len(trainer.train_loader.dataset)
         medido["lotes_por_epoca"] = len(trainer.train_loader)
+        print("MEDIDO:", json.dumps(medido), flush=True)
+        if so_contar:
+            raise _Parada()
 
     modelo = YOLO("yolo11n.pt")
     modelo.add_callback("on_train_epoch_start", ao_iniciar_epoca)
-    modelo.train(data=str(saida / "data.yaml"), epochs=1, batch=LOTE, imgsz=640, workers=2, val=False, plots=False,
-                 project=str(saida / "runs"), name="teste", exist_ok=True, seed=0)
+    try:
+        modelo.train(data=str(saida / "data.yaml"), epochs=1, batch=LOTE, imgsz=640, workers=2, val=False, plots=False,
+                     project=str(saida / "runs"), name="teste", exist_ok=True, seed=0)
+    except _Parada:
+        pass
     res = {"ultralytics": ultralytics.__version__, "linhas_na_lista": len(linhas), "copias_fisicas": copias_fisicas,
+           "so_contou": so_contar,
            "esperado": {"imagens": ESPERADO_LINHAS, "lotes": ESPERADO_LOTES}, **medido,
            "confere": medido.get("imagens_no_conjunto") == ESPERADO_LINHAS and medido.get("lotes_por_epoca") == ESPERADO_LOTES}
     (saida / "resultado_teste_epoca.json").write_text(json.dumps(res, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -87,4 +100,4 @@ if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
     if len(a) != 3:
         sys.exit(__doc__)
-    principal(a[0], a[1], a[2], "--copias-fisicas" in sys.argv)
+    principal(a[0], a[1], a[2], "--copias-fisicas" in sys.argv, "--so-contar" in sys.argv)
