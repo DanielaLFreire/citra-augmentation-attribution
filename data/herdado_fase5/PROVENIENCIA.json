@@ -6,10 +6,20 @@
   "arquivos": {
     "fase5_resultados_val.json": "c2feab87d3f0483015edd534546a9b76f8912a0ee12e1b81992df0bb7099d4ed",
     "fase5_teste_metricas.csv": "cc3a6e0b7e4ce1a8cdca117ff0b9231581059ec8e429721eb0ed390804b26ea3",
-    "args_f5_S1_C_seed42.yaml": "243264acde1aa42cfc1fdf7e58ab74f12125fa00defbff72bcfdf97b5b0d5644"
+    "args_f5_S1_C_seed42.yaml": "243264acde1aa42cfc1fdf7e58ab74f12125fa00defbff72bcfdf97b5b0d5644",
+    "args_f5_S2_C_seed42.yaml": "587e319e39c05c1e59777f652d4c27b35bd10b585190f186e8f2f2ec4be802ad",
+    "passos_f5.json": "e88607ad87966ea9956f58a9c90a26377d16ebd1499b4135fa1128b07a0f3ea4"
   },
   "args_f5_S1_C_seed42.yaml": {
     "origem": "args.yaml gravado pelo Ultralytics na execução f5_S1_C_seed42 da Fase 5 (30 épocas × 337 passos = 10.110 passos, S1). Caminho no Drive: EXPERIMENTO_ATRIBUICAO_CAUSAL/fase5/runs/f5_S1_C_seed42/args.yaml. Enviado por Daniela em 2026-11-19; cópia sem alteração.",
     "nota": "É da escala S1, não da S2 (75 épocas). A versão exata do Ultralytics não consta no arquivo; as chaves (cls_remap, dis, dlog, dgrad, dlam) são da série 8.4."
+  },
+  "args_f5_S2_C_seed42.yaml": {
+    "origem": "args.yaml gravado pelo Ultralytics na execução f5_S2_C_seed42 da Fase 5 (75 épocas × 337 passos = 25.275, escala S2, a adotada na D17). Enviado por Daniela em 2026-11-19; cópia sem alteração. Difere do S1 só em epochs, patience, close_mosaic, name e save_dir.",
+    "nota": "Dado herdado, não reexecutado."
+  },
+  "passos_f5.json": {
+    "origem": "Resumo de passos e ambiente da execução S2 (seed 42) da Fase 5, enviado por Daniela em 2026-11-19: 5.392 imagens no conjunto, 337 passos por época, 75 épocas, close_mosaic 5, warmup_epochs 1,4837, 25.275 passos executados; ambiente torch 2.11.0+cu128, GPU NVIDIA A100-SXM4-80GB, Ultralytics 8.4.165.",
+    "nota": "Dado herdado, não reexecutado."
   }
 }

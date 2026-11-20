@@ -1,0 +1,15 @@
+{
+  "n_imagens_dataset": 5392,
+  "passos_por_epoca": 337,
+  "epochs": 75,
+  "batch": 16,
+  "close_mosaic": 5,
+  "warmup_epochs": 1.4836795252225519,
+  "seed": 42,
+  "ambiente": {
+    "torch": "2.11.0+cu128",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "ultralytics": "8.4.165"
+  },
+  "passos_executados": 25275
+}
