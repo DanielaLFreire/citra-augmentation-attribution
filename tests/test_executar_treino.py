@@ -152,3 +152,19 @@ def test_registro_de_execucoes_nao_suja_a_conferencia_do_codigo(tmp_path):
     assert _commit_limpo(tmp_path)[1] is True
     (tmp_path / "codigo.py").write_text("x = 2\n")  # alteração real de código continua barrando
     assert _commit_limpo(tmp_path)[1] is False
+
+
+def test_preparar_dados_externa_com_id_de_manifesto_dois_pontos_e_barras(tmp_path):
+    raiz = raiz_falsa(tmp_path, ["a", "b", "v", "t"])
+    id_ext = "aboships:ABOshipsDataset/Seaships/20180626/201806260722_000.png"
+    f = lista(tmp_path, [("a", "citra", 1), ("b", "citra", 1), (id_ext, "aboships", 1), ("a", "citra", 2)])
+    img, rot = tmp_path / "ext.png", tmp_path / "ext.txt"
+    img.write_bytes(b"x")
+    rot.write_text("0 0.5 0.5 0.1 0.1\n")
+    d = preparar_dados(f, DIV, raiz, tmp_path / "local", {id_ext: (img, rot)})
+    assert d["fonte_externa"] == "aboships" and d["imagens_unicas_treino"] == 3
+    train = (tmp_path / "local/train.txt").read_text().split()
+    assert any("aboships_ABOshipsDataset_Seaships_20180626_201806260722_000.png" in p for p in train)
+    assert all(Path(p).exists() for p in train)
+    for p in train:  # o Ultralytics acha o rótulo trocando /images/ por /labels/ e o sufixo por .txt
+        assert Path(p.replace("/images/", "/labels/").rsplit(".", 1)[0] + ".txt").exists(), p

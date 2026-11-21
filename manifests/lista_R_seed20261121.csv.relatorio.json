@@ -1,0 +1,28 @@
+{
+  "seed": 20261121,
+  "n_pedido": 1370,
+  "disponiveis": {
+    "aboships": 7788,
+    "smd": 743
+  },
+  "cota_por_fonte": {
+    "aboships": 685,
+    "smd": 685
+  },
+  "fontes": {
+    "aboships": {
+      "n": 685,
+      "n_unidades_disponiveis": 202,
+      "n_unidades_usadas": 202,
+      "caixas": 3293,
+      "caixas_small": 2253
+    },
+    "smd": {
+      "n": 685,
+      "n_unidades_disponiveis": 36,
+      "n_unidades_usadas": 36,
+      "caixas": 5160,
+      "caixas_small": 3028
+    }
+  }
+}

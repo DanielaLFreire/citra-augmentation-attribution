@@ -27,6 +27,7 @@ from pathlib import Path
 import yaml
 
 from scripts._hashes import HASHES, carregar, sha256
+from scripts._nomes import nome_seguro
 from scripts.construir_lista_treino import PLANOS
 from scripts.teste_epoca_ultralytics import indexar
 
@@ -91,6 +92,7 @@ def preparar_dados(lista_csv: Path, divisao: dict[str, set[str]], raiz: Path, lo
     (local / "labels").mkdir(parents=True, exist_ok=True)
 
     def copiar(nome, origem_img, origem_rot):
+        nome = nome_seguro(nome)  # ids externos trazem ':' e '/'; ids do CITRA passam sem mudar
         destino = local / "images" / f"{nome}{origem_img.suffix}"
         if not destino.exists():
             shutil.copyfile(origem_img, destino)

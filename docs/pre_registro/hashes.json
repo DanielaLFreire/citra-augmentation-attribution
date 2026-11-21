@@ -119,6 +119,18 @@
       "caminho": "data/divisao_citra_antiga/divisao_antiga.csv",
       "sha256": "c6000321365d5f4969b3b16f097ad2d12853dbb8ee55cf6d7dd1e0332377f606",
       "tamanho_bytes": 78031
+    },
+    "lista_R_seed20261121.csv": {
+      "registrado_em_utc": "2026-11-21T16:38:30.935676+00:00",
+      "caminho": "manifests/lista_R_seed20261121.csv",
+      "sha256": "b2d9317c1c9a189bf0da937f838a6c52e9f176e14a0be342374365abe98ae50e",
+      "tamanho_bytes": 323761
+    },
+    "lista_treino_R.csv": {
+      "registrado_em_utc": "2026-11-21T16:38:30.976849+00:00",
+      "caminho": "manifests/lista_treino_R.csv",
+      "sha256": "3b9ea10e12b554695663fefcbccbfdf74e67b4f60bb4543be8a6a1cbf14476d2",
+      "tamanho_bytes": 532903
     }
   },
   "adendos": {}
