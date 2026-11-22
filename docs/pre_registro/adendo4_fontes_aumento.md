@@ -1,7 +1,5 @@
 # Adendo 4 — Fontes de aumento: desenho, métricas e regras de decisão
 
-Estado: RASCUNHO aguardando aprovação de Daniela (remover esta linha antes de lacrar).
-
 ## 1. Pergunta
 
 Qual braço de treino melhora o detector no CITRA-3D-Real (teste privado), em comparação com o controle repetido do CITRA (C)? Em seguida, quais características das imagens explicam o efeito (análise de atribuição, fora deste adendo, desenhada depois dos resultados primários e rotulada como exploratória).
