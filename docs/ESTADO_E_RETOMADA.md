@@ -11,7 +11,8 @@
 2. Remover a linha "Estado: RASCUNHO", rodar `python -m scripts.lacrar_adendo docs/pre_registro/adendo4_fontes_aumento.md`, `make check`, commit e push (o commit público é o lacre).
 3. No Colab, materializar as externas de R (uma linha por comando, em `%%bash`):
    `python -m scripts.materializar_externas --lista manifests/lista_R_seed20261121.csv --pacote aboships=/content/drive/MyDrive/PROJETO_MARINHA/Datasets/_zips/ABOships.zip:abocsv --pacote smd=/content/drive/MyDrive/PROJETO_MARINHA/Datasets/_zips/smd_clean.zip:yolo --saida /content/externas_R`
-4. Fumaça de R (`--fumaca`), depois as sementes 42, 7, 123, 2024, 31415 com `scripts.executar_treino` (`--braco R --plano principal`).
+4. Fumaça de R (`--fumaca`), depois as 10 sementes (7, 42, 123, 2024, 31415, 101, 1001, 2025, 4242, 27182) com `scripts.executar_treino` (`--braco R --plano principal`); depois as 5 sementes novas do C (`--braco C`).
+   Antes de qualquer uso do teste: escrever e registrar `scripts/avaliar_teste.py`; o teste só é avaliado depois de lacrado o 4a (D51).
 5. Colar a saída aqui; o registro e a D51 saem daí.
 
 ## Se o Colab cair no meio
