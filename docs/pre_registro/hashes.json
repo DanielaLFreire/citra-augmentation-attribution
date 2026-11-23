@@ -137,6 +137,18 @@
       "caminho": "scripts/avaliar_teste.py",
       "sha256": "49d231259bdab4f66e7294c3ed1056d2958c69627d625e5aa85e56b7df6c7a84",
       "tamanho_bytes": 16941
+    },
+    "avaliar_teste_v2.py": {
+      "registrado_em_utc": "2026-11-23T16:25:47.579958+00:00",
+      "caminho": "scripts/avaliar_teste_v2.py",
+      "sha256": "fa2e38ea10d2675b93c195ac6d606169bb004dc24217dcdfc5f465c1910cfa4c",
+      "tamanho_bytes": 7129
+    },
+    "analisar_principal.py": {
+      "registrado_em_utc": "2026-11-23T16:25:47.608469+00:00",
+      "caminho": "scripts/analisar_principal.py",
+      "sha256": "41a7d577bf96f11c943f48a604c17e3ef3f6a47b2a51e1910a96a0fa019aef0f",
+      "tamanho_bytes": 8837
     }
   },
   "adendos": {
