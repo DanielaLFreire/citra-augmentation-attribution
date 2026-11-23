@@ -131,6 +131,12 @@
       "caminho": "manifests/lista_treino_R.csv",
       "sha256": "3b9ea10e12b554695663fefcbccbfdf74e67b4f60bb4543be8a6a1cbf14476d2",
       "tamanho_bytes": 532903
+    },
+    "avaliar_teste.py": {
+      "registrado_em_utc": "2026-11-23T15:45:59.521982+00:00",
+      "caminho": "scripts/avaliar_teste.py",
+      "sha256": "49d231259bdab4f66e7294c3ed1056d2958c69627d625e5aa85e56b7df6c7a84",
+      "tamanho_bytes": 16941
     }
   },
   "adendos": {
