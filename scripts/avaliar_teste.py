@@ -16,6 +16,7 @@ Depois de avaliar, escreve o lacre (`runs/AVALIACAO_TESTE_LACRE.json`): o teste 
 
 Uso (Colab):
   python -m scripts.avaliar_teste --split val  --raiz <CITRA-3D-Real> --divisao <divisao.csv> --ids C_principal_yolo11n_seed42 --saida runs/aval_val.csv
+  # ensaio do caminho do teste, com a validação: --split val --exigir-condicoes --lacre /content/lacre_ensaio.json --bracos C R --sem-4a-decisao Dnn
   python -m scripts.avaliar_teste --split test --raiz <CITRA-3D-Real> --divisao <divisao.csv> --bracos C R --saida runs/AVALIACAO_TESTE.csv
 """
 from __future__ import annotations
@@ -26,6 +27,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -270,6 +272,9 @@ def principal(argv=None) -> None:
     p.add_argument("--ids", nargs="*", default=[], help="só no split val")
     p.add_argument("--sem-4a-decisao", default=None)
     p.add_argument("--trabalho", default="/content/trabalho_aval")
+    p.add_argument("--exigir-condicoes", action="store_true",
+                   help="no split val: aplica as mesmas condições e escreve o lacre em --lacre (ensaio do caminho do teste)")
+    p.add_argument("--lacre", default=str(LACRE), help="caminho do lacre; use outro caminho no ensaio")
     a = p.parse_args(argv)
     import torch
     import ultralytics
@@ -279,11 +284,14 @@ def principal(argv=None) -> None:
     if not torch.cuda.is_available():
         raise SystemExit("sem GPU")
     registro = ler_registro()
-    if a.split == "test":
+    lacre = Path(a.lacre)
+    if a.split == "test" and lacre.resolve() != LACRE.resolve():
+        raise SystemExit("no split test o lacre é sempre " + str(LACRE))
+    if a.split == "test" or a.exigir_condicoes:
         if a.ids:
-            raise SystemExit("--ids só vale no split val")
+            raise SystemExit("--ids não vale com as condições do teste")
         _commit_limpo()
-        linhas = verificar_condicoes_teste(registro, carregar(HASHES), Path(__file__), a.bracos, LACRE, a.sem_4a_decisao)
+        linhas = verificar_condicoes_teste(registro, carregar(HASHES), Path(__file__), a.bracos, lacre, a.sem_4a_decisao)
     else:
         por_id = {r["id_execucao"]: r for r in registro}
         alvo = a.ids or [r["id_execucao"] for r in registro if r["braco"] in a.bracos and "_principal_" in r["id_execucao"]]
@@ -301,10 +309,10 @@ def principal(argv=None) -> None:
             w.writerow({k: m[k] for k in COLUNAS})
             f.flush()
             print(json.dumps({k: m[k] for k in COLUNAS}, ensure_ascii=False))
-    if a.split == "test":
-        LACRE.write_text(json.dumps({"avaliado_em": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+    if a.split == "test" or a.exigir_condicoes:
+        lacre.write_text(json.dumps({"avaliado_em": datetime.now(timezone.utc).isoformat(), "split": a.split,
                                      "saida": str(saida), "n_modelos": len(linhas)}, indent=2) + "\n", encoding="utf-8")
-        print("LACRE escrito:", LACRE)
+        print("LACRE escrito:", lacre)
 
 
 if __name__ == "__main__":
