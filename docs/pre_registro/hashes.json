@@ -149,6 +149,12 @@
       "caminho": "scripts/analisar_principal.py",
       "sha256": "41a7d577bf96f11c943f48a604c17e3ef3f6a47b2a51e1910a96a0fa019aef0f",
       "tamanho_bytes": 8837
+    },
+    "analisar_principal_v2.py": {
+      "registrado_em_utc": "2026-11-23T17:01:53.934521+00:00",
+      "caminho": "scripts/analisar_principal_v2.py",
+      "sha256": "2ef73d55d5e58a9efcc4aad19ae29100afa485fe876b94fe93fde41682e598c1",
+      "tamanho_bytes": 5740
     }
   },
   "adendos": {
