@@ -37,6 +37,10 @@ BRACOS = ("C", "R", "E", "G")
 PLANOS = {
     "principal": {"fator_citra": 3, "n_ext": 1370, "ciclos_por_epoca": 2, "epocas": 37, "passos_por_epoca": 685,
                   "excluir_d10": True},
+    # Réplica de hardware do C (adendo 4b): mesmo desenho, mesma lista e mesmas sementes do plano principal, treinada na L4 para que
+    # o controle e o R rodem no mesmo hardware. Só muda o nome do plano (e, portanto, o id da execução).
+    "principalL4": {"fator_citra": 3, "n_ext": 1370, "ciclos_por_epoca": 2, "epocas": 37, "passos_por_epoca": 685,
+                    "excluir_d10": True},
     "reserva": {"fator_citra": 1, "n_ext": 454, "ciclos_por_epoca": 1, "epocas": 222, "passos_por_epoca": 114,
                 "excluir_d10": True},
     # Checagem de reprodutibilidade da D09: C na divisão antiga, como na Fase 5 (real x4, 75 épocas de 337 passos,
