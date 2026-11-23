@@ -20,3 +20,9 @@
 - Uma semente interrompida não retoma de onde parou: apague a pasta incompleta no Drive (ou mova) e rode de novo; a regra do adendo (seção 8) trata isso como falha técnica, mesma semente e configuração.
 - `/content` some quando a sessão cai: a materialização de R precisa ser refeita (minutos).
 - Cada execução leva cerca de 0,6 h na A100; cinco sementes, cerca de 3 h.
+
+## Atualização de 23/11/2026 (noite): réplica de C na L4 e instrumentos do estágio 1
+
+- Retreino das 5 sementes de C da A100 (7, 42, 123, 2024, 31415) na L4, plano `principalL4`, ids `C_principalL4_yolo11n_seed{s}`, mesma lista `manifests/lista_treino_C.csv` e mesma configuração. Se o Colab cair, a semente interrompida não deixa pasta de destino: basta rodar a célula de novo, que pula as sementes já concluídas. Depois de terminar, recuperar as linhas de `registro_execucao.csv` de cada pasta (como foi feito com R) e commitar `runs/REGISTRO_EXECUCOES.csv`.
+- Escritos e testados, ainda **sem hash registrado** (registrar depois do ensaio na validação): `avaliar_teste_v3.py`, `verificar_condicoes_etapa1.py`, `analisar_hardware.py`, `bootstrap_imagens.py`.
+- Ordem seguinte: ensaio do v3 na validação com os 25 modelos; ensaio do analisador de hardware e do bootstrap sobre as predições; registrar os hashes (D60); lacrar o 4b; fechar o 4a e redigir o adendo do G (nome `adendo4c_genship.md`); etiquetas `lacre-adendo4`, `lacre-adendo4b`, `lacre-adendo4a`, `lacre-adendo4c`; só então o estágio 1.
