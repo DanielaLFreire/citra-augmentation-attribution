@@ -30,6 +30,7 @@ O restante do adendo 4 (braços, orçamento de treino, sementes, métrica primá
 **Condições, todas verificadas e registradas em decisão própria antes da execução:**
 1. Este adendo (4b) lacrado.
 2. O adendo 4a (E) e o adendo do G lacrados, de modo que as regras de E e G estejam fixadas antes de se conhecer o resultado de R no teste. Se um deles não estiver lacrado em 30/12/2026 (Brasília), esse braço sai deste experimento, o estágio 1 prossegue com decisão registrada que dispensa o adendo ausente (como na seção 5 do adendo 4), e o braço só entra por adendo posterior, rotulado como posterior ao resultado de R.
+   Consequência de calendário: se o adendo do G não estiver lacrado até 30/12/2026, o estágio 1 só pode rodar a partir de 31/12/2026. Se o 4a e o adendo do G forem lacrados antes, o estágio 1 pode rodar assim que as demais condições valerem.
 3. Hashes de todos os instrumentos da seção 2 (avaliadores, analisadores, verificador, bootstrap) registrados e conferidos contra os arquivos do commit avaliado; código sem alterações não commitadas.
 4. Todas as execuções de C e R, e as 5 réplicas de C na L4 (confirmadas na L4 pelo registro), registradas em `runs/REGISTRO_EXECUCOES.csv`, com SHA-256 dos pesos conferido e ainda não avaliadas no teste.
 5. Etiqueta (tag) de git `lacre-<adendo>` em cada adendo lacrado, apontando para a versão com o hash do lacre, **publicada no GitHub**. O verificador confere a etiqueta no clone local, e a publicação é conferida à mão com `git ls-remote --tags origin`, cuja saída é arquivada na decisão que registra a verificação.
