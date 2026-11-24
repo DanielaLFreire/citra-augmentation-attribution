@@ -1,6 +1,6 @@
 # Adendo 4a (RASCUNHO, NÃO LACRADO): fidelidade de rótulos das imagens geradas pelo iflens
 
-Estado: rascunho atualizado em 2026-11-24. Dois itens seguem abertos, marcados como pendentes no texto (classificação das condições e hash do commit do fork): `scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum marcador. Este adendo alimenta o adendo 4 (fontes de aumento): é o "piloto do braço generativo auditado" exigido em `README.md`.
+Estado: rascunho atualizado em 2026-11-24. Sem itens abertos, falta a revisão de Daniela para lacrar (`scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum marcador de pendência no texto). Este adendo alimenta o adendo 4 (fontes de aumento): é o "piloto do braço generativo auditado" exigido em `README.md`.
 
 ## 1. Pergunta
 Qual fração das imagens do CITRA editadas pelo iflens (prompt v1) deixa de preservar os rótulos herdados, e quanto desse problema um filtro automático consegue remover antes do treino?
@@ -13,8 +13,8 @@ Textos e hashes: `prompts/prompt_v1.txt` (5437d06c…4f64) e `prompts/prompt_v2.
 ## 3. Instrumento congelado
 - Prompt: v1, texto e hash acima. O texto do v1 não muda (versão e hash já registrados; decisão de Daniela em 24/11/2026).
 - Gerador: Gemini `gemini-3.1-flash-lite-image` (Interactions API; sem seed, geração não determinística). Registrar por imagem: modelo solicitado e retornado, `response_id`, hash do prompt, condições sorteadas, hash SHA-256 da saída. Janela de geração: depois do lacre deste adendo e do registro da lista sorteada, e até 20/12/2026 (Brasília), para sobrar prazo antes de 30/12/2026. A data e a hora de cada geração ficam no registro por imagem.
-- Classificador das condições originais: Groq `qwen/qwen3.8-27b`, temperatura 0, com cache. DECISÃO PENDENTE: capacidade de classificação (A21, limite diário de 200 mil tokens).
-- Código: ramo `reprodutibilidade-condicoes-restritas` do fork, commit DECISÃO PENDENTE (registrar hash do commit).
+- Classificador das condições originais: Groq `qwen/qwen3.8-27b`, temperatura 0, com cache. Capacidade (A21): plano pago do Groq, sem o limite diário de 200 mil tokens do plano gratuito (decisão de Daniela em 24/11/2026). O modelo retornado e a data de cada chamada ficam no registro por imagem, e a classificação roda antes da geração, dentro da janela acima.
+- Código: ramo `reprodutibilidade-condicoes-restritas` do fork, fixado no commit `0bd983f30ecabd8aa1d1682faafe318e1d096e4c` (16/11/2026, "Add --classification-cache: reuse a stored classification instead of calling the vision API again"), lido na branch pública `DanielaLFreire/iflens` em 24/11/2026. A geração usa esse commit por checkout do hash, e commits posteriores do ramo não valem.
 - Condições: `conditions-citra.yaml` (domínio brasileiro) e o estrato de risco `conditions-citra-risk.yaml` (chuva forte, neblina densa) conforme D19/A07.
 
 ## 4. Amostra
@@ -32,7 +32,7 @@ Ruído herdado do dataset (`sem_objeto_original`, `original_sem_rotulo`) é cont
 Observação de transparência: este critério foi refinado depois do piloto (v3 da auditoria, pós-hoc). Aqui ele é fixado antes dos dados confirmatórios.
 
 ## 6. Avaliação
-- Dois avaliadores humanos independentes (Daniela e José), cegos entre si e ao parâmetro de geração, com a planilha e as definições do piloto (`INSTRUCOES_avaliador2.md`).
+- Dois avaliadores humanos independentes (Daniela e José; Daniela informou em 24/11/2026 que José avaliará), cegos entre si e ao parâmetro de geração, com a planilha e as definições do piloto (`INSTRUCOES_avaliador2.md`).
 - Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. Resultado da reavaliação (D33): imagem reprovada kappa 0,86 (IC95% 0,69–1,00); caixa em 6 categorias 0,44 (0,29–0,57). Limiar: kappa de pelo menos 0,60 no campo imagem reprovada para prosseguir. Se não for atingido, discutem-se as definições e as duas avaliações são refeitas sem ver a resposta do outro, relatando o kappa antes e depois. Se continuar abaixo, relatam-se as duas taxas (qualquer avaliador e ambos) sem eleger uma.
 - Resolução de discordâncias: primário = reprovada se **qualquer** avaliador marcar; sensibilidade = só se ambos marcarem; relatar as duas taxas (no piloto, com os dois avaliadores, v1: 6/30 contra 2/30; v2: 13/30 contra 10/30).
 - Leitor LLM (família diferente do gerador desejável): usado como terceiro leitor e como filtro; calibrado contra os humanos.
