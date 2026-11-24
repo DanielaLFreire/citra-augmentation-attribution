@@ -1,0 +1,32 @@
+Rodada 1 do desenvolvimento do filtro (24/11/2026). Prompt `prompts/filtro_v1.txt`, modelo groq:qwen/qwen3.8-27b, temperatura 0.
+Conjunto de desenvolvimento: 60 folhas do piloto, 16 positivos (referência: qualquer avaliador, primário; D33).
+Resultado (saída do comando `desenvolver`):
+groq:qwen/qwen3.8-27b|R1  sens 0.25 esp 0.86 descarte 0.17 residual 0.240 falhas 1
+groq:qwen/qwen3.8-27b|R2  sens 0.25 esp 0.73 descarte 0.27 residual 0.273 falhas 1
+groq:qwen/qwen3.8-27b|R3  sens 0.25 esp 0.86 descarte 0.17 residual 0.240 falhas 1
+Piso pré-declarado: sensibilidade >= 0.85. Não atingido. Diagnóstico por folha (saída do comando `diagnostico`, regra R1):
+TP = reprovada e sinalizada; FN = reprovada e não sinalizada; FP = sinalizada sem ser reprovada.
+A002 FP | MODELO: 1vali 2apag 3apag 4vali 5vali 6vali add=-
+A003 TP | MODELO: 1vali 2vali 3vali 4apag 5apag add=-
+A004 FN | D: 2alte 3degr add=barco | J: 2apag 3apag add=embarcacao | MODELO: tudo vali, add=-
+A007 FN | D/J: add=embarcacao | MODELO: add=-
+A009 FN | D: 2nao_ add=barco | J: 2apag add=embarcacao | MODELO: tudo vali, add=-
+A011 FP | MODELO: falha de leitura (resposta em ```json sem JSON válido para 4 caixas)
+A013 FN | D/J: add=embarcacao | MODELO: add=-
+A017 FN | D: 2nao_ add=barco | J: 2degr add=varias embarcacoes | MODELO: add=-
+A019 FP | MODELO: 2apag 3apag
+A022 FN | D: 2degr 4degr 6degr | J: 4apag | MODELO: tudo vali
+A025 TP | MODELO: 1apag add=embarcacao
+A029 FN | D/J: add=embarcacao | MODELO: add=-
+A030 TP | MODELO: 4apag add=embarcacao
+A034 FN | D: 7nao_ | J: 7apag (17 caixas) | MODELO: tudo vali
+A035 TP | MODELO: add=embarcacao
+A046 FN | D/J: add=embarcacao | MODELO: add=-
+A050 FN | D: 1nao_ | J: 2alte | MODELO: tudo vali
+A052 FN | D: 17nao_ add=barco | J: 17apag add=embarcacoes | MODELO: tudo vali, add=-
+A053 FP | MODELO: 1desl
+A056 FP | MODELO: 1apag 2apag 3apag
+A057 FP | MODELO: 1apag 2degr 3degr
+A060 FN | D: 4degr 5degr add=barco | J: 1degr 4apag 5alte add=varias embarcacoes | MODELO: tudo vali, add=-
+Contagem: 4 TP, 12 FN, 6 FP (5 sinalizações de caixa sem falha humana e 1 falha de leitura).
+Embarcação adicionada segundo algum humano em 12 folhas; o modelo apontou em 3 (A025, A030, A035).
