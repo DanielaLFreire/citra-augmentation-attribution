@@ -193,6 +193,44 @@ def referencia_piloto(pasta: Path) -> tuple[dict[str, bool], dict[str, int]]:
     return ref, ncx
 
 
+def categorias_humanas(pasta: Path) -> dict[str, dict]:
+    """Por folha: categorias por caixa e objeto adicionado de cada avaliador (D = Daniela, J = José), após a reavaliação v4."""
+    from scripts import analise_reavaliacao_v4 as an
+    pasta = Path(pasta)
+    D0 = an.ler_csv_daniela(pasta / "auditoria_daniela_v3_com_tipo.csv")
+    J0 = an.ler_xlsx_jose(pasta / "auditoria_jose_com_tipo.xlsx")
+    Dr = an.reavaliacao(pasta / "reavaliacao_v4_daniela_caixas_corrigida.csv", pasta / "reavaliacao_v4_daniela_imagens.csv")
+    Jr = an.reavaliacao(pasta / "reavaliacao_v4_jose_caixas.csv", pasta / "reavaliacao_v4_jose_imagens.csv")
+    out: dict[str, dict] = {}
+    for nome, (cx, im) in (("D", an.juntar(D0, Dr)), ("J", an.juntar(J0, Jr))):
+        for (c, i), cat in sorted(cx.items()):
+            out.setdefault(c, {"D": {}, "J": {}, "adD": "", "adJ": ""})[nome][i] = cat
+        for c, (flag, tipo) in im.items():
+            out.setdefault(c, {"D": {}, "J": {}, "adD": "", "adJ": ""})["ad" + nome] = tipo if flag == "1" else ""
+    return out
+
+
+def diagnostico(pasta_piloto: Path, folhas: Path, cache: Path, config: str, regra: str = "R1") -> list[str]:
+    """Uma linha por folha em que a referência humana ou o filtro marca reprovada. Só lê o cache."""
+    prov, modelo = parse_config(config)
+    ref, ncx = referencia_piloto(pasta_piloto)
+    hum = categorias_humanas(pasta_piloto)
+    fmt = lambda d: " ".join(f"{i}{v[:4]}" for i, v in sorted(d.items()))
+    linhas = []
+    for c in sorted(ref):
+        resp = ler_folha(prov, modelo, folhas / f"{c}.png", cache)
+        lit = parse_resposta(resp["texto"], ncx[c])
+        flag = sinalizada(lit, regra)
+        if not (ref[c] or flag):
+            continue
+        h = hum[c]
+        mod = "FALHA_LEITURA " + (resp["texto"] or "")[:80].replace("\n", " ") if lit is None else \
+            f"{fmt(lit['caixas'])} add={lit['tipo'] if lit['adicionado'] else '-'}"
+        tipo = "FN" if ref[c] and not flag else ("FP" if flag and not ref[c] else "TP")
+        linhas.append(f"{c} {tipo} | D: {fmt(h['D'])} add={h['adD'] or '-'} | J: {fmt(h['J'])} add={h['adJ'] or '-'} | MODELO: {mod}")
+    return linhas
+
+
 def parse_config(s: str) -> tuple[str, str]:
     prov, _, modelo = s.partition(":")
     if prov not in CHAMADAS or not modelo:
@@ -228,7 +266,17 @@ def principal(argv=None) -> int:
     d.add_argument("--cache", required=True)
     d.add_argument("--saida", required=True)
     d.add_argument("--config", action="append", required=True, help="provedor:modelo (repetir)")
+    g = sub.add_parser("diagnostico")
+    g.add_argument("--pasta-piloto", default=str(RAIZ / "data" / "auditoria_piloto_iflens"))
+    g.add_argument("--folhas", required=True)
+    g.add_argument("--cache", required=True)
+    g.add_argument("--config", required=True)
+    g.add_argument("--regra", default="R1", choices=REGRAS)
     a = ap.parse_args(argv)
+    if a.cmd == "diagnostico":
+        for linha in diagnostico(Path(a.pasta_piloto), Path(a.folhas), Path(a.cache), a.config, a.regra):
+            print(linha)
+        return 0
     if Path(a.saida).exists():
         print(f"{a.saida} já existe; recuso sobrescrever.", file=sys.stderr)
         return 2

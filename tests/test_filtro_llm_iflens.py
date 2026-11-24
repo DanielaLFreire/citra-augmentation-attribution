@@ -121,3 +121,21 @@ def test_cache_depende_do_prompt(tmp_path, monkeypatch):
     monkeypatch.setattr(f, "PROMPT", outro)
     f.ler_folha("groq", "qwen/x", folha, tmp_path / "c", falso)
     assert len(n) == 2 and n[1] == "prompt diferente"
+
+
+def test_diagnostico_lista_so_reprovadas_e_sinalizadas(tmp_path):
+    from PIL import Image
+    pasta = f.RAIZ / "data" / "auditoria_piloto_iflens"
+    ref, ncx = f.referencia_piloto(pasta)
+    folhas = tmp_path / "folhas"; folhas.mkdir()
+    for c in ref:
+        Image.new("RGB", (10, 10)).save(folhas / f"{c}.png")
+    def tudo_valido(modelo, prompt, dados, mime):
+        return {"texto": json.dumps({"caixas": [{"caixa": k, "categoria": "valida"} for k in range(1, 9)],
+                                      "objeto_adicionado": {"presente": False, "tipo": ""}}), "modelo_retornado": "m", "id": "i"}
+    # com 8 caixas fixas, só folhas com 8 caixas são válidas; as outras viram falha de leitura (sinalizadas)
+    for c in ref:
+        f.ler_folha("groq", "fake", folhas / f"{c}.png", tmp_path / "cache", tudo_valido)
+    linhas = f.diagnostico(pasta, folhas, tmp_path / "cache", "groq:fake")
+    assert linhas and all(" | MODELO: " in l for l in linhas)
+    assert sum(" FN " in l for l in linhas) + sum(" TP " in l for l in linhas) == 16  # todas as 16 reprovadas aparecem
