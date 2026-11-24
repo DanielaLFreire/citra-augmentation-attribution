@@ -185,6 +185,18 @@
       "caminho": "scripts/sortear_amostra_4a.py",
       "sha256": "cf9602c9393dfec7276205930824ce2b3852d2cead63ceb9a18f102b31b5438e",
       "tamanho_bytes": 7664
+    },
+    "lista_elegivel_4a.csv": {
+      "registrado_em_utc": "2026-11-24T19:23:02.218918+00:00",
+      "caminho": "manifests/lista_elegivel_4a.csv",
+      "sha256": "66eee1144b3e9d4d1d8ea41d4e49ccf1373ca78490d5dffde5632f8058f32d13",
+      "tamanho_bytes": 68591
+    },
+    "amostra_4a_seed20261201.csv": {
+      "registrado_em_utc": "2026-11-24T19:23:02.247358+00:00",
+      "caminho": "manifests/amostra_4a_seed20261201.csv",
+      "sha256": "5f6fe2c90328d23d5aea25e3180a54ec5d2726ba850de8a4c526d2f0334f3932",
+      "tamanho_bytes": 7088
     }
   },
   "adendos": {

@@ -1,0 +1,56 @@
+{
+  "adendo": "adendo4a_fidelidade_iflens.md",
+  "semente": 20261201,
+  "n": 150,
+  "n_risco": 30,
+  "python": "3.13.18",
+  "entradas": {
+    "divisao_sha256": "1e7674fdef8dff8413e93f7e9562d830dfe792dd85d35fe9033282e4e2e3bea9",
+    "manifestos_sha256": {
+      "labels_final_manifest_train.json": "5feebf29cb5403d163ac5355b801db2db83cf062613776edce504a9c4ab9c048",
+      "labels_final_manifest_val.json": "77013f53290f333061c7ad1276a7b4570f155ef66cc9de5f428a0732f56dd365",
+      "labels_final_manifest_test.json": "f788a9005fbbfb2946b2794c3750d33d30b5aea30802867736fd935a5c92aaa4"
+    },
+    "chave_piloto_sha256": "b679308486a8d951cdd5f1808a6bb142af6854c70fcb3e9536bc17f079180a94"
+  },
+  "lista_elegivel": {
+    "arquivo": "lista_elegivel_4a.csv",
+    "sha256": "66eee1144b3e9d4d1d8ea41d4e49ccf1373ca78490d5dffde5632f8058f32d13",
+    "n_imagens": 1370,
+    "n_blocos": 293
+  },
+  "pool_amostra": {
+    "n_imagens": 1352,
+    "n_blocos": 293,
+    "excluidas_piloto_no_treino": [
+      "04.05.2022-09-50-51",
+      "04.05.2022-15-26-05",
+      "04.05.2022-15-32-10",
+      "05.07.2022-08-39-26",
+      "05.07.2022-08-42-52",
+      "07.07.2022-09-38-49",
+      "08.07.2022-15-01-09",
+      "11.05.2022-15-17-07",
+      "11.05.2022-15-23-16",
+      "11.07.2022-09-48-42",
+      "11.07.2022-14-07-42",
+      "11.07.2022-15-55-46",
+      "12.04.2022-13-37-39",
+      "12.04.2022-14-23-39",
+      "24.06.2022-11-16-53",
+      "24.06.2022-15-35-01",
+      "28.06.2022-10-54-53",
+      "29.04.2022-14-35-53"
+    ]
+  },
+  "amostra": {
+    "arquivo": "amostra_4a_seed20261201.csv",
+    "sha256": "5f6fe2c90328d23d5aea25e3180a54ec5d2726ba850de8a4c526d2f0334f3932",
+    "n_imagens": 150,
+    "n_blocos": 150,
+    "por_estrato": {
+      "padrao": 120,
+      "risco": 30
+    }
+  }
+}

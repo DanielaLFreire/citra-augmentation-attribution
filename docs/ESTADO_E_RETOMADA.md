@@ -32,3 +32,4 @@
 - Regra de uso do E: sensibilidade do filtro ≥ 80% e taxa residual ≤ 7% (D63). Produção do E, calendário e auditoria de 100 imagens estão no 4a (seções 10 e 11).
 - Rascunhos não lacrados: 4b (dois estágios) e 4c (GenShip, 6 pendências; esperando o João até 02/12 ou piloto próprio).
 - Próximos passos: script de sorteio das 150 (semente 20261201) e lista elegível com hash; filtro congelado e registrado até 30/11; classificação e geração das 150 de 01/12 a 04/12; lacrar o 4b quando Daniela disser.
+- (24/11, noite) Etiqueta `lacre-adendo4a` publicada e conferida (aponta para `d644c32`). Sorteio das 150 feito e registrado (D65): `manifests/amostra_4a_seed20261201.csv`, lista elegível de 1.370 em `manifests/lista_elegivel_4a.csv`. Próximos: filtro congelado e registrado até 30/11; sorteio das condições; classificação (Groq) e geração das 150 de 01/12 a 04/12; planilhas cegas.
