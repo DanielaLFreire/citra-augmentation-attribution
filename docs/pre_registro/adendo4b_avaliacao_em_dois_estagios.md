@@ -80,6 +80,7 @@ O resultado de R−C no mAP50 qualquer que seja a conclusão (melhora, piora, eq
 - Uma primeira versão do analisador (D58) tratava as secundárias com veredito e Holm. Foi substituída pela versão atual antes de qualquer avaliação do teste (D59).
 - O avaliador v1 (D55) foi registrado antes de eu perceber que as análises por subconjunto exigiam predições por imagem; o v2 o substitui para o teste (D58).
 - No ensaio, a mesma semente treinada na A100 e na L4 diferiu em média 0,67 pp, sem efeito médio detectável do hardware (+0,10 pp na reavaliação, IC95% de −0,63 a +0,84 pp, 5 pares). O pareamento por semente é nominal.
+- **Errata do adendo 4a (lacrado em 24/11/2026).** Nas seções 4, 6 e 9 do 4a, os números do piloto estão errados: o texto diz "6/30 = 20%" e "6/30 contra 2/30; 13/30 contra 10/30". Os valores corretos do desfecho primário (D33) são: qualquer avaliador, v1 5/30 (16,7%) e v2 11/30; ambos os avaliadores, v1 3/30 e v2 10/30. Os 6/30 e 13/30 pertencem à sensibilidade em que `degradada` conta como falha, e o 2/30 e o 10/30 à análise v3 com avaliadora única. Nenhuma regra do 4a muda, porque o limiar de 7% é sobre a taxa residual depois do filtro. O registro está em `docs/DESVIOS.md` e na D66.
 - Há 40% de sobreposição entre o teste novo e imagens usadas na história do projeto (seção 5.1), e o teste cobre 3 dias.
 
 ## 9. O que este adendo não decide

@@ -1,6 +1,7 @@
 # Registro de desvios
 
-Cada vez que algo feito diverge do que o pré-registro ou o protocolo dizia, uma linha aqui: data, o que divergiu, por quê, efeito esperado nas conclusões. Vazio até o primeiro adendo ser lacrado.
+Cada vez que algo feito diverge do que o pré-registro ou o protocolo dizia, uma linha aqui: data, o que divergiu, por quê, efeito esperado nas conclusões. Começou a ser preenchido com o lacre do adendo 4a.
 
 | Data | Referência (adendo/seção) | O que divergiu | Motivo | Efeito esperado |
 | --- | --- | --- | --- | --- |
+| 2026-11-24 | Adendo 4a, seções 4, 6 e 9 (texto lacrado em d644c32) | O texto cita números errados do piloto: "20% (30/150, como no piloto com dois avaliadores)" e "6/30 = 20% pela definição qualquer avaliador" (seções 4 e 9), e "v1: 6/30 contra 2/30; v2: 13/30 contra 10/30" (seção 6). Os valores corretos do D33, desfecho primário, são: qualquer avaliador v1 5/30 (16,7%; Wilson 7%–34%) e v2 11/30; ambos v1 3/30 e v2 10/30. Os 6/30 e 13/30 são da sensibilidade (degradada conta como falha), e o 2/30 e o 10/30 são da v3, com avaliadora única | Erro de redação meu (Claude), ao misturar a análise de sensibilidade e a v3 com o primário; achado em 24/11/2026 ao calcular a referência do filtro com os dados do piloto. Não alterado no texto lacrado (correção só por adendo novo) | Nenhuma regra muda: o limiar de 7% é sobre a taxa residual depois do filtro e não depende do valor do piloto. Muda só a justificativa descritiva: com 16,7% bruto, a regra antiga de 15% sobre a taxa bruta barraria o E com probabilidade ~70% (e não ~94%), e a taxa residual esperada com sensibilidade 80% e especificidade 90% é ~4%. Quem lê o 4a deve usar os valores do D33 |

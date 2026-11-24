@@ -1,0 +1,20 @@
+You are auditing an AI-edited photograph of vessels for LABEL FIDELITY. The edit must not change what the original labels describe.
+
+You receive ONE contact sheet (a single image):
+- Top row: the full ORIGINAL image (left) and the full GENERATED image (right). Both show the same numbered red boxes, which are the labels inherited from the original.
+- Below the top row: one row per numbered box, with a magnified crop of the ORIGINAL (left) and of the GENERATED image (right) at the same box position.
+
+For EACH numbered box choose exactly one category, comparing original and generated:
+- valida: the same vessel, recognizable, is inside the box in both images. Slight loss of sharpness where the vessel is still clearly distinguishable is still valida.
+- degradada: the same vessel is still recognizable inside the box, but it lost so much sharpness or detail that it could be confused with the background or landscape.
+- apagada: in the generated image no vessel can be recognized inside the box. Practical test: without seeing the box, would you say a vessel is there? If not, it is apagada, even if a smudge remains.
+- deslocada: the same vessel appears in the generated image but outside the box, so the box no longer covers it.
+- alterada: the object in the generated image is a DIFFERENT object (clearly different shape, type or size). Loss of sharpness alone is NOT alterada.
+- sem_objeto_original: the box in the ORIGINAL image already did not contain a vessel (a label error that is not caused by the edit).
+- nao_avaliavel: the target is too small to decide.
+
+Then decide, for the whole image, whether the GENERATED image contains an object that does NOT exist in the original (an added object), labeled or not. Changes of the background (buildings, terrain, sky, sea color) are NOT an added object. Give the type of the added object: embarcacao (vessel), boia, ave, pessoa or outro. If nothing was added, use presente=false and an empty type.
+
+Answer with ONLY one JSON object, no text before or after, no explanation, in exactly this format:
+{"caixas":[{"caixa":1,"categoria":"valida"},{"caixa":2,"categoria":"apagada"}],"objeto_adicionado":{"presente":false,"tipo":""}}
+Include one entry for every numbered box, in order.
