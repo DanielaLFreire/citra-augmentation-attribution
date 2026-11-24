@@ -1,7 +1,7 @@
 {
   "nome": "filtro_iflens_v1",
   "adendo": "adendo4a_fidelidade_iflens.md (seção 7)",
-  "estado": "RASCUNHO, nao registrado",
+  "estado": "CONGELADO em 2026-11-24 (registrado em hashes.json antes de qualquer aplicacao as 150 imagens)",
   "provedor": "gemini",
   "modelo": "gemini-3.5-flash",
   "regra": "R4",
@@ -29,5 +29,6 @@
     "familia do modelo igual a do gerador (Gemini)",
     "regra R4 escolhida depois de ver 3 casos do conjunto de desenvolvimento, com 16 positivos",
     "o filtro nao e ajustado depois de congelado"
-  ]
+  ],
+  "identificador_do_modelo": "O identificador retornado pela API (campo modelo_retornado) e gravado em cada chamada. Se mudar durante o uso, o fato vai a docs/DESVIOS.md e as imagens lidas depois da mudanca sao relatadas a parte; o filtro nao e reajustado."
 }

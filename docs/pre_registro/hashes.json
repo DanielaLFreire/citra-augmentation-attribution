@@ -197,6 +197,30 @@
       "caminho": "manifests/amostra_4a_seed20261201.csv",
       "sha256": "5f6fe2c90328d23d5aea25e3180a54ec5d2726ba850de8a4c526d2f0334f3932",
       "tamanho_bytes": 7088
+    },
+    "filtro_v1.txt": {
+      "registrado_em_utc": "2026-11-24T21:39:19.451694+00:00",
+      "caminho": "prompts/filtro_v1.txt",
+      "sha256": "90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d",
+      "tamanho_bytes": 2238
+    },
+    "filtro_llm_iflens.py": {
+      "registrado_em_utc": "2026-11-24T21:39:19.485383+00:00",
+      "caminho": "scripts/filtro_llm_iflens.py",
+      "sha256": "0d6d404411fdbe05c83bb47cba463b20e08daa9becf72fa268e866e0ec32506c",
+      "tamanho_bytes": 18170
+    },
+    "filtro_iflens_v1.json": {
+      "registrado_em_utc": "2026-11-24T21:39:19.521893+00:00",
+      "caminho": "configs/filtro_iflens_v1.json",
+      "sha256": "607d87a1f032077dd8a6a300b9837a47b333bc9bd0d62d83cc0c1ee4b781e3fa",
+      "tamanho_bytes": 2182
+    },
+    "rodada1_groq_qwen.txt": {
+      "registrado_em_utc": "2026-11-24T21:39:19.560011+00:00",
+      "caminho": "data/filtro_desenvolvimento/rodada1_groq_qwen.txt",
+      "sha256": "b36d4d6e0dc8a297cf8c5901655148b9f5bf279a2c1483c8afc94b4350245ab1",
+      "tamanho_bytes": 4553
     }
   },
   "adendos": {
