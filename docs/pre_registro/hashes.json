@@ -155,6 +155,30 @@
       "caminho": "scripts/analisar_principal_v2.py",
       "sha256": "2ef73d55d5e58a9efcc4aad19ae29100afa485fe876b94fe93fde41682e598c1",
       "tamanho_bytes": 5740
+    },
+    "avaliar_teste_v3.py": {
+      "registrado_em_utc": "2026-11-24T14:49:22.486953+00:00",
+      "caminho": "scripts/avaliar_teste_v3.py",
+      "sha256": "13333e29c5c7dab2eb49e75cc417662225450d2aa4421f29965ab090a22f4543",
+      "tamanho_bytes": 8470
+    },
+    "analisar_hardware.py": {
+      "registrado_em_utc": "2026-11-24T14:49:22.530002+00:00",
+      "caminho": "scripts/analisar_hardware.py",
+      "sha256": "b2996e6bdf2f435aa861126adb931f1a9976b13ab484396c54523924d701aefd",
+      "tamanho_bytes": 3492
+    },
+    "bootstrap_imagens.py": {
+      "registrado_em_utc": "2026-11-24T14:49:22.570714+00:00",
+      "caminho": "scripts/bootstrap_imagens.py",
+      "sha256": "4128162ddbc6341307483e8e42cd273c5256304b7d55529419aa66167d90918c",
+      "tamanho_bytes": 5773
+    },
+    "verificar_condicoes_etapa1.py": {
+      "registrado_em_utc": "2026-11-24T14:49:22.609559+00:00",
+      "caminho": "scripts/verificar_condicoes_etapa1.py",
+      "sha256": "3a5592abe053ca6b1ea5c5708c369d72b40e8539d895efba7db93a366f426db9",
+      "tamanho_bytes": 6083
     }
   },
   "adendos": {
