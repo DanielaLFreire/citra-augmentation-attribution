@@ -1,6 +1,6 @@
 # Adendo 4a (RASCUNHO, NÃO LACRADO): fidelidade de rótulos das imagens geradas pelo iflens
 
-Estado: rascunho de 2026-11-18. Contém marcadores "DECISÃO PENDENTE" de propósito: `scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum. Este adendo alimenta o adendo 4 (fontes de aumento): é o "piloto do braço generativo auditado" exigido em `README.md`.
+Estado: rascunho atualizado em 2026-11-24. Dois itens seguem abertos, marcados como pendentes no texto (classificação das condições e hash do commit do fork): `scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum marcador. Este adendo alimenta o adendo 4 (fontes de aumento): é o "piloto do braço generativo auditado" exigido em `README.md`.
 
 ## 1. Pergunta
 Qual fração das imagens do CITRA editadas pelo iflens (prompt v1) deixa de preservar os rótulos herdados, e quanto desse problema um filtro automático consegue remover antes do treino?
@@ -11,19 +11,19 @@ No piloto (30 imagens × 2 prompts, exploratório, avaliadora única), o v1 repr
 Textos e hashes: `prompts/prompt_v1.txt` (5437d06c…4f64) e `prompts/prompt_v2.txt` (e96659f9…423b).
 
 ## 3. Instrumento congelado
-- Prompt: v1, texto e hash acima. DECISÃO PENDENTE: confirmar que o texto do v1 não muda (versão e hash já registrados).
-- Gerador: Gemini `gemini-3.1-flash-lite-image` (Interactions API; sem seed, geração não determinística). Registrar por imagem: modelo solicitado e retornado, `response_id`, hash do prompt, condições sorteadas, hash SHA-256 da saída. DECISÃO PENDENTE: data/hora da janela de geração.
+- Prompt: v1, texto e hash acima. O texto do v1 não muda (versão e hash já registrados; decisão de Daniela em 24/11/2026).
+- Gerador: Gemini `gemini-3.1-flash-lite-image` (Interactions API; sem seed, geração não determinística). Registrar por imagem: modelo solicitado e retornado, `response_id`, hash do prompt, condições sorteadas, hash SHA-256 da saída. Janela de geração: depois do lacre deste adendo e do registro da lista sorteada, e até 20/12/2026 (Brasília), para sobrar prazo antes de 30/12/2026. A data e a hora de cada geração ficam no registro por imagem.
 - Classificador das condições originais: Groq `qwen/qwen3.8-27b`, temperatura 0, com cache. DECISÃO PENDENTE: capacidade de classificação (A21, limite diário de 200 mil tokens).
 - Código: ramo `reprodutibilidade-condicoes-restritas` do fork, commit DECISÃO PENDENTE (registrar hash do commit).
 - Condições: `conditions-citra.yaml` (domínio brasileiro) e o estrato de risco `conditions-citra-risk.yaml` (chuva forte, neblina densa) conforme D19/A07.
 
 ## 4. Amostra
-- População: imagens do split de **treino da divisão refeita em blocos de dias** (D16/D23) com pelo menos 1 caixa. DECISÃO PENDENTE: o sorteio só ocorre depois de a nova divisão ser congelada; se o adendo for lacrado antes, a população precisa citar o hash da lista de treino nova.
+- População: imagens do split de **treino da divisão em blocos de dias** (D16/D23), lista congelada em `data/divisao_citra_blocos_dias/divisao_blocos_dias.csv` (sha256 `1e7674fdef8dff8413e93f7e9562d830dfe792dd85d35fe9033282e4e2e3bea9`), com pelo menos 1 caixa. O script de sorteio grava a lista elegível e o hash dela antes de sortear.
 - Excluídas: as 30 imagens do piloto, os quadros em quarentena, imagens usadas no desenvolvimento do prompt.
 - Tamanho: 150 imagens (n = 131 para poder de 90% num cenário de comparação; aqui a justificativa é a precisão da estimativa: com 7% de falha, o IC95% de Wilson fica em torno de 4%–12%).
-- Sorteio: semente pré-registrada DECISÃO PENDENTE, `random.Random(semente)`, script e lista de saída registrados com hash antes de gerar.
-- Dependência entre imagens: quadros do mesmo vídeo/sessão são correlacionados. DECISÃO PENDENTE: 1 imagem por sessão/cluster (como na lista R) ou amostra simples com IC por bootstrap de clusters.
-- Estrato de risco: DECISÃO PENDENTE: fração das 150 com condições de risco (sugestão: 20%), analisada em separado.
+- Sorteio: semente pré-registrada 20261201, `random.Random(semente)`, script e lista de saída registrados com hash antes de gerar.
+- Dependência entre imagens: quadros do mesmo vídeo/sessão são correlacionados. 1 imagem por bloco. O CITRA não tem identificador de sessão, então define-se bloco como a data, a hora e a dezena de minutos do nome do arquivo (`DD.MM.AAAA-HH-MM-SS`, dezena = minuto dividido por 10). A divisão de treino tem 293 blocos, 89 combinações de data e hora, e 20 dias. O sorteio escolhe 150 blocos entre os que têm pelo menos 1 imagem elegível, e 1 imagem em cada. Se houver menos de 150 blocos elegíveis, usa-se 1 imagem em todos eles e o restante é sorteado sem restrição. O bloco de 10 minutos é uma hipótese de trabalho para reduzir quase-duplicatas, não uma medida de independência, e a análise reporta também o IC por bootstrap de blocos.
+- Estrato de risco: 20% das 150 (30 imagens) com condições de risco, analisadas em separado.
 - Uma geração por imagem (a taxa estimada é por geração).
 
 ## 5. Desfecho primário
@@ -33,19 +33,19 @@ Observação de transparência: este critério foi refinado depois do piloto (v3
 
 ## 6. Avaliação
 - Dois avaliadores humanos independentes (Daniela e José), cegos entre si e ao parâmetro de geração, com a planilha e as definições do piloto (`INSTRUCOES_avaliador2.md`).
-- Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. Resultado da reavaliação (D33): imagem reprovada kappa 0,86 (IC95% 0,69–1,00); caixa em 6 categorias 0,44 (0,29–0,57). DECISÃO PENDENTE: limiar mínimo de kappa por campo para prosseguir e conduta se não for atingido.
+- Concordância medida primeiro nas 60 folhas do piloto: objeto adicionado kappa 0,85; original sem rótulo 0,52; caixa 0,27 (6 categorias), por definição ambígua de `alterada`. Definições refinadas (v4) e as caixas divergentes reavaliadas por cada um sem ver a resposta do outro. Resultado da reavaliação (D33): imagem reprovada kappa 0,86 (IC95% 0,69–1,00); caixa em 6 categorias 0,44 (0,29–0,57). Limiar: kappa de pelo menos 0,60 no campo imagem reprovada para prosseguir. Se não for atingido, discutem-se as definições e as duas avaliações são refeitas sem ver a resposta do outro, relatando o kappa antes e depois. Se continuar abaixo, relatam-se as duas taxas (qualquer avaliador e ambos) sem eleger uma.
 - Resolução de discordâncias: primário = reprovada se **qualquer** avaliador marcar; sensibilidade = só se ambos marcarem; relatar as duas taxas (no piloto, com os dois avaliadores, v1: 6/30 contra 2/30; v2: 13/30 contra 10/30).
 - Leitor LLM (família diferente do gerador desejável): usado como terceiro leitor e como filtro; calibrado contra os humanos.
 
 ## 7. Filtro automático de qualidade
-Objetivo: descartar imagens reprovadas antes do treino, já que a auditoria humana não escala. Validação nas 150: sensibilidade e especificidade com IC95% contra o consenso humano. DECISÃO PENDENTE: limiar mínimo de sensibilidade para usar o filtro no braço E e o que fazer se não for atingido.
+Objetivo: descartar imagens reprovadas antes do treino, já que a auditoria humana não escala. Validação nas 150: sensibilidade e especificidade com IC95% contra o consenso humano. Limiar: sensibilidade estimada de pelo menos 80%. Se não for atingida, o filtro não é usado como critério de descarte, e o braço E só pode ser formado por novo adendo que declare o risco de rótulos não verificados.
 
 ## 8. Análise
 Taxa de reprovação com IC95% de Wilson (ou bootstrap por cluster); taxa por estrato (padrão e risco); tipos de falha; concordância entre avaliadores; desempenho do filtro. Sem teste de hipótese e sem múltiplas comparações. Regras de α e poder (0,05 bilateral, 90%) ficam para qualquer comparação futura entre prompts.
 
 ## 9. Regras de decisão
 - Imagens reprovadas (ou sinalizadas pelo filtro) são **descartadas, não regeneradas**; a taxa de descarte é relatada.
-- Se a taxa de reprovação do v1 for maior que DECISÃO PENDENTE (sugestão: 15%) ou o descarte inviabilizar o volume do braço E, abre-se um novo ciclo de desenvolvimento de prompt em conjunto de desenvolvimento separado, e um novo adendo.
+- Se a taxa de reprovação do v1 for maior que 15% ou o descarte inviabilizar o volume do braço E, abre-se um novo ciclo de desenvolvimento de prompt em conjunto de desenvolvimento separado, e um novo adendo.
 - O conjunto de teste do CITRA não é usado em nenhuma decisão deste adendo.
 
 ## 10. Desvios
