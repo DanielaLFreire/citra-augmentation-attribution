@@ -221,6 +221,18 @@
       "caminho": "data/filtro_desenvolvimento/rodada1_groq_qwen.txt",
       "sha256": "b36d4d6e0dc8a297cf8c5901655148b9f5bf279a2c1483c8afc94b4350245ab1",
       "tamanho_bytes": 4553
+    },
+    "geracao_4a.py": {
+      "registrado_em_utc": "2026-11-24T23:39:46.877565+00:00",
+      "caminho": "scripts/geracao_4a.py",
+      "sha256": "902bf712927c6b72d9b09c787a93caf5cd5a6a31fbf48d7e7a36497bb4364774",
+      "tamanho_bytes": 10883
+    },
+    "parametros_geracao_4a.json": {
+      "registrado_em_utc": "2026-11-24T23:39:46.909858+00:00",
+      "caminho": "manifests/parametros_geracao_4a.json",
+      "sha256": "bf87fac05c17ea765531b4d293a6a80333d479120c151dc93f3814fe3b4bdbd9",
+      "tamanho_bytes": 5540
     }
   },
   "adendos": {
