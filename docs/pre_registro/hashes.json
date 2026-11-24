@@ -179,6 +179,12 @@
       "caminho": "scripts/verificar_condicoes_etapa1.py",
       "sha256": "3a5592abe053ca6b1ea5c5708c369d72b40e8539d895efba7db93a366f426db9",
       "tamanho_bytes": 6083
+    },
+    "sortear_amostra_4a.py": {
+      "registrado_em_utc": "2026-11-24T19:22:59.873103+00:00",
+      "caminho": "scripts/sortear_amostra_4a.py",
+      "sha256": "cf9602c9393dfec7276205930824ce2b3852d2cead63ceb9a18f102b31b5438e",
+      "tamanho_bytes": 7664
     }
   },
   "adendos": {
