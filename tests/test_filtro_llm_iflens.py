@@ -1,3 +1,4 @@
+import csv
 import json
 
 import pytest
@@ -141,3 +142,40 @@ def test_diagnostico_lista_so_reprovadas_e_sinalizadas(tmp_path):
     linhas = f.diagnostico(pasta, folhas, tmp_path / "cache", "groq:fake")
     assert linhas and all(" | MODELO: " in l for l in linhas)
     assert sum(" FN " in l for l in linhas) + sum(" TP " in l for l in linhas) == 16  # todas as 16 reprovadas aparecem
+
+
+def _modelo_csv(caminho, cods_ncx):
+    with open(caminho, "w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["codigo", "tipo", "item", "classe", "categoria", "observacao"])
+        w.writeheader()
+        for c, n in cods_ncx.items():
+            for i in range(1, n + 1):
+                w.writerow({"codigo": c, "tipo": "caixa", "item": i, "classe": "0", "categoria": "", "observacao": ""})
+            w.writerow({"codigo": c, "tipo": "imagem", "item": 0, "classe": "", "categoria": "", "observacao": ""})
+
+
+def test_aplicar_grava_uma_linha_por_folha_e_confere_hashes(tmp_path):
+    from PIL import Image
+    modelo = tmp_path / "auditoria_modelo.csv"
+    _modelo_csv(modelo, {"A001": 2, "A002": 1})
+    folhas = tmp_path / "folhas"; folhas.mkdir()
+    for c in ("A001", "A002"):
+        Image.new("RGB", (10, 10)).save(folhas / f"{c}.png")
+    resp = {"A001": OK2, "A002": '{"caixas":[{"caixa":1,"categoria":"sem_objeto_original"}],"objeto_adicionado":{"presente":false,"tipo":""}}'}
+    n = {"i": 0}
+    def falso(m, prompt, dados, mime):
+        c = ["A001", "A002"][n["i"]]; n["i"] += 1
+        return {"texto": resp[c], "modelo_retornado": "gemini-x", "id": f"id{n['i']}"}
+    cfg = tmp_path / "cfg.json"
+    cfg.write_text(json.dumps({"provedor": "gemini", "modelo": "gemini-x", "regra": "R4",
+                               "prompt_sha256": f.sha256(f.PROMPT), "script_sha256": f.sha256(f.Path(f.__file__))}))
+    res = f.aplicar(cfg, folhas, modelo, tmp_path / "c", tmp_path / "saida.csv", falso)
+    assert res == {"n": 2, "sinalizadas": 1, "falhas_de_leitura": 0, "modelos_retornados": ["gemini-x"]}
+    linhas = list(csv.DictReader(open(tmp_path / "saida.csv", encoding="utf-8")))
+    assert [(r["codigo"], r["sinalizada"]) for r in linhas] == [("A001", "0"), ("A002", "1")]
+    with pytest.raises(FileExistsError):
+        f.aplicar(cfg, folhas, modelo, tmp_path / "c", tmp_path / "saida.csv", falso)
+    cfg.write_text(json.dumps({"provedor": "gemini", "modelo": "gemini-x", "regra": "R4",
+                               "prompt_sha256": "0" * 64, "script_sha256": f.sha256(f.Path(f.__file__))}))
+    with pytest.raises(ValueError):
+        f.aplicar(cfg, folhas, modelo, tmp_path / "c", tmp_path / "outra.csv", falso)

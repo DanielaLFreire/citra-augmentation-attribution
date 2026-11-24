@@ -49,3 +49,10 @@ FN: A034 (17 caixas; D: caixa 7 nao_avaliavel | J: caixa 7 apagada | MODELO: cai
     Nos três, Daniela marcou nao_avaliavel e José marcou falha: alvos minúsculos, avaliadores divergentes.
 FP: A055 (6 caixas; D e J: tudo valida | MODELO: 2 apagada, 3 e 4 degradada).
 Regra R4 (R3 ou alguma caixa sem_objeto_original) acrescentada depois deste diagnóstico.
+
+--- gemini-3.5-flash com a regra R4 (24/11/2026; resultados lidos do cache) ---
+gemini:gemini-3.5-flash|R1  sens 0.81 esp 0.98 descarte 0.23 residual 0.065 falhas 0
+gemini:gemini-3.5-flash|R2  sens 0.81 esp 0.95 descarte 0.25 residual 0.067 falhas 0
+gemini:gemini-3.5-flash|R3  sens 0.81 esp 0.98 descarte 0.23 residual 0.065 falhas 0
+gemini:gemini-3.5-flash|R4  sens 0.94 esp 0.98 descarte 0.27 residual 0.023 falhas 0
+escolhida pela regra pré-declarada: gemini:gemini-3.5-flash|R4 (única com sensibilidade >= 0,85; 15 de 16 reprovadas sinalizadas, 43 de 44 boas liberadas, 1 não sinalizada reprovada).

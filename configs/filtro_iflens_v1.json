@@ -1,0 +1,33 @@
+{
+  "nome": "filtro_iflens_v1",
+  "adendo": "adendo4a_fidelidade_iflens.md (seção 7)",
+  "estado": "RASCUNHO, nao registrado",
+  "provedor": "gemini",
+  "modelo": "gemini-3.5-flash",
+  "regra": "R4",
+  "temperatura": 0,
+  "prompt": "prompts/filtro_v1.txt",
+  "prompt_sha256": "90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d",
+  "script": "scripts/filtro_llm_iflens.py",
+  "script_sha256": "0d6d404411fdbe05c83bb47cba463b20e08daa9becf72fa268e866e0ec32506c",
+  "entrada": "folha cega gerada por scripts/auditoria_recortes_iflens.py (original | gerada, caixas numeradas, recortes por caixa); PNG, ou JPEG q90 reduzido se > 3,5 MB",
+  "saida_esperada": "JSON com categoria por caixa e objeto_adicionado; resposta invalida = imagem sinalizada (falha de leitura contada)",
+  "regra_de_decisao": "R4 = alguma caixa apagada/deslocada/alterada, ou objeto adicionado do tipo embarcacao, ou alguma caixa nao_avaliavel ou sem_objeto_original",
+  "desenvolvimento": {
+    "conjunto": "60 folhas do piloto, 16 positivos (qualquer avaliador, primario)",
+    "registro": "data/filtro_desenvolvimento/rodada1_groq_qwen.txt",
+    "resultado_escolhida": {
+      "sensibilidade": "15/16 (0,94)",
+      "especificidade": "43/44 (0,98)",
+      "descarte": "16/60 (0,27)",
+      "taxa_residual": "1/44 (0,023)"
+    },
+    "observacao": "R4 acrescentada depois de ver o diagnostico (D69); o prompt nao foi alterado; nenhuma rodada de ajuste de prompt foi usada"
+  },
+  "criterios_de_uso_do_E": "adendo 4a, secoes 7 e 9: sensibilidade >= 80% e taxa residual <= 7% nas 150 imagens, medidas contra a referencia humana qualquer avaliador",
+  "limites": [
+    "familia do modelo igual a do gerador (Gemini)",
+    "regra R4 escolhida depois de ver 3 casos do conjunto de desenvolvimento, com 16 positivos",
+    "o filtro nao e ajustado depois de congelado"
+  ]
+}

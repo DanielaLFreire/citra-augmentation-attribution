@@ -8,7 +8,8 @@ registrado com hash antes de o filtro tocar as 150 imagens.
 Fases:
   desenvolver  roda as configurações candidatas nas 60 folhas do piloto, compara com a referência humana ("qualquer avaliador",
                desfecho primário) e aplica a regra de seleção pré-declarada. Só usa o piloto.
-  aplicar      aplica a configuração congelada a um conjunto de folhas (as 150 da amostra, depois as edições do E).
+  aplicar      aplica a configuração congelada (`configs/filtro_iflens_v1.json`) às folhas de `auditoria_modelo.csv` (as 150 da amostra,
+               depois as edições do E) e grava uma linha por folha. Confere o hash do prompt e do script contra a configuração.
 
 Regra de seleção (declarada antes de ver os resultados): entre as configurações com sensibilidade pontual >= 0,85 no piloto,
 a de maior especificidade; empate: a de provedor de família diferente do gerador (Groq), depois a regra de decisão mais simples
@@ -235,6 +236,49 @@ def diagnostico(pasta_piloto: Path, folhas: Path, cache: Path, config: str, regr
     return linhas
 
 
+def contar_caixas_modelo_csv(caminho: Path) -> dict[str, int]:
+    """Nº de caixas por folha a partir de `auditoria_modelo.csv` (linhas tipo=caixa), como o `gerar` o escreve."""
+    n: dict[str, int] = {}
+    with open(caminho, encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            n.setdefault(r["codigo"], 0)
+            if r["tipo"] == "caixa":
+                n[r["codigo"]] += 1
+    return n
+
+
+def aplicar(config_json: Path, folhas: Path, modelo_csv: Path, cache: Path, saida: Path, chamar=None,
+            verificar_hashes: bool = True) -> dict:
+    cfg = json.loads(Path(config_json).read_text(encoding="utf-8"))
+    if verificar_hashes:
+        if cfg["prompt_sha256"] != sha256(PROMPT):
+            raise ValueError("o prompt difere do congelado na configuração")
+        if cfg["script_sha256"] != sha256(Path(__file__)):
+            raise ValueError("o script difere do congelado na configuração")
+    saida = Path(saida)
+    if saida.exists():
+        raise FileExistsError(f"{saida} já existe")
+    ncx = contar_caixas_modelo_csv(modelo_csv)
+    linhas = []
+    for c in sorted(ncx):
+        resp = ler_folha(cfg["provedor"], cfg["modelo"], Path(folhas) / f"{c}.png", cache, chamar)
+        lit = parse_resposta(resp["texto"], ncx[c])
+        linhas.append({
+            "codigo": c, "sinalizada": int(sinalizada(lit, cfg["regra"])), "falha_leitura": int(lit is None),
+            "categorias": "" if lit is None else " ".join(f"{i}{v}" for i, v in sorted(lit["caixas"].items())),
+            "adicionado": "" if lit is None else int(lit["adicionado"]), "tipo_adicionado": "" if lit is None else lit["tipo"],
+            "modelo_retornado": resp.get("modelo_retornado") or "", "response_id": resp.get("id") or "",
+            "prompt_sha256": resp.get("prompt_sha256", "")})
+    _gravar = [dict(r) for r in linhas]
+    with open(saida, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(_gravar[0]))
+        w.writeheader()
+        w.writerows(_gravar)
+    return {"n": len(linhas), "sinalizadas": sum(r["sinalizada"] for r in linhas),
+            "falhas_de_leitura": sum(r["falha_leitura"] for r in linhas),
+            "modelos_retornados": sorted({r["modelo_retornado"] for r in linhas})}
+
+
 def parse_config(s: str) -> tuple[str, str]:
     prov, _, modelo = s.partition(":")
     if prov not in CHAMADAS or not modelo:
@@ -270,6 +314,12 @@ def principal(argv=None) -> int:
     d.add_argument("--cache", required=True)
     d.add_argument("--saida", required=True)
     d.add_argument("--config", action="append", required=True, help="provedor:modelo (repetir)")
+    ap2 = sub.add_parser("aplicar")
+    ap2.add_argument("--config", default=str(RAIZ / "configs" / "filtro_iflens_v1.json"))
+    ap2.add_argument("--folhas", required=True)
+    ap2.add_argument("--modelo-csv", required=True, help="auditoria_modelo.csv gerado junto com as folhas")
+    ap2.add_argument("--cache", required=True)
+    ap2.add_argument("--saida", required=True)
     g = sub.add_parser("diagnostico")
     g.add_argument("--pasta-piloto", default=str(RAIZ / "data" / "auditoria_piloto_iflens"))
     g.add_argument("--folhas", required=True)
@@ -277,6 +327,10 @@ def principal(argv=None) -> int:
     g.add_argument("--config", required=True)
     g.add_argument("--regra", default="R1", choices=REGRAS)
     a = ap.parse_args(argv)
+    if a.cmd == "aplicar":
+        res = aplicar(Path(a.config), Path(a.folhas), Path(a.modelo_csv), Path(a.cache), Path(a.saida))
+        print(json.dumps(res, ensure_ascii=False, indent=2))
+        return 0
     if a.cmd == "diagnostico":
         for linha in diagnostico(Path(a.pasta_piloto), Path(a.folhas), Path(a.cache), a.config, a.regra):
             print(linha)
