@@ -187,6 +187,12 @@
       "caminho": "docs/pre_registro/adendo4_fontes_aumento.md",
       "sha256": "660cd6ea865c5f3d934d7645aa1c73b2c7eb49b473893ca63f2becbae89c805b",
       "tamanho_bytes": 8583
+    },
+    "adendo4a_fidelidade_iflens.md": {
+      "lacrado_em_utc": "2026-11-24T19:14:15.026265+00:00",
+      "caminho": "docs/pre_registro/adendo4a_fidelidade_iflens.md",
+      "sha256": "7dcc1da1f68a8e949fcd46bfabbedcf18a4a53963cb7a6ae81a690777fabff73",
+      "tamanho_bytes": 16963
     }
   }
 }
