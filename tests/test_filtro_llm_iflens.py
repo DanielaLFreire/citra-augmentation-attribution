@@ -105,3 +105,19 @@ def test_desenvolver_ponta_a_ponta_com_modelo_falso(tmp_path):
     res = f.desenvolver(f.RAIZ / "data" / "auditoria_piloto_iflens", folhas, tmp_path / "cache", ["groq:fake"], falso)
     r1 = next(r for r in res["resultados"] if r["regra"] == "R1")
     assert res["positivos"] == 16 and r1["sensibilidade"] == 1.0 and r1["especificidade"] == 1.0 and r1["falhas_de_leitura"] == 0
+
+
+def test_cache_depende_do_prompt(tmp_path, monkeypatch):
+    from PIL import Image
+    folha = tmp_path / "A001.png"
+    Image.new("RGB", (20, 20), "white").save(folha)
+    n = []
+    def falso(modelo, prompt, dados, mime):
+        n.append(prompt)
+        return {"texto": OK2, "modelo_retornado": "m", "id": "x"}
+    f.ler_folha("groq", "qwen/x", folha, tmp_path / "c", falso)
+    outro = tmp_path / "prompt2.txt"
+    outro.write_text("prompt diferente")
+    monkeypatch.setattr(f, "PROMPT", outro)
+    f.ler_folha("groq", "qwen/x", folha, tmp_path / "c", falso)
+    assert len(n) == 2 and n[1] == "prompt diferente"

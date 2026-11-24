@@ -162,7 +162,7 @@ CHAMADAS = {"groq": chamar_groq, "gemini": chamar_gemini}
 
 def ler_folha(provedor: str, modelo: str, folha: Path, cache: Path, chamar=None) -> dict:
     """Uma chamada por (provedor, modelo, folha); guarda a resposta bruta em `cache` e não chama de novo."""
-    chave = cache / f"{provedor}__{modelo.replace('/', '_')}__{Path(folha).stem}.json"
+    chave = cache / f"{provedor}__{modelo.replace('/', '_')}__p{sha256(PROMPT)[:8]}__{Path(folha).stem}.json"
     if chave.exists():
         return json.loads(chave.read_text(encoding="utf-8"))
     dados, mime = preparar_imagem(folha)
