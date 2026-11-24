@@ -26,3 +26,9 @@
 - Retreino das 5 sementes de C da A100 (7, 42, 123, 2024, 31415) na L4, plano `principalL4`, ids `C_principalL4_yolo11n_seed{s}`, mesma lista `manifests/lista_treino_C.csv` e mesma configuração. Se o Colab cair, a semente interrompida não deixa pasta de destino: basta rodar a célula de novo, que pula as sementes já concluídas. Depois de terminar, recuperar as linhas de `registro_execucao.csv` de cada pasta (como foi feito com R) e commitar `runs/REGISTRO_EXECUCOES.csv`.
 - Escritos e testados, ainda **sem hash registrado** (registrar depois do ensaio na validação): `avaliar_teste_v3.py`, `verificar_condicoes_etapa1.py`, `analisar_hardware.py`, `bootstrap_imagens.py`.
 - Ordem seguinte: ensaio do v3 na validação com os 25 modelos; ensaio do analisador de hardware e do bootstrap sobre as predições; registrar os hashes (D60); lacrar o 4b; fechar o 4a e redigir o adendo do G (nome `adendo4c_genship.md`); etiquetas `lacre-adendo4`, `lacre-adendo4b`, `lacre-adendo4a`, `lacre-adendo4c`; só então o estágio 1.
+
+## Atualização de 24/11/2026 (noite)
+- Adendo 4a LACRADO (D64), commit `d644c32`, sha256 `7dcc1da1…ff73`. Etiqueta `lacre-adendo4a` existe só no clone local; Daniela publica pelo GitHub (Releases, branch `ref-lacre-adendo4a`).
+- Regra de uso do E: sensibilidade do filtro ≥ 80% e taxa residual ≤ 7% (D63). Produção do E, calendário e auditoria de 100 imagens estão no 4a (seções 10 e 11).
+- Rascunhos não lacrados: 4b (dois estágios) e 4c (GenShip, 6 pendências; esperando o João até 02/12 ou piloto próprio).
+- Próximos passos: script de sorteio das 150 (semente 20261201) e lista elegível com hash; filtro congelado e registrado até 30/11; classificação e geração das 150 de 01/12 a 04/12; lacrar o 4b quando Daniela disser.
