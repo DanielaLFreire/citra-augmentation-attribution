@@ -30,3 +30,13 @@ A057 FP | MODELO: 1apag 2degr 3degr
 A060 FN | D: 4degr 5degr add=barco | J: 1degr 4apag 5alte add=varias embarcacoes | MODELO: tudo vali, add=-
 Contagem: 4 TP, 12 FN, 6 FP (5 sinalizações de caixa sem falha humana e 1 falha de leitura).
 Embarcação adicionada segundo algum humano em 12 folhas; o modelo apontou em 3 (A025, A030, A035).
+
+--- Mesmo prompt `filtro_v1`, modelos Gemini (24/11/2026; trocar de modelo não conta como rodada de prompt) ---
+gemini:gemini-3.1-pro-preview|R1  sens 0.56 esp 0.86 descarte 0.25 residual 0.156 falhas 0
+gemini:gemini-3.1-pro-preview|R2  sens 0.56 esp 0.82 descarte 0.28 residual 0.163 falhas 0
+gemini:gemini-3.1-pro-preview|R3  sens 0.56 esp 0.86 descarte 0.25 residual 0.156 falhas 0
+gemini:gemini-3.5-flash|R1        sens 0.81 esp 0.98 descarte 0.23 residual 0.065 falhas 0
+gemini:gemini-3.5-flash|R2        sens 0.81 esp 0.95 descarte 0.25 residual 0.067 falhas 0
+gemini:gemini-3.5-flash|R3        sens 0.81 esp 0.98 descarte 0.23 residual 0.065 falhas 0
+Contagens do gemini-3.5-flash R1: 13 de 16 reprovadas sinalizadas (3 perdidas), 43 de 44 boas liberadas (1 falso positivo); 14 sinalizadas, 46 não sinalizadas.
+Seleção pré-declarada: nenhuma configuração atinge 0,85; vale a de maior sensibilidade (gemini-3.5-flash, empate R1/R3 por especificidade, depois a regra mais simples: R1).
