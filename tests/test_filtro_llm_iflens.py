@@ -33,6 +33,8 @@ def test_regras_de_decisao():
     assert f.sinalizada(_lit(["degradada"]), "R1") is False and f.sinalizada(_lit(["degradada"]), "R2") is True
     assert f.sinalizada(_lit(["nao_avaliavel"]), "R2") is False and f.sinalizada(_lit(["nao_avaliavel"]), "R3") is True
     assert f.sinalizada(_lit(["sem_objeto_original"]), "R3") is False
+    assert f.sinalizada(_lit(["sem_objeto_original"]), "R4") is True and f.sinalizada(_lit(["nao_avaliavel"]), "R4") is True
+    assert f.sinalizada(_lit(["valida", "degradada"]), "R4") is False
     with pytest.raises(ValueError):
         f.sinalizada(_lit(["valida"]), "R9")
 

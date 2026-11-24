@@ -20,6 +20,8 @@ Regras de decisão:
   R1  alguma caixa apagada/deslocada/alterada, ou objeto adicionado do tipo embarcacao   (a mesma do desfecho primário humano)
   R2  R1, ou alguma caixa degradada
   R3  R1, ou alguma caixa nao_avaliavel
+  R4  R3, ou alguma caixa sem_objeto_original (acrescentada em 24/11/2026, DEPOIS de ver o diagnóstico da rodada 1: nas folhas com alvos
+      minúsculos o modelo usa essa categoria quando não consegue ver; a regra é "se o filtro não consegue verificar, descarta")
 """
 from __future__ import annotations
 
@@ -37,7 +39,7 @@ from scripts._hashes import RAIZ, sha256
 
 CATEGORIAS = ("valida", "degradada", "apagada", "deslocada", "alterada", "sem_objeto_original", "nao_avaliavel")
 INVALIDAS = {"apagada", "deslocada", "alterada"}
-REGRAS = ("R1", "R2", "R3")
+REGRAS = ("R1", "R2", "R3", "R4")
 PROMPT = RAIZ / "prompts" / "filtro_v1.txt"
 LIMITE_BYTES = 3_500_000  # Groq: base64 de até 4 MB por imagem
 LIMIAR_SENSIBILIDADE = 0.85
@@ -96,6 +98,8 @@ def sinalizada(leitura: dict | None, regra: str) -> bool:
         return falha or "degradada" in cats
     if regra == "R3":
         return falha or "nao_avaliavel" in cats
+    if regra == "R4":
+        return falha or bool(cats & {"nao_avaliavel", "sem_objeto_original"})
     raise ValueError(f"regra desconhecida: {regra}")
 
 

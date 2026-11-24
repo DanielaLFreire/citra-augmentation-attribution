@@ -40,3 +40,12 @@ gemini:gemini-3.5-flash|R2        sens 0.81 esp 0.95 descarte 0.25 residual 0.06
 gemini:gemini-3.5-flash|R3        sens 0.81 esp 0.98 descarte 0.23 residual 0.065 falhas 0
 Contagens do gemini-3.5-flash R1: 13 de 16 reprovadas sinalizadas (3 perdidas), 43 de 44 boas liberadas (1 falso positivo); 14 sinalizadas, 46 não sinalizadas.
 Seleção pré-declarada: nenhuma configuração atinge 0,85; vale a de maior sensibilidade (gemini-3.5-flash, empate R1/R3 por especificidade, depois a regra mais simples: R1).
+
+--- Diagnóstico do gemini-3.5-flash, regra R1 (24/11/2026) ---
+13 TP (A003 A004 A007 A009 A013 A017 A022 A025 A029 A030 A035 A046 A060), 3 FN, 1 FP.
+FN: A034 (17 caixas; D: caixa 7 nao_avaliavel | J: caixa 7 apagada | MODELO: caixas 6 a 17 sem_objeto_original)
+    A050 (D: 1 nao_avaliavel | J: 2 alterada | MODELO: tudo valida)
+    A052 (17 caixas; D: 17 nao_avaliavel add=barco | J: 17 apagada add=embarcacoes | MODELO: 3, 6, 7 e 17 sem_objeto_original, add=-)
+    Nos três, Daniela marcou nao_avaliavel e José marcou falha: alvos minúsculos, avaliadores divergentes.
+FP: A055 (6 caixas; D e J: tudo valida | MODELO: 2 apagada, 3 e 4 degradada).
+Regra R4 (R3 ou alguma caixa sem_objeto_original) acrescentada depois deste diagnóstico.
