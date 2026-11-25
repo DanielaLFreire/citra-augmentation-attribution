@@ -35,3 +35,10 @@ def test_variacao_so_entre_valores_de_risco(tmp_path):
 def test_valor_original_desconhecido():
     with pytest.raises(ValueError):
         v2.montar_esquema({"sky": {"clear": "x"}}, {"sky": {"overcast": "y"}}, {"sky": "snow"})
+
+
+def test_v3_classes_sem_sorteio():
+    from scripts import geracao_4a_v3 as v3
+    risco = yaml.safe_load((IFLENS / "conditions-citra-risk.yaml").read_text())
+    assert v3.classes_sem_sorteio(risco, {"time_of_day": "noon", "sky": "overcast", "atmosphere": "haze"}) == ["sky"]
+    assert v3.classes_sem_sorteio(risco, {"time_of_day": "dusk", "sky": "clear", "atmosphere": "haze"}) == []

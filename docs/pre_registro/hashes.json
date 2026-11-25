@@ -239,6 +239,12 @@
       "caminho": "scripts/geracao_4a_v2.py",
       "sha256": "dc89d43fe67af8a63aa90422bcf9676870d16faacccc10660a15a162ce88438a",
       "tamanho_bytes": 8022
+    },
+    "geracao_4a_v3.py": {
+      "registrado_em_utc": "2026-11-25T00:46:39.034734+00:00",
+      "caminho": "scripts/geracao_4a_v3.py",
+      "sha256": "bc5e5275f65e3e5190662f84b9a8e4a77e3a948b37adec43a741c28815508ed1",
+      "tamanho_bytes": 8257
     }
   },
   "adendos": {
