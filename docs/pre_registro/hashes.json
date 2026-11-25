@@ -269,6 +269,12 @@
       "caminho": "manifests/plano_producao_E_seed20261202.csv",
       "sha256": "82a23ab27fb61a90008a0b703661c1fa2a444ff5f97b0b3c7ce0bfc560a3a39d",
       "tamanho_bytes": 130445
+    },
+    "producao_E.py": {
+      "registrado_em_utc": "2026-11-25T20:10:35.384857+00:00",
+      "caminho": "scripts/producao_E.py",
+      "sha256": "e1e38ecc88cc02edd4f3917618c39835d401402dab2134514e9debd558df18fa",
+      "tamanho_bytes": 6598
     }
   },
   "adendos": {
