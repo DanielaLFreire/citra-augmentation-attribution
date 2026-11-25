@@ -281,6 +281,12 @@
       "caminho": "scripts/producao_E_v2.py",
       "sha256": "3c7c986370bb137b1c4487420691242eeb3104feddb1ea7cbe54bd69f7f0c21b",
       "tamanho_bytes": 6752
+    },
+    "auditoria_daniela_entregue_20261125.csv": {
+      "registrado_em_utc": "2026-11-25T21:02:10.507725+00:00",
+      "caminho": "data/auditoria_4a/auditoria_daniela_entregue_20261125.csv",
+      "sha256": "81ee13d6b0825de8f3dd9c07c95bfa8d2aec6344b3eb7fe42a1b2dc3d5df26e5",
+      "tamanho_bytes": 21266
     }
   },
   "adendos": {
