@@ -233,6 +233,12 @@
       "caminho": "manifests/parametros_geracao_4a.json",
       "sha256": "bf87fac05c17ea765531b4d293a6a80333d479120c151dc93f3814fe3b4bdbd9",
       "tamanho_bytes": 5540
+    },
+    "geracao_4a_v2.py": {
+      "registrado_em_utc": "2026-11-25T00:32:10.465254+00:00",
+      "caminho": "scripts/geracao_4a_v2.py",
+      "sha256": "dc89d43fe67af8a63aa90422bcf9676870d16faacccc10660a15a162ce88438a",
+      "tamanho_bytes": 8022
     }
   },
   "adendos": {
