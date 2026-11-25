@@ -1,0 +1,15 @@
+{
+ "lista_sha256": "66eee1144b3e9d4d1d8ea41d4e49ccf1373ca78490d5dffde5632f8058f32d13",
+ "plano_sha256": "82a23ab27fb61a90008a0b703661c1fa2a444ff5f97b0b3c7ce0bfc560a3a39d",
+ "n_geracoes": 2740,
+ "semente_ordem": 20261202,
+ "semente_estrato": 20261210,
+ "sementes_mestras": {
+  "1": 20261208,
+  "2": 20261209
+ },
+ "risco_por_passagem": {
+  "1": 274,
+  "2": 274
+ }
+}

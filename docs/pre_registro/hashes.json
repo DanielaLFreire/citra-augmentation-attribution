@@ -257,6 +257,18 @@
       "caminho": "scripts/analisar_4a.py",
       "sha256": "46e9296e38db74af27fb79ba7bb2ba40420d6a7a25b4d17bccec704b7cf49f95",
       "tamanho_bytes": 16875
+    },
+    "plano_producao_E.py": {
+      "registrado_em_utc": "2026-11-25T19:41:47.401418+00:00",
+      "caminho": "scripts/plano_producao_E.py",
+      "sha256": "f996a3277c2e01ff7d38b04726a660c563983e8d78c4fffe0c4d014defdd6b8a",
+      "tamanho_bytes": 4227
+    },
+    "plano_producao_E_seed20261202.csv": {
+      "registrado_em_utc": "2026-11-25T19:41:47.472400+00:00",
+      "caminho": "manifests/plano_producao_E_seed20261202.csv",
+      "sha256": "82a23ab27fb61a90008a0b703661c1fa2a444ff5f97b0b3c7ce0bfc560a3a39d",
+      "tamanho_bytes": 130445
     }
   },
   "adendos": {
