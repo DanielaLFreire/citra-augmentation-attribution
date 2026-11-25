@@ -1,0 +1,10 @@
+{
+  "descricao": "Folhas cegas das 150 edições do adendo 4a, geradas em 2026-11-25 (UTC) no Colab; os arquivos ficam no Drive de Daniela (PROJETO_MARINHA/geracao_4a/folhas_cegas)",
+  "n_folhas": 150,
+  "semente_ordem_cega": 20261206,
+  "auditoria_modelo_csv_sha256": "1236ec5124b5e505621dd4a8ce11eab7b2ac6ec8c3718b62ca1d637aa1b2d53d",
+  "chave_cega_csv_sha256": "49323fdda0b66b7ace25d1af99374f4bc8fdde05d6c35f2bd65d9307abfdc1b4",
+  "geracao": {"scripts": ["scripts/geracao_4a.py", "scripts/geracao_4a_v2.py", "scripts/geracao_4a_v3.py"], "parametros": "manifests/parametros_geracao_4a.json",
+              "validas": 150, "modelo_devolvido": "gemini-3.1-flash-lite-image", "mesma_proporcao": 150},
+  "regra": "A chave só é aberta depois que Daniela e José fecharem as avaliações. O filtro só é aplicado depois."
+}

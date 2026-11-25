@@ -245,6 +245,12 @@
       "caminho": "scripts/geracao_4a_v3.py",
       "sha256": "bc5e5275f65e3e5190662f84b9a8e4a77e3a948b37adec43a741c28815508ed1",
       "tamanho_bytes": 8257
+    },
+    "folhas_cegas_4a.json": {
+      "registrado_em_utc": "2026-11-25T01:01:29.327878+00:00",
+      "caminho": "manifests/folhas_cegas_4a.json",
+      "sha256": "5424d6baf74b347e1dd142b1e31352ce9b0fa4293971059f890cd18a8cdeff1c",
+      "tamanho_bytes": 823
     }
   },
   "adendos": {
