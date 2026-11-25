@@ -35,3 +35,11 @@ def test_recusas(tmp_path, capsys):
     c = tmp_path / "c.json"; c.write_text(json.dumps({"validas": 1370}))
     assert pe.principal(["--passagem", "2", "--contagem-passagem1", str(c), *args]) == 2   # 1370 não é < 1370
     assert pe.principal(["--passagem", "1", *args], agora=datetime(2026, 12, 21, 3, 0, tzinfo=timezone.utc)) == 2  # fora da janela
+
+
+def test_execucao_completa_com_executores_falsos(tmp_path, monkeypatch, capsys):
+    from scripts import producao_E_v2 as pv2
+    monkeypatch.setattr(pv2.g, "executar", lambda *a, **k: {"lotes": {"padrao_001": {"n": 30, "ok": 0}}})
+    monkeypatch.setattr(pv2.v3, "executar_risco", lambda *a, **k: {"risco_001": {"n": 30, "ok": 0}})
+    rc = pv2.principal(["--passagem", "1", "--citra-raiz", "x", "--iflens-dir", "y", "--trabalho", str(tmp_path), "--max-lotes", "1"])
+    assert rc == 0 and '"passagem": 1' in capsys.readouterr().out

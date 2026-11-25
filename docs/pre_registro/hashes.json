@@ -275,6 +275,12 @@
       "caminho": "scripts/producao_E.py",
       "sha256": "e1e38ecc88cc02edd4f3917618c39835d401402dab2134514e9debd558df18fa",
       "tamanho_bytes": 6598
+    },
+    "producao_E_v2.py": {
+      "registrado_em_utc": "2026-11-25T20:11:05.065109+00:00",
+      "caminho": "scripts/producao_E_v2.py",
+      "sha256": "3c7c986370bb137b1c4487420691242eeb3104feddb1ea7cbe54bd69f7f0c21b",
+      "tamanho_bytes": 6752
     }
   },
   "adendos": {
