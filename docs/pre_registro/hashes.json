@@ -293,6 +293,18 @@
       "caminho": "data/auditoria_4a/auditoria_daniela_corrigida_20261125.csv",
       "sha256": "681678214f22e73915ce9c5e9ef4b656a93a48c0b21855c836d28404bf91c9df",
       "tamanho_bytes": 21469
+    },
+    "normalizar_auditoria.py": {
+      "registrado_em_utc": "2026-11-26T01:30:33.298328+00:00",
+      "caminho": "scripts/normalizar_auditoria.py",
+      "sha256": "b6271f6e92627995bcfe35293bda9673948bea8219fe468570bfbdef40f6af66",
+      "tamanho_bytes": 2416
+    },
+    "auditoria_daniela_FINAL_normalizada.csv": {
+      "registrado_em_utc": "2026-11-26T01:30:33.346753+00:00",
+      "caminho": "data/auditoria_4a/auditoria_daniela_FINAL_normalizada.csv",
+      "sha256": "d9bf659e2a65484760b2f9a74eddf4ea2cd27dd8bc7cb0322257a5e2191511f9",
+      "tamanho_bytes": 21471
     }
   },
   "adendos": {
