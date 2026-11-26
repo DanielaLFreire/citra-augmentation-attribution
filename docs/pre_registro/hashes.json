@@ -287,6 +287,12 @@
       "caminho": "data/auditoria_4a/auditoria_daniela_entregue_20261125.csv",
       "sha256": "81ee13d6b0825de8f3dd9c07c95bfa8d2aec6344b3eb7fe42a1b2dc3d5df26e5",
       "tamanho_bytes": 21266
+    },
+    "auditoria_daniela_corrigida_20261125.csv": {
+      "registrado_em_utc": "2026-11-26T01:28:46.837415+00:00",
+      "caminho": "data/auditoria_4a/auditoria_daniela_corrigida_20261125.csv",
+      "sha256": "681678214f22e73915ce9c5e9ef4b656a93a48c0b21855c836d28404bf91c9df",
+      "tamanho_bytes": 21469
     }
   },
   "adendos": {
