@@ -305,6 +305,12 @@
       "caminho": "data/auditoria_4a/auditoria_daniela_FINAL_normalizada.csv",
       "sha256": "d9bf659e2a65484760b2f9a74eddf4ea2cd27dd8bc7cb0322257a5e2191511f9",
       "tamanho_bytes": 21471
+    },
+    "producao_E_v3.py": {
+      "registrado_em_utc": "2026-11-26T21:41:22.168277+00:00",
+      "caminho": "scripts/producao_E_v3.py",
+      "sha256": "b06497acbf790c1cacfa62e7c294faaaa02fcb18e344ef8f5d76ad69aa45f81c",
+      "tamanho_bytes": 10170
     }
   },
   "adendos": {
