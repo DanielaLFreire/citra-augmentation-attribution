@@ -317,6 +317,18 @@
       "caminho": "data/auditoria_4a/auditoria_jose_entregue_20261126.csv",
       "sha256": "57be3b04e9848d0f56e2376fc74521321330d7dbf53605be152a31aff5eec48a",
       "tamanho_bytes": 24952
+    },
+    "auditoria_jose_corrigida_20261127.csv": {
+      "registrado_em_utc": "2026-11-27T13:41:53.837153+00:00",
+      "caminho": "data/auditoria_4a/auditoria_jose_corrigida_20261127.csv",
+      "sha256": "d856af16a52304e9cbe44bf4b8ff7d312f8758a1e1ed01e64ff89a636ae220e0",
+      "tamanho_bytes": 24954
+    },
+    "auditoria_jose_FINAL_normalizada.csv": {
+      "registrado_em_utc": "2026-11-27T13:41:53.989090+00:00",
+      "caminho": "data/auditoria_4a/auditoria_jose_FINAL_normalizada.csv",
+      "sha256": "aefb43150e1e9d63cfc08aef24dbd56aa36e9d0801b95e9115e32e44c46ef179",
+      "tamanho_bytes": 24956
     }
   },
   "adendos": {
