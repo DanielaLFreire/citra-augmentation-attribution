@@ -311,6 +311,12 @@
       "caminho": "scripts/producao_E_v3.py",
       "sha256": "b06497acbf790c1cacfa62e7c294faaaa02fcb18e344ef8f5d76ad69aa45f81c",
       "tamanho_bytes": 10170
+    },
+    "auditoria_jose_entregue_20261126.csv": {
+      "registrado_em_utc": "2026-11-27T00:30:56.056961+00:00",
+      "caminho": "data/auditoria_4a/auditoria_jose_entregue_20261126.csv",
+      "sha256": "57be3b04e9848d0f56e2376fc74521321330d7dbf53605be152a31aff5eec48a",
+      "tamanho_bytes": 24952
     }
   },
   "adendos": {
