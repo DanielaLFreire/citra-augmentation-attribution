@@ -60,6 +60,7 @@ Estado: rascunho de 2026-11-27, revisão 3 (correções da revisão crítica do 
 - Mesma estatística do adendo 4: mAP50 de teste, diferença pareada por semente, margem de equivalência de ±1,0 pp por TOST (IC90%), IC95% para melhora, e a mesma regra de leitura para sobreposição.
 - **Referência do C nos contrastes com o A:** as 10 sementes do C em L4 (D53 e D60), para não confundir braço e GPU. O contraste primário R − C segue o adendo 4.
 - Bootstrap em dois níveis (sementes e imagens do teste), como planejado, por causa da incerteza do conjunto de teste (383 imagens, 3 dias).
+- **Sensibilidade a quadros escuros (D102):** todos os contrastes (o primário e os secundários) são recalculados também sem as imagens do teste com luminância média < 5 (escala 0–255). Descritiva: a análise primária usa as 383 imagens e nada muda de decisão. Os quadros escuros do treino e da validação são relatados como ruído herdado.
 
 ## 4. Regra de recomendação por custo (pré-registrada)
 - Ordem de custo fixada agora, por tipo de fonte: **C ≤ A < R < G**. Os custos medidos (seção 5) são relatados ao lado, mas não mudam a ordem.
