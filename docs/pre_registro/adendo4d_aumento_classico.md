@@ -1,6 +1,6 @@
 # Adendo 4d (RASCUNHO, NÃO LACRADO): braço A, aumento clássico offline, e contabilidade de recursos
 
-Estado: rascunho de 2026-11-27, revisão 2 (correções da revisão crítica do mesmo dia, aceitas por Daniela; versão anterior no commit `c2360ff`). Os pontos em aberto estão marcados com o marcador de pendência, e `scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum. Pelo adendo 4b, este adendo só vale se for lacrado, com etiqueta publicada, **antes do estágio 1** (antes de qualquer avaliação no teste).
+Estado: rascunho de 2026-11-27, revisão 3 (correções da revisão crítica do mesmo dia e propostas das pendências, aceitas por Daniela; versões anteriores nos commits `c2360ff` e `ddc21c0`). Os pontos em aberto estão marcados com o marcador de pendência, e `scripts/lacrar_adendo.py` recusa lacrar enquanto houver algum. Pelo adendo 4b, este adendo só vale se for lacrado, com etiqueta publicada, **antes do estágio 1** (antes de qualquer avaliação no teste).
 
 ## 0. Origem e transparência
 - O braço de aumento clássico foi proposto na revisão crítica de 25/11/2026, inicialmente como **controle do E** (separar o efeito do conteúdo gerado do efeito de variar as mesmas fontes).
@@ -15,7 +15,7 @@ Estado: rascunho de 2026-11-27, revisão 2 (correções da revisão crítica do 
 - Mesma composição e mesmo orçamento de treino dos braços com externas (adendo 4, seção 3: 25% das linhas por época-lista, CITRA ×3 por ciclo, 2 ciclos por época, 25.345 passos), mesmas 10 sementes (adendo 4, seção 4), mesmo YOLO11n e modelo inicial, mesma configuração (`configs/treino_yolo11n_d43.yaml`), Ultralytics 8.4.165.
 - Fontes: as 1.370 imagens efetivas de treino do CITRA (D31), as mesmas da lista `manifests/lista_elegivel_4a.csv` (1.370 linhas), uma versão transformada de cada.
 - Como C e A têm a mesma composição, **a única diferença entre os dois são as transformações offline em 25% das linhas**.
-- **Sobreposição com o aumento online.** O aumento online do YOLO continua ligado e igual em todos os braços: brilho (`hsv_v` 0,4), saturação (`hsv_s` 0,7), matiz (`hsv_h` 0,015), espelhamento, translação, escala e mosaico. O braço A não repete essas operações: ele faz o que o aumento online não faz, que é **balanço de branco (temperatura de cor), curva de gama, neblina e chuva sintéticas**. As intensidades da seção 2 ficam fora da faixa que o aumento online já cobre.
+- **Sobreposição com o aumento online.** O aumento online do YOLO continua ligado e igual em todos os braços: brilho (`hsv_v` 0,4), saturação (`hsv_s` 0,7), matiz (`hsv_h` 0,015), espelhamento, translação, escala e mosaico. O braço A não repete essas operações: ele faz **tipos de operação** que o aumento online não faz, que são **balanço de branco por temperatura de cor (modelo de corpo negro), curva de gama (não linear, diferente do ganho linear de `hsv_v`), neblina e chuva sintéticas**. As intensidades da seção 2 são moderadas, porque o objetivo é imitar condições plausíveis do domínio, não deformar a imagem.
 - GPU: todas as execuções do A em **L4**, a mesma GPU do R e das 10 sementes do C em L4 (D53, D60). O tipo de GPU de cada execução é registrado.
 
 ## 2. Que transformação cada imagem recebe
@@ -30,10 +30,27 @@ Estado: rascunho de 2026-11-27, revisão 2 (correções da revisão crítica do 
 - Tabela de implementação, um conjunto de parâmetros fixo por valor:
   - hora do dia → balanço de branco (ganho por canal) e gama: `dawn` e `dusk` quentes e escuros, `morning` neutro e levemente escuro, `noon` neutro e claro, `afternoon` quente e claro;
   - atmosfera → `clean` sem efeito; `haze` neblina sintética leve; `light_rain` chuva sintética leve.
-  - Valores dos parâmetros: DECISÃO PENDENTE (tabela fechada antes de gerar, a partir dos padrões documentados da biblioteca, com intensidades fora da faixa do aumento online).
+  - Valores dos parâmetros (Albumentations 2.0.8, todas as transformações com `p = 1`, aplicadas nesta ordem: temperatura de cor, gama, atmosfera):
+
+    | Valor | Temperatura de cor (K; função `planckian_jitter`, `mode="blackbody"`) | Gama (`RandomGamma`, `gamma_limit`; gama = valor ÷ 100, acima de 100 escurece) |
+    |---|---|---|
+    | `dawn` | 4500 a 5000 | 120 a 140 |
+    | `morning` | 5500 a 6000 | 105 a 115 |
+    | `noon` | 6000 a 6500 | 80 a 90 |
+    | `afternoon` | 5000 a 5500 | 90 a 100 |
+    | `dusk` | 4000 a 4500 | 130 a 150 |
+
+    | Valor | Atmosfera |
+    |---|---|
+    | `clean` | nenhum efeito |
+    | `haze` | `RandomFog(fog_coef_range=(0.10, 0.20), alpha_coef=0.08)` (o padrão da biblioteca é 0,3 a 1, denso demais para "neblina leve") |
+    | `light_rain` | `RandomRain(rain_type="drizzle", drop_width=1, blur_value=3, brightness_coefficient=0.9, slant_range=(-10, 10))` |
+
+    Critério das faixas: a ordem das temperaturas segue a luz natural (mais quente no nascer e no pôr do sol, neutra ao meio-dia), mas as faixas são **atenuadas**, porque as câmeras do CITRA corrigem o balanço de branco e o modelo de corpo negro aplicado sem essa correção gera dominantes de cor fortes demais (na biblioteca, 3.000 K leva o cinza médio a laranja puro, com o canal azul zerado; o ponto neutro da biblioteca é 6.000 K). A temperatura de cada imagem é sorteada uniformemente na faixa pela semente da imagem e aplicada pela função `planckian_jitter` da biblioteca, porque a classe `PlanckianJitter` exige que a faixa contenha 6.000 K; gama dentro de ±50% do neutro; neblina e chuva no nível "leve" da própria taxonomia (`haze`: "slightly reduced contrast"; `light_rain`: "vessels remain fully visible"). As faixas foram escolhidas antes de qualquer treino do A e sem olhar nenhuma métrica.
+  - **Degrau de redução** (único ajuste permitido pela checagem visual): a faixa do efeito em causa passa a ser a metade inferior da faixa original (por exemplo, `haze` de 0,10 a 0,20 para 0,10 a 0,15; gama de `dusk` de 130 a 150 para 130 a 140; temperatura de `dusk` de 4.000 a 4.500 K para 4.250 a 4.500 K, a metade mais próxima do neutro).
   - **Checagem visual, regra fechada:** 20 imagens de treino sorteadas (semente da linha abaixo), uma pergunta só, com resposta sim ou não: "as embarcações com caixa continuam visíveis?". Se a resposta for não em alguma, a única ação permitida é reduzir a intensidade do efeito em causa num degrau já fixado na tabela, uma vez, com registro. Nenhuma métrica de detecção é calculada.
-  - Biblioteca e versão: DECISÃO PENDENTE (proposta: Albumentations, versão fixada no `requirements`).
-- Aleatoriedade: a semente de cada imagem é derivada da semente mestra e do nome do arquivo (como no iflens), de modo que o resultado não depende da ordem de execução. Semente mestra: DECISÃO PENDENTE (proposta: 20261203).
+  - Biblioteca e versão: **Albumentations 2.0.8** (licença MIT), fixada no `requirements` do script de geração.
+- Aleatoriedade: a semente de cada imagem é derivada da semente mestra e do nome do arquivo (como no iflens), de modo que o resultado não depende da ordem de execução. Semente mestra: **20261203**. Semente de cada imagem: os primeiros 8 bytes do SHA-256 de `"20261203:<nome do arquivo>"`, passada a `A.Compose(..., seed=...)`. A mesma semente mestra sorteia as 20 imagens da checagem visual.
 - Script de geração registrado com hash antes de gerar; manifesto de saída com o SHA-256 de cada imagem e a condição aplicada.
 
 ## 3. Contrastes
@@ -60,7 +77,7 @@ Estado: rascunho de 2026-11-27, revisão 2 (correções da revisão crítica do 
 - Rendimento por fonte: utilizáveis ÷ produzidas (E: 1.370 devolvidas e 0 utilizáveis no experimento principal, D99; A: 1.370 de 1.370 por construção).
 
 ## 6. YOLO26n (estágio 2)
-- Definido no adendo 4, seção 4 (3 sementes: 7, 42, 123; Ultralytics 8.4.165, D79). Este adendo só fixa **em quais braços** ele roda: DECISÃO PENDENTE (proposta: C, R e A, contrastes descritivos R − C e A − C, sem correção e sem decidir nada).
+- Definido no adendo 4, seção 4 (3 sementes: 7, 42, 123; Ultralytics 8.4.165, D79). Este adendo só fixa **em quais braços** ele roda: **C, R e A**, com os contrastes descritivos R − C e A − C, sem correção e sem decidir nada. O G não roda com o YOLO26n.
 
 ## 7. O que este adendo não muda
 Divisão, conjunto de teste, métrica primária, contraste primário, margem de equivalência, as regras dos adendos 4, 4a e 4b e a saída do E do experimento principal (D99, D100).
