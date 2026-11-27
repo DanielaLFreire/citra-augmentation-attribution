@@ -1,0 +1,151 @@
+codigo,sinalizada,falha_leitura,categorias,adicionado,tipo_adicionado,modelo_retornado,response_id,prompt_sha256
+A001,0,0,1valida 2valida,0,,gemini-3.6-flash,oakJa6i0LIbCxdIPzbucAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A002,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,qKkJa5zKJ965xdIPwLLvyQE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A003,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,sKkJa5yMC76rxdIPzOeD8AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A004,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,t6kJa_zsOty3uMYP4tb08Ac,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A005,0,0,1valida,0,,gemini-3.6-flash,v6kJa5TIDJqnxdIPtJvvmAc,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A006,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,xKkJa6fNO7PgytMP15rhyAI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A007,0,0,1valida,0,,gemini-3.6-flash,y6kJa_uJDdap5NoPg5jQ0QE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A008,1,0,1valida 2apagada,0,,gemini-3.6-flash,z6kJa4f4OPm3xdIPnsqsgQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A009,0,0,1degradada,0,,gemini-3.6-flash,1qkJa9TPBc-6xdIPwdCFwAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A010,1,0,1valida 2valida 3valida 4valida,1,embarcacao,gemini-3.6-flash,3akJa_ZLmb7F0g_L6bFo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A011,0,0,1degradada 2degradada 3valida 4valida,0,,gemini-3.6-flash,46kJa4CAKMK6xdIPpdqViAU,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A012,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,7akJa6zOEM2MytMPn7iwoAo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A013,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,9akJa56vHNWho_UPvd6i-Q8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A014,0,0,1valida 2valida,0,,gemini-3.6-flash,-6kJa-HfHJmoxdIP0qPU-QQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A015,0,0,1valida,0,,gemini-3.6-flash,AKoJa-_RJtWsuMYPjt2PAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A016,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,BqoJa8jkFbCrxdIPy5XZ2AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A017,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,DaoJa7DKNruao_UP74E4,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A018,1,0,1apagada 2valida 3valida 4apagada,0,,gemini-3.6-flash,FaoJa7GODsCp5NoPs9a-kAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A019,0,0,1valida 2valida,0,,gemini-3.6-flash,HaoJa-fiJKmuxdIP1fHHyQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A020,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,I6oJa5CXD4yv5NoP35TIoQs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A021,1,0,1valida 2valida 3alterada,0,,gemini-3.6-flash,KaoJa4WoJdiD1sgP3aGHmAI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A022,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,MKoJa7mMAe-h5NoP8pXFQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A023,0,0,1valida,0,,gemini-3.6-flash,NqoJa8-IIv6jo_UP-o6fuQI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A024,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida,0,,gemini-3.6-flash,PKoJa8z1KY-PytMP4ba_qQo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A025,1,0,1valida 2valida 3valida 4apagada 5apagada,0,,gemini-3.6-flash,RKoJa6f3JdjHxdIP8tuEqAE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A026,1,0,1apagada,0,,gemini-3.6-flash,TqoJa7OQM9aio_UP6q2quQk,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A027,0,0,1valida 2valida 3degradada,0,,gemini-3.6-flash,VaoJa5nUM62CytMPoomdoQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A028,1,0,1apagada 2valida 3valida 4valida,0,,gemini-3.6-flash,XaoJa8L-NdDc0_gPloLy-AM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A029,0,0,1valida,0,,gemini-3.6-flash,ZKoJa7KjMZK7xdIPvdSquQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A030,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida 12valida 13valida 14valida,0,,gemini-3.6-flash,aqoJa8bNDPLDxdIP4KO1iAw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A031,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,daoJa9XAIsupxdIP2ODu0Ag,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A032,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,e6oJa8qTL8Cp5NoPs9a-kAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A033,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida,0,,gemini-3.6-flash,gqoJa933BeCao_UPyu-fQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A034,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,iKoJa-C1MvGvxdIPwOWvgQE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A035,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,jaoJa_H_Jc2jo_UPweztsAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A036,0,0,1valida,0,,gemini-3.6-flash,laoJa7naJuCtuMYPkMWiEQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A037,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,mqoJa9XVN5TCxdIP2_DSsQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A038,1,0,1valida 2valida 3valida 4valida,1,embarcacao,gemini-3.6-flash,oqoJa-fpHbTMytMPr4XU4AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A039,0,0,1valida,0,,gemini-3.6-flash,qqoJa9vMDYbiytMP-MeI0AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A040,0,0,1valida 2valida 3degradada,0,,gemini-3.6-flash,sKoJa4nGIqCFytMPsKyegQo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A041,0,0,1valida 2valida,0,,gemini-3.6-flash,uKoJa7uFG4_iytMP4pXBMQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A042,1,0,1alterada,1,embarcacao,gemini-3.6-flash,vaoJa4y3MvLhytMP9IOZMA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A043,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,x6oJa-LlCb2eo_UPoqid0Qs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A044,1,0,1valida 2valida 3valida 4valida,1,embarcacao,gemini-3.6-flash,zqoJa4r6PO_S0_gPut20UQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A045,0,0,1valida 2valida,0,,gemini-3.6-flash,16oJa6nxF6CFytMPsKyegQo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A046,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,3aoJa7DuGoaiuMYP1OeeqQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A047,0,0,1valida 2valida,0,,gemini-3.6-flash,5KoJa_qdHJPMytMPud3YiAg,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A048,1,0,1valida 2valida,1,embarcacao,gemini-3.6-flash,6qoJa_2zOYmCytMPj9XZ6AQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A049,0,0,1valida 2valida,0,,gemini-3.6-flash,8qoJa6KoNuamxdIPoJ-8iQ0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A050,1,0,1deslocada,0,,gemini-3.6-flash,-qoJa7nyFJK7xdIPouuO0Q4,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A051,1,0,1valida 2valida 3valida 4valida 5valida 6sem_objeto_original,0,,gemini-3.6-flash,BqsJa5CXCu_S0_gPut20UQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A052,1,0,1sem_objeto_original,1,embarcacao,gemini-3.6-flash,D6sJa_HfIpO_xdIPvvCXgQ4,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A053,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,F6sJa5DQEvbjytMPy43mqA8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A054,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,H6sJa9XvE_S3xdIPjNzZ0Qw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A055,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,JasJa_2UOezfytMP7ITCyQk,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A056,1,0,1valida 2valida 3apagada,0,,gemini-3.6-flash,LasJa52WIc6jo_UP84_MCA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A057,0,0,1valida 2valida,0,,gemini-3.6-flash,NKsJa5WANbO6xdIPk7aeyQs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A058,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,O6sJa_CeJ5fI0_gP4pzwsQo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A059,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,QKsJa-vNMNXS0_gP26LYwAI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A060,1,0,1valida 2apagada 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,R6sJa_SnGv68xdIP_fq7-QE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A061,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,TqsJa4LNMf6rytMP15au2As,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A062,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida 12valida 13valida 14valida 15valida 16valida,0,,gemini-3.6-flash,WKsJa7PqIeyjo_UPkrHwKA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A063,0,0,1valida 2valida 3valida 4valida 5valida 6valida,1,boia,gemini-3.6-flash,YqsJa8DaDri7xdIP05itMQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A064,0,0,1valida,0,,gemini-3.6-flash,a6sJa76iKtuio_UPxYfk-AE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A065,0,0,1valida 2valida,0,,gemini-3.6-flash,casJa7LaMbmiuMYP3vujWA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A066,0,0,1valida 2valida,0,,gemini-3.6-flash,eKsJa45UvKrK0w_A87LIBA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A067,1,0,1valida 2valida,1,embarcacao,gemini-3.6-flash,f6sJa82bEsmho_UP5vKpmA8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A068,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,hasJa7WxLMu_xdIPvJPa0AM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A069,1,0,1apagada,0,,gemini-3.6-flash,iqsJa6ydN_i_xdIPqaiDMA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A070,1,0,1valida 2valida 3valida 4valida 5valida,1,embarcacao,gemini-3.6-flash,kasJa_WBJNSio_UP7M2VsQs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A071,0,0,1valida 2valida,0,,gemini-3.6-flash,masJa8PpJfXHxdIP48_C-Ao,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A072,0,0,1valida 2valida,0,,gemini-3.6-flash,nqsJa_ybDaPYytMPiZyhqQg,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A073,0,0,1valida,0,,gemini-3.6-flash,qasJa_z4DJPiytMPsezo8QM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A074,0,0,1valida,0,,gemini-3.6-flash,rasJa5CcItLGxdIPl_3syAM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A075,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,s6sJa4-cKbv8wbUP7Om84Aw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A076,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida 12valida 13valida 14valida 15valida 16valida 17valida 18valida 19valida 20valida 21valida 22valida 23valida,0,,gemini-3.6-flash,uasJa-zpO5O_xdIPvvCXgQ4,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A077,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,xKsJa9rlHtOs5NoP8vX0-QQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A078,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,zasJa_XICu_gytMP4-zfmQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A079,0,0,1valida,0,,gemini-3.6-flash,1asJa---J6f7ytMP2fGGyAw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A080,1,0,1valida 2valida 3valida 4valida,1,embarcacao,gemini-3.6-flash,2qsJa9TqFt-C1sgPy7vjoAE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A081,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,4qsJa5K9IsuqxdIPgK2IyQ0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A082,1,0,1valida 2apagada 3apagada 4apagada 5degradada 6valida,0,,gemini-3.6-flash,6KsJa7fNO5Ggo_UPnLGumAY,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A083,0,0,1valida,0,,gemini-3.6-flash,8qsJa9TzLbWwytMPteKQuAY,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A084,1,0,1deslocada 2deslocada,0,,gemini-3.6-flash,96sJa9TQNMOMytMPheDEIQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A085,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,AKwJa5PBCJ2h5NoP68CIkQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A086,0,0,1valida 2valida,0,,gemini-3.6-flash,BqwJa-3RMemLytMPluq68Q4,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A087,0,0,1valida 2valida,0,,gemini-3.6-flash,GKwJa4jdC9Oio_UP7sDfCA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A088,0,0,1valida 2valida,0,,gemini-3.6-flash,HqwJa5v9Osmho_UP5vKpmA8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A089,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,JawJa9abN-yjo_UPkrHwKA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A090,0,0,1valida 2valida,0,,gemini-3.6-flash,MKwJa-HbLNrFxdIP_s3fMA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A091,1,0,1degradada 2apagada,0,,gemini-3.6-flash,OKwJa5HRM4rnwbUP38jY6AM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A092,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,P6wJa7DmL6avxdIP16eKkAY,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A093,0,0,1valida,0,,gemini-3.6-flash,SKwJa-z9NuDExdIP_ezI-Qo,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A094,0,0,1valida,0,,gemini-3.6-flash,TawJa7XfKI_iytMP2ubz4QM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A095,0,0,1valida 2degradada,0,,gemini-3.6-flash,U6wJa86cLb2eo_UPoqid0Qs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A096,1,0,1apagada,0,,gemini-3.6-flash,W6wJa9eRJ4XCxdIPpofU6Q8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A097,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,Y6wJa7ycDrmiuMYP3vujWA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A098,0,0,1valida 2valida,0,,gemini-3.6-flash,bawJa5n2Guyho_UP7LOl6AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A099,0,0,1valida 2valida 3valida,1,ave,gemini-3.6-flash,dKwJa_TMG4biytMP-MeI0AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A100,1,0,1valida 2valida 3valida 4valida 5valida 6degradada 7apagada 8apagada,0,,gemini-3.6-flash,fawJa7OFNc2C1sgP5cPKgAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A101,0,0,1valida 2valida,0,,gemini-3.6-flash,jKwJa7yUG4_iytMP4pXBMQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A102,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,l6wJa4ymO8upxdIP2ODu0Ag,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A103,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,qawJa7ikKrv9wbUP0fnpuAw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A104,0,0,1valida,0,,gemini-3.6-flash,tawJa9POGZKG1sgPotbZQQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A105,0,0,1valida 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,v6wJa92lMY6LytMPmKnmEA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A106,1,0,1apagada 2valida 3valida 4valida 5valida,0,,gemini-3.6-flash,x6wJa6ugNI_iytMP2ubz4QM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A107,0,0,1valida 2valida,0,,gemini-3.6-flash,z6wJa6O4As-yiLMP2ezPQA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A108,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,1awJa8nUCeCtuMYPkMWiEQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A109,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida 12valida,0,,gemini-3.6-flash,26wJa6-0MejnwbUP_YLWIA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A110,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,9qwJa8DyBvCjo_UPoLbxKA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A111,1,0,1valida 2apagada 3degradada,0,,gemini-3.6-flash,-6wJa8maJP23xdIP0NrAwQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A112,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,BK0Ja5SMPM-yiLMP2ezPQA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A113,0,0,1valida,0,,gemini-3.6-flash,Da0Ja6WIIceC1sgP_umZgA0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A114,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,E60Ja7e1BLOrxdIP_66QoQE,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A115,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida,0,,gemini-3.6-flash,I60Ja7ziNOajo_UPjaLwKQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A116,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,Kq0Ja-Y7ybjF0g_zib4x,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A117,1,0,1valida 2valida 3valida 4valida 5valida,1,embarcacao,gemini-3.6-flash,MK0Ja66TO72eo_UPoqid0Qs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A118,1,0,1apagada 2alterada,1,embarcacao,gemini-3.6-flash,OK0Ja8P1OZfS0_gPgOTx2Q0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A119,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,Qq0Ja_6BI5XDxdIPh6Pj8AM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A120,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida,0,,gemini-3.6-flash,Sa0Ja9OAHLi7xdIP05itMQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A121,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,VK0Ja-7oEMvDxdIPzOjqsAM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A122,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,XK0Ja6SZB4GEytMPsq-YwAs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A123,1,0,1deslocada,0,,gemini-3.6-flash,Zq0Ja7jgBeyuwbUPx82zkQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A124,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,bK0Ja6z7D_LDxdIP4KO1iAw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A125,0,0,1valida,0,,gemini-3.6-flash,da0Ja7_JNc-O1sgP9aXCkAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A126,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,e60Ja_2AM6XgytMPorG-6AM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A127,0,0,1valida 2valida 3valida 4valida,0,,gemini-3.6-flash,ga0Ja8u0M4_iytMP4pXBMQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A128,1,0,1deslocada 2apagada 3apagada,0,,gemini-3.6-flash,hq0Ja5uqJeyho_UP7LOl6AI,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A129,0,0,1valida 2degradada,0,,gemini-3.6-flash,l60Ja--AMPGD1sgPmY6xgA8,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A130,0,0,1degradada 2degradada 3degradada 4degradada 5degradada 6degradada 7degradada 8degradada 9degradada 10degradada 11degradada 12degradada,0,,gemini-3.6-flash,oa0Ja6GxLKyjo_UP04-yGQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A131,1,0,1valida 2valida 3valida 4alterada 5alterada,0,,gemini-3.6-flash,q60Ja7HcJ9OsuMYPiKG2MQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A132,0,0,1valida 2valida,0,,gemini-3.6-flash,ta0Ja41witLT-A-1spo5,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A133,1,0,1deslocada 2apagada,0,,gemini-3.6-flash,u60Ja5T0AaDhytMP1erl4QQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A134,0,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida,0,,gemini-3.6-flash,wq0Ja-2MJZfS0_gPgOTx2Q0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A135,0,0,1valida,0,,gemini-3.6-flash,y60Ja_aVB7OrxdIPgoGDgQs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A136,1,0,1valida 2valida 3degradada 4valida,1,embarcacao,gemini-3.6-flash,0K0Ja6biEtWRytMPurKESA,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A137,1,0,1valida 2valida 3valida 4valida 5valida 6valida 7valida 8valida 9valida 10valida 11valida 12valida 13valida,1,embarcacao,gemini-3.6-flash,2a0Ja5P9OLWwytMPteKQuAY,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A138,1,0,1valida 2degradada 3valida 4valida,1,embarcacao,gemini-3.6-flash,5a0Ja9GGI7SU5NoPh5_Y-A0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A139,1,0,1valida 2valida 3apagada 4valida 5valida 6valida 7valida 8valida,1,embarcacao,gemini-3.6-flash,8q0Ja6roCvyOytMPmdCGgAk,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A140,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,_K0Ja-PiCqfv5NoPq4WcmAQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A141,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,Aq4Ja83EM4yv5NoP15TIoQs,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A142,0,0,1valida,0,,gemini-3.6-flash,CK4Ja7G0PLv8wbUP7Om84Aw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A143,0,0,1valida 2valida 3valida,0,,gemini-3.6-flash,Dq4Ja8qiO-WiuMYPvuewEQ,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A144,0,0,1valida,0,,gemini-3.6-flash,F64Ja9-9Gu-3xdIP2dDxkAM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A145,0,0,1valida 2valida 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,Ha4Ja_CNINaio_UP6q2quQk,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A146,0,0,1valida,0,,gemini-3.6-flash,Ja4Ja8fWDdWvytMPx7y78Qw,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A147,0,0,1degradada 2degradada,0,,gemini-3.6-flash,Kq4Ja660DJ-s5NoPtuCpgAU,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A148,1,0,1valida 2valida,1,embarcacao,gemini-3.6-flash,Mq4Ja5_BBou9xdIPiJW3yQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A149,1,0,1alterada,0,,gemini-3.6-flash,Oa4Ja9uvM4u9xdIPiJW3yQM,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d
+A150,0,0,1valida 2degradada 3valida 4valida 5valida 6valida,0,,gemini-3.6-flash,Ra4Ja7mQCOamxdIPoJ-8iQ0,90516fabd7629b9d7c375ad0e7319f370c4c6030582f2735a1f641177617679d

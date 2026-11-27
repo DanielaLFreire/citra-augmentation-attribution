@@ -335,6 +335,12 @@
       "caminho": "data/auditoria_4a/chave_cega_4a.csv",
       "sha256": "49323fdda0b66b7ace25d1af99374f4bc8fdde05d6c35f2bd65d9307abfdc1b4",
       "tamanho_bytes": 62826
+    },
+    "filtro_150_sinalizadas.csv": {
+      "registrado_em_utc": "2026-11-27T16:26:26.638719+00:00",
+      "caminho": "data/auditoria_4a/filtro_150_sinalizadas.csv",
+      "sha256": "085b2dfa7e3818a28792f329348435b193834c7a0f87dd76490e3cf17f3e48b2",
+      "tamanho_bytes": 22926
     }
   },
   "adendos": {

@@ -1,0 +1,444 @@
+{
+  "n": 150,
+  "avaliadores": [
+    "Daniela",
+    "Jose"
+  ],
+  "semente_bootstrap": 20261207,
+  "secao5": {
+    "primaria_qualquer_avaliador": {
+      "k": 44,
+      "n": 150,
+      "taxa": 0.29333333333333333,
+      "wilson": [
+        0.22636309522530063,
+        0.37062497562159646
+      ],
+      "ic_blocos": [
+        0.22,
+        0.36666666666666664
+      ]
+    },
+    "sensibilidade_ambos": {
+      "k": 29,
+      "n": 150,
+      "taxa": 0.19333333333333333,
+      "wilson": [
+        0.13811802293025152,
+        0.2638642757457893
+      ],
+      "ic_blocos": [
+        0.13333333333333333,
+        0.26
+      ]
+    },
+    "por_avaliador": {
+      "Daniela": {
+        "k": 31,
+        "n": 150,
+        "taxa": 0.20666666666666667,
+        "wilson": [
+          0.1495880352139403,
+          0.27839503308488134
+        ]
+      },
+      "Jose": {
+        "k": 42,
+        "n": 150,
+        "taxa": 0.28,
+        "wilson": [
+          0.21432932072113417,
+          0.35665798050298214
+        ]
+      }
+    },
+    "por_estrato_qualquer": {
+      "padrao": {
+        "k": 35,
+        "n": 120,
+        "taxa": 0.2916666666666667,
+        "wilson": [
+          0.21781442705981954,
+          0.3784440192134845
+        ]
+      },
+      "risco": {
+        "k": 9,
+        "n": 30,
+        "taxa": 0.3,
+        "wilson": [
+          0.16664562643958933,
+          0.4787612101166018
+        ]
+      }
+    },
+    "kappa_imagem_reprovada": {
+      "kappa": 0.7304097771387492,
+      "ic_bootstrap": [
+        0.5952197378565921,
+        0.8486595560680312
+      ],
+      "atinge_limiar_0_60": true
+    }
+  },
+  "qualquer_objeto": {
+    "primaria_qualquer_avaliador": {
+      "k": 45,
+      "n": 150,
+      "taxa": 0.3,
+      "wilson": [
+        0.23240716608801582,
+        0.3775812895702717
+      ],
+      "ic_blocos": [
+        0.22666666666666666,
+        0.37333333333333335
+      ]
+    },
+    "sensibilidade_ambos": {
+      "k": 30,
+      "n": 150,
+      "taxa": 0.2,
+      "wilson": [
+        0.14383992805606738,
+        0.27114275543136385
+      ],
+      "ic_blocos": [
+        0.14,
+        0.26666666666666666
+      ]
+    },
+    "por_avaliador": {
+      "Daniela": {
+        "k": 31,
+        "n": 150,
+        "taxa": 0.20666666666666667,
+        "wilson": [
+          0.1495880352139403,
+          0.27839503308488134
+        ]
+      },
+      "Jose": {
+        "k": 44,
+        "n": 150,
+        "taxa": 0.29333333333333333,
+        "wilson": [
+          0.22636309522530063,
+          0.37062497562159646
+        ]
+      }
+    },
+    "por_estrato_qualquer": {
+      "padrao": {
+        "k": 36,
+        "n": 120,
+        "taxa": 0.3,
+        "wilson": [
+          0.22525501338672319,
+          0.38715309503564865
+        ]
+      },
+      "risco": {
+        "k": 9,
+        "n": 30,
+        "taxa": 0.3,
+        "wilson": [
+          0.16664562643958933,
+          0.4787612101166018
+        ]
+      }
+    },
+    "kappa_imagem_reprovada": {
+      "kappa": 0.7359774700774466,
+      "ic_bootstrap": [
+        0.6035394162261549,
+        0.8515219005196734
+      ],
+      "atinge_limiar_0_60": true
+    }
+  },
+  "caixas": {
+    "Daniela": {
+      "valida": 552,
+      "apagada": 2,
+      "deslocada": 15,
+      "alterada": 11,
+      "sem_objeto_original": 0,
+      "nao_avaliavel": 0
+    },
+    "Jose": {
+      "valida": 490,
+      "apagada": 12,
+      "deslocada": 6,
+      "alterada": 21,
+      "sem_objeto_original": 0,
+      "nao_avaliavel": 51
+    }
+  },
+  "kappa_caixa_6_categorias": {
+    "kappa": 0.31010293556995794,
+    "n_caixas": 580,
+    "observacao": "caixas da mesma imagem não são independentes; descritivo"
+  },
+  "kappa_objeto_adicionado": 0.7847478474784749,
+  "kappa_original_sem_rotulo": 0.4102564102564103,
+  "imagens_com_adicao_nao_embarcacao": {
+    "Daniela": 0,
+    "Jose": 2
+  },
+  "adicao_sem_tipo_na_observacao": {
+    "Daniela": 0,
+    "Jose": 3
+  },
+  "original_sem_rotulo_imagens": {
+    "Daniela": 15,
+    "Jose": 30
+  },
+  "filtro": {
+    "falhas_de_leitura": 0,
+    "secao5": {
+      "n": 150,
+      "positivos": 44,
+      "tp": 30,
+      "fn": 14,
+      "tn": 97,
+      "fp": 9,
+      "sensibilidade": {
+        "k": 30,
+        "n": 44,
+        "taxa": 0.6818181818181818,
+        "wilson": [
+          0.5344282746687306,
+          0.8000087006832644
+        ]
+      },
+      "especificidade": {
+        "k": 97,
+        "n": 106,
+        "taxa": 0.9150943396226415,
+        "wilson": [
+          0.8464647063757682,
+          0.9546889548964639
+        ]
+      },
+      "taxa_descarte": {
+        "k": 39,
+        "n": 150,
+        "taxa": 0.26,
+        "wilson": [
+          0.19642034813317322,
+          0.33556579865677183
+        ]
+      },
+      "taxa_residual": {
+        "k": 14,
+        "n": 111,
+        "taxa": 0.12612612612612611,
+        "wilson": [
+          0.07663785470708646,
+          0.20062752647882526
+        ]
+      },
+      "regra_uso_E": {
+        "sensibilidade_ok": false,
+        "residual_ok": false,
+        "E_pode_treinar": false,
+        "sensibilidade": 0.6818181818181818,
+        "taxa_residual": 0.12612612612612611,
+        "limiares": {
+          "sensibilidade": 0.8,
+          "taxa_residual": 0.07
+        }
+      }
+    },
+    "qualquer_objeto": {
+      "n": 150,
+      "positivos": 45,
+      "tp": 30,
+      "fn": 15,
+      "tn": 96,
+      "fp": 9,
+      "sensibilidade": {
+        "k": 30,
+        "n": 45,
+        "taxa": 0.6666666666666666,
+        "wilson": [
+          0.520702168092554,
+          0.7864130779272324
+        ]
+      },
+      "especificidade": {
+        "k": 96,
+        "n": 105,
+        "taxa": 0.9142857142857143,
+        "wilson": [
+          0.8450756880867552,
+          0.9542510399290034
+        ]
+      },
+      "taxa_descarte": {
+        "k": 39,
+        "n": 150,
+        "taxa": 0.26,
+        "wilson": [
+          0.19642034813317322,
+          0.33556579865677183
+        ]
+      },
+      "taxa_residual": {
+        "k": 15,
+        "n": 111,
+        "taxa": 0.13513513513513514,
+        "wilson": [
+          0.08363365730969172,
+          0.2110470158958366
+        ]
+      },
+      "regra_uso_E": {
+        "sensibilidade_ok": false,
+        "residual_ok": false,
+        "E_pode_treinar": false,
+        "sensibilidade": 0.6666666666666666,
+        "taxa_residual": 0.13513513513513514,
+        "limiares": {
+          "sensibilidade": 0.8,
+          "taxa_residual": 0.07
+        }
+      }
+    },
+    "referencia_consenso_descritiva": {
+      "n": 150,
+      "positivos": 29,
+      "tp": 24,
+      "fn": 5,
+      "tn": 106,
+      "fp": 15,
+      "sensibilidade": {
+        "k": 24,
+        "n": 29,
+        "taxa": 0.8275862068965517,
+        "wilson": [
+          0.6545119942718488,
+          0.9240225472852007
+        ]
+      },
+      "especificidade": {
+        "k": 106,
+        "n": 121,
+        "taxa": 0.8760330578512396,
+        "wilson": [
+          0.8055069201274051,
+          0.9234167719752272
+        ]
+      },
+      "taxa_descarte": {
+        "k": 39,
+        "n": 150,
+        "taxa": 0.26,
+        "wilson": [
+          0.19642034813317322,
+          0.33556579865677183
+        ]
+      },
+      "taxa_residual": {
+        "k": 5,
+        "n": 111,
+        "taxa": 0.04504504504504504,
+        "wilson": [
+          0.01939147410855501,
+          0.10113627890080745
+        ]
+      }
+    },
+    "por_estrato_secao5": {
+      "padrao": {
+        "n": 120,
+        "positivos": 35,
+        "tp": 25,
+        "fn": 10,
+        "tn": 83,
+        "fp": 2,
+        "sensibilidade": {
+          "k": 25,
+          "n": 35,
+          "taxa": 0.7142857142857143,
+          "wilson": [
+            0.5494475193017891,
+            0.8367363660170444
+          ]
+        },
+        "especificidade": {
+          "k": 83,
+          "n": 85,
+          "taxa": 0.9764705882352941,
+          "wilson": [
+            0.9182114184971183,
+            0.9935236245457805
+          ]
+        },
+        "taxa_descarte": {
+          "k": 27,
+          "n": 120,
+          "taxa": 0.225,
+          "wilson": [
+            0.1594905146581338,
+            0.3075706344226275
+          ]
+        },
+        "taxa_residual": {
+          "k": 10,
+          "n": 93,
+          "taxa": 0.10752688172043011,
+          "wilson": [
+            0.059462429584426144,
+            0.1867292896767178
+          ]
+        }
+      },
+      "risco": {
+        "n": 30,
+        "positivos": 9,
+        "tp": 5,
+        "fn": 4,
+        "tn": 14,
+        "fp": 7,
+        "sensibilidade": {
+          "k": 5,
+          "n": 9,
+          "taxa": 0.5555555555555556,
+          "wilson": [
+            0.2666473457440297,
+            0.811224570528086
+          ]
+        },
+        "especificidade": {
+          "k": 14,
+          "n": 21,
+          "taxa": 0.6666666666666666,
+          "wilson": [
+            0.45373075657210293,
+            0.8280546356731631
+          ]
+        },
+        "taxa_descarte": {
+          "k": 12,
+          "n": 30,
+          "taxa": 0.4,
+          "wilson": [
+            0.24590394326083403,
+            0.5767994750172616
+          ]
+        },
+        "taxa_residual": {
+          "k": 4,
+          "n": 18,
+          "taxa": 0.2222222222222222,
+          "wilson": [
+            0.09000781913382,
+            0.4521502645230549
+          ]
+        }
+      }
+    }
+  }
+}
