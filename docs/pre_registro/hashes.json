@@ -341,6 +341,12 @@
       "caminho": "data/auditoria_4a/filtro_150_sinalizadas.csv",
       "sha256": "085b2dfa7e3818a28792f329348435b193834c7a0f87dd76490e3cf17f3e48b2",
       "tamanho_bytes": 22926
+    },
+    "luminancia_citra.csv": {
+      "registrado_em_utc": "2026-11-27T20:17:17.950068+00:00",
+      "caminho": "data/luminancia_citra.csv",
+      "sha256": "655fb7b101725ccafb5bddb35bf26cba0731b51b13927b8adeeddc23215f6a52",
+      "tamanho_bytes": 94071
     }
   },
   "adendos": {
