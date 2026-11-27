@@ -329,6 +329,12 @@
       "caminho": "data/auditoria_4a/auditoria_jose_FINAL_normalizada.csv",
       "sha256": "aefb43150e1e9d63cfc08aef24dbd56aa36e9d0801b95e9115e32e44c46ef179",
       "tamanho_bytes": 24956
+    },
+    "chave_cega_4a.csv": {
+      "registrado_em_utc": "2026-11-27T13:48:16.189991+00:00",
+      "caminho": "data/auditoria_4a/chave_cega_4a.csv",
+      "sha256": "49323fdda0b66b7ace25d1af99374f4bc8fdde05d6c35f2bd65d9307abfdc1b4",
+      "tamanho_bytes": 62826
     }
   },
   "adendos": {
